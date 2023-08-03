@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "419038814745",
+    "project_id": "fitness-prodigy",
+    "storage_bucket": "fitness-prodigy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419038814745:android:a8cac25506bf5d086d8088",
+        "android_client_info": {
+          "package_name": "com.mateuszkasprzak.fintess_prodigy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419038814745-9f0h1mbnmnsvatek63vql0sjllm8khr3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYlGMmaTXE28itrDtRBeZ_nx_ArUh2V4Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419038814745-9f0h1mbnmnsvatek63vql0sjllm8khr3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
