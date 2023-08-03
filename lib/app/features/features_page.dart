@@ -8,7 +8,6 @@ import 'package:fintess_prodigy/app/features/stopwatch/stopwatch.dart';
 import 'package:fintess_prodigy/app/features/supplements/supplements.dart';
 import 'package:fintess_prodigy/app/features/water_glass_counter/water_glass_counter.dart';
 import 'package:fintess_prodigy/app/features/workout_plans/workout_plans.dart';
-import 'package:fintess_prodigy/main.dart';
 import 'package:flutter/material.dart';
 
 class Features extends StatelessWidget {
