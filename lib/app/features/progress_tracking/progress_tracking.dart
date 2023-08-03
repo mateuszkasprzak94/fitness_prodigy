@@ -1,25 +1,18 @@
-import 'package:fintess_prodigy/main.dart';
 import 'package:flutter/material.dart';
 
-class ProgressTracking extends StatelessWidget {
-  const ProgressTracking({
+class ProgressTrackingPage extends StatelessWidget {
+  const ProgressTrackingPage({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      icon: const Icon(Icons.hourglass_bottom),
-      label: const Text(
-        'PROGRESS TRACKING',
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Progress Tracking',
+        ),
       ),
-      onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => const ProgressTrackingPage(),
-          ),
-        );
-      },
     );
   }
 }

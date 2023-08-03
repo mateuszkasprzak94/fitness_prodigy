@@ -1,25 +1,18 @@
-import 'package:fintess_prodigy/main.dart';
 import 'package:flutter/material.dart';
 
-class Stopwatch extends StatelessWidget {
-  const Stopwatch({
+class StopwatchPage extends StatelessWidget {
+  const StopwatchPage({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      icon: const Icon(Icons.watch_rounded),
-      label: const Text(
-        'STOPWATCH',
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Stopwatch',
+        ),
       ),
-      onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => const StopwatchPage(),
-          ),
-        );
-      },
     );
   }
 }

@@ -1,25 +1,18 @@
-import 'package:fintess_prodigy/main.dart';
 import 'package:flutter/material.dart';
 
-class SocialSharing extends StatelessWidget {
-  const SocialSharing({
+class SocialSharingPage extends StatelessWidget {
+  const SocialSharingPage({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      icon: const Icon(Icons.person),
-      label: const Text(
-        'SOCIAL SHARING',
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Social Sharing',
+        ),
       ),
-      onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => const SocialSharingPage(),
-          ),
-        );
-      },
     );
   }
 }

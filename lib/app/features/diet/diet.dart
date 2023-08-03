@@ -1,25 +1,18 @@
-import 'package:fintess_prodigy/main.dart';
 import 'package:flutter/material.dart';
 
-class Diet extends StatelessWidget {
-  const Diet({
+class DietPage extends StatelessWidget {
+  const DietPage({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      icon: const Icon(Icons.fastfood),
-      label: const Text(
-        'DIET',
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Diet',
+        ),
       ),
-      onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => const DietPage(),
-          ),
-        );
-      },
     );
   }
 }
