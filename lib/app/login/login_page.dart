@@ -25,7 +25,6 @@ class LoginPage extends StatelessWidget {
             ),
           );
         },
-        backgroundColor: Colors.blue,
         child: const Text('Features'),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
@@ -35,13 +34,11 @@ class LoginPage extends StatelessWidget {
           decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
-                'images/hantla.png',
+                'images/gym.png',
               ),
               fit: BoxFit.cover,
             ),
           ),
-          height: 20.0,
-          width: 20.0,
         ),
       ),
     );
