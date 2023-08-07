@@ -1,4 +1,4 @@
-import 'package:fintess_prodigy/app/features/features_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -6,72 +6,37 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login'),
-      ),
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('images/login page.png'),
-                fit: BoxFit.fill,
-              ),
-            ),
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Center(
-                child: FloatingActionButton(
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) => const Features(),
-                      ),
-                    );
-                  },
-                  backgroundColor: Colors.black,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'images/hantla.png',
-                        width: 24,
-                        height: 24,
-                      ),
-                      const SizedBox(
-                        height: 4,
-                      ),
-                      const Text(
-                        'Features',
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
+    return const RootPage();
+  }
+}
+
+class RootPage extends StatelessWidget {
+  const RootPage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          final user = snapshot.data;
+          if (user == null) {
+            return const Scaffold(
+              body: Center(
+                child: Text(
+                  'Jesteś niezalogowany',
                 ),
               ),
-              const SizedBox(
-                  height: 16), // Add spacing between FAB and BottomAppBar
-            ],
-          ),
-        ],
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-      bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
-        child: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('images/gym.png'),
-              fit: BoxFit.cover,
+            );
+          }
+          return Scaffold(
+            body: Center(
+              child: Text(
+                'Jesteś zalogowany jako ${user.email}',
+              ),
             ),
-          ),
-          height: 50.0,
-        ),
-      ),
-    );
+          );
+        });
   }
 }
