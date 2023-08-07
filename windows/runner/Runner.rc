@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.mateuszkasprzak" "\0"
-            VALUE "FileDescription", "fintess_prodigy" "\0"
+            VALUE "FileDescription", "fitness_prodgy" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "fintess_prodigy" "\0"
+            VALUE "InternalName", "fitness_prodgy" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.mateuszkasprzak. All rights reserved." "\0"
-            VALUE "OriginalFilename", "fintess_prodigy.exe" "\0"
-            VALUE "ProductName", "fintess_prodigy" "\0"
+            VALUE "OriginalFilename", "fitness_prodgy.exe" "\0"
+            VALUE "ProductName", "fitness_prodgy" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

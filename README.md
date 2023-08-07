@@ -1,4 +1,4 @@
-# fintess_prodigy
+# fitness_prodgy
 
 A new Flutter project.
 

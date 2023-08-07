@@ -1,6 +1,6 @@
 {
-    "name": "fintess_prodigy",
-    "short_name": "fintess_prodigy",
+    "name": "fitness_prodgy",
+    "short_name": "fitness_prodgy",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
