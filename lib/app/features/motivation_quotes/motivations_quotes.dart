@@ -13,23 +13,33 @@ class MotivationQuotesPage extends StatelessWidget {
           'Motivation Quotes',
         ),
       ),
-      body: ListView(
-        children: [
-          ElevatedButton.icon(
-            onPressed: () {},
-            icon: const Icon(Icons.all_inclusive),
-            label: const Text(
-              'Random Quote',
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              'images/Motivation page.png',
             ),
           ),
-          ElevatedButton.icon(
-            onPressed: () {},
-            icon: const Icon(Icons.favorite),
-            label: const Text(
-              'Favorite Quote',
+        ),
+        child: Center(
+            child: ListView(
+          children: [
+            ElevatedButton.icon(
+              onPressed: () {},
+              icon: const Icon(Icons.all_inclusive),
+              label: const Text(
+                'Random Quote',
+              ),
             ),
-          ),
-        ],
+            ElevatedButton.icon(
+              onPressed: () {},
+              icon: const Icon(Icons.favorite),
+              label: const Text(
+                'Favorite Quote',
+              ),
+            ),
+          ],
+        )),
       ),
     );
   }
