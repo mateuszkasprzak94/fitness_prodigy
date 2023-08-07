@@ -1,6 +1,5 @@
 import 'package:fitness_prodigy/app/after%20login/after_login.dart';
 import 'package:fitness_prodigy/app/before%20login/before_login.dart';
-import 'package:fitness_prodigy/app/home/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -25,7 +24,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const RootPage(),
     );
   }
 }
