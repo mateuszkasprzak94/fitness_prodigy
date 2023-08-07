@@ -1,13 +1,13 @@
-import 'package:fintess_prodigy/app/features/diet/diet.dart';
-import 'package:fintess_prodigy/app/features/exercies_examples/exercies_examples.dart';
-import 'package:fintess_prodigy/app/features/goals/goals.dart';
-import 'package:fintess_prodigy/app/features/motivation_quotes/motivations_quotes.dart';
-import 'package:fintess_prodigy/app/features/progress_tracking/progress_tracking.dart';
-import 'package:fintess_prodigy/app/features/social_sharing/social_sharing.dart';
-import 'package:fintess_prodigy/app/features/stopwatch/stopwatch.dart';
-import 'package:fintess_prodigy/app/features/supplements/supplements.dart';
-import 'package:fintess_prodigy/app/features/water_glass_counter/water_glass_counter.dart';
-import 'package:fintess_prodigy/app/features/workout_plans/workout_plans.dart';
+import 'package:fitness_prodigy/app/features/diet/diet.dart';
+import 'package:fitness_prodigy/app/features/exercies_examples/exercies_examples.dart';
+import 'package:fitness_prodigy/app/features/goals/goals.dart';
+import 'package:fitness_prodigy/app/features/motivation_quotes/motivations_quotes.dart';
+import 'package:fitness_prodigy/app/features/progress_tracking/progress_tracking.dart';
+import 'package:fitness_prodigy/app/features/social_sharing/social_sharing.dart';
+import 'package:fitness_prodigy/app/features/stopwatch/stopwatch.dart';
+import 'package:fitness_prodigy/app/features/supplements/supplements.dart';
+import 'package:fitness_prodigy/app/features/water_glass_counter/water_glass_counter.dart';
+import 'package:fitness_prodigy/app/features/workout_plans/workout_plans.dart';
 import 'package:flutter/material.dart';
 
 class Features extends StatelessWidget {

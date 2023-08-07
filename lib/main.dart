@@ -1,6 +1,6 @@
-import 'package:fintess_prodigy/app/after%20login/after_login.dart';
-import 'package:fintess_prodigy/app/home/home_page.dart';
-import 'package:fintess_prodigy/app/before%20login/before_login.dart';
+import 'package:fitness_prodigy/app/after%20login/after_login.dart';
+import 'package:fitness_prodigy/app/before%20login/before_login.dart';
+import 'package:fitness_prodigy/app/home/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -30,8 +30,10 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RootPage extends StatelessWidget {
+  const RootPage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

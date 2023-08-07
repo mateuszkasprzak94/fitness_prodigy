@@ -1,4 +1,4 @@
-package com.mateuszkasprzak.fintess_prodigy
+package com.mateuszkasprzak.fitness_prodigy
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,4 +1,4 @@
-import 'package:fintess_prodigy/app/before%20login/before_login.dart';
+import 'package:fitness_prodigy/app/before%20login/before_login.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
