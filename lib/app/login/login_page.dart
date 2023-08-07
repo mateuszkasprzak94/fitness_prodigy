@@ -12,16 +12,59 @@ class LoginPage extends StatelessWidget {
       builder: (context, snapshot) {
         final user = snapshot.data;
         if (user == null) {
-          return const Scaffold(
-            body: Center(
-              child: Text(
-                'Jesteś niezalogowany',
-              ),
-            ),
-          );
+          return BeforeLogin();
         }
         return AfterLogin(user: user);
       },
+    );
+  }
+}
+
+class BeforeLogin extends StatelessWidget {
+  BeforeLogin({
+    super.key,
+  });
+
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Zaloguj się'),
+              const SizedBox(height: 20),
+              TextField(
+                controller: emailController,
+                decoration: const InputDecoration(hintText: 'E-mail'),
+              ),
+              const TextField(
+                obscureText: true,
+                decoration: InputDecoration(hintText: 'Password'),
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () async {
+                  try {
+                    await FirebaseAuth.instance.signInWithEmailAndPassword(
+                      email: emailController.text,
+                      password: passwordController.text,
+                    );
+                  } catch (error) {
+                    print(error);
+                  }
+                },
+                child: const Text('Login'),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
