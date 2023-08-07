@@ -1,32 +1,20 @@
-import 'package:fintess_prodigy/app/after%20login/after_login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return StreamBuilder<User?>(
-      stream: FirebaseAuth.instance.authStateChanges(),
-      builder: (context, snapshot) {
-        final user = snapshot.data;
-        if (user == null) {
-          return BeforeLogin();
-        }
-        return AfterLogin(user: user);
-      },
-    );
-  }
-}
-
-class BeforeLogin extends StatelessWidget {
+class BeforeLogin extends StatefulWidget {
   BeforeLogin({
     super.key,
   });
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
+  @override
+  State<BeforeLogin> createState() => _BeforeLoginState();
+}
+
+class _BeforeLoginState extends State<BeforeLogin> {
+  var errorMessage = '';
 
   @override
   Widget build(BuildContext context) {
@@ -40,23 +28,29 @@ class BeforeLogin extends StatelessWidget {
               const Text('Zaloguj się'),
               const SizedBox(height: 20),
               TextField(
-                controller: emailController,
+                controller: widget.emailController,
                 decoration: const InputDecoration(hintText: 'E-mail'),
               ),
               const TextField(
                 obscureText: true,
                 decoration: InputDecoration(hintText: 'Password'),
               ),
+              const SizedBox(
+                height: 20,
+              ),
+              Text(errorMessage),
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () async {
                   try {
                     await FirebaseAuth.instance.signInWithEmailAndPassword(
-                      email: emailController.text,
-                      password: passwordController.text,
+                      email: widget.emailController.text,
+                      password: widget.passwordController.text,
                     );
                   } catch (error) {
-                    print(error);
+                    setState(() {
+                      errorMessage = error.toString();
+                    });
                   }
                 },
                 child: const Text('Login'),

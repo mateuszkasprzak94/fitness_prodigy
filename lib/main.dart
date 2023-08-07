@@ -1,4 +1,7 @@
+import 'package:fintess_prodigy/app/after%20login/after_login.dart';
 import 'package:fintess_prodigy/app/home/home_page.dart';
+import 'package:fintess_prodigy/app/before%20login/before_login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -23,6 +26,24 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const HomePage(),
+    );
+  }
+}
+
+class LoginPage extends StatelessWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<User?>(
+      stream: FirebaseAuth.instance.authStateChanges(),
+      builder: (context, snapshot) {
+        final user = snapshot.data;
+        if (user == null) {
+          return BeforeLogin();
+        }
+        return AfterLogin(user: user);
+      },
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:fintess_prodigy/app/login/login_page.dart';
+import 'package:fintess_prodigy/app/before%20login/before_login.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -42,7 +42,7 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (_) => const LoginPage(),
+                      builder: (_) => BeforeLogin(),
                     ),
                   );
                 },
