@@ -26,21 +26,28 @@ class _BeforeLoginState extends State<BeforeLogin> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(isCreatingAccount == true ? 'Register' : 'Login'),
-              const SizedBox(height: 20),
+              Text(
+                isCreatingAccount == true ? 'Zarejestru się' : 'Zaloguj się',
+              ),
+              const SizedBox(
+                height: 20,
+              ),
               TextField(
                 controller: widget.emailController,
                 decoration: const InputDecoration(hintText: 'E-mail'),
               ),
-              const TextField(
+              TextField(
+                controller: widget.passwordController,
                 obscureText: true,
-                decoration: InputDecoration(hintText: 'Password'),
+                decoration: const InputDecoration(hintText: 'Hasło'),
               ),
               const SizedBox(
                 height: 20,
               ),
               Text(errorMessage),
-              const SizedBox(height: 20),
+              const SizedBox(
+                height: 20,
+              ),
               ElevatedButton(
                 onPressed: () async {
                   if (isCreatingAccount == true) {
@@ -52,9 +59,11 @@ class _BeforeLoginState extends State<BeforeLogin> {
                         password: widget.passwordController.text,
                       );
                     } catch (error) {
-                      setState(() {
-                        errorMessage = error.toString();
-                      });
+                      setState(
+                        () {
+                          errorMessage = error.toString();
+                        },
+                      );
                     }
                   } else {
                     //logowanie
@@ -64,13 +73,17 @@ class _BeforeLoginState extends State<BeforeLogin> {
                         password: widget.passwordController.text,
                       );
                     } catch (error) {
-                      setState(() {
-                        errorMessage = error.toString();
-                      });
+                      setState(
+                        () {
+                          errorMessage = error.toString();
+                        },
+                      );
                     }
                   }
                 },
-                child: Text(isCreatingAccount == true ? 'Register' : 'Login'),
+                child: Text(
+                  isCreatingAccount == true ? 'Zarejestruj się' : 'Zaloguj się',
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -82,7 +95,9 @@ class _BeforeLoginState extends State<BeforeLogin> {
                       isCreatingAccount = true;
                     });
                   },
-                  child: const Text('Create account'),
+                  child: const Text(
+                    'Utwórz konto',
+                  ),
                 ),
               ],
               if (isCreatingAccount == true) ...[
@@ -92,7 +107,9 @@ class _BeforeLoginState extends State<BeforeLogin> {
                       isCreatingAccount = false;
                     });
                   },
-                  child: const Text('Do you already have an account?'),
+                  child: const Text(
+                    'Masz już konto?',
+                  ),
                 ),
               ],
             ],
