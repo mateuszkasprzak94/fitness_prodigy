@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login/after_login.dart';
+import 'package:fitness_prodigy/app/before%20login/main_login_page.dart';
 import 'package:flutter/material.dart';
 
 class BeforeLogin extends StatelessWidget {
@@ -14,11 +15,7 @@ class BeforeLogin extends StatelessWidget {
         builder: (context, snapshot) {
           final user = snapshot.data;
           if (user == null) {
-            return const Scaffold(
-              body: Center(
-                child: Text('Jesteś niezalogowany'),
-              ),
-            );
+            return const MainLoginPage();
           }
           return AfterLogin(user: user);
         });
