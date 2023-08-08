@@ -1,19 +1,35 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class AfterLogin extends StatelessWidget {
   const AfterLogin({
-    super.key,
+    Key? key,
     required this.user,
-  });
+  }) : super(key: key);
 
   final User user;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text('Jesteś zalogowany jako ${user.email}'),
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Jesteś zalogowany jako ${user.email}',
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+            onPressed: () {
+              FirebaseAuth.instance.signOut();
+            },
+            child: const Text(
+              'Wyloguj',
+            ),
+          ),
+        ],
       ),
     );
   }
