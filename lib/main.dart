@@ -1,6 +1,4 @@
-import 'package:fitness_prodigy/app/after%20login/after_login.dart';
-import 'package:fitness_prodigy/app/before%20login/before_login.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fitness_prodigy/app/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -24,27 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const RootPage(),
-    );
-  }
-}
-
-class RootPage extends StatelessWidget {
-  const RootPage({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return StreamBuilder<User?>(
-      stream: FirebaseAuth.instance.authStateChanges(),
-      builder: (context, snapshot) {
-        final user = snapshot.data;
-        if (user == null) {
-          return BeforeLogin();
-        }
-        return AfterLogin(user: user);
-      },
+      home: const HomePage(),
     );
   }
 }
