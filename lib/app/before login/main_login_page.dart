@@ -15,6 +15,7 @@ class MainLoginPage extends StatefulWidget {
 
 class _MainLoginPageState extends State<MainLoginPage> {
   var errorMessage = '';
+  var isCreatingAccount = false;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class _MainLoginPageState extends State<MainLoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('Login'),
+              Text(isCreatingAccount == true ? 'Register' : 'Login'),
               const SizedBox(
                 height: 20,
               ),
@@ -45,19 +46,56 @@ class _MainLoginPageState extends State<MainLoginPage> {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () async {
-                  try {
-                    await FirebaseAuth.instance.signInWithEmailAndPassword(
-                      email: widget.emailController.text,
-                      password: widget.passwordController.text,
-                    );
-                  } catch (error) {
-                    setState(() {
-                      errorMessage = error.toString();
-                    });
+                  if (isCreatingAccount == true) {
+                    // rejestracja
+                    try {
+                      await FirebaseAuth.instance
+                          .createUserWithEmailAndPassword(
+                        email: widget.emailController.text,
+                        password: widget.passwordController.text,
+                      );
+                    } catch (error) {
+                      setState(() {
+                        errorMessage = error.toString();
+                      });
+                    }
+                  } else {
+                    // logowanie
+                    try {
+                      await FirebaseAuth.instance.signInWithEmailAndPassword(
+                        email: widget.emailController.text,
+                        password: widget.passwordController.text,
+                      );
+                    } catch (error) {
+                      setState(() {
+                        errorMessage = error.toString();
+                      });
+                    }
                   }
                 },
-                child: const Text('Login'),
+                child: Text(isCreatingAccount == true ? 'Register' : 'Login'),
               ),
+              const SizedBox(height: 20),
+              if (isCreatingAccount == false) ...[
+                TextButton(
+                  onPressed: () {
+                    setState(() {
+                      isCreatingAccount = true;
+                    });
+                  },
+                  child: const Text('Create Account'),
+                ),
+              ],
+              if (isCreatingAccount == true) ...[
+                TextButton(
+                  onPressed: () {
+                    setState(() {
+                      isCreatingAccount = false;
+                    });
+                  },
+                  child: const Text('Have an account?'),
+                ),
+              ],
             ],
           ),
         ),
