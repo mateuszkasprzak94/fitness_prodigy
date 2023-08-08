@@ -1,13 +1,20 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class MainLoginPage extends StatelessWidget {
+class MainLoginPage extends StatefulWidget {
   MainLoginPage({
     super.key,
   });
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
+  @override
+  State<MainLoginPage> createState() => _MainLoginPageState();
+}
+
+class _MainLoginPageState extends State<MainLoginPage> {
+  var errorMessage = '';
 
   @override
   Widget build(BuildContext context) {
@@ -23,26 +30,30 @@ class MainLoginPage extends StatelessWidget {
                 height: 20,
               ),
               TextField(
-                controller: emailController,
+                controller: widget.emailController,
                 decoration: const InputDecoration(hintText: 'E-mail'),
               ),
               TextField(
-                controller: passwordController,
+                controller: widget.passwordController,
                 obscureText: true,
                 decoration: const InputDecoration(hintText: 'Password'),
               ),
               const SizedBox(
                 height: 20,
               ),
+              Text(errorMessage),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () async {
                   try {
                     await FirebaseAuth.instance.signInWithEmailAndPassword(
-                      email: emailController.text,
-                      password: passwordController.text,
+                      email: widget.emailController.text,
+                      password: widget.passwordController.text,
                     );
                   } catch (error) {
-                    print(error);
+                    setState(() {
+                      errorMessage = error.toString();
+                    });
                   }
                 },
                 child: const Text('Login'),
