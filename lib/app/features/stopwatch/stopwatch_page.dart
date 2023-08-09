@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class StopwatchPage extends StatelessWidget {
-  const StopwatchPage({
+class FitStopwatchPage extends StatelessWidget {
+  const FitStopwatchPage({
     super.key,
   });
 
