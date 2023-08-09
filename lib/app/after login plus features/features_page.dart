@@ -59,6 +59,9 @@ class _FeaturesState extends State<Features> {
           setState(() {
             currentIndex = newIndex;
           });
+          if (newIndex == 3) {
+            FirebaseAuth.instance.signOut();
+          }
         },
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.black,
