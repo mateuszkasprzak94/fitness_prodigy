@@ -11,8 +11,8 @@ import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plan
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class AfterLogin extends StatelessWidget {
-  const AfterLogin({
+class Features extends StatelessWidget {
+  const Features({
     Key? key,
     required this.user,
   }) : super(key: key);

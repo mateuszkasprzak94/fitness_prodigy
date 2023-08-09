@@ -17,7 +17,7 @@ class Auth extends StatelessWidget {
         if (user == null) {
           return MainLoginPage();
         }
-        return AfterLogin(user: user);
+        return Features(user: user);
       },
     );
   }
