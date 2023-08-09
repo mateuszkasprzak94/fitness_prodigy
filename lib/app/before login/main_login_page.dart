@@ -27,7 +27,7 @@ class _MainLoginPageState extends State<MainLoginPage> {
                 image: AssetImage('images/arnold 2.png'), fit: BoxFit.fill),
           ),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 40, 20, 170),
+            padding: const EdgeInsets.fromLTRB(20, 3, 20, 165),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
