@@ -9,17 +9,21 @@ import 'package:fitness_prodigy/app/features/supplements/supplements_button.dart
 import 'package:fitness_prodigy/app/features/water_glass_counter/water_glass_counter_button.dart';
 import 'package:fitness_prodigy/app/features/workout_plans/workout_plans_button.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class Features extends StatelessWidget {
-  const Features({
-    super.key,
-  });
+class AfterLogin extends StatelessWidget {
+  const AfterLogin({
+    Key? key,
+    required this.user,
+  }) : super(key: key);
+
+  final User user;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Features:'),
+        title: Text('Jesteś zalogowany jako ${user.email}'),
       ),
       backgroundColor: Colors.white,
       body: Center(
