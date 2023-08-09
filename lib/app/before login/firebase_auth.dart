@@ -3,8 +3,8 @@ import 'package:fitness_prodigy/app/after%20login/after_login.dart';
 import 'package:fitness_prodigy/app/before%20login/main_login_page.dart';
 import 'package:flutter/material.dart';
 
-class BeforeLogin extends StatelessWidget {
-  const BeforeLogin({
+class Auth extends StatelessWidget {
+  const Auth({
     super.key,
   });
 
