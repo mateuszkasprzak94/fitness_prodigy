@@ -11,7 +11,7 @@ import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plan
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class Features extends StatelessWidget {
+class Features extends StatefulWidget {
   const Features({
     Key? key,
     required this.user,
@@ -20,10 +20,17 @@ class Features extends StatelessWidget {
   final User user;
 
   @override
+  State<Features> createState() => _FeaturesState();
+}
+
+class _FeaturesState extends State<Features> {
+  var currentIndex = 0;
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Logged as: ${user.email}'),
+        title: Text('Logged as: ${widget.user.email}'),
       ),
       backgroundColor: Colors.white,
       body: Center(
@@ -45,6 +52,34 @@ class Features extends StatelessWidget {
             SocialSharing(),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
+        onTap: (newIndex) {
+          setState(() {
+            currentIndex = newIndex;
+          });
+        },
+        selectedItemColor: Colors.blue,
+        unselectedItemColor: Colors.black,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.fitness_center),
+            label: 'Exercises',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_today),
+            label: 'Workouts',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.logout),
+            label: 'Logout',
+          ),
+        ],
       ),
     );
   }
