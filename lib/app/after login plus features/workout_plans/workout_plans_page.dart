@@ -1,10 +1,19 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class WorkoutPlansPage extends StatelessWidget {
+class WorkoutPlansPage extends StatefulWidget {
   const WorkoutPlansPage({
-    super.key,
-  });
+    Key? key,
+    required this.user,
+  }) : super(key: key);
 
+  final User user;
+
+  @override
+  State<WorkoutPlansPage> createState() => _WorkoutPlansPageState();
+}
+
+class _WorkoutPlansPageState extends State<WorkoutPlansPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

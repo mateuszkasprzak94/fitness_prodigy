@@ -9,6 +9,7 @@ import 'package:fitness_prodigy/app/after%20login%20plus%20features/stopwatch/st
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/supplements/supplements_button.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/water_glass_counter/water_glass_counter_button.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_button.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -65,6 +66,14 @@ class _FeaturesState extends State<Features> {
               context,
               MaterialPageRoute(
                 builder: (_) => ExerciseExamplesPage(user: widget.user),
+              ),
+            );
+          }
+          if (newIndex == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => WorkoutPlansPage(user: widget.user),
               ),
             );
           }
