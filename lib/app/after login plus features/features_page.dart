@@ -1,4 +1,5 @@
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/diet/diet_button.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/exercies_examples_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/exercise_examples_button.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/goals/goals_button.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/motivation_quotes/motivation_quotes_button.dart';
@@ -59,6 +60,14 @@ class _FeaturesState extends State<Features> {
           setState(() {
             currentIndex = newIndex;
           });
+          if (newIndex == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => ExerciseExamplesPage(user: widget.user),
+              ),
+            );
+          }
           if (newIndex == 3) {
             FirebaseAuth.instance.signOut();
           }

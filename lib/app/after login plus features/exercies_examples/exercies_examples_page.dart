@@ -5,8 +5,11 @@ import 'package:flutter/material.dart';
 
 class ExerciseExamplesPage extends StatefulWidget {
   const ExerciseExamplesPage({
-    super.key,
-  });
+    Key? key,
+    required this.user,
+  }) : super(key: key);
+
+  final User user;
 
   @override
   State<ExerciseExamplesPage> createState() => _ExerciseExamplesPageState();
