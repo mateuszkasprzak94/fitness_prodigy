@@ -12,7 +12,7 @@ class UserProfile extends StatelessWidget {
     return ElevatedButton.icon(
       icon: const Icon(Icons.account_box),
       label: const Text(
-        'User Profile',
+        'USER PROFILE',
       ),
       onPressed: () {
         Navigator.of(context).push(

@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/exercies_examples_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_page.dart';
 import 'package:fitness_prodigy/app/before%20login/main_login_page.dart';
@@ -40,6 +41,13 @@ class _UserProfilePageState extends State<UserProfilePage> {
                 builder: (_) => Features(
                   user: widget.user,
                 ),
+              ),
+            );
+          } else if (newIndex == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => ExerciseExamplesPage(user: widget.user),
               ),
             );
           } else if (newIndex == 2) {

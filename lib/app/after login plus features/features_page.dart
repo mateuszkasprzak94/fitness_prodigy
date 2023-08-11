@@ -78,7 +78,12 @@ class _FeaturesState extends State<Features> {
               ),
             );
           } else if (newIndex == 3) {
-            FirebaseAuth.instance.signOut();
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => const UserProfile(),
+              ),
+            );
           }
         },
         selectedItemColor: Colors.blue,

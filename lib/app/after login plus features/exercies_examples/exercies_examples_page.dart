@@ -46,7 +46,9 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => WorkoutPlansPage(user: widget.user),
+                builder: (_) => WorkoutPlansPage(
+                  user: widget.user,
+                ),
               ),
             );
           } else if (newIndex == 3) {
