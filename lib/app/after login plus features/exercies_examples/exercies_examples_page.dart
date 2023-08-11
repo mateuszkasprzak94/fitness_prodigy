@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
 import 'package:fitness_prodigy/app/before%20login/main_login_page.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +29,16 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
           setState(() {
             currentIndex = newIndex;
           });
-          if (newIndex == 3) {
+          if (newIndex == 0) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (_) => Features(
+                  user: FirebaseAuth.instance.currentUser!,
+                ),
+              ),
+            );
+          } else if (newIndex == 3) {
             FirebaseAuth.instance.signOut();
             Navigator.pushReplacement(
               context,
