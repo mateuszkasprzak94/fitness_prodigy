@@ -73,8 +73,8 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
             label: 'Workouts',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.logout),
-            label: 'Logout',
+            icon: Icon(Icons.account_box),
+            label: 'User Profile',
           ),
         ],
       ),
