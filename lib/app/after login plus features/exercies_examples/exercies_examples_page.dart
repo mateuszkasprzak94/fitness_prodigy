@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_page.dart';
 import 'package:fitness_prodigy/app/before%20login/main_login_page.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class ExerciseExamplesPage extends StatefulWidget {
 }
 
 class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
-  var currentIndex = 0;
+  var currentIndex = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -33,17 +34,24 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
             currentIndex = newIndex;
           });
           if (newIndex == 0) {
-            Navigator.pushReplacement(
+            Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (_) => Features(
-                  user: FirebaseAuth.instance.currentUser!,
+                  user: widget.user,
                 ),
+              ),
+            );
+          } else if (newIndex == 2) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => WorkoutPlansPage(user: widget.user),
               ),
             );
           } else if (newIndex == 3) {
             FirebaseAuth.instance.signOut();
-            Navigator.pushReplacement(
+            Navigator.push(
               context,
               MaterialPageRoute(builder: (_) => MainLoginPage()),
             );

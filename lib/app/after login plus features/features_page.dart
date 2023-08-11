@@ -68,16 +68,14 @@ class _FeaturesState extends State<Features> {
                 builder: (_) => ExerciseExamplesPage(user: widget.user),
               ),
             );
-          }
-          if (newIndex == 2) {
+          } else if (newIndex == 2) {
             Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (_) => WorkoutPlansPage(user: widget.user),
               ),
             );
-          }
-          if (newIndex == 3) {
+          } else if (newIndex == 3) {
             FirebaseAuth.instance.signOut();
           }
         },
