@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/exercies_examples_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
-import 'package:fitness_prodigy/app/before%20login/main_login_page.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/user_profile/user_profile_button.dart';
 import 'package:flutter/material.dart';
 
 class WorkoutPlansPage extends StatefulWidget {
@@ -50,10 +50,11 @@ class _WorkoutPlansPageState extends State<WorkoutPlansPage> {
               ),
             );
           } else if (newIndex == 3) {
-            FirebaseAuth.instance.signOut();
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (_) => MainLoginPage()),
+              MaterialPageRoute(
+                builder: (_) => const UserProfile(),
+              ),
             );
           }
         },

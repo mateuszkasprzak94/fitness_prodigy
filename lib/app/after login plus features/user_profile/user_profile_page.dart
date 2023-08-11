@@ -28,6 +28,27 @@ class _UserProfilePageState extends State<UserProfilePage> {
           'User Profile',
         ),
       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('You are logged as ${widget.user.email}'),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                FirebaseAuth.instance.signOut();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => MainLoginPage()),
+                );
+              },
+              child: const Text('Logout'),
+            ),
+          ],
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (newIndex) {
@@ -56,12 +77,6 @@ class _UserProfilePageState extends State<UserProfilePage> {
               MaterialPageRoute(
                 builder: (_) => WorkoutPlansPage(user: widget.user),
               ),
-            );
-          } else if (newIndex == 3) {
-            FirebaseAuth.instance.signOut();
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => MainLoginPage()),
             );
           }
         },
