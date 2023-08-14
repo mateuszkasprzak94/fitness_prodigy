@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/motivation_quotes/motivations_quotes_page.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,8 @@ class MotivationQuotes extends StatelessWidget {
       onPressed: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) => const MotivationQuotesPage(),
+            builder: (_) =>
+                MotivationQuotesPage(user: FirebaseAuth.instance.currentUser!),
           ),
         );
       },
