@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/diet/diet_page.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class Diet extends StatelessWidget {
       onPressed: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) => const DietPage(),
+            builder: (_) => DietPage(user: FirebaseAuth.instance.currentUser!),
           ),
         );
       },
