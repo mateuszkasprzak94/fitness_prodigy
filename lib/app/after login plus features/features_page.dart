@@ -8,6 +8,7 @@ import 'package:fitness_prodigy/app/after%20login%20plus%20features/social_shari
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/stopwatch/stopwatch_button.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/supplements/supplements_button.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/user_profile/user_profile_button.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/user_profile/user_profile_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/water_glass_counter/water_glass_counter_button.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_button.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_page.dart';
@@ -81,7 +82,7 @@ class _FeaturesState extends State<Features> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => const UserProfile(),
+                builder: (_) => UserProfilePage(user: widget.user),
               ),
             );
           }

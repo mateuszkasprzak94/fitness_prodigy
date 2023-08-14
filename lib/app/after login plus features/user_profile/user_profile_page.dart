@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/exercies_examples_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_page.dart';
-import 'package:fitness_prodigy/app/before%20login/main_login_page.dart';
 import 'package:flutter/material.dart';
 
 class UserProfilePage extends StatefulWidget {
@@ -39,9 +38,10 @@ class _UserProfilePageState extends State<UserProfilePage> {
             ElevatedButton(
               onPressed: () {
                 FirebaseAuth.instance.signOut();
-                Navigator.push(
+                Navigator.pushNamedAndRemoveUntil(
                   context,
-                  MaterialPageRoute(builder: (_) => MainLoginPage()),
+                  'before login/main_login_page', // Replace with the route name for your login page
+                  (route) => false,
                 );
               },
               child: const Text('Logout'),
