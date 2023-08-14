@@ -18,12 +18,103 @@ class WaterGlassCounterPage extends StatefulWidget {
 
 class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
   var currentIndex = 0;
+  var waterGlassCount = 0;
+  var goalReached = false;
+  var goal = 0;
+
+  void _incrementWaterGlassCount() {
+    setState(() {
+      waterGlassCount++;
+      if (waterGlassCount >= goal) {
+        goalReached = true;
+      }
+    });
+  }
+
+  void _decrementWaterGlassCount() {
+    setState(() {
+      if (waterGlassCount > 0) {
+        waterGlassCount--;
+        if (waterGlassCount < goal) {
+          goalReached = false;
+        }
+      }
+    });
+  }
+
+  void _setGoal(int newGoal) {
+    setState(() {
+      goal = newGoal;
+      if (waterGlassCount >= goal) {
+        goalReached = true;
+      } else {
+        goalReached = false;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
           'Water Glass Counter',
+        ),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            goalReached
+                ? Image.asset(
+                    'images/water glass.png',
+                    width: 200,
+                    height: 200,
+                  )
+                : Image.asset(
+                    'images/empty.png',
+                    width: 200,
+                    height: 200,
+                  ),
+            const SizedBox(
+              height: 20,
+            ),
+            Text('Water Glass Count: $waterGlassCount / Goal: $goal'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: _incrementWaterGlassCount,
+                  child: const Text('+'),
+                ),
+                ElevatedButton(
+                  onPressed: _decrementWaterGlassCount,
+                  child: const Text('-'),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+            const Text('Set Goal:'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () => _setGoal(5),
+                  child: const Text('5'),
+                ),
+                const SizedBox(width: 10),
+                ElevatedButton(
+                  onPressed: () => _setGoal(10),
+                  child: const Text('10'),
+                ),
+                const SizedBox(width: 10),
+                ElevatedButton(
+                  onPressed: () => _setGoal(15),
+                  child: const Text('15'),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
