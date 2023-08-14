@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/water_glass_counter/water_glass_counter_page.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,8 @@ class WaterGlassCounter extends StatelessWidget {
       onPressed: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) => const WaterGlassCounterPage(),
+            builder: (_) =>
+                WaterGlassCounterPage(user: FirebaseAuth.instance.currentUser!),
           ),
         );
       },
