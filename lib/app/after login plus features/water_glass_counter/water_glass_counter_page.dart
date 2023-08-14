@@ -20,7 +20,7 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
   var currentIndex = 0;
   var waterGlassCount = 0;
   var goalReached = false;
-  var goal = 0;
+  var goal = 1;
 
   void _incrementWaterGlassCount() {
     setState(() {
@@ -42,17 +42,6 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
     });
   }
 
-  void _setGoal(int newGoal) {
-    setState(() {
-      goal = newGoal;
-      if (waterGlassCount >= goal) {
-        goalReached = true;
-      } else {
-        goalReached = false;
-      }
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -66,10 +55,23 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             goalReached
-                ? Image.asset(
-                    'images/water glass.png',
-                    width: 200,
-                    height: 200,
+                ? Column(
+                    children: [
+                      Image.asset(
+                        'images/water glass.png',
+                        width: 200,
+                        height: 200,
+                      ),
+                      const SizedBox(height: 10),
+                      const Text(
+                        'GOAL REACHED!',
+                        style: TextStyle(
+                          color: Colors.green,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                      ),
+                    ],
                   )
                 : Image.asset(
                     'images/empty.png',
@@ -94,25 +96,17 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
               ],
             ),
             const SizedBox(height: 20),
-            const Text('Set Goal:'),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: () => _setGoal(5),
-                  child: const Text('5'),
-                ),
-                const SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: () => _setGoal(10),
-                  child: const Text('10'),
-                ),
-                const SizedBox(width: 10),
-                ElevatedButton(
-                  onPressed: () => _setGoal(15),
-                  child: const Text('15'),
-                ),
-              ],
+            Slider(
+              onChanged: (newValue) {
+                setState(() {
+                  goal = newValue.toInt();
+                });
+              },
+              value: goal.toDouble(),
+              min: 1.0,
+              max: 20.0,
+              divisions: 19,
+              label: goal.toString(),
             ),
           ],
         ),
