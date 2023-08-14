@@ -111,16 +111,31 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
             const SizedBox(
               height: 20,
             ),
-            Text('Water Glass Count: $waterGlassCount / Goal: $goal'),
+            Text(
+              'Water Glass Count: $waterGlassCount / Goal: $goal',
+              style: const TextStyle(fontSize: 15),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
                   onPressed: _incrementWaterGlassCount,
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(50, 50),
+                  ),
                   child: const Text('+'),
+                ),
+                const SizedBox(
+                  width: 20,
                 ),
                 ElevatedButton(
                   onPressed: _decrementWaterGlassCount,
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: const Size(50, 50),
+                  ),
                   child: const Text('-'),
                 ),
               ],
@@ -137,6 +152,7 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
               max: 20.0,
               divisions: 19,
               label: goal.toString(),
+              activeColor: Colors.blue,
             ),
           ],
         ),
