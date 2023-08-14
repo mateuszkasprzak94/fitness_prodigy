@@ -17,7 +17,7 @@ class DietPage extends StatefulWidget {
 }
 
 class _DietPageState extends State<DietPage> {
-  var currentIndex = 1;
+  var currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

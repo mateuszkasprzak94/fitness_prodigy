@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/supplements/supplements_page.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,8 @@ class Supplements extends StatelessWidget {
       onPressed: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) => const SupplementsPage(),
+            builder: (_) =>
+                SupplementsPage(user: FirebaseAuth.instance.currentUser!),
           ),
         );
       },
