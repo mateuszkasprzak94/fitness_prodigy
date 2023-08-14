@@ -1,4 +1,4 @@
-import 'package:fitness_prodigy/app/after%20login%20plus%20features/diet/diet.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/diet/diet_page.dart';
 import 'package:flutter/material.dart';
 
 class Diet extends StatelessWidget {
