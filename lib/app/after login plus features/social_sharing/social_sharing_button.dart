@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/social_sharing/social_sharing_page.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,8 @@ class SocialSharing extends StatelessWidget {
       onPressed: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) => const SocialSharingPage(),
+            builder: (_) =>
+                SocialSharingPage(user: FirebaseAuth.instance.currentUser!),
           ),
         );
       },
