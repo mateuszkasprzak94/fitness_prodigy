@@ -93,30 +93,30 @@ class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(
-              'images/Motivation page.png',
-            ),
+            image: AssetImage('images/Motivation page.png'),
+            fit: BoxFit.cover,
           ),
         ),
         child: Center(
-            child: ListView(
-          children: [
-            ElevatedButton.icon(
-              onPressed: () {},
-              icon: const Icon(Icons.all_inclusive),
-              label: const Text(
-                'Random Quote',
+          child: ListView(
+            children: [
+              ElevatedButton.icon(
+                onPressed: () {},
+                icon: const Icon(Icons.all_inclusive),
+                label: const Text(
+                  'Random Quote',
+                ),
               ),
-            ),
-            ElevatedButton.icon(
-              onPressed: () {},
-              icon: const Icon(Icons.favorite),
-              label: const Text(
-                'Favorite Quote',
+              ElevatedButton.icon(
+                onPressed: () {},
+                icon: const Icon(Icons.favorite),
+                label: const Text(
+                  'Favorite Quote',
+                ),
               ),
-            ),
-          ],
-        )),
+            ],
+          ),
+        ),
       ),
     );
   }
