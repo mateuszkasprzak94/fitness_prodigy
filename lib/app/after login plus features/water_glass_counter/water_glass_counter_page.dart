@@ -3,6 +3,7 @@ import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_exa
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/user_profile/user_profile_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_page.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class WaterGlassCounterPage extends StatefulWidget {
   const WaterGlassCounterPage({
@@ -22,12 +23,40 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
   var goalReached = false;
   var goal = 1;
 
+  @override
+  void initState() {
+    super.initState();
+    _loadPreferences(); // Load saved preferences when the widget initializes
+  }
+
+  @override
+  void dispose() {
+    _savePreferences(); // Save preferences when the widget is disposed
+    super.dispose();
+  }
+
+  Future<void> _loadPreferences() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      waterGlassCount = prefs.getInt('waterGlassCount') ?? 0;
+      goal = prefs.getInt('goal') ?? 1;
+      goalReached = waterGlassCount >= goal;
+    });
+  }
+
+  Future<void> _savePreferences() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt('waterGlassCount', waterGlassCount);
+    await prefs.setInt('goal', goal);
+  }
+
   void _incrementWaterGlassCount() {
     setState(() {
       waterGlassCount++;
       if (waterGlassCount >= goal) {
         goalReached = true;
       }
+      _savePreferences(); // Save preferences after updating values
     });
   }
 
@@ -39,6 +68,7 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
           goalReached = false;
         }
       }
+      _savePreferences(); // Save preferences after updating values
     });
   }
 
