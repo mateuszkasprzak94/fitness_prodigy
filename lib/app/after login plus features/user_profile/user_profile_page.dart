@@ -40,7 +40,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                 FirebaseAuth.instance.signOut();
                 Navigator.pushNamedAndRemoveUntil(
                   context,
-                  'before login/main_login_page', // Replace with the route name for your login page
+                  '/', // Replace with the route name for your login page
                   (route) => false,
                 );
               },

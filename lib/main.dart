@@ -1,8 +1,8 @@
+import 'package:fitness_prodigy/app/before%20login/main_login_page.dart';
 import 'package:fitness_prodigy/app/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +23,13 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      initialRoute: '/', // Set the initial route
+      routes: {
+        '/': (context) => const HomePage(),
+        '/login': (context) =>
+            MainLoginPage(), // Define the route for your login page
+        // Define other routes here
+      },
     );
   }
 }
