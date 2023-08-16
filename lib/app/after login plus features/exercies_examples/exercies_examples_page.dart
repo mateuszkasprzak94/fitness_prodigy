@@ -27,6 +27,41 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
           'Exercise Examples',
         ),
       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ListView(children: [
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(45, 3, 168, 244),
+                ),
+                child: Image.asset(
+                  'exercise examples page images/chest.png',
+                  width: 100,
+                  height: 100,
+                ),
+              ),
+              const SizedBox(height: 10),
+              const Text('Chest Exercise'),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(45, 3, 168, 244),
+                ),
+                child: Image.asset(
+                  'exercise examples page images/back.png',
+                  width: 100,
+                  height: 100,
+                ),
+              ),
+              const SizedBox(height: 10),
+              const Text('Back Exercise'),
+            ]),
+          ],
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (newIndex) {
