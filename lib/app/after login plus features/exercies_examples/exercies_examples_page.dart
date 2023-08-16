@@ -1,4 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/muscle_anatomy/abs.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/muscle_anatomy/back.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/muscle_anatomy/biceps.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/muscle_anatomy/chest.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/muscle_anatomy/forearms.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/muscle_anatomy/legs.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/muscle_anatomy/shoulders.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/muscle_anatomy/triceps.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/user_profile/user_profile_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_page.dart';
@@ -29,182 +37,22 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
       ),
       body: Center(
         child: ListView(
-          children: [
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(45, 3, 168, 244),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset(
-                    'exercise examples page images/chest.png',
-                    width: 100,
-                    height: 100,
-                  ),
-                  const SizedBox(width: 10),
-                  const Text(
-                    'Chest',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(45, 3, 168, 244),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset(
-                    'exercise examples page images/back.png',
-                    width: 100,
-                    height: 100,
-                  ),
-                  const SizedBox(width: 10),
-                  const Text(
-                    'Back',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(45, 3, 168, 244),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset(
-                    'exercise examples page images/shoulders.png',
-                    width: 100,
-                    height: 100,
-                  ),
-                  const SizedBox(width: 10),
-                  const Text(
-                    'Shoulders',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(45, 3, 168, 244),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset(
-                    'exercise examples page images/biceps.png',
-                    width: 100,
-                    height: 100,
-                  ),
-                  const SizedBox(width: 10),
-                  const Text(
-                    'Biceps',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(45, 3, 168, 244),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset(
-                    'exercise examples page images/triceps.png',
-                    width: 100,
-                    height: 100,
-                  ),
-                  const SizedBox(width: 10),
-                  const Text(
-                    'Triceps',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(45, 3, 168, 244),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset(
-                    'exercise examples page images/forearms.png',
-                    width: 100,
-                    height: 100,
-                  ),
-                  const SizedBox(width: 10),
-                  const Text(
-                    'Forearms',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(45, 3, 168, 244),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset(
-                    'exercise examples page images/legs.png',
-                    width: 100,
-                    height: 100,
-                  ),
-                  const SizedBox(width: 10),
-                  const Text(
-                    'Legs',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            ),
-            const SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromARGB(45, 3, 168, 244),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Image.asset(
-                    'exercise examples page images/abs.png',
-                    width: 100,
-                    height: 100,
-                  ),
-                  const SizedBox(width: 10),
-                  const Text(
-                    'Abs',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            ),
+          children: const [
+            Chest(),
+            SizedBox(height: 10),
+            Back(),
+            SizedBox(height: 10),
+            Shoulders(),
+            SizedBox(height: 10),
+            Biceps(),
+            SizedBox(height: 10),
+            Triceps(),
+            SizedBox(height: 10),
+            Forearms(),
+            SizedBox(height: 10),
+            Legs(),
+            SizedBox(height: 10),
+            Abs(),
           ],
         ),
       ),
