@@ -51,6 +51,7 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
                 ],
               ),
             ),
+            const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
@@ -67,6 +68,138 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
                   const SizedBox(width: 10),
                   const Text(
                     'Back',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(45, 3, 168, 244),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(
+                    'exercise examples page images/shoulders.png',
+                    width: 100,
+                    height: 100,
+                  ),
+                  const SizedBox(width: 10),
+                  const Text(
+                    'Shoulders',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(45, 3, 168, 244),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(
+                    'exercise examples page images/biceps.png',
+                    width: 100,
+                    height: 100,
+                  ),
+                  const SizedBox(width: 10),
+                  const Text(
+                    'Biceps',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(45, 3, 168, 244),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(
+                    'exercise examples page images/triceps.png',
+                    width: 100,
+                    height: 100,
+                  ),
+                  const SizedBox(width: 10),
+                  const Text(
+                    'Triceps',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(45, 3, 168, 244),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(
+                    'exercise examples page images/forearms.png',
+                    width: 100,
+                    height: 100,
+                  ),
+                  const SizedBox(width: 10),
+                  const Text(
+                    'Forearms',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(45, 3, 168, 244),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(
+                    'exercise examples page images/legs.png',
+                    width: 100,
+                    height: 100,
+                  ),
+                  const SizedBox(width: 10),
+                  const Text(
+                    'Legs',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(45, 3, 168, 244),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Image.asset(
+                    'exercise examples page images/abs.png',
+                    width: 100,
+                    height: 100,
+                  ),
+                  const SizedBox(width: 10),
+                  const Text(
+                    'Abs',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   )
                 ],
