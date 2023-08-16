@@ -36,123 +36,53 @@ class ChestPage extends StatelessWidget {
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
-        children: const [
-          Text(
+        children: [
+          const Text(
             chestExercises,
             style: TextStyle(fontWeight: FontWeight.w400),
           ),
-          SizedBox(height: 15),
-          Text(
-            '1. Flat Bench Press:',
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic,
-                fontSize: 17),
-          ),
-          Text(
-            chest1,
-            style: TextStyle(
-                fontWeight: FontWeight.normal,
-                fontStyle: FontStyle.normal,
-                fontSize: 12),
-          ),
-          SizedBox(height: 15),
-          Text(
-            '2. Incline Bench Press:',
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic,
-                fontSize: 17),
-          ),
-          Text(
-            chest2,
-            style: TextStyle(
-                fontWeight: FontWeight.normal,
-                fontStyle: FontStyle.normal,
-                fontSize: 12),
-          ),
-          SizedBox(height: 15),
-          Text(
-            '3. Decline Bench Press:',
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic,
-                fontSize: 17),
-          ),
-          Text(
-            chest3,
-            style: TextStyle(
-                fontWeight: FontWeight.normal,
-                fontStyle: FontStyle.normal,
-                fontSize: 12),
-          ),
-          SizedBox(height: 15),
-          Text(
-            '4. Cable Crossover:',
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic,
-                fontSize: 17),
-          ),
-          Text(
-            chest4,
-            style: TextStyle(
-                fontWeight: FontWeight.normal,
-                fontStyle: FontStyle.normal,
-                fontSize: 12),
-          ),
-          SizedBox(height: 15),
-          Text(
-            '5. Chest Dip:',
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic,
-                fontSize: 17),
-          ),
-          Text(
-            chest5,
-            style: TextStyle(
-                fontWeight: FontWeight.normal,
-                fontStyle: FontStyle.normal,
-                fontSize: 12),
-          ),
-          SizedBox(height: 15),
-          Text(
-            '6. Dumbbell Pull-Over:',
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic,
-                fontSize: 17),
-          ),
-          Text(
-            chest6,
-            style: TextStyle(
-                fontWeight: FontWeight.normal,
-                fontStyle: FontStyle.normal,
-                fontSize: 12),
-          ),
-          SizedBox(height: 15),
-          Text(
-            '7. Machine Fly:',
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic,
-                fontSize: 17),
-          ),
-          Text(
-            chest7,
-            style: TextStyle(
-                fontWeight: FontWeight.normal,
-                fontStyle: FontStyle.normal,
-                fontSize: 12),
-          ),
-          SizedBox(height: 15),
-          Text(
+          const SizedBox(height: 15),
+          _buildExercise('1. Flat Bench Press:', chest1),
+          const SizedBox(height: 15),
+          _buildExercise('2. Incline Bench Press:', chest2),
+          const SizedBox(height: 15),
+          _buildExercise('3. Decline Bench Press:', chest3),
+          const SizedBox(height: 15),
+          _buildExercise('4. Cable Crossover:', chest4),
+          const SizedBox(height: 15),
+          _buildExercise('5. Chest Dip:', chest5),
+          const SizedBox(height: 15),
+          _buildExercise('6. Dumbbell Pull-Over:', chest6),
+          const SizedBox(height: 15),
+          _buildExercise('7. Machine Fly:', chest7),
+          const Text(
             end,
             style: TextStyle(fontWeight: FontWeight.w400),
-          ),
+          )
         ],
       ),
     );
   }
+}
+
+Widget _buildExercise(String title, String description) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text(
+        title,
+        style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            fontSize: 17),
+      ),
+      Text(
+        description,
+        style: const TextStyle(
+            fontWeight: FontWeight.normal,
+            fontStyle: FontStyle.normal,
+            fontSize: 12),
+      ),
+    ],
+  );
 }
