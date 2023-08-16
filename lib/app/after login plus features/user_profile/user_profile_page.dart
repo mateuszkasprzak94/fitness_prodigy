@@ -44,7 +44,10 @@ class _UserProfilePageState extends State<UserProfilePage> {
                   (route) => false,
                 );
               },
-              child: const Text('Logout'),
+              child: const Text(
+                'Logout',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
           ],
         ),
