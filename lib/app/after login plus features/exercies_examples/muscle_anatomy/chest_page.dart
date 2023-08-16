@@ -148,7 +148,7 @@ class ChestPage extends StatelessWidget {
           ),
           SizedBox(height: 15),
           Text(
-            chestExercises,
+            end,
             style: TextStyle(fontWeight: FontWeight.w400),
           ),
         ],
