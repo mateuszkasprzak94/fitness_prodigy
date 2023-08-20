@@ -3,6 +3,7 @@ import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_exa
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/user_profile/user_profile_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/beginner_workout.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/intermediate_workout.dart';
 import 'package:flutter/material.dart';
 
 class WorkoutPlansPage extends StatefulWidget {
@@ -44,7 +45,14 @@ class _WorkoutPlansPageState extends State<WorkoutPlansPage> {
           ),
           const SizedBox(height: 15),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => IntermediateWorkout(
+                      user: FirebaseAuth.instance.currentUser!),
+                ),
+              );
+            },
             child: const Text('Intermediate Workout'),
           ),
           const SizedBox(height: 15),
