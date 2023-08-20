@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/exercies_examples_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/user_profile/user_profile_page.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/beginner_workout.dart';
 import 'package:flutter/material.dart';
 
 class WorkoutPlansPage extends StatefulWidget {
@@ -26,6 +27,72 @@ class _WorkoutPlansPageState extends State<WorkoutPlansPage> {
         title: const Text(
           'Workout Plans',
         ),
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) =>
+                      BeginnerWorkout(user: FirebaseAuth.instance.currentUser!),
+                ),
+              );
+            },
+            child: const Text('Beginner Workout'),
+          ),
+          const SizedBox(height: 15),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Intermediate Workout'),
+          ),
+          const SizedBox(height: 15),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Advanced Workout'),
+          ),
+          const SizedBox(height: 15),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Chest'),
+          ),
+          const SizedBox(height: 15),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Back'),
+          ),
+          const SizedBox(height: 15),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Shoulders'),
+          ),
+          const SizedBox(height: 15),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Biceps'),
+          ),
+          const SizedBox(height: 15),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Triceps'),
+          ),
+          const SizedBox(height: 15),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Forearms'),
+          ),
+          const SizedBox(height: 15),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Legs'),
+          ),
+          const SizedBox(height: 15),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Abs'),
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
