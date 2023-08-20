@@ -7,6 +7,7 @@ import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plan
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/beginner_workout.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/biceps_workout.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/chest_workout.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/forearms_workout.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/intermediate_workout.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/shoulders_workout.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/triceps_workout.dart';
@@ -135,7 +136,14 @@ class _WorkoutPlansPageState extends State<WorkoutPlansPage> {
           ),
           const SizedBox(height: 15),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) =>
+                      ForearmsWorkout(user: FirebaseAuth.instance.currentUser!),
+                ),
+              );
+            },
             child: const Text('Forearms'),
           ),
           const SizedBox(height: 15),
