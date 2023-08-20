@@ -55,6 +55,7 @@ class ChestPage extends StatelessWidget {
           _buildExercise('6. Dumbbell Pull-Over:', chest6),
           const SizedBox(height: 15),
           _buildExercise('7. Machine Fly:', chest7),
+          const SizedBox(height: 15),
           const Text(
             end,
             style: TextStyle(fontWeight: FontWeight.w400),

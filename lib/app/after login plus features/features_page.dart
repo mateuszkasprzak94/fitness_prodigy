@@ -15,6 +15,7 @@ import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plan
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Features extends StatefulWidget {
   const Features({
@@ -35,17 +36,20 @@ class _FeaturesState extends State<Features> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           '# Fitness Prodigy',
-          style: TextStyle(color: Colors.black),
+          style: GoogleFonts.anton(
+              fontSize: 30, color: const Color.fromARGB(230, 33, 149, 243)),
         ),
         centerTitle: true,
         flexibleSpace: Container(
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                    colors: [Colors.white, Colors.orange],
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter))),
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Colors.white, Colors.orange],
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter),
+          ),
+        ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       backgroundColor: Colors.white,
