@@ -14,6 +14,7 @@ import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plan
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 
 class Features extends StatefulWidget {
   const Features({
@@ -34,8 +35,18 @@ class _FeaturesState extends State<Features> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('# Fitness Prodigy'),
+        title: const Text(
+          '# Fitness Prodigy',
+          style: TextStyle(color: Colors.black),
+        ),
         centerTitle: true,
+        flexibleSpace: Container(
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    colors: [Colors.white, Colors.orange],
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter))),
+        systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       backgroundColor: Colors.white,
       body: Center(
