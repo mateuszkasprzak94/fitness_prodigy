@@ -26,6 +26,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
         title: const Text(
           'User Profile',
         ),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(

@@ -34,7 +34,8 @@ class _FeaturesState extends State<Features> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Logged as: ${widget.user.email}'),
+        title: const Text('# Fitness Prodigy'),
+        centerTitle: true,
       ),
       backgroundColor: Colors.white,
       body: Center(

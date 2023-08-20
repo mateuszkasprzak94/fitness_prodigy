@@ -80,6 +80,7 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
         title: const Text(
           'Water Glass Counter',
         ),
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
