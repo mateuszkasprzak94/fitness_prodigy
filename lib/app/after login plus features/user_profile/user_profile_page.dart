@@ -104,6 +104,21 @@ class _UserProfilePageState extends State<UserProfilePage> {
           ),
         ],
       ),
+      floatingActionButton: const Align(
+        alignment: Alignment.bottomRight,
+        child: Padding(
+          padding: EdgeInsets.all(16),
+          child: AboutListTile(
+            icon: Icon(Icons.info),
+            applicationIcon: FlutterLogo(),
+            applicationName: 'Fitness Prodigy',
+            applicationVersion: '1.0.0',
+            applicationLegalese:
+                'Copyright © 2023 Fitness Prodigy. All rights reserved.',
+            child: Text('About'),
+          ),
+        ),
+      ),
     );
   }
 }
