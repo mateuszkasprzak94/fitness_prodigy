@@ -3,6 +3,8 @@ import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_exa
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class UserProfilePage extends StatefulWidget {
   const UserProfilePage({
@@ -23,10 +25,21 @@ class _UserProfilePageState extends State<UserProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'User Profile',
+          style: GoogleFonts.anton(
+              fontSize: 30, color: const Color.fromARGB(230, 33, 149, 243)),
         ),
         centerTitle: true,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Colors.white, Colors.orange],
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter),
+          ),
+        ),
+        systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: Center(
         child: Column(

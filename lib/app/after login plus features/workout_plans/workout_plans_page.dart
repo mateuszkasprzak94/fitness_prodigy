@@ -14,6 +14,8 @@ import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plan
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/shoulders_workout.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/triceps_workout.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class WorkoutPlansPage extends StatefulWidget {
   const WorkoutPlansPage({
@@ -34,9 +36,21 @@ class _WorkoutPlansPageState extends State<WorkoutPlansPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Workout Plans',
+          style: GoogleFonts.anton(
+              fontSize: 30, color: const Color.fromARGB(230, 33, 149, 243)),
         ),
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Colors.white, Colors.orange],
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter),
+          ),
+        ),
+        systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
