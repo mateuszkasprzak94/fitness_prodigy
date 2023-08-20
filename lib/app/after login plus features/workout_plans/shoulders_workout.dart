@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 String start =
-    '''This workout is designed to target different parts of the shoulders for a well-rounded and sculpted shoulder development. As always, encourage users to warm up before starting the workout and cool down afterwards.''';
+    '''This workout is designed to target different parts of the shoulders for a well-rounded and sculpted shoulder development. As always, include warm-up and cool-down sessions in each workout.''';
 
 String warmup =
     '''Perform 5-10 minutes of light cardio and dynamic shoulder stretches to increase blood flow to the muscles and prepare the shoulders for the workout.''';

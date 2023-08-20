@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 String start =
-    '''Here's a simple and well-rounded 4-week beginner workout plan that targets different muscle groups while gradually increasing intensity. Remember to include warm-up and cool-down sessions in each workout. Feel free to adjust the plan based on your app's layout and preferences.''';
+    '''Here's a simple and well-rounded 4-week beginner workout plan that targets different muscle groups while gradually increasing intensity. Remember to include warm-up and cool-down sessions in each workout.''';
 
 String beginner1 = '''
 1. Push Ups - 3 sets of 8-10 reps
