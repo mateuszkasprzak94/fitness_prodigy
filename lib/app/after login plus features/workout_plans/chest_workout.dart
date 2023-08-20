@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/muscle_anatomy/chest_page.dart';
 import 'package:flutter/material.dart';
 
 String start =
@@ -8,32 +7,32 @@ String start =
 String warmup =
     '''Perform 5-10 minutes of light cardio (e.g., brisk walking, easy cycling) to increase blood flow to the muscles and prepare the body for the workout.''';
 
-String advanced1 = '''Sets: 4
+String chest1 = '''Sets: 4
 Reps: 8-10
 Rest: 2 minutes
 Description: Lie on a flat bench, grip the barbell slightly wider than shoulder-width, and lower the barbell to your chest. Press the barbell back up to the starting position. Flat bench press targets the overall chest muscles.''';
 
-String advanced2 = '''Sets: 4
+String chest2 = '''Sets: 4
 Reps: 8-10
 Rest: 2 minutes
 Description: Lie on an incline bench, grip the barbell slightly wider than shoulder-width, and lower the barbell to your upper chest. Press the barbell back up to the starting position. Incline bench press emphasizes the upper chest.''';
 
-String advanced3 = '''Sets: 3
+String chest3 = '''Sets: 3
 Reps: 10-12
 Rest: 1.5 minutes
 Description: Lie on a decline bench, grip the barbell slightly wider than shoulder-width, and lower the barbell to your lower chest. Press the barbell back up to the starting position. Decline bench press targets the lower chest.''';
 
-String advanced4 = '''Sets: 3
+String chest4 = '''Sets: 3
 Reps: 12-15
 Rest: 1.5 minutes
 Description: Stand between two high pulley cables, hold a handle in each hand, and cross your arms in front of your chest. Pull the handles towards the center of your chest, focusing on squeezing the chest muscles at the end of the movement.''';
 
-String advanced5 = '''Sets: 3
+String chest5 = '''Sets: 3
 Reps: 10-12
 Rest: 1.5 minutes
 Description: Use parallel bars or dip bars. Lower your body by bending your elbows, keeping your torso slightly forward. Push through your palms to return to the starting position. Chest dips target the lower chest and triceps.''';
 
-String advanced6 = '''Sets: 3
+String chest6 = '''Sets: 3
 Reps: 12-15
 Rest: 1.5 minutes
 Description: Lie on a bench, hold a dumbbell with both hands overhead, and lower the dumbbell behind your head. Lift the dumbbell back to the starting position. Dumbbell pull-overs engage the chest and serratus anterior.''';
