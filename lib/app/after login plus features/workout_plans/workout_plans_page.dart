@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/exercies_examples_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/user_profile/user_profile_page.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/abs_workout.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/advanced_workout.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/back_workout.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/beginner_workout.dart';
@@ -161,7 +162,14 @@ class _WorkoutPlansPageState extends State<WorkoutPlansPage> {
           ),
           const SizedBox(height: 15),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) =>
+                      AbsWorkout(user: FirebaseAuth.instance.currentUser!),
+                ),
+              );
+            },
             child: const Text('Abs'),
           ),
         ],
