@@ -2,18 +2,17 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/exercies_examples_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/user_profile/user_profile_page.dart';
-import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/abs_workout.dart';
-import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/advanced_workout.dart';
-import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/back_workout.dart';
-import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/beginner_workout.dart';
-import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/biceps_workout.dart';
-import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/chest_workout.dart';
-import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/forearms_workout.dart';
-import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/intermediate_workout.dart';
-import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/legs_workout.dart';
-import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/shoulders_workout.dart';
-import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/triceps_workout.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_buttons/abs_workout_button.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_buttons/advanced_workout_button.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_buttons/back_workout_button.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_buttons/beginner_workout_button.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_buttons/biceps_workout_button.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_buttons/chest_workout_button.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_buttons/forearms_workout_button.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_buttons/intermediate_workout_button.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_buttons/legs_workout_button.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_buttons/shoulders_workout_button.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_buttons/triceps_workout_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -55,128 +54,28 @@ class _WorkoutPlansPageState extends State<WorkoutPlansPage> {
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
-        children: [
-          const BeginnerWorkoutButton(),
-          const SizedBox(height: 15),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => IntermediateWorkout(
-                      user: FirebaseAuth.instance.currentUser!),
-                ),
-              );
-            },
-            child: const Text('Intermediate Workout'),
-          ),
-          const SizedBox(height: 15),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) =>
-                      AdvancedWorkout(user: FirebaseAuth.instance.currentUser!),
-                ),
-              );
-            },
-            child: const Text('Advanced Workout'),
-          ),
-          const SizedBox(height: 15),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) =>
-                      ChestWorkout(user: FirebaseAuth.instance.currentUser!),
-                ),
-              );
-            },
-            child: const Text('Chest'),
-          ),
-          const SizedBox(height: 15),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) =>
-                      BackWorkout(user: FirebaseAuth.instance.currentUser!),
-                ),
-              );
-            },
-            child: const Text('Back'),
-          ),
-          const SizedBox(height: 15),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => ShouldersWorkout(
-                      user: FirebaseAuth.instance.currentUser!),
-                ),
-              );
-            },
-            child: const Text('Shoulders'),
-          ),
-          const SizedBox(height: 15),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) =>
-                      BicepsWorkout(user: FirebaseAuth.instance.currentUser!),
-                ),
-              );
-            },
-            child: const Text('Biceps'),
-          ),
-          const SizedBox(height: 15),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) =>
-                      TricepsWorkout(user: FirebaseAuth.instance.currentUser!),
-                ),
-              );
-            },
-            child: const Text('Triceps'),
-          ),
-          const SizedBox(height: 15),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) =>
-                      ForearmsWorkout(user: FirebaseAuth.instance.currentUser!),
-                ),
-              );
-            },
-            child: const Text('Forearms'),
-          ),
-          const SizedBox(height: 15),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) =>
-                      LegsWorkout(user: FirebaseAuth.instance.currentUser!),
-                ),
-              );
-            },
-            child: const Text('Legs'),
-          ),
-          const SizedBox(height: 15),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) =>
-                      AbsWorkout(user: FirebaseAuth.instance.currentUser!),
-                ),
-              );
-            },
-            child: const Text('Abs'),
-          ),
+        children: const [
+          BeginnerWorkoutButton(),
+          SizedBox(height: 15),
+          IntermediateWorkoutButton(),
+          SizedBox(height: 15),
+          AdvancedWorkoutButton(),
+          SizedBox(height: 15),
+          ChestWorkoutButton(),
+          SizedBox(height: 15),
+          BackWorkoutButton(),
+          SizedBox(height: 15),
+          ShouldersWorkoutButton(),
+          SizedBox(height: 15),
+          BicepsWorkoutButton(),
+          SizedBox(height: 15),
+          TricepsWorkoutButton(),
+          SizedBox(height: 15),
+          ForearmsWorkoutButton(),
+          SizedBox(height: 15),
+          LegsWorkoutButton(),
+          SizedBox(height: 15),
+          AbsWorkoutButton(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
