@@ -4,6 +4,8 @@ import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_pag
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/user_profile/user_profile_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DietPage extends StatefulWidget {
   const DietPage({
@@ -23,9 +25,21 @@ class _DietPageState extends State<DietPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Diet',
+          style: GoogleFonts.satisfy(
+              fontSize: 30, color: const Color.fromARGB(230, 33, 149, 243)),
         ),
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Colors.white, Colors.orange],
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter),
+          ),
+        ),
+        systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,

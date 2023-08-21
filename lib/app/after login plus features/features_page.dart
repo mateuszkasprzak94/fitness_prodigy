@@ -38,8 +38,8 @@ class _FeaturesState extends State<Features> {
       appBar: AppBar(
         title: Text(
           '# Fitness Prodigy',
-          style: GoogleFonts.anton(
-              fontSize: 30, color: const Color.fromARGB(230, 33, 149, 243)),
+          style: GoogleFonts.lobster(
+              fontSize: 40, color: const Color.fromARGB(230, 33, 149, 243)),
         ),
         centerTitle: true,
         flexibleSpace: Container(

@@ -38,7 +38,7 @@ class _WorkoutPlansPageState extends State<WorkoutPlansPage> {
       appBar: AppBar(
         title: Text(
           'Workout Plans',
-          style: GoogleFonts.anton(
+          style: GoogleFonts.satisfy(
               fontSize: 30, color: const Color.fromARGB(230, 33, 149, 243)),
         ),
         centerTitle: true,
