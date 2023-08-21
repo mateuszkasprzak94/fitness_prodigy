@@ -56,10 +56,11 @@ class _FeaturesState extends State<Features> {
       body: Center(
         child: ListView(
           children: const [
-            CircleAvatar(
-              backgroundImage: AssetImage('images/Copy of Fitness Prodigy.png'),
-              radius: 150,
+            Image(
+              image: AssetImage('images/step4m.png'),
+              fit: BoxFit.cover,
             ),
+            SizedBox(height: 15),
             ExerciseExamples(),
             WorkoutPlans(),
             Diet(),
