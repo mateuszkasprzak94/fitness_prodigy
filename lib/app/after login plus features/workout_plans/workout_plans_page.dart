@@ -13,6 +13,7 @@ import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plan
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/legs_workout.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/shoulders_workout.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/triceps_workout.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_buttons/beginner_workout_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -55,17 +56,7 @@ class _WorkoutPlansPageState extends State<WorkoutPlansPage> {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) =>
-                      BeginnerWorkout(user: FirebaseAuth.instance.currentUser!),
-                ),
-              );
-            },
-            child: const Text('Beginner Workout'),
-          ),
+          const BeginnerWorkoutButton(),
           const SizedBox(height: 15),
           ElevatedButton(
             onPressed: () {
