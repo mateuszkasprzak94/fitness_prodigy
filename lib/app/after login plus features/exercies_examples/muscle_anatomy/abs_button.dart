@@ -9,31 +9,51 @@ class Abs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => AbsPage(user: FirebaseAuth.instance.currentUser!),
-          ),
-        );
-      },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: const Color.fromARGB(45, 3, 168, 244),
+    const shape = StadiumBorder();
+
+    return Container(
+      decoration: const ShapeDecoration(
+        shape: shape,
+        gradient: LinearGradient(
+          colors: [
+            Colors.orange,
+            Colors.amber,
+            Colors.white,
+          ],
+        ),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Image.asset(
-            'exercise examples page images/abs.png',
-            width: 100,
-            height: 100,
-          ),
-          const SizedBox(width: 10),
-          const Text(
-            'Abs',
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-          )
-        ],
+      child: ElevatedButton(
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (_) => AbsPage(user: FirebaseAuth.instance.currentUser!),
+            ),
+          );
+        },
+        style: ElevatedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+
+          ///deactivate color and shadow
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          backgroundColor: Colors.transparent,
+          shadowColor: Colors.transparent,
+          elevation: 0,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Image.asset(
+              'exercise examples page images/abs.png',
+              width: 100,
+              height: 100,
+            ),
+            const SizedBox(width: 10),
+            const Text(
+              'Abs',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            )
+          ],
+        ),
       ),
     );
   }
