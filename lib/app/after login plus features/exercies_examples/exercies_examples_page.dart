@@ -32,6 +32,7 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
         title: Text(
           'Exercise Examples',
