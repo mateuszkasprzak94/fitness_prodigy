@@ -57,7 +57,7 @@ class _FeaturesState extends State<Features> {
         child: ListView(
           children: const [
             Image(
-              image: AssetImage('images/step4m.png'),
+              image: AssetImage('images/step4mm.png'),
               fit: BoxFit.cover,
             ),
             SizedBox(height: 15),

@@ -9,16 +9,43 @@ class AdvancedWorkoutButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) =>
-                AdvancedWorkout(user: FirebaseAuth.instance.currentUser!),
+    const shape = StadiumBorder();
+    return Material(
+      color: Colors.transparent,
+      shape: shape,
+      elevation: 8,
+      child: Container(
+        decoration: const ShapeDecoration(
+          shape: shape,
+          gradient: LinearGradient(colors: [
+            Colors.blue,
+            Colors.lightBlue,
+            Colors.white,
+          ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+        ),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            //deactivate color and shadow
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            backgroundColor: Colors.transparent,
+            shadowColor: Colors.transparent,
+            elevation: 0,
           ),
-        );
-      },
-      child: const Text('Advanced Workout'),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) =>
+                    AdvancedWorkout(user: FirebaseAuth.instance.currentUser!),
+              ),
+            );
+          },
+          child: const Text(
+            'Advanced Workout',
+            style: TextStyle(color: Colors.black),
+          ),
+        ),
+      ),
     );
   }
 }
