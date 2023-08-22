@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 String start =
     '''Here's a 4-week advanced workout plan that is designed for individuals with a high level of fitness experience. This plan incorporates challenging exercises and higher intensity to help users push their limits. Remember to prioritize safety, proper form, and adequate recovery. As always, include warm-up and cool-down sessions in each workout.''';
@@ -47,7 +49,21 @@ class AdvancedWorkout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Advanced Workout'),
+        title: Text(
+          'Advanced Workout',
+          style: GoogleFonts.satisfy(
+              fontSize: 30, color: const Color.fromARGB(230, 33, 149, 243)),
+        ),
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Colors.white, Colors.orange],
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter),
+          ),
+        ),
+        systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),

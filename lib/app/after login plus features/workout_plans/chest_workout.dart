@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 String start =
     '''This workout focuses on targeting the chest muscles from different angles and utilizing a variety of movements. Remember to warm up before starting the workout and cool down afterwards.''';
@@ -55,7 +57,21 @@ class ChestWorkout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Chest Workout'),
+        title: Text(
+          'Chest Workout',
+          style: GoogleFonts.satisfy(
+              fontSize: 30, color: const Color.fromARGB(230, 33, 149, 243)),
+        ),
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+                colors: [Colors.white, Colors.orange],
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter),
+          ),
+        ),
+        systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
