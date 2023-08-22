@@ -44,7 +44,7 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
             gradient: LinearGradient(colors: [
               Color.fromARGB(164, 0, 0, 0),
               Colors.white,
-            ], begin: Alignment.bottomCenter, end: Alignment.topCenter),
+            ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,

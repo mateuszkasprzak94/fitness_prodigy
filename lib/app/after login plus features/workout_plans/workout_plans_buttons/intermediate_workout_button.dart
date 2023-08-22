@@ -18,8 +18,7 @@ class IntermediateWorkoutButton extends StatelessWidget {
         decoration: const ShapeDecoration(
           shape: shape,
           gradient: LinearGradient(colors: [
-            Colors.orange,
-            Colors.amber,
+            Color.fromARGB(164, 0, 0, 0),
             Colors.white,
           ], begin: Alignment.centerRight, end: Alignment.centerLeft),
         ),
