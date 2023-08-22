@@ -21,7 +21,7 @@ class AbsWorkoutButton extends StatelessWidget {
             Colors.orange,
             Colors.amber,
             Colors.white,
-          ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
         ),
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
