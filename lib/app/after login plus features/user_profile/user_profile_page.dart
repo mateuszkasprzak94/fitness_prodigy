@@ -29,16 +29,15 @@ class _UserProfilePageState extends State<UserProfilePage> {
       appBar: AppBar(
         title: Text(
           'User Profile',
-          style: GoogleFonts.satisfy(
-              fontSize: 30, color: const Color.fromARGB(230, 33, 149, 243)),
+          style: GoogleFonts.satisfy(fontSize: 30, color: Colors.black),
         ),
         centerTitle: true,
         flexibleSpace: Container(
           decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Colors.white, Colors.orange],
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter),
+            gradient: LinearGradient(colors: [
+              Color.fromARGB(164, 0, 0, 0),
+              Colors.white,
+            ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
@@ -65,8 +64,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                   shape: shape,
                   gradient: LinearGradient(
                     colors: [
-                      Colors.orange,
-                      Colors.amber,
+                      Color.fromARGB(164, 0, 0, 0),
                       Colors.white,
                     ],
                   ),
