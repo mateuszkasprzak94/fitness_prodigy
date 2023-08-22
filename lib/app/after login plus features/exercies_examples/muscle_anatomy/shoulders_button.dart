@@ -55,7 +55,11 @@ class Shoulders extends StatelessWidget {
               const SizedBox(width: 10),
               const Text(
                 'Shoulders',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
               )
             ],
           ),
