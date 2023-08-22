@@ -20,8 +20,7 @@ class Forearms extends StatelessWidget {
           shape: shape,
           gradient: LinearGradient(
             colors: [
-              Colors.orange,
-              Colors.amber,
+              Color.fromARGB(164, 0, 0, 0),
               Colors.white,
             ],
           ),
