@@ -40,7 +40,10 @@ class BeginnerWorkoutButton extends StatelessWidget {
               ),
             );
           },
-          child: const Text('Beginner Workout'),
+          child: const Text(
+            'Beginner Workout',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
       ),
     );

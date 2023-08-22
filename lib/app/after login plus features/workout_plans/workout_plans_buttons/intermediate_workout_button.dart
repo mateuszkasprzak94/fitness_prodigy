@@ -40,7 +40,10 @@ class IntermediateWorkoutButton extends StatelessWidget {
               ),
             );
           },
-          child: const Text('Intermediate Workout'),
+          child: const Text(
+            'Intermediate Workout',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
       ),
     );

@@ -40,7 +40,10 @@ class BackWorkoutButton extends StatelessWidget {
               ),
             );
           },
-          child: const Text('Back'),
+          child: const Text(
+            'Back',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
       ),
     );

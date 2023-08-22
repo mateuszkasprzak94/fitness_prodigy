@@ -40,7 +40,10 @@ class TricepsWorkoutButton extends StatelessWidget {
               ),
             );
           },
-          child: const Text('Triceps'),
+          child: const Text(
+            'Triceps',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
       ),
     );

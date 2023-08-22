@@ -40,7 +40,10 @@ class ForearmsWorkoutButton extends StatelessWidget {
               ),
             );
           },
-          child: const Text('Forearms'),
+          child: const Text(
+            'Forearms',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
       ),
     );

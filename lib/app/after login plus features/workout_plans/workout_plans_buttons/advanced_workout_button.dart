@@ -18,8 +18,8 @@ class AdvancedWorkoutButton extends StatelessWidget {
         decoration: const ShapeDecoration(
           shape: shape,
           gradient: LinearGradient(colors: [
-            Colors.blue,
-            Colors.lightBlue,
+            Colors.orange,
+            Colors.amber,
             Colors.white,
           ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
         ),

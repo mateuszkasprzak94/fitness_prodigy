@@ -40,7 +40,10 @@ class ChestWorkoutButton extends StatelessWidget {
               ),
             );
           },
-          child: const Text('Chest'),
+          child: const Text(
+            'Chest',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
       ),
     );

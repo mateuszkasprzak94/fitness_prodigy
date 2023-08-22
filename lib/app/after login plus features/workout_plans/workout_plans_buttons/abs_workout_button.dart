@@ -40,7 +40,10 @@ class AbsWorkoutButton extends StatelessWidget {
               ),
             );
           },
-          child: const Text('Abs'),
+          child: const Text(
+            'Abs',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
       ),
     );

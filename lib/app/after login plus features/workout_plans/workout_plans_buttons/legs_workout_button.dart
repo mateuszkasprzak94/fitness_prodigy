@@ -40,7 +40,10 @@ class LegsWorkoutButton extends StatelessWidget {
               ),
             );
           },
-          child: const Text('Legs'),
+          child: const Text(
+            'Legs',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
       ),
     );

@@ -40,7 +40,10 @@ class ShouldersWorkoutButton extends StatelessWidget {
               ),
             );
           },
-          child: const Text('Shoulders'),
+          child: const Text(
+            'Shoulders',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
       ),
     );
