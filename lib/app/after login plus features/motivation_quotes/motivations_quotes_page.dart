@@ -112,23 +112,107 @@ class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
         ),
         child: Center(
           child: ListView(
-            children: [
-              ElevatedButton.icon(
-                onPressed: () {},
-                icon: const Icon(Icons.all_inclusive),
-                label: const Text(
-                  'Random Quote',
-                ),
-              ),
-              ElevatedButton.icon(
-                onPressed: () {},
-                icon: const Icon(Icons.favorite),
-                label: const Text(
-                  'Favorite Quote',
-                ),
-              ),
+            children: const [
+              SizedBox(height: 15),
+              RandomQuoteButton(),
+              SizedBox(height: 15),
+              FavoriteQuoteButton(),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class FavoriteQuoteButton extends StatelessWidget {
+  const FavoriteQuoteButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    const shape = StadiumBorder();
+
+    return Container(
+      decoration: const ShapeDecoration(
+        shape: shape,
+        gradient: LinearGradient(
+          colors: [
+            Color.fromARGB(255, 49, 49, 49),
+            Colors.white,
+          ],
+          begin: Alignment.centerRight,
+          end: Alignment.centerLeft,
+        ),
+      ),
+      child: ElevatedButton.icon(
+        style: ElevatedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 8,
+            vertical: 8,
+          ),
+          //deactivate color and shadow
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          backgroundColor: Colors.transparent,
+          shadowColor: Colors.transparent,
+          elevation: 0,
+        ),
+        onPressed: () {},
+        icon: const Icon(
+          Icons.favorite,
+          color: Colors.red,
+        ),
+        label: const Text(
+          'FAVORITE QUOTE',
+          style: TextStyle(fontSize: 16, color: Colors.black),
+        ),
+      ),
+    );
+  }
+}
+
+class RandomQuoteButton extends StatelessWidget {
+  const RandomQuoteButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    const shape = StadiumBorder();
+
+    return Container(
+      decoration: const ShapeDecoration(
+        shape: shape,
+        gradient: LinearGradient(
+          colors: [
+            Color.fromARGB(255, 49, 49, 49),
+            Colors.white,
+          ],
+          begin: Alignment.centerRight,
+          end: Alignment.centerLeft,
+        ),
+      ),
+      child: ElevatedButton.icon(
+        style: ElevatedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 8,
+            vertical: 8,
+          ),
+          //deactivate color and shadow
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          backgroundColor: Colors.transparent,
+          shadowColor: Colors.transparent,
+          elevation: 0,
+        ),
+        onPressed: () {},
+        icon: const Icon(
+          Icons.all_inclusive,
+          color: Colors.amber,
+        ),
+        label: const Text(
+          'RANDOM QUOTE',
+          style: TextStyle(fontSize: 16, color: Colors.black),
         ),
       ),
     );
