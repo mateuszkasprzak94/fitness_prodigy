@@ -112,7 +112,7 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
                         style: TextStyle(
                           color: Colors.green,
                           fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                          fontSize: 20,
                         ),
                       ),
                     ],
@@ -135,22 +135,56 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(
-                  onPressed: _incrementWaterGlassCount,
-                  style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(50, 50),
+                Container(
+                  decoration: const ShapeDecoration(
+                    shape: StadiumBorder(),
+                    gradient: LinearGradient(
+                      colors: [Colors.blue, Colors.white],
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                    ),
                   ),
-                  child: const Text('+'),
+                  child: ElevatedButton(
+                    onPressed: _incrementWaterGlassCount,
+                    style: ElevatedButton.styleFrom(
+                      //deactivate color and shadow
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                      elevation: 0,
+                      fixedSize: const Size(50, 50),
+                    ),
+                    child: const Text(
+                      '+',
+                      style: TextStyle(fontSize: 17, color: Colors.black),
+                    ),
+                  ),
                 ),
                 const SizedBox(
                   width: 20,
                 ),
-                ElevatedButton(
-                  onPressed: _decrementWaterGlassCount,
-                  style: ElevatedButton.styleFrom(
-                    fixedSize: const Size(50, 50),
+                Container(
+                  decoration: const ShapeDecoration(
+                    shape: StadiumBorder(),
+                    gradient: LinearGradient(
+                      colors: [Colors.blue, Colors.white],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ),
                   ),
-                  child: const Text('-'),
+                  child: ElevatedButton(
+                    onPressed: _decrementWaterGlassCount,
+                    style: ElevatedButton.styleFrom(
+                      //deactivate color and shadow
+                      tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                      elevation: 0,
+                      fixedSize: const Size(50, 50),
+                    ),
+                    child: const Text('-',
+                        style: TextStyle(fontSize: 17, color: Colors.black)),
+                  ),
                 ),
               ],
             ),
@@ -166,7 +200,7 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
               max: 20.0,
               divisions: 19,
               label: goal.toString(),
-              activeColor: Colors.amber,
+              activeColor: Colors.blue,
             ),
           ],
         ),
