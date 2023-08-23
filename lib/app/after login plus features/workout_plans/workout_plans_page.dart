@@ -108,7 +108,7 @@ class _WorkoutPlansPageState extends State<WorkoutPlansPage> {
             );
           }
         },
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Colors.amber,
         unselectedItemColor: Colors.black,
         items: const [
           BottomNavigationBarItem(

@@ -106,7 +106,7 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
             );
           }
         },
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Colors.amber,
         unselectedItemColor: Colors.black,
         items: const [
           BottomNavigationBarItem(

@@ -114,7 +114,7 @@ class _FeaturesState extends State<Features> {
             );
           }
         },
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Colors.amber,
         unselectedItemColor: Colors.black,
         items: const [
           BottomNavigationBarItem(
