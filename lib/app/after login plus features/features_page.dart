@@ -61,7 +61,7 @@ class _FeaturesState extends State<Features> {
             ),
             SizedBox(height: 15),
             ExerciseExamples(),
-            SizedBox(height: 5),
+            SizedBox(height: 15),
             WorkoutPlans(),
             SizedBox(height: 5),
             Diet(),
