@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/exercies_examples_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/supplements/supplements_type/creatine.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/user_profile/user_profile_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_page.dart';
 import 'package:flutter/material.dart';
@@ -39,6 +40,100 @@ class _SupplementsPageState extends State<SupplementsPage> {
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
+      ),
+      body: Center(
+        child: ListView(
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) =>
+                        Creatine(user: FirebaseAuth.instance.currentUser!),
+                  ),
+                );
+              },
+              child: const Text('Creatine monohydrate'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) =>
+                        Creatine(user: FirebaseAuth.instance.currentUser!),
+                  ),
+                );
+              },
+              child: const Text('Protein Powder'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) =>
+                        Creatine(user: FirebaseAuth.instance.currentUser!),
+                  ),
+                );
+              },
+              child: const Text('BCAA'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) =>
+                        Creatine(user: FirebaseAuth.instance.currentUser!),
+                  ),
+                );
+              },
+              child: const Text('AAKG'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) =>
+                        Creatine(user: FirebaseAuth.instance.currentUser!),
+                  ),
+                );
+              },
+              child: const Text('Cytruline'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) =>
+                        Creatine(user: FirebaseAuth.instance.currentUser!),
+                  ),
+                );
+              },
+              child: const Text('Beta-Alanine'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) =>
+                        Creatine(user: FirebaseAuth.instance.currentUser!),
+                  ),
+                );
+              },
+              child: const Text('Glutamine'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) =>
+                        Creatine(user: FirebaseAuth.instance.currentUser!),
+                  ),
+                );
+              },
+              child: const Text('Collagen'),
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
