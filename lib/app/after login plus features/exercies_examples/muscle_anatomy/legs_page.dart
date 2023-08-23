@@ -62,6 +62,10 @@ class LegsPage extends StatelessWidget {
             legsExercise,
             style: const TextStyle(fontWeight: FontWeight.w400),
           ),
+          const Divider(
+            height: 10,
+            thickness: 5,
+          ),
           const SizedBox(height: 15),
           _buildExercise('1. Squats:', legs1),
           const SizedBox(height: 15),
@@ -81,6 +85,10 @@ class LegsPage extends StatelessWidget {
           const SizedBox(height: 15),
           _buildExercise('9. Seated Leg Curl:', legs9),
           const SizedBox(height: 15),
+          const Divider(
+            height: 10,
+            thickness: 5,
+          ),
           Text(
             end,
             style: const TextStyle(fontWeight: FontWeight.w400),

@@ -62,6 +62,10 @@ class BicepsPage extends StatelessWidget {
             bicepsExercise,
             style: const TextStyle(fontWeight: FontWeight.w400),
           ),
+          const Divider(
+            height: 10,
+            thickness: 5,
+          ),
           const SizedBox(height: 15),
           _buildExercise('1. Barbell Curls:', biceps1),
           const SizedBox(height: 15),
@@ -81,6 +85,10 @@ class BicepsPage extends StatelessWidget {
           const SizedBox(height: 15),
           _buildExercise('9. Preacher Curl:', biceps9),
           const SizedBox(height: 15),
+          const Divider(
+            height: 10,
+            thickness: 5,
+          ),
           Text(
             end,
             style: const TextStyle(fontWeight: FontWeight.w400),

@@ -60,6 +60,10 @@ class ForearmsPage extends StatelessWidget {
             forearmsExercise,
             style: const TextStyle(fontWeight: FontWeight.w400),
           ),
+          const Divider(
+            height: 10,
+            thickness: 5,
+          ),
           const SizedBox(height: 15),
           _buildExercise('1. Barbell Reverse Biceps Curl:', forearms1),
           const SizedBox(height: 15),
@@ -77,6 +81,10 @@ class ForearmsPage extends StatelessWidget {
           const SizedBox(height: 15),
           _buildExercise('8. Bar Hang:', forearms8),
           const SizedBox(height: 15),
+          const Divider(
+            height: 10,
+            thickness: 5,
+          ),
           Text(
             end,
             style: const TextStyle(fontWeight: FontWeight.w400),

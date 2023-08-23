@@ -62,6 +62,10 @@ class ShouldersPage extends StatelessWidget {
             shouldersExercise,
             style: const TextStyle(fontWeight: FontWeight.w400),
           ),
+          const Divider(
+            height: 10,
+            thickness: 5,
+          ),
           const SizedBox(height: 15),
           _buildExercise('1. Overhead Press:', shoulders1),
           const SizedBox(height: 15),
@@ -81,6 +85,10 @@ class ShouldersPage extends StatelessWidget {
           const SizedBox(height: 15),
           _buildExercise('9. Arnold Press:', shoulders9),
           const SizedBox(height: 15),
+          const Divider(
+            height: 10,
+            thickness: 5,
+          ),
           Text(
             end,
             style: const TextStyle(fontWeight: FontWeight.w400),

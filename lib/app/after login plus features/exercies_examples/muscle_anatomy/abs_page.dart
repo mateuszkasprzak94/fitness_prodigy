@@ -68,6 +68,10 @@ class AbsPage extends StatelessWidget {
             absExercise,
             style: const TextStyle(fontWeight: FontWeight.w400),
           ),
+          const Divider(
+            height: 10,
+            thickness: 5,
+          ),
           const SizedBox(height: 15),
           _buildExercise('1. Cable Crunch:', abs1),
           const SizedBox(height: 15),
@@ -93,6 +97,10 @@ class AbsPage extends StatelessWidget {
           const SizedBox(height: 15),
           _buildExercise('12. Stability Ball Tuck:', abs12),
           const SizedBox(height: 15),
+          const Divider(
+            height: 10,
+            thickness: 5,
+          ),
           Text(
             end,
             style: const TextStyle(fontWeight: FontWeight.w400),

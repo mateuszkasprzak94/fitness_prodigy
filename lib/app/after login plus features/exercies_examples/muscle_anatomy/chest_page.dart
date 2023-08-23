@@ -58,6 +58,10 @@ class ChestPage extends StatelessWidget {
             chestExercises,
             style: TextStyle(fontWeight: FontWeight.w400),
           ),
+          const Divider(
+            height: 10,
+            thickness: 5,
+          ),
           const SizedBox(height: 15),
           _buildExercise('1. Flat Bench Press:', chest1),
           const SizedBox(height: 15),
@@ -73,6 +77,10 @@ class ChestPage extends StatelessWidget {
           const SizedBox(height: 15),
           _buildExercise('7. Machine Fly:', chest7),
           const SizedBox(height: 15),
+          const Divider(
+            height: 10,
+            thickness: 5,
+          ),
           const Text(
             end,
             style: TextStyle(fontWeight: FontWeight.w400),
