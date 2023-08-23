@@ -21,7 +21,7 @@ class UserProfile extends StatelessWidget {
           gradient: LinearGradient(colors: [
             Color.fromARGB(164, 0, 0, 0),
             Colors.white,
-          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
+          ], begin: Alignment.bottomCenter, end: Alignment.topCenter),
         ),
         child: ElevatedButton.icon(
           icon: const Icon(

@@ -21,7 +21,7 @@ class Goals extends StatelessWidget {
           gradient: LinearGradient(colors: [
             Color.fromARGB(164, 0, 0, 0),
             Colors.white,
-          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
+          ], begin: Alignment.topRight, end: Alignment.topLeft),
         ),
         child: ElevatedButton.icon(
           icon: const ImageIcon(
