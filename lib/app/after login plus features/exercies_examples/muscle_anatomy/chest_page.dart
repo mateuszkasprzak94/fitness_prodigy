@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 const String chestExercises =
     '''Embark on a transformative journey for your chest muscles with this ultimate workout that leaves no angle untouched. This dynamic routine combines classic and effective exercises to help you carve a chest that's not only powerful but also aesthetically pleasing. Elevate your upper body strength and achieve a well-defined chest that radiates confidence and vitality.''';
@@ -31,8 +33,23 @@ class ChestPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: false,
       appBar: AppBar(
-        title: const Text('Forge Your Pectoral Power'),
+        title: Text(
+          'Forge Your Pectoral Power',
+          style: GoogleFonts.lancelot(
+              fontSize: 30, color: Colors.black, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(colors: [
+              Color.fromARGB(164, 0, 0, 0),
+              Colors.white,
+            ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+          ),
+        ),
+        systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
@@ -66,7 +83,7 @@ class ChestPage extends StatelessWidget {
   }
 }
 
-Widget _buildExercise(String title, String description) {
+_buildExercise(String title, String description) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [

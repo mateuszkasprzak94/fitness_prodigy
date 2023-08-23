@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 String absExercise =
     '''Embark on a journey to develop a robust and well-defined core with this comprehensive core workout routine. By incorporating a diverse range of effective exercises, you'll shape abdominal muscles that not only radiate power but also elevate your overall physique. Elevate your core prowess and unveil a midsection that commands attention and exudes confidence.''';
@@ -42,11 +44,22 @@ class AbsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Sculpting Strong Core: Unveiling Abdominal Power',
-          overflow: TextOverflow.ellipsis,
+          style: GoogleFonts.lancelot(
+              fontSize: 26, color: Colors.black, fontWeight: FontWeight.bold),
           maxLines: 2,
         ),
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(colors: [
+              Color.fromARGB(164, 0, 0, 0),
+              Colors.white,
+            ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+          ),
+        ),
+        systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),

@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 String legsExercise =
     '''Embark on a journey to develop a robust and well-sculpted lower body with this comprehensive lower body workout routine. By incorporating a diverse range of effective exercises, you'll shape leg muscles that not only radiate power but also elevate your overall physique. Elevate your lower body prowess and unveil legs that command attention and exude confidence.''';
@@ -36,7 +38,22 @@ class LegsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Forging Powerful Lower Body'),
+        title: Text(
+          'Forging Powerful Lower Body',
+          style: GoogleFonts.lancelot(
+              fontSize: 28, color: Colors.black, fontWeight: FontWeight.bold),
+          maxLines: 2,
+        ),
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(colors: [
+              Color.fromARGB(164, 0, 0, 0),
+              Colors.white,
+            ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+          ),
+        ),
+        systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),

@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 String bicepsExercise =
     '''Embark on a journey to develop robust and well-sculpted biceps with this comprehensive biceps workout routine. By incorporating a diverse range of effective exercises, you'll shape biceps that not only radiate power but also elevate your overall upper body aesthetics. Elevate your biceps prowess and unveil arms that command attention and exude confidence.''';
@@ -36,11 +38,22 @@ class BicepsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Crafting Strength and Definition',
-          overflow: TextOverflow.ellipsis,
+          style: GoogleFonts.lancelot(
+              fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
           maxLines: 2,
         ),
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(colors: [
+              Color.fromARGB(164, 0, 0, 0),
+              Colors.white,
+            ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+          ),
+        ),
+        systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),

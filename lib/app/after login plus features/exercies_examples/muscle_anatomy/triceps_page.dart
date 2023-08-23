@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 String tricepsExercise =
     '''Embark on a journey to develop well-defined and robust triceps with this comprehensive triceps workout routine. By incorporating a diverse range of effective exercises, you'll shape triceps that not only radiate power but also elevate your overall upper body aesthetics. Elevate your triceps prowess and unveil arms that command attention and exude confidence.''';
@@ -36,11 +38,22 @@ class TricepsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Sculpting Powerful Triceps',
-          overflow: TextOverflow.ellipsis,
+          style: GoogleFonts.lancelot(
+              fontSize: 30, color: Colors.black, fontWeight: FontWeight.bold),
           maxLines: 2,
         ),
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(colors: [
+              Color.fromARGB(164, 0, 0, 0),
+              Colors.white,
+            ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+          ),
+        ),
+        systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),

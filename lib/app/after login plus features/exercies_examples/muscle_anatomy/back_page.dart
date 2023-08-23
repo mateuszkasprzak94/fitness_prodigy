@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 const String backExercises =
     '''Equip yourself with the knowledge and drive to perform each exercise with precision and purpose. As you embark on this journey, remember that your back is a canvas waiting to be shaped. Commit to this back workout regimen, and witness the transformation as your back becomes a symbol of your commitment to excellence, resilience, and self-improvement.''';
@@ -34,11 +36,21 @@ class BackPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           "Unlock Your Back's Full Potential",
-          overflow: TextOverflow.ellipsis,
-          maxLines: 2,
+          style: GoogleFonts.lancelot(
+              fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
         ),
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(colors: [
+              Color.fromARGB(164, 0, 0, 0),
+              Colors.white,
+            ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+          ),
+        ),
+        systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: CustomScrollView(
         slivers: [

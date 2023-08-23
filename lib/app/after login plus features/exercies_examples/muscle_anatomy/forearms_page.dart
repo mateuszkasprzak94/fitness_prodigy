@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 String forearmsExercise =
     '''Embark on a journey to cultivate robust and well-defined forearms with this comprehensive forearm workout routine. By incorporating a diverse range of effective exercises, you'll shape forearms that not only radiate strength but also elevate your overall upper body aesthetics. Elevate your forearm prowess and unveil arms that exhibit impressive grip strength and tenacity.''';
@@ -34,11 +36,22 @@ class ForearmsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Building Resilient Forearms: Strengthening Grip',
-          overflow: TextOverflow.ellipsis,
+          style: GoogleFonts.lancelot(
+              fontSize: 24, color: Colors.black, fontWeight: FontWeight.bold),
           maxLines: 2,
         ),
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(colors: [
+              Color.fromARGB(164, 0, 0, 0),
+              Colors.white,
+            ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+          ),
+        ),
+        systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),

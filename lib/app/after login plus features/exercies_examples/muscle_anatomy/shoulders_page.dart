@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 String shouldersExercise =
     '''Embark on a journey to develop strong and well-defined shoulder muscles with this comprehensive workout routine. By incorporating a variety of effective exercises, you'll sculpt shoulders that not only exude power but also enhance your overall upper body aesthetics. Elevate your shoulder strength and achieve a robust and balanced physique that radiates confidence and vitality.''';
@@ -36,11 +38,22 @@ class ShouldersPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Crafting Broad and Impressive Shoulders',
-          overflow: TextOverflow.ellipsis,
+          style: GoogleFonts.lancelot(
+              fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
           maxLines: 2,
         ),
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(colors: [
+              Color.fromARGB(164, 0, 0, 0),
+              Colors.white,
+            ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+          ),
+        ),
+        systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
