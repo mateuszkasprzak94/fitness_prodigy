@@ -26,16 +26,15 @@ class _SocialSharingPageState extends State<SocialSharingPage> {
       appBar: AppBar(
         title: Text(
           'Social Sharing',
-          style: GoogleFonts.satisfy(
-              fontSize: 30, color: const Color.fromARGB(230, 33, 149, 243)),
+          style: GoogleFonts.satisfy(fontSize: 30, color: Colors.black),
         ),
         centerTitle: true,
         flexibleSpace: Container(
           decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Colors.white, Colors.orange],
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter),
+            gradient: LinearGradient(colors: [
+              Color.fromARGB(164, 0, 0, 0),
+              Colors.white,
+            ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
@@ -69,7 +68,7 @@ class _SocialSharingPageState extends State<SocialSharingPage> {
             );
           }
         },
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Colors.amber,
         unselectedItemColor: Colors.black,
         items: const [
           BottomNavigationBarItem(

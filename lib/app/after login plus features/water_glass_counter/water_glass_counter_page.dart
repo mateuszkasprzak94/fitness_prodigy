@@ -81,16 +81,15 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
       appBar: AppBar(
         title: Text(
           'Water Glass Counter',
-          style: GoogleFonts.satisfy(
-              fontSize: 30, color: const Color.fromARGB(230, 33, 149, 243)),
+          style: GoogleFonts.satisfy(fontSize: 30, color: Colors.black),
         ),
         centerTitle: true,
         flexibleSpace: Container(
           decoration: const BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Colors.white, Colors.orange],
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter),
+            gradient: LinearGradient(colors: [
+              Color.fromARGB(164, 0, 0, 0),
+              Colors.white,
+            ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
@@ -167,7 +166,7 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
               max: 20.0,
               divisions: 19,
               label: goal.toString(),
-              activeColor: Colors.blue,
+              activeColor: Colors.amber,
             ),
           ],
         ),
@@ -208,7 +207,7 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
             );
           }
         },
-        selectedItemColor: Colors.blue,
+        selectedItemColor: Colors.amber,
         unselectedItemColor: Colors.black,
         items: const [
           BottomNavigationBarItem(
