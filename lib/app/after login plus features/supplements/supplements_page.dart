@@ -52,13 +52,21 @@ class _SupplementsPageState extends State<SupplementsPage> {
         child: ListView(
           children: [
             const CreatineButton(),
+            const SizedBox(height: 5),
             const ProteinPowderButton(),
+            const SizedBox(height: 5),
             const BCAAButton(),
+            const SizedBox(height: 5),
             const AAKGButton(),
+            const SizedBox(height: 5),
             const CitrullineButton(),
+            const SizedBox(height: 5),
             const BetaAlanineButton(),
+            const SizedBox(height: 5),
             const GlutamineButton(),
+            const SizedBox(height: 5),
             const CollagenButton(),
+            const SizedBox(height: 5),
             //Expanded button for Vitamins
             ExpansionTile(
               title: const Text('Vitamins'),
