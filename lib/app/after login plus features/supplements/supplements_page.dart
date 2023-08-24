@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/exercies_examples_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/supplements/supplements_type/creatine.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/supplements/supplements_type/protein_powder.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/user_profile/user_profile_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_page.dart';
 import 'package:flutter/material.dart';
@@ -60,7 +61,7 @@ class _SupplementsPageState extends State<SupplementsPage> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) =>
-                        Creatine(user: FirebaseAuth.instance.currentUser!),
+                        ProteinPowder(user: FirebaseAuth.instance.currentUser!),
                   ),
                 );
               },
