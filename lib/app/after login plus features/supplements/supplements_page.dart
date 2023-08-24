@@ -1,7 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/exercies_examples_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/supplements/supplements_type/aakg.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/supplements/supplements_type/bcaa.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/supplements/supplements_type/beta_alanine.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/supplements/supplements_type/collagen.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/supplements/supplements_type/creatine.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/supplements/supplements_type/citrulline.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/supplements/supplements_type/glutamine.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/supplements/supplements_type/protein_powder.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/user_profile/user_profile_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_page.dart';
@@ -72,7 +78,7 @@ class _SupplementsPageState extends State<SupplementsPage> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) =>
-                        Creatine(user: FirebaseAuth.instance.currentUser!),
+                        BCAAPage(user: FirebaseAuth.instance.currentUser!),
                   ),
                 );
               },
@@ -83,7 +89,7 @@ class _SupplementsPageState extends State<SupplementsPage> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) =>
-                        Creatine(user: FirebaseAuth.instance.currentUser!),
+                        AAKGPage(user: FirebaseAuth.instance.currentUser!),
                   ),
                 );
               },
@@ -93,8 +99,8 @@ class _SupplementsPageState extends State<SupplementsPage> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (_) =>
-                        Creatine(user: FirebaseAuth.instance.currentUser!),
+                    builder: (_) => CitrullinePage(
+                        user: FirebaseAuth.instance.currentUser!),
                   ),
                 );
               },
@@ -104,8 +110,8 @@ class _SupplementsPageState extends State<SupplementsPage> {
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (_) =>
-                        Creatine(user: FirebaseAuth.instance.currentUser!),
+                    builder: (_) => BetaAlaninePage(
+                        user: FirebaseAuth.instance.currentUser!),
                   ),
                 );
               },
@@ -116,7 +122,7 @@ class _SupplementsPageState extends State<SupplementsPage> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) =>
-                        Creatine(user: FirebaseAuth.instance.currentUser!),
+                        GlutaminePage(user: FirebaseAuth.instance.currentUser!),
                   ),
                 );
               },
@@ -127,7 +133,7 @@ class _SupplementsPageState extends State<SupplementsPage> {
                 Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (_) =>
-                        Creatine(user: FirebaseAuth.instance.currentUser!),
+                        CollagenPage(user: FirebaseAuth.instance.currentUser!),
                   ),
                 );
               },

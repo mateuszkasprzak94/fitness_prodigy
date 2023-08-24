@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ProteinPowder extends StatelessWidget {
-  const ProteinPowder({
+class AAKGPage extends StatelessWidget {
+  const AAKGPage({
     Key? key,
     required this.user,
   }) : super(key: key);
@@ -17,8 +17,9 @@ class ProteinPowder extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Protein Powder',
-          style: GoogleFonts.lancelot(fontSize: 30, color: Colors.black),
+          'Arginine Alpha-Ketoglutarate (AAKG)',
+          maxLines: 2,
+          style: GoogleFonts.lancelot(fontSize: 28, color: Colors.black),
         ),
         centerTitle: true,
         flexibleSpace: Container(
@@ -36,43 +37,39 @@ class ProteinPowder extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           children: [
             const Image(
-              image: AssetImage(
-                  'images supplements/'), //add image of protein powder
+              image: AssetImage('images supplements/'), //add image of AAKG
             ),
             const SizedBox(height: 15),
-            _buildSupplements1('Description:', proteindescription),
+            _buildSupplements1('Description:', aakgdescription),
             const Divider(height: 5, thickness: 5),
             const SizedBox(height: 15),
             _buildSupplements1('Benefits:', ''),
-            _buildSupplements2(
-                'Muscle Recovery and Growth: ', proteinbenefits1),
-            _buildSupplements2('Convenience: ', proteinbenefits2),
-            _buildSupplements2('Appetite Control: ', proteinbenefits3),
-            _buildSupplements2('Diverse Options:  ', proteinbenefits4),
-            const Divider(height: 5, thickness: 5),
-            const SizedBox(height: 15),
-            _buildSupplements1('Types:', ''),
-            _buildSupplements2('Whey Protein:', proteintype1),
-            _buildSupplements2('Casein Protein:', proteintype2),
-            _buildSupplements2('Plant-Based Proteins:', proteintype3),
-            _buildSupplements2('Egg White Protein', proteintype4),
+            _buildSupplements2('Nitric Oxide Production: ', aakgbenefits1),
+            _buildSupplements2('Muscle Pumps:  ', aakgbenefits2),
+            _buildSupplements2('Exercise Performance: ', aakgbenefits3),
+            _buildSupplements2('Muscle Recovery:  ', aakgbenefits4),
             const Divider(height: 5, thickness: 5),
             const SizedBox(height: 15),
             _buildSupplements1('Usage:', ''),
-            _buildSupplements2('Post-Workout:', proteinusage1),
-            _buildSupplements2('Meal Replacement:', proteinusage2),
-            _buildSupplements2('Snacking:', proteinusage3),
+            _buildSupplements2('Pre-Workout:', aakgusage1),
+            _buildSupplements2('Dosage Timing:', aakgusage2),
             const Divider(height: 5, thickness: 5),
             const SizedBox(height: 15),
-            _buildSupplements1('Dosage:', proteindosage),
+            _buildSupplements1('Dosage:', aakgdosage),
             const Divider(height: 5, thickness: 5),
             const SizedBox(height: 15),
-            _buildSupplements1('Quality:', proteinconsiderations1),
-            _buildSupplements2('Allergies:', proteinconsiderations2),
-            _buildSupplements2('Individual Goals:', proteinconsiderations3),
+            _buildSupplements1('Considerations:', ''),
+            _buildSupplements2('Synergy:', aakgconsiderations1),
+            _buildSupplements2('Diet and Lifestyle: ', aakgconsiderations2),
             const Divider(height: 5, thickness: 5),
             const SizedBox(height: 15),
-            Text(proteinend),
+            _buildSupplements1('Side Effects:', aakgsideeffects),
+            const Divider(height: 5, thickness: 5),
+            const SizedBox(height: 15),
+            Text(
+              aakgend,
+              style: const TextStyle(fontStyle: FontStyle.italic),
+            ),
           ],
         ),
       ),

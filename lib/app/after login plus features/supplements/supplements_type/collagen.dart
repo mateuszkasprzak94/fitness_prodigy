@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ProteinPowder extends StatelessWidget {
-  const ProteinPowder({
+class CollagenPage extends StatelessWidget {
+  const CollagenPage({
     Key? key,
     required this.user,
   }) : super(key: key);
@@ -17,8 +17,9 @@ class ProteinPowder extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Protein Powder',
-          style: GoogleFonts.lancelot(fontSize: 30, color: Colors.black),
+          'Collagen',
+          maxLines: 2,
+          style: GoogleFonts.lancelot(fontSize: 40, color: Colors.black),
         ),
         centerTitle: true,
         flexibleSpace: Container(
@@ -36,43 +37,40 @@ class ProteinPowder extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           children: [
             const Image(
-              image: AssetImage(
-                  'images supplements/'), //add image of protein powder
+              image: AssetImage('images supplements/'), //add image of Collagen
             ),
             const SizedBox(height: 15),
-            _buildSupplements1('Description:', proteindescription),
+            _buildSupplements1('Description:', collagendescription),
             const Divider(height: 5, thickness: 5),
             const SizedBox(height: 15),
             _buildSupplements1('Benefits:', ''),
-            _buildSupplements2(
-                'Muscle Recovery and Growth: ', proteinbenefits1),
-            _buildSupplements2('Convenience: ', proteinbenefits2),
-            _buildSupplements2('Appetite Control: ', proteinbenefits3),
-            _buildSupplements2('Diverse Options:  ', proteinbenefits4),
-            const Divider(height: 5, thickness: 5),
-            const SizedBox(height: 15),
-            _buildSupplements1('Types:', ''),
-            _buildSupplements2('Whey Protein:', proteintype1),
-            _buildSupplements2('Casein Protein:', proteintype2),
-            _buildSupplements2('Plant-Based Proteins:', proteintype3),
-            _buildSupplements2('Egg White Protein', proteintype4),
+            _buildSupplements2('Skin Health:', collagenbenefits1),
+            _buildSupplements2('Joint Health:', collagenbenefits2),
+            _buildSupplements2('Bone Health:', collagenbenefits3),
+            _buildSupplements2('Hair and Nails:', collagenbenefits4),
             const Divider(height: 5, thickness: 5),
             const SizedBox(height: 15),
             _buildSupplements1('Usage:', ''),
-            _buildSupplements2('Post-Workout:', proteinusage1),
-            _buildSupplements2('Meal Replacement:', proteinusage2),
-            _buildSupplements2('Snacking:', proteinusage3),
+            _buildSupplements2('Beauty:', collagenusage1),
+            _buildSupplements2('Joint Support: ', collagenusage2),
             const Divider(height: 5, thickness: 5),
             const SizedBox(height: 15),
-            _buildSupplements1('Dosage:', proteindosage),
+            _buildSupplements1('Dosage:', collagendosage),
             const Divider(height: 5, thickness: 5),
             const SizedBox(height: 15),
-            _buildSupplements1('Quality:', proteinconsiderations1),
-            _buildSupplements2('Allergies:', proteinconsiderations2),
-            _buildSupplements2('Individual Goals:', proteinconsiderations3),
+            _buildSupplements1('Considerations:', ''),
+            _buildSupplements2('Types of Collagen:', collagenconsiderations1),
+            _buildSupplements2('Digestibility:', collagenconsiderations2),
+            _buildSupplements2('Synergy::', collagenconsiderations3),
             const Divider(height: 5, thickness: 5),
             const SizedBox(height: 15),
-            Text(proteinend),
+            _buildSupplements1('Side Effects:', collagensideeffects),
+            const Divider(height: 5, thickness: 5),
+            const SizedBox(height: 15),
+            Text(
+              collagenend,
+              style: const TextStyle(fontStyle: FontStyle.italic),
+            ),
           ],
         ),
       ),
