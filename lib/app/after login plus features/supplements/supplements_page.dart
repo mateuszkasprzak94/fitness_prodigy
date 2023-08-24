@@ -51,93 +51,51 @@ class _SupplementsPageState extends State<SupplementsPage> {
       body: Center(
         child: ListView(
           children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) =>
-                        Creatine(user: FirebaseAuth.instance.currentUser!),
-                  ),
-                );
-              },
-              child: const Text('Creatine monohydrate'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) =>
-                        ProteinPowder(user: FirebaseAuth.instance.currentUser!),
-                  ),
-                );
-              },
-              child: const Text('Protein Powder'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) =>
-                        BCAAPage(user: FirebaseAuth.instance.currentUser!),
-                  ),
-                );
-              },
-              child: const Text('BCAA'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) =>
-                        AAKGPage(user: FirebaseAuth.instance.currentUser!),
-                  ),
-                );
-              },
-              child: const Text('AAKG'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => CitrullinePage(
-                        user: FirebaseAuth.instance.currentUser!),
-                  ),
-                );
-              },
-              child: const Text('Cytruline'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => BetaAlaninePage(
-                        user: FirebaseAuth.instance.currentUser!),
-                  ),
-                );
-              },
-              child: const Text('Beta-Alanine'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) =>
-                        GlutaminePage(user: FirebaseAuth.instance.currentUser!),
-                  ),
-                );
-              },
-              child: const Text('Glutamine'),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) =>
-                        CollagenPage(user: FirebaseAuth.instance.currentUser!),
-                  ),
-                );
-              },
-              child: const Text('Collagen'),
+            const CreatineButton(),
+            const ProteinPowderButton(),
+            const BCAAButton(),
+            const AAKGButton(),
+            const CitrullineButton(),
+            const BetaAlanineButton(),
+            const GlutamineButton(),
+            const CollagenButton(),
+            //Expanded button for Vitamins
+            ExpansionTile(
+              title: const Text('Vitamins'),
+              children: [
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Vitamin C'),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Vitamin D'),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Vitamin B'),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Magnesium'),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Omega3'),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Zync'),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Ashwagandha'),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('D3K2'),
+                ),
+              ],
             ),
           ],
         ),
@@ -205,6 +163,171 @@ class _SupplementsPageState extends State<SupplementsPage> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class CollagenButton extends StatelessWidget {
+  const CollagenButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (_) =>
+                CollagenPage(user: FirebaseAuth.instance.currentUser!),
+          ),
+        );
+      },
+      child: const Text('Collagen'),
+    );
+  }
+}
+
+class GlutamineButton extends StatelessWidget {
+  const GlutamineButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (_) =>
+                GlutaminePage(user: FirebaseAuth.instance.currentUser!),
+          ),
+        );
+      },
+      child: const Text('Glutamine'),
+    );
+  }
+}
+
+class BetaAlanineButton extends StatelessWidget {
+  const BetaAlanineButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (_) =>
+                BetaAlaninePage(user: FirebaseAuth.instance.currentUser!),
+          ),
+        );
+      },
+      child: const Text('Beta-Alanine'),
+    );
+  }
+}
+
+class CitrullineButton extends StatelessWidget {
+  const CitrullineButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (_) =>
+                CitrullinePage(user: FirebaseAuth.instance.currentUser!),
+          ),
+        );
+      },
+      child: const Text('Cytruline'),
+    );
+  }
+}
+
+class AAKGButton extends StatelessWidget {
+  const AAKGButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (_) => AAKGPage(user: FirebaseAuth.instance.currentUser!),
+          ),
+        );
+      },
+      child: const Text('AAKG'),
+    );
+  }
+}
+
+class BCAAButton extends StatelessWidget {
+  const BCAAButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (_) => BCAAPage(user: FirebaseAuth.instance.currentUser!),
+          ),
+        );
+      },
+      child: const Text('BCAA'),
+    );
+  }
+}
+
+class ProteinPowderButton extends StatelessWidget {
+  const ProteinPowderButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (_) =>
+                ProteinPowder(user: FirebaseAuth.instance.currentUser!),
+          ),
+        );
+      },
+      child: const Text('Protein Powder'),
+    );
+  }
+}
+
+class CreatineButton extends StatelessWidget {
+  const CreatineButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (_) => Creatine(user: FirebaseAuth.instance.currentUser!),
+          ),
+        );
+      },
+      child: const Text('Creatine monohydrate'),
     );
   }
 }
