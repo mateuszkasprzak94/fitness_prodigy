@@ -1,8 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
 import 'package:fitness_prodigy/app/before%20login/main_login_page.dart';
+import 'package:fitness_prodigy/app/cubit/auth_cubit.dart';
 import 'package:fitness_prodigy/app/home/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -33,15 +34,17 @@ class Auth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<User?>(
-      stream: FirebaseAuth.instance.authStateChanges(),
-      builder: (context, snapshot) {
-        final user = snapshot.data;
-        if (user == null) {
-          return MainLoginPage();
-        }
-        return Features(user: user);
-      },
+    return BlocProvider(
+      create: (context) => AuthCubit()..start(),
+      child: BlocBuilder<AuthCubit, AuthState>(
+        builder: (context, state) {
+          final user = state.user;
+          if (user == null) {
+            return MainLoginPage();
+          }
+          return Features(user: user);
+        },
+      ),
     );
   }
 }
