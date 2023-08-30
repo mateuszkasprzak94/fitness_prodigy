@@ -58,7 +58,18 @@ class _GoalsPageState extends State<GoalsPage> {
             return ListView(
               children: [
                 for (final document in documents) ...[
-                  CategoryWidget(document['title']),
+                  Dismissible(
+                    key: ValueKey(document.id),
+                    onDismissed: (_) {
+                      FirebaseFirestore.instance
+                          .collection('goals')
+                          .doc(document.id)
+                          .delete();
+                    },
+                    child: CategoryWidget(
+                      document['title'],
+                    ),
+                  ),
                 ],
               ],
             );
@@ -150,7 +161,13 @@ class FloatingButton extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         shape: const StadiumBorder(),
-        onPressed: () {},
+        onPressed: () {
+          FirebaseFirestore.instance.collection('goals').add(
+            {
+              'title': '',
+            },
+          );
+        },
         child: const Icon(
           Icons.add,
           color: Colors.amber,
