@@ -57,26 +57,32 @@ class _GoalsPageState extends State<GoalsPage> {
 
             final documents = snapshot.data!.docs;
 
-            return ListView(
-              children: [
-                for (final document in documents) ...[
-                  Dismissible(
-                    key: ValueKey(document.id),
-                    onDismissed: (_) {
-                      FirebaseFirestore.instance
-                          .collection('goals')
-                          .doc(document.id)
-                          .delete();
-                    },
-                    child: CategoryWidget(
-                      document['title'],
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ListView(
+                children: [
+                  for (final document in documents) ...[
+                    Dismissible(
+                      key: ValueKey(document.id),
+                      onDismissed: (_) {
+                        FirebaseFirestore.instance
+                            .collection('goals')
+                            .doc(document.id)
+                            .delete();
+                      },
+                      child: CategoryWidget(
+                        document['title'],
+                      ),
                     ),
-                  ),
+                  ],
+                  TextField(
+                    controller: controller,
+                    decoration: const InputDecoration(
+                      hintText: 'Enter a new goal',
+                    ),
+                  )
                 ],
-                TextField(
-                  controller: controller,
-                )
-              ],
+              ),
             );
           }),
       bottomNavigationBar: BottomNavigationBar(
