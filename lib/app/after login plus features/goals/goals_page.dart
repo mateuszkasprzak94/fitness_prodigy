@@ -78,12 +78,19 @@ class _GoalsPageState extends State<GoalsPage> {
                   for (final document in documents) ...[
                     Dismissible(
                       key: ValueKey(document.id),
+                      direction: DismissDirection.startToEnd,
                       onDismissed: (_) {
                         FirebaseFirestore.instance
                             .collection('goals')
                             .doc(document.id)
                             .delete();
                       },
+                      background: Container(
+                        color: Colors.red,
+                        alignment: Alignment.centerRight,
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: const Icon(Icons.delete, color: Colors.white),
+                      ),
                       child: CategoryWidget(
                         document['title'],
                       ),
@@ -220,9 +227,18 @@ class CategoryWidget extends StatelessWidget {
       color: Colors.grey,
       padding: const EdgeInsets.all(15),
       margin: const EdgeInsets.all(10),
-      child: Text(
-        title,
-        style: const TextStyle(color: Colors.white),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            title,
+            style: const TextStyle(color: Colors.white),
+          ),
+          const Icon(
+            Icons.delete,
+            color: Colors.white,
+          )
+        ],
       ),
     );
   }
