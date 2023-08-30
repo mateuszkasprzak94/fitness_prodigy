@@ -57,6 +57,20 @@ class _GoalsPageState extends State<GoalsPage> {
 
             final documents = snapshot.data!.docs;
 
+            // Sort the documents based on creation timestamps
+            documents.sort((a, b) {
+              final aTimestamp = b['timestamp'] as Timestamp?;
+              final bTimestamp = a['timestamp'] as Timestamp?;
+
+              // Handle cases where timestamps are null
+              if (aTimestamp == null || bTimestamp == null) {
+                // Return 0 to indicate equal timestamps
+                return 0;
+              }
+
+              return bTimestamp.compareTo(aTimestamp);
+            });
+
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: ListView(
@@ -167,7 +181,7 @@ class FloatingButton extends StatelessWidget {
         ),
       ),
       child: FloatingActionButton(
-        //deactivate color and shadow
+        // Deactivate color and shadow
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -177,6 +191,7 @@ class FloatingButton extends StatelessWidget {
             FirebaseFirestore.instance.collection('goals').add(
               {
                 'title': controller.text,
+                'timestamp': FieldValue.serverTimestamp(),
               },
             );
             controller.clear();
