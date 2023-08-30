@@ -137,15 +137,9 @@ class FloatingButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton.small(
+    return FloatingActionButton(
       onPressed: () {},
-      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-      shape: const StadiumBorder(),
-      backgroundColor: Colors.grey,
-      child: const Text(
-        '+',
-        style: TextStyle(color: Colors.white),
-      ),
+      child: const Icon(Icons.add),
     );
   }
 }
