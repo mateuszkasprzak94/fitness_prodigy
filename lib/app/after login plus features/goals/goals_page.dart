@@ -21,12 +21,15 @@ class GoalsPage extends StatefulWidget {
 }
 
 final controller = TextEditingController();
+final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
 class _GoalsPageState extends State<GoalsPage> {
   var currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         title: Text(
           'Goals',
@@ -80,10 +83,28 @@ class _GoalsPageState extends State<GoalsPage> {
                       key: ValueKey(document.id),
                       direction: DismissDirection.startToEnd,
                       onDismissed: (_) {
+                        final deletedGoal = document['title'] as String;
                         FirebaseFirestore.instance
                             .collection('goals')
                             .doc(document.id)
                             .delete();
+
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('Goal "$deletedGoal" deleted'),
+                            action: SnackBarAction(
+                              label: 'Undo',
+                              onPressed: () {
+                                FirebaseFirestore.instance
+                                    .collection('goals')
+                                    .add({
+                                  'title': deletedGoal,
+                                  'timestamp': FieldValue.serverTimestamp(),
+                                });
+                              },
+                            ),
+                          ),
+                        );
                       },
                       background: Container(
                         color: Colors.red,
