@@ -138,6 +138,10 @@ class FloatingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
+      //deactivate color and shadow
+      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
       onPressed: () {},
       child: const Icon(Icons.add),
     );
