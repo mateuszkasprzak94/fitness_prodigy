@@ -20,6 +20,8 @@ class GoalsPage extends StatefulWidget {
   State<GoalsPage> createState() => _GoalsPageState();
 }
 
+final controller = TextEditingController();
+
 class _GoalsPageState extends State<GoalsPage> {
   var currentIndex = 0;
   @override
@@ -71,6 +73,9 @@ class _GoalsPageState extends State<GoalsPage> {
                     ),
                   ),
                 ],
+                TextField(
+                  controller: controller,
+                )
               ],
             );
           }),
@@ -164,9 +169,10 @@ class FloatingButton extends StatelessWidget {
         onPressed: () {
           FirebaseFirestore.instance.collection('goals').add(
             {
-              'title': '',
+              'title': controller.text,
             },
           );
+          controller.clear();
         },
         child: const Icon(
           Icons.add,
