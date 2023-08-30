@@ -57,9 +57,9 @@ class _GoalsPageState extends State<GoalsPage> {
 
             return ListView(
               children: [
-                CategoryWidget(documents[0]['title']),
-                CategoryWidget(documents[1]['title']),
-                CategoryWidget(documents[2]['title']),
+                for (final document in documents) ...[
+                  CategoryWidget(document['title']),
+                ],
               ],
             );
           }),
