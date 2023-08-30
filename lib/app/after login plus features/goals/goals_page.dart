@@ -173,12 +173,14 @@ class FloatingButton extends StatelessWidget {
         elevation: 0,
         shape: const StadiumBorder(),
         onPressed: () {
-          FirebaseFirestore.instance.collection('goals').add(
-            {
-              'title': controller.text,
-            },
-          );
-          controller.clear();
+          if (controller.text.isNotEmpty) {
+            FirebaseFirestore.instance.collection('goals').add(
+              {
+                'title': controller.text,
+              },
+            );
+            controller.clear();
+          }
         },
         child: const Icon(
           Icons.add,
