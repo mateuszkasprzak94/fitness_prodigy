@@ -83,7 +83,7 @@ class _GoalsPageState extends State<GoalsPage> {
                             action: SnackBarAction(
                               label: 'Undo',
                               onPressed: () {
-                                context.read<GoalsCubit>().add(deletedGoal);
+                                context.read<GoalsCubit>().undo(deletedGoal);
                               },
                             ),
                           ),
