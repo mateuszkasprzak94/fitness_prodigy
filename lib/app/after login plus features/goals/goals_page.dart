@@ -82,6 +82,7 @@ class _GoalsPageState extends State<GoalsPage> {
                       direction: DismissDirection.startToEnd,
                       onDismissed: (_) {
                         final deletedGoal = document['title'] as String;
+
                         FirebaseFirestore.instance
                             .collection('goals')
                             .doc(document.id)
