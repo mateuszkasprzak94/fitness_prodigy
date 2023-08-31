@@ -2,10 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/exercies_examples_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/goals/cubit/goals_cubit.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/user_profile/user_profile_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class GoalsPage extends StatefulWidget {
@@ -45,32 +47,21 @@ class _GoalsPageState extends State<GoalsPage> {
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       floatingActionButton: const FloatingButton(),
-      body: StreamBuilder<QuerySnapshot>(
-          stream: FirebaseFirestore.instance.collection('goals').snapshots(),
-          builder: (context, snapshot) {
-            if (snapshot.hasError) {
+      body: BlocProvider(
+        create: (context) => GoalsCubit()..start(),
+        child: BlocBuilder<GoalsCubit, GoalsState>(
+          builder: (context, state) {
+            if (state.errorMessage.isNotEmpty) {
               return const Text('An unexpected problem has occurred');
             }
 
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Text('Please wait, data loading in progress');
+            if (state.isLoading) {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
             }
 
-            final documents = snapshot.data!.docs;
-
-            // Sort the documents based on creation timestamps
-            documents.sort((a, b) {
-              final aTimestamp = b['timestamp'] as Timestamp?;
-              final bTimestamp = a['timestamp'] as Timestamp?;
-
-              // Handle cases where timestamps are null
-              if (aTimestamp == null || bTimestamp == null) {
-                // Return 0 to indicate equal timestamps
-                return 0;
-              }
-
-              return bTimestamp.compareTo(aTimestamp);
-            });
+            final documents = state.documents;
 
             return Padding(
               padding: const EdgeInsets.all(8.0),
@@ -125,7 +116,9 @@ class _GoalsPageState extends State<GoalsPage> {
                 ],
               ),
             );
-          }),
+          },
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (newIndex) {
