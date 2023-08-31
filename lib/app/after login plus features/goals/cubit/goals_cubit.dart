@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/material.dart';
 
 part 'goals_state.dart';
 
@@ -18,7 +18,14 @@ class GoalsCubit extends Cubit<GoalsState> {
 
   StreamSubscription? _streamSubscription;
 
-  Future<void> add() async {}
+  // Future<void> add() async {
+  //   FirebaseFirestore.instance.collection('goals').add(
+  //     {
+  //       'title': controller.text,
+  //       'timestamp': FieldValue.serverTimestamp(),
+  //     },
+  //   );
+  // }
 
   Future<void> undo(String deletedGoal) async {
     FirebaseFirestore.instance.collection('goals').add({

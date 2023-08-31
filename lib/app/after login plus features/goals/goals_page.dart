@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/exercies_examples_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
@@ -199,17 +200,16 @@ class FloatingButton extends StatelessWidget {
         elevation: 0,
         shape: const StadiumBorder(),
         onPressed: () {
-          context.read<GoalsCubit>().add();
-
-          // if (controller.text.isNotEmpty) {
-          //   FirebaseFirestore.instance.collection('goals').add(
-          //     {
-          //       'title': controller.text,
-          //       'timestamp': FieldValue.serverTimestamp(),
-          //     },
-          //   );
-          //   controller.clear();
-          // }
+          if (controller.text.isNotEmpty) {
+            // context.read<GoalsCubit>().add();
+            FirebaseFirestore.instance.collection('goals').add(
+              {
+                'title': controller.text,
+                'timestamp': FieldValue.serverTimestamp(),
+              },
+            );
+            controller.clear();
+          }
         },
         child: const Icon(
           Icons.add,
