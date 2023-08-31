@@ -14,10 +14,15 @@ class GoalsCubit extends Cubit<GoalsState> {
             errorMessage: '',
             isLoading: false,
             timestamp: true,
+            documentId: '',
           ),
         );
 
   StreamSubscription? _streamSubscription;
+
+  Future<void> delete(String documentId) async {
+    FirebaseFirestore.instance.collection('goals').doc(documentId).delete();
+  }
 
   Future<void> start() async {
     emit(
@@ -26,6 +31,7 @@ class GoalsCubit extends Cubit<GoalsState> {
         errorMessage: '',
         isLoading: true,
         timestamp: true,
+        documentId: '',
       ),
     );
 
@@ -50,16 +56,18 @@ class GoalsCubit extends Cubit<GoalsState> {
           isLoading: false,
           errorMessage: '',
           timestamp: true,
+          documentId: '',
         ),
       );
     })
       ..onError((error) {
         emit(
           GoalsState(
-            documents: [],
+            documents: const [],
             isLoading: false,
             errorMessage: error.toString(),
             timestamp: true,
+            documentId: '',
           ),
         );
       });

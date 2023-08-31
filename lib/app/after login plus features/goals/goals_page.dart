@@ -73,6 +73,9 @@ class _GoalsPageState extends State<GoalsPage> {
                       direction: DismissDirection.startToEnd,
                       onDismissed: (_) {
                         final deletedGoal = document['title'] as String;
+                        final documentId = document.id;
+
+                        context.read<GoalsCubit>().delete(documentId);
 
                         FirebaseFirestore.instance
                             .collection('goals')
