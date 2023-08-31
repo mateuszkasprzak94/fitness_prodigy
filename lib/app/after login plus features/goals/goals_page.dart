@@ -77,11 +77,6 @@ class _GoalsPageState extends State<GoalsPage> {
 
                         context.read<GoalsCubit>().delete(documentId);
 
-                        FirebaseFirestore.instance
-                            .collection('goals')
-                            .doc(document.id)
-                            .delete();
-
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text('Goal "$deletedGoal" deleted'),
