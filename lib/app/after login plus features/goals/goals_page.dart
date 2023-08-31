@@ -21,7 +21,6 @@ class GoalsPage extends StatefulWidget {
 }
 
 final controller = TextEditingController();
-final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
 class _GoalsPageState extends State<GoalsPage> {
   var currentIndex = 0;
@@ -29,7 +28,6 @@ class _GoalsPageState extends State<GoalsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
       appBar: AppBar(
         title: Text(
           'Goals',
