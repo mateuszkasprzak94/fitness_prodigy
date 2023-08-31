@@ -18,6 +18,8 @@ class GoalsCubit extends Cubit<GoalsState> {
 
   StreamSubscription? _streamSubscription;
 
+  Future<void> add() async {}
+
   Future<void> undo(String deletedGoal) async {
     FirebaseFirestore.instance.collection('goals').add({
       'title': deletedGoal,
