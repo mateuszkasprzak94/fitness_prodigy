@@ -83,6 +83,8 @@ class _GoalsPageState extends State<GoalsPage> {
                             action: SnackBarAction(
                               label: 'Undo',
                               onPressed: () {
+                                // context.read<GoalsCubit>().add(deletedGoal);
+
                                 FirebaseFirestore.instance
                                     .collection('goals')
                                     .add({

@@ -14,7 +14,6 @@ class GoalsCubit extends Cubit<GoalsState> {
             errorMessage: '',
             isLoading: false,
             timestamp: true,
-            documentId: '',
           ),
         );
 
@@ -31,7 +30,6 @@ class GoalsCubit extends Cubit<GoalsState> {
         errorMessage: '',
         isLoading: true,
         timestamp: true,
-        documentId: '',
       ),
     );
 
@@ -56,7 +54,6 @@ class GoalsCubit extends Cubit<GoalsState> {
           isLoading: false,
           errorMessage: '',
           timestamp: true,
-          documentId: '',
         ),
       );
     })
@@ -67,7 +64,6 @@ class GoalsCubit extends Cubit<GoalsState> {
             isLoading: false,
             errorMessage: error.toString(),
             timestamp: true,
-            documentId: '',
           ),
         );
       });
