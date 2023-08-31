@@ -18,6 +18,13 @@ class GoalsCubit extends Cubit<GoalsState> {
 
   StreamSubscription? _streamSubscription;
 
+  Future<void> add(String deletedGoal) async {
+    FirebaseFirestore.instance.collection('goals').add({
+      'title': deletedGoal,
+      'timestamp': FieldValue.serverTimestamp(),
+    });
+  }
+
   Future<void> delete(String documentId) async {
     FirebaseFirestore.instance.collection('goals').doc(documentId).delete();
   }
