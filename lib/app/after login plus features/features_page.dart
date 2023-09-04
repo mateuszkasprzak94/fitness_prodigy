@@ -50,6 +50,7 @@ class _FeaturesState extends State<Features> {
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
+        automaticallyImplyLeading: false,
       ),
       backgroundColor: Colors.white,
       body: Center(
