@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/text_for_workouts.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/text_for_workout_plans/text_for_workouts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
