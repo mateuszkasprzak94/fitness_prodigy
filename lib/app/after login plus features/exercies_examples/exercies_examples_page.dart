@@ -48,6 +48,7 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
+        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: Padding(

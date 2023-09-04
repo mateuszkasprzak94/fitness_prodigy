@@ -45,6 +45,7 @@ class _GoalsPageState extends State<GoalsPage> {
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
+        automaticallyImplyLeading: false,
       ),
       floatingActionButton: const FloatingButton(),
       body: BlocProvider(

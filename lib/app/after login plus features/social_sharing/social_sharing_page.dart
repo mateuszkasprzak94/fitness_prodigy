@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/exercies_examples/exercies_examples_page.dart';
+import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/user_profile/user_profile_page.dart';
 import 'package:fitness_prodigy/app/after%20login%20plus%20features/workout_plans/workout_plans_page.dart';
 import 'package:flutter/material.dart';
@@ -38,6 +39,7 @@ class _SocialSharingPageState extends State<SocialSharingPage> {
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
+        automaticallyImplyLeading: false,
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
@@ -45,18 +47,31 @@ class _SocialSharingPageState extends State<SocialSharingPage> {
           setState(() {
             currentIndex = newIndex;
           });
-          if (newIndex == 1) {
+          if (newIndex == 0) {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => ExerciseExamplesPage(user: widget.user),
+                builder: (_) => Features(
+                  user: widget.user,
+                ),
+              ),
+            );
+          } else if (newIndex == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => ExerciseExamplesPage(
+                  user: widget.user,
+                ),
               ),
             );
           } else if (newIndex == 2) {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (_) => WorkoutPlansPage(user: widget.user),
+                builder: (_) => WorkoutPlansPage(
+                  user: widget.user,
+                ),
               ),
             );
           } else if (newIndex == 3) {

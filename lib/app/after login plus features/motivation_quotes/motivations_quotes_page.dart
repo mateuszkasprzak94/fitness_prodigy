@@ -39,6 +39,7 @@ class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
+        automaticallyImplyLeading: false,
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,

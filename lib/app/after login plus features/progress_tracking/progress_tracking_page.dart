@@ -39,6 +39,7 @@ class _ProgressTrackingPageState extends State<ProgressTrackingPage> {
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
+        automaticallyImplyLeading: false,
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,

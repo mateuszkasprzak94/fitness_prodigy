@@ -41,6 +41,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
+        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: Column(

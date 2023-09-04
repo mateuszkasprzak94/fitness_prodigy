@@ -47,6 +47,7 @@ class _SupplementsPageState extends State<SupplementsPage> {
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
+        automaticallyImplyLeading: false,
       ),
       body: Center(
         child: ListView(

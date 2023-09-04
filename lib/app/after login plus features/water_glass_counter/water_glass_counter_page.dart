@@ -93,6 +93,7 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
+        automaticallyImplyLeading: false,
       ),
       body: Container(
         decoration: const BoxDecoration(

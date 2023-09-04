@@ -50,6 +50,7 @@ class _WorkoutPlansPageState extends State<WorkoutPlansPage> {
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
+        automaticallyImplyLeading: false,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),

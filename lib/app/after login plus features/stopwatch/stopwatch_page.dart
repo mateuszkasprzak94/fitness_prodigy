@@ -39,6 +39,7 @@ class _FitStopwatchPageState extends State<FitStopwatchPage> {
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
+        automaticallyImplyLeading: false,
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
