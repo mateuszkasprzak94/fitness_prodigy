@@ -104,7 +104,7 @@ class _GoalsPageState extends State<GoalsPage> {
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: const Icon(Icons.delete, color: Colors.white),
                       ),
-                      child: CategoryWidget(
+                      child: GoalTextWidget(
                         document['title'],
                       ),
                     ),
@@ -231,8 +231,8 @@ class FloatingButton extends StatelessWidget {
   }
 }
 
-class CategoryWidget extends StatelessWidget {
-  const CategoryWidget(
+class GoalTextWidget extends StatelessWidget {
+  const GoalTextWidget(
     this.title, {
     super.key,
   });
@@ -248,9 +248,13 @@ class CategoryWidget extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            title,
-            style: const TextStyle(color: Colors.white),
+          Expanded(
+            child: Text(
+              title,
+              style: const TextStyle(color: Colors.white),
+              maxLines: 5,
+              overflow: TextOverflow.ellipsis,
+            ),
           ),
           const Icon(
             Icons.delete,
