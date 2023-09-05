@@ -75,6 +75,8 @@ class _GoalsPageState extends State<GoalsPage> {
                       onDismissed: (_) {
                         final deletedGoal = document['title'] as String;
                         final documentId = document.id;
+                        final originalTimestamp =
+                            document['timestamp'] as Timestamp;
 
                         context.read<GoalsCubit>().delete(documentId);
 
@@ -84,7 +86,9 @@ class _GoalsPageState extends State<GoalsPage> {
                             action: SnackBarAction(
                               label: 'Undo',
                               onPressed: () {
-                                context.read<GoalsCubit>().undo(deletedGoal);
+                                context
+                                    .read<GoalsCubit>()
+                                    .undo(deletedGoal, originalTimestamp);
                               },
                             ),
                           ),

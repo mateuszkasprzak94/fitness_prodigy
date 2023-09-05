@@ -27,15 +27,18 @@ class GoalsCubit extends Cubit<GoalsState> {
   //   );
   // }
 
-  Future<void> undo(String deletedGoal) async {
-    FirebaseFirestore.instance.collection('goals').add({
+  Future<void> undo(String deletedGoal, Timestamp originalTimestamp) async {
+    await FirebaseFirestore.instance.collection('goals').add({
       'title': deletedGoal,
-      'timestamp': FieldValue.serverTimestamp(),
+      'timestamp': originalTimestamp,
     });
   }
 
   Future<void> delete(String documentId) async {
-    FirebaseFirestore.instance.collection('goals').doc(documentId).delete();
+    await FirebaseFirestore.instance
+        .collection('goals')
+        .doc(documentId)
+        .delete();
   }
 
   Future<void> start() async {
@@ -49,22 +52,23 @@ class GoalsCubit extends Cubit<GoalsState> {
 
     _streamSubscription = FirebaseFirestore.instance
         .collection('goals')
+        .orderBy('timestamp')
         .snapshots()
         .listen((data) {
-      final sortedDocs = List<QueryDocumentSnapshot>.from(data.docs)
-        ..sort((a, b) {
-          final aTimestamp = b['timestamp'] as Timestamp?;
-          final bTimestamp = a['timestamp'] as Timestamp?;
+      // final sortedDocs = List<QueryDocumentSnapshot>.from(data.docs)
+      //   ..sort((a, b) {
+      //     final aTimestamp = b['timestamp'] as Timestamp?;
+      //     final bTimestamp = a['timestamp'] as Timestamp?;
 
-          if (aTimestamp == null || bTimestamp == null) {
-            return 0;
-          }
+      //     if (aTimestamp == null || bTimestamp == null) {
+      //       return 0;
+      //     }
 
-          return bTimestamp.compareTo(aTimestamp);
-        });
+      //     return bTimestamp.compareTo(aTimestamp);
+      //   });
       emit(
         GoalsState(
-          documents: sortedDocs,
+          documents: data.docs,
           isLoading: false,
           errorMessage: '',
         ),
