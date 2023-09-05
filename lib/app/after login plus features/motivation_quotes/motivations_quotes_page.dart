@@ -83,8 +83,10 @@ class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
             );
           }
         },
-        selectedItemColor: Colors.amber,
+        selectedItemColor: Colors.black,
         unselectedItemColor: Colors.black,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

@@ -133,6 +133,8 @@ class _UserProfilePageState extends State<UserProfilePage> {
         },
         selectedItemColor: Colors.amber,
         unselectedItemColor: Colors.black,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

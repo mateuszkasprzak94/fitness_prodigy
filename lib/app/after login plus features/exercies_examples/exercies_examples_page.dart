@@ -109,6 +109,8 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
         },
         selectedItemColor: Colors.amber,
         unselectedItemColor: Colors.black,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

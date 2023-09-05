@@ -83,8 +83,10 @@ class _SocialSharingPageState extends State<SocialSharingPage> {
             );
           }
         },
-        selectedItemColor: Colors.amber,
+        selectedItemColor: Colors.black,
         unselectedItemColor: Colors.black,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

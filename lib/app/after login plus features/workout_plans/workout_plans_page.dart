@@ -111,6 +111,8 @@ class _WorkoutPlansPageState extends State<WorkoutPlansPage> {
         },
         selectedItemColor: Colors.amber,
         unselectedItemColor: Colors.black,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
