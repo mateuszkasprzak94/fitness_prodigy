@@ -82,6 +82,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                     elevation: 0,
                   ),
                   onPressed: () {
+                    // context.read<AuthCubit>().signOut();
                     FirebaseAuth.instance.signOut();
                     Navigator.pushNamedAndRemoveUntil(
                       context,
