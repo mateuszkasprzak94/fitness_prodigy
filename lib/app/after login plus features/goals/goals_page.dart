@@ -89,6 +89,10 @@ class _GoalsPageState extends State<GoalsPage> {
                                 context
                                     .read<GoalsCubit>()
                                     .undo(deletedGoal, originalTimestamp);
+
+                                // context
+                                //     .read<GoalsCubit>()
+                                //     .undo(deletedGoal, originalTimestamp);
                               },
                             ),
                           ),
