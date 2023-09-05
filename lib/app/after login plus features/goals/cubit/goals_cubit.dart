@@ -18,29 +18,6 @@ class GoalsCubit extends Cubit<GoalsState> {
 
   StreamSubscription? _streamSubscription;
 
-  // Future<void> add() async {
-  //   FirebaseFirestore.instance.collection('goals').add(
-  //     {
-  //       'title': controller.text,
-  //       'timestamp': FieldValue.serverTimestamp(),
-  //     },
-  //   );
-  // }
-
-  Future<void> undo(String deletedGoal, Timestamp originalTimestamp) async {
-    await FirebaseFirestore.instance.collection('goals').add({
-      'title': deletedGoal,
-      'timestamp': originalTimestamp,
-    });
-  }
-
-  Future<void> delete(String documentId) async {
-    await FirebaseFirestore.instance
-        .collection('goals')
-        .doc(documentId)
-        .delete();
-  }
-
   Future<void> start() async {
     emit(
       const GoalsState(
@@ -55,17 +32,6 @@ class GoalsCubit extends Cubit<GoalsState> {
         .orderBy('timestamp')
         .snapshots()
         .listen((data) {
-      // final sortedDocs = List<QueryDocumentSnapshot>.from(data.docs)
-      //   ..sort((a, b) {
-      //     final aTimestamp = b['timestamp'] as Timestamp?;
-      //     final bTimestamp = a['timestamp'] as Timestamp?;
-
-      //     if (aTimestamp == null || bTimestamp == null) {
-      //       return 0;
-      //     }
-
-      //     return bTimestamp.compareTo(aTimestamp);
-      //   });
       emit(
         GoalsState(
           documents: data.docs,
@@ -83,6 +49,29 @@ class GoalsCubit extends Cubit<GoalsState> {
           ),
         );
       });
+  }
+
+  // Future<void> add() async {
+  //   await  FirebaseFirestore.instance.collection('goals').add(
+  //     {
+  //       'title': controller.text,
+  //       'timestamp': FieldValue.serverTimestamp(),
+  //     },
+  //   );
+  // }
+
+  Future<void> delete(String documentId) async {
+    await FirebaseFirestore.instance
+        .collection('goals')
+        .doc(documentId)
+        .delete();
+  }
+
+  Future<void> undo(String deletedGoal, Timestamp originalTimestamp) async {
+    await FirebaseFirestore.instance.collection('goals').add({
+      'title': deletedGoal,
+      'timestamp': originalTimestamp,
+    });
   }
 
   @override

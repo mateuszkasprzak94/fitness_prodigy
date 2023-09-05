@@ -53,7 +53,10 @@ class _GoalsPageState extends State<GoalsPage> {
         child: BlocBuilder<GoalsCubit, GoalsState>(
           builder: (context, state) {
             if (state.errorMessage.isNotEmpty) {
-              return const Text('An unexpected problem has occurred');
+              return Center(
+                child: Text(
+                    'An unexpected problem has occurred: ${state.errorMessage}'),
+              );
             }
 
             if (state.isLoading) {
@@ -89,10 +92,6 @@ class _GoalsPageState extends State<GoalsPage> {
                                 context
                                     .read<GoalsCubit>()
                                     .undo(deletedGoal, originalTimestamp);
-
-                                // context
-                                //     .read<GoalsCubit>()
-                                //     .undo(deletedGoal, originalTimestamp);
                               },
                             ),
                           ),
