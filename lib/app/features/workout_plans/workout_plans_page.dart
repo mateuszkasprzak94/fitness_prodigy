@@ -168,8 +168,8 @@ class BeginnerWorkoutButton extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) =>
-                    BeginnerWorkout(user: FirebaseAuth.instance.currentUser!),
+                builder: (_) => BeginnerWorkoutPage(
+                    user: FirebaseAuth.instance.currentUser!),
               ),
             );
           },
@@ -215,7 +215,7 @@ class IntermediateWorkoutButton extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) => IntermediateWorkout(
+                builder: (_) => IntermediateWorkoutPage(
                     user: FirebaseAuth.instance.currentUser!),
               ),
             );
@@ -262,8 +262,8 @@ class AdvancedWorkoutButton extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) =>
-                    AdvancedWorkout(user: FirebaseAuth.instance.currentUser!),
+                builder: (_) => AdvancedWorkoutPage(
+                    user: FirebaseAuth.instance.currentUser!),
               ),
             );
           },
@@ -310,7 +310,7 @@ class ChestWorkoutButton extends StatelessWidget {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (_) =>
-                    ChestWorkout(user: FirebaseAuth.instance.currentUser!),
+                    ChestWorkoutPage(user: FirebaseAuth.instance.currentUser!),
               ),
             );
           },
@@ -357,7 +357,7 @@ class BackWorkoutButton extends StatelessWidget {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (_) =>
-                    BackWorkout(user: FirebaseAuth.instance.currentUser!),
+                    BackWorkoutPage(user: FirebaseAuth.instance.currentUser!),
               ),
             );
           },
@@ -403,8 +403,8 @@ class ShouldersWorkoutButton extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) =>
-                    ShouldersWorkout(user: FirebaseAuth.instance.currentUser!),
+                builder: (_) => ShouldersWorkoutPage(
+                    user: FirebaseAuth.instance.currentUser!),
               ),
             );
           },
@@ -451,7 +451,7 @@ class BicepsWorkoutButton extends StatelessWidget {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (_) =>
-                    BicepsWorkout(user: FirebaseAuth.instance.currentUser!),
+                    BicepsWorkoutPage(user: FirebaseAuth.instance.currentUser!),
               ),
             );
           },
@@ -497,8 +497,8 @@ class TricepsWorkoutButton extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) =>
-                    TricepsWorkout(user: FirebaseAuth.instance.currentUser!),
+                builder: (_) => TricepsWorkoutPage(
+                    user: FirebaseAuth.instance.currentUser!),
               ),
             );
           },
@@ -544,8 +544,8 @@ class ForearmsWorkoutButton extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) =>
-                    ForearmsWorkout(user: FirebaseAuth.instance.currentUser!),
+                builder: (_) => ForearmsWorkoutPage(
+                    user: FirebaseAuth.instance.currentUser!),
               ),
             );
           },
@@ -592,7 +592,7 @@ class LegsWorkoutButton extends StatelessWidget {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (_) =>
-                    LegsWorkout(user: FirebaseAuth.instance.currentUser!),
+                    LegsWorkoutPage(user: FirebaseAuth.instance.currentUser!),
               ),
             );
           },
@@ -639,7 +639,7 @@ class AbsWorkoutButton extends StatelessWidget {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (_) =>
-                    AbsWorkout(user: FirebaseAuth.instance.currentUser!),
+                    AbsWorkoutPage(user: FirebaseAuth.instance.currentUser!),
               ),
             );
           },

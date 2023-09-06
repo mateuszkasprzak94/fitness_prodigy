@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LegsWorkout extends StatelessWidget {
-  const LegsWorkout({
+class LegsWorkoutPage extends StatelessWidget {
+  const LegsWorkoutPage({
     Key? key,
     required this.user,
   }) : super(key: key);

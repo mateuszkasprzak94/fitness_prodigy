@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ChestWorkout extends StatelessWidget {
-  const ChestWorkout({
+class ChestWorkoutPage extends StatelessWidget {
+  const ChestWorkoutPage({
     Key? key,
     required this.user,
   }) : super(key: key);
