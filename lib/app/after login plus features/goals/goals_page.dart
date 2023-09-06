@@ -211,8 +211,16 @@ class FloatingButton extends StatelessWidget {
         shape: const StadiumBorder(),
         onPressed: () {
           if (controller.text.isNotEmpty) {
-            // context.read<GoalsCubit>().add();
-            FirebaseFirestore.instance.collection('goals').add(
+            final userID = FirebaseAuth.instance.currentUser?.uid;
+            if (userID == null) {
+              throw Exception('User is not logged in');
+            }
+            // context.read<GoalsCubit>().add(controller);
+            FirebaseFirestore.instance
+                .collection('users')
+                .doc(userID)
+                .collection('goals')
+                .add(
               {
                 'title': controller.text,
                 'timestamp': FieldValue.serverTimestamp(),

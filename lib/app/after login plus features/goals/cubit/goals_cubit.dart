@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 part 'goals_state.dart';
@@ -19,6 +20,10 @@ class GoalsCubit extends Cubit<GoalsState> {
   StreamSubscription? _streamSubscription;
 
   Future<void> start() async {
+    final userID = FirebaseAuth.instance.currentUser?.uid;
+    if (userID == null) {
+      throw Exception('User is not logged in');
+    }
     emit(
       const GoalsState(
         documents: [],
@@ -28,6 +33,8 @@ class GoalsCubit extends Cubit<GoalsState> {
     );
 
     _streamSubscription = FirebaseFirestore.instance
+        .collection('users')
+        .doc(userID)
         .collection('goals')
         .orderBy('timestamp')
         .snapshots()
@@ -61,14 +68,28 @@ class GoalsCubit extends Cubit<GoalsState> {
   // }
 
   Future<void> delete(String documentId) async {
+    final userID = FirebaseAuth.instance.currentUser?.uid;
+    if (userID == null) {
+      throw Exception('User is not logged in');
+    }
     await FirebaseFirestore.instance
+        .collection('users')
+        .doc(userID)
         .collection('goals')
         .doc(documentId)
         .delete();
   }
 
   Future<void> undo(String deletedGoal, Timestamp originalTimestamp) async {
-    await FirebaseFirestore.instance.collection('goals').add({
+    final userID = FirebaseAuth.instance.currentUser?.uid;
+    if (userID == null) {
+      throw Exception('User is not logged in');
+    }
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(userID)
+        .collection('goals')
+        .add({
       'title': deletedGoal,
       'timestamp': originalTimestamp,
     });
