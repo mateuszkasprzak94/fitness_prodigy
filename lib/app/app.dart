@@ -1,7 +1,7 @@
-import 'package:fitness_prodigy/app/after%20login%20plus%20features/features_page.dart';
-import 'package:fitness_prodigy/app/before%20login/main_login_page.dart';
 import 'package:fitness_prodigy/app/cubit/auth_cubit.dart';
+import 'package:fitness_prodigy/app/features/features_page.dart';
 import 'package:fitness_prodigy/app/home/home_page.dart';
+import 'package:fitness_prodigy/app/login%20page/main_login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -41,7 +41,7 @@ class Auth extends StatelessWidget {
         builder: (context, state) {
           final user = state.user;
           if (user == null) {
-            return MainLoginPage();
+            return LoginPage();
           }
           return Features(user: user);
         },
