@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fitness_prodigy/app/features/supplements/supplements_type/text_for_supplements.dart';
+import 'package:fitness_prodigy/app/features/supplements/supplements_type/text_for_supplements/text_for_supplements.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
