@@ -1,7 +1,7 @@
 import 'package:fitness_prodigy/app/cubit/auth_cubit.dart';
 import 'package:fitness_prodigy/app/features/features_page.dart';
 import 'package:fitness_prodigy/app/home/home_page.dart';
-import 'package:fitness_prodigy/app/login%20page/main_login_page.dart';
+import 'package:fitness_prodigy/app/login%20page/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

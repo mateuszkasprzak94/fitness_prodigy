@@ -58,27 +58,27 @@ class _FeaturesState extends State<Features> {
               fit: BoxFit.cover,
             ),
             SizedBox(height: 15),
-            ExerciseExamples(),
+            ExerciseExamplesButton(),
             SizedBox(height: 15),
-            WorkoutPlans(),
+            WorkoutPlansButton(),
             SizedBox(height: 15),
-            Diet(),
+            DietButton(),
             SizedBox(height: 15),
-            Supplements(),
+            SupplementsButton(),
             SizedBox(height: 15),
-            Goals(),
+            GoalsButton(),
             SizedBox(height: 15),
-            MotivationQuotes(),
+            MotivationQuotesButton(),
             SizedBox(height: 15),
-            WaterGlassCounter(),
+            WaterGlassCounterButton(),
             SizedBox(height: 15),
-            FitStopwatch(),
+            FitStopwatchButton(),
             SizedBox(height: 15),
-            ProgressTracking(),
+            ProgressTrackingButton(),
             SizedBox(height: 15),
-            SocialSharing(),
+            SocialSharingButton(),
             SizedBox(height: 15),
-            UserProfile(),
+            UserProfileButton(),
             SizedBox(height: 15),
           ],
         ),
@@ -139,8 +139,8 @@ class _FeaturesState extends State<Features> {
   }
 }
 
-class ExerciseExamples extends StatelessWidget {
-  const ExerciseExamples({
+class ExerciseExamplesButton extends StatelessWidget {
+  const ExerciseExamplesButton({
     super.key,
   });
 
@@ -191,8 +191,8 @@ class ExerciseExamples extends StatelessWidget {
   }
 }
 
-class WorkoutPlans extends StatelessWidget {
-  const WorkoutPlans({
+class WorkoutPlansButton extends StatelessWidget {
+  const WorkoutPlansButton({
     super.key,
   });
 
@@ -243,8 +243,8 @@ class WorkoutPlans extends StatelessWidget {
   }
 }
 
-class Diet extends StatelessWidget {
-  const Diet({
+class DietButton extends StatelessWidget {
+  const DietButton({
     super.key,
   });
 
@@ -295,8 +295,8 @@ class Diet extends StatelessWidget {
   }
 }
 
-class Supplements extends StatelessWidget {
-  const Supplements({
+class SupplementsButton extends StatelessWidget {
+  const SupplementsButton({
     super.key,
   });
 
@@ -347,8 +347,8 @@ class Supplements extends StatelessWidget {
   }
 }
 
-class Goals extends StatelessWidget {
-  const Goals({
+class GoalsButton extends StatelessWidget {
+  const GoalsButton({
     super.key,
   });
 
@@ -401,8 +401,8 @@ class Goals extends StatelessWidget {
   }
 }
 
-class MotivationQuotes extends StatelessWidget {
-  const MotivationQuotes({
+class MotivationQuotesButton extends StatelessWidget {
+  const MotivationQuotesButton({
     super.key,
   });
 
@@ -455,8 +455,8 @@ class MotivationQuotes extends StatelessWidget {
   }
 }
 
-class WaterGlassCounter extends StatelessWidget {
-  const WaterGlassCounter({
+class WaterGlassCounterButton extends StatelessWidget {
+  const WaterGlassCounterButton({
     super.key,
   });
 
@@ -509,8 +509,8 @@ class WaterGlassCounter extends StatelessWidget {
   }
 }
 
-class FitStopwatch extends StatelessWidget {
-  const FitStopwatch({
+class FitStopwatchButton extends StatelessWidget {
+  const FitStopwatchButton({
     super.key,
   });
 
@@ -561,8 +561,8 @@ class FitStopwatch extends StatelessWidget {
   }
 }
 
-class ProgressTracking extends StatelessWidget {
-  const ProgressTracking({
+class ProgressTrackingButton extends StatelessWidget {
+  const ProgressTrackingButton({
     super.key,
   });
 
@@ -613,8 +613,8 @@ class ProgressTracking extends StatelessWidget {
   }
 }
 
-class SocialSharing extends StatelessWidget {
-  const SocialSharing({
+class SocialSharingButton extends StatelessWidget {
+  const SocialSharingButton({
     super.key,
   });
 
@@ -665,8 +665,8 @@ class SocialSharing extends StatelessWidget {
   }
 }
 
-class UserProfile extends StatelessWidget {
-  const UserProfile({
+class UserProfileButton extends StatelessWidget {
+  const UserProfileButton({
     super.key,
   });
 
