@@ -74,7 +74,7 @@ class _GoalsPageState extends State<GoalsPage> {
                   for (final document in documents) ...[
                     Dismissible(
                       key: ValueKey(document.id),
-                      direction: DismissDirection.startToEnd,
+                      direction: DismissDirection.endToStart,
                       onDismissed: (_) {
                         final deletedGoal = document['title'] as String;
                         final documentId = document.id;
@@ -101,7 +101,7 @@ class _GoalsPageState extends State<GoalsPage> {
                         color: Colors.red,
                         alignment: Alignment.centerRight,
                         padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: const Icon(Icons.delete, color: Colors.white),
+                        child: const Icon(Icons.delete, color: Colors.black),
                       ),
                       child: GoalTextWidget(
                         document['title'],
