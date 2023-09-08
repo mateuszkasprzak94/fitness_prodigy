@@ -212,20 +212,21 @@ class FloatingButton extends StatelessWidget {
         onPressed: () {
           if (controller.text.isNotEmpty) {
             final userID = FirebaseAuth.instance.currentUser?.uid;
+            final goal = controller;
             if (userID == null) {
               throw Exception('User is not logged in');
             }
-            // context.read<GoalsCubit>().add(controller);
-            FirebaseFirestore.instance
-                .collection('users')
-                .doc(userID)
-                .collection('goals')
-                .add(
-              {
-                'title': controller.text,
-                'timestamp': FieldValue.serverTimestamp(),
-              },
-            );
+            context.read<GoalsCubit>().add(goal.text);
+            // FirebaseFirestore.instance
+            //     .collection('users')
+            //     .doc(userID)
+            //     .collection('goals')
+            //     .add(
+            //   {
+            //     'title': controller.text,
+            //     'timestamp': FieldValue.serverTimestamp(),
+            //   },
+            // );
             controller.clear();
           }
         },

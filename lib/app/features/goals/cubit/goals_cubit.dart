@@ -58,14 +58,21 @@ class GoalsCubit extends Cubit<GoalsState> {
       });
   }
 
-  // Future<void> add() async {
-  //   await  FirebaseFirestore.instance.collection('goals').add(
-  //     {
-  //       'title': controller.text,
-  //       'timestamp': FieldValue.serverTimestamp(),
-  //     },
-  //   );
-  // }
+  Future<void> add(String goal) async {
+    await FirebaseFirestore.instance.collection('goals').add(
+      {
+        'title': goal,
+        'timestamp': FieldValue.serverTimestamp(),
+      },
+    );
+    emit(
+      const GoalsState(
+        documents: [],
+        isLoading: false,
+        errorMessage: '',
+      ),
+    );
+  }
 
   Future<void> delete(String documentId) async {
     final userID = FirebaseAuth.instance.currentUser?.uid;
