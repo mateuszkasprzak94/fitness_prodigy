@@ -47,7 +47,6 @@ class _GoalsPageState extends State<GoalsPage> {
         systemOverlayStyle: SystemUiOverlayStyle.light,
         automaticallyImplyLeading: false,
       ),
-      floatingActionButton: const FloatingButton(),
       body: BlocProvider(
         create: (context) => GoalsCubit()..start(),
         child: BlocBuilder<GoalsCubit, GoalsState>(
@@ -67,54 +66,57 @@ class _GoalsPageState extends State<GoalsPage> {
 
             final documents = state.documents;
 
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ListView(
-                children: [
-                  for (final document in documents) ...[
-                    Dismissible(
-                      key: ValueKey(document.id),
-                      direction: DismissDirection.endToStart,
-                      onDismissed: (_) {
-                        final deletedGoal = document['title'] as String;
-                        final documentId = document.id;
-                        final originalTimestamp =
-                            document['timestamp'] as Timestamp;
+            return Scaffold(
+              floatingActionButton: const FloatingButton(),
+              body: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: ListView(
+                  children: [
+                    for (final document in documents) ...[
+                      Dismissible(
+                        key: ValueKey(document.id),
+                        direction: DismissDirection.endToStart,
+                        onDismissed: (_) {
+                          final deletedGoal = document['title'] as String;
+                          final documentId = document.id;
+                          final originalTimestamp =
+                              document['timestamp'] as Timestamp;
 
-                        context.read<GoalsCubit>().delete(documentId);
+                          context.read<GoalsCubit>().delete(documentId);
 
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text('Goal "$deletedGoal" deleted'),
-                            action: SnackBarAction(
-                              label: 'Undo',
-                              onPressed: () {
-                                context
-                                    .read<GoalsCubit>()
-                                    .undo(deletedGoal, originalTimestamp);
-                              },
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Goal "$deletedGoal" deleted'),
+                              action: SnackBarAction(
+                                label: 'Undo',
+                                onPressed: () {
+                                  context
+                                      .read<GoalsCubit>()
+                                      .undo(deletedGoal, originalTimestamp);
+                                },
+                              ),
                             ),
-                          ),
-                        );
-                      },
-                      background: Container(
-                        color: Colors.red,
-                        alignment: Alignment.centerRight,
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: const Icon(Icons.delete, color: Colors.black),
+                          );
+                        },
+                        background: Container(
+                          color: Colors.red,
+                          alignment: Alignment.centerRight,
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          child: const Icon(Icons.delete, color: Colors.black),
+                        ),
+                        child: GoalTextWidget(
+                          document['title'],
+                        ),
                       ),
-                      child: GoalTextWidget(
-                        document['title'],
+                    ],
+                    TextField(
+                      controller: controller,
+                      decoration: const InputDecoration(
+                        hintText: 'Enter a new goal',
                       ),
-                    ),
+                    )
                   ],
-                  TextField(
-                    controller: controller,
-                    decoration: const InputDecoration(
-                      hintText: 'Enter a new goal',
-                    ),
-                  )
-                ],
+                ),
               ),
             );
           },
@@ -211,12 +213,11 @@ class FloatingButton extends StatelessWidget {
         shape: const StadiumBorder(),
         onPressed: () {
           if (controller.text.isNotEmpty) {
-            final userID = FirebaseAuth.instance.currentUser?.uid;
-            final goal = controller;
-            if (userID == null) {
-              throw Exception('User is not logged in');
-            }
-            context.read<GoalsCubit>().add(goal.text);
+            // final userID = FirebaseAuth.instance.currentUser?.uid;
+            // if (userID == null) {
+            //   throw Exception('User is not logged in');
+            // }
+            context.read<GoalsCubit>().add(controller.text);
             // FirebaseFirestore.instance
             //     .collection('users')
             //     .doc(userID)
