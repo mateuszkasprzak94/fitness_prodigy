@@ -32,7 +32,7 @@ class EventPlannerPage extends StatelessWidget {
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: true,
       ),
       body: const _EventPlannerPageBody(),
       floatingActionButton: Container(
