@@ -126,19 +126,39 @@ class _AddPageBody extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 20),
-        ElevatedButton(
-          onPressed: () async {
-            final selectedDate = await showDatePicker(
-              context: context,
-              initialDate: DateTime.now(),
-              firstDate: DateTime.now(),
-              lastDate: DateTime.now().add(
-                const Duration(days: 365 * 10),
-              ),
-            );
-            onDateChanged(selectedDate);
-          },
-          child: Text(selectedDateFormatted ?? 'Choose release date'),
+        Container(
+          decoration: const ShapeDecoration(
+            shape: StadiumBorder(),
+            gradient: LinearGradient(colors: [
+              Color.fromARGB(164, 0, 0, 0),
+              Colors.white,
+            ], begin: Alignment.centerRight, end: Alignment.centerLeft),
+          ),
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              //deactivate color and shadow
+              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              backgroundColor: Colors.transparent,
+              shadowColor: Colors.transparent,
+              elevation: 0,
+            ),
+            onPressed: () async {
+              final selectedDate = await showDatePicker(
+                context: context,
+                initialDate: DateTime.now(),
+                firstDate: DateTime.now(),
+                lastDate: DateTime.now().add(
+                  const Duration(days: 365 * 10),
+                ),
+              );
+              onDateChanged(selectedDate);
+            },
+            child: Text(
+              selectedDateFormatted ?? 'Choose release date',
+              style: const TextStyle(color: Colors.black),
+            ),
+          ),
         ),
       ],
     );
