@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fitness_prodigy/app/cubit/auth_cubit.dart';
 import 'package:fitness_prodigy/app/features/exercies_examples/exercies_examples_page.dart';
 import 'package:fitness_prodigy/app/features/features_page.dart';
 import 'package:fitness_prodigy/app/features/workout_plans/workout_plans_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class UserProfilePage extends StatefulWidget {
@@ -82,8 +84,8 @@ class _UserProfilePageState extends State<UserProfilePage> {
                     elevation: 0,
                   ),
                   onPressed: () {
-                    // context.read<AuthCubit>().signOut();
-                    FirebaseAuth.instance.signOut();
+                    context.read<AuthCubit>().signOut();
+                    // FirebaseAuth.instance.signOut();
                     Navigator.pushNamedAndRemoveUntil(
                       context,
                       '/', // Replace with the route name for your login page
