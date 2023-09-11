@@ -142,11 +142,11 @@ class _UserProfilePageState extends State<UserProfilePage> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.fitness_center),
+            icon: Icon(Icons.accessibility),
             label: 'Exercises',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
+            icon: Icon(Icons.fitness_center),
             label: 'Workouts',
           ),
           BottomNavigationBarItem(

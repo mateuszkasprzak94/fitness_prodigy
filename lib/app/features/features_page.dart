@@ -3,7 +3,7 @@ import 'package:fitness_prodigy/app/features/exercies_examples/exercies_examples
 import 'package:fitness_prodigy/app/features/goals/goals_page.dart';
 import 'package:fitness_prodigy/app/features/motivation_quotes/motivations_quotes_page.dart';
 import 'package:fitness_prodigy/app/features/progress_tracking/progress_tracking_page.dart';
-import 'package:fitness_prodigy/app/features/social_sharing/social_sharing_page.dart';
+import 'package:fitness_prodigy/app/features/event_planner/event_planner_page.dart';
 import 'package:fitness_prodigy/app/features/stopwatch/stopwatch_page.dart';
 import 'package:fitness_prodigy/app/features/supplements/supplements_page.dart';
 import 'package:fitness_prodigy/app/features/user_profile/user_profile_page.dart';
@@ -76,7 +76,7 @@ class _FeaturesState extends State<Features> {
             SizedBox(height: 15),
             ProgressTrackingButton(),
             SizedBox(height: 15),
-            SocialSharingButton(),
+            EventPlannerButton(),
             SizedBox(height: 15),
             UserProfileButton(),
             SizedBox(height: 15),
@@ -122,11 +122,11 @@ class _FeaturesState extends State<Features> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.fitness_center),
+            icon: Icon(Icons.accessibility),
             label: 'Exercises',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
+            icon: Icon(Icons.fitness_center),
             label: 'Workouts',
           ),
           BottomNavigationBarItem(
@@ -613,8 +613,8 @@ class ProgressTrackingButton extends StatelessWidget {
   }
 }
 
-class SocialSharingButton extends StatelessWidget {
-  const SocialSharingButton({
+class EventPlannerButton extends StatelessWidget {
+  const EventPlannerButton({
     super.key,
   });
 
@@ -636,11 +636,11 @@ class SocialSharingButton extends StatelessWidget {
         ),
         child: ElevatedButton.icon(
           icon: const Icon(
-            Icons.person,
+            Icons.calendar_today,
             color: Colors.black,
           ),
           label: const Text(
-            'SOCIAL SHARING',
+            'EVENT PLANNER',
             style: TextStyle(color: Colors.black),
           ),
           style: ElevatedButton.styleFrom(
@@ -655,7 +655,7 @@ class SocialSharingButton extends StatelessWidget {
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (_) =>
-                    SocialSharingPage(user: FirebaseAuth.instance.currentUser!),
+                    EventPlannerPage(user: FirebaseAuth.instance.currentUser!),
               ),
             );
           },

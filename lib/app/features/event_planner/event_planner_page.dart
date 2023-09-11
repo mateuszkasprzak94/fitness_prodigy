@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SocialSharingPage extends StatefulWidget {
-  const SocialSharingPage({
+class EventPlannerPage extends StatefulWidget {
+  const EventPlannerPage({
     Key? key,
     required this.user,
   }) : super(key: key);
@@ -16,10 +16,10 @@ class SocialSharingPage extends StatefulWidget {
   final User user;
 
   @override
-  State<SocialSharingPage> createState() => _SocialSharingPageState();
+  State<EventPlannerPage> createState() => _EventPlannerPageState();
 }
 
-class _SocialSharingPageState extends State<SocialSharingPage> {
+class _EventPlannerPageState extends State<EventPlannerPage> {
   var currentIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -93,11 +93,11 @@ class _SocialSharingPageState extends State<SocialSharingPage> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.fitness_center),
+            icon: Icon(Icons.accessibility),
             label: 'Exercises',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
+            icon: Icon(Icons.fitness_center),
             label: 'Workouts',
           ),
           BottomNavigationBarItem(
