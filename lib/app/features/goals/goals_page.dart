@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/features/goals/cubit/goals_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,10 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 class GoalsPage extends StatefulWidget {
   const GoalsPage({
     Key? key,
-    required this.user,
   }) : super(key: key);
-
-  final User user;
 
   @override
   State<GoalsPage> createState() => _GoalsPageState();

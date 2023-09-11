@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/features/supplements/supplements_type/aakg_page.dart';
 import 'package:fitness_prodigy/app/features/supplements/supplements_type/bcaa_page.dart';
 import 'package:fitness_prodigy/app/features/supplements/supplements_type/beta_alanine_page.dart';
@@ -14,10 +13,7 @@ import 'package:google_fonts/google_fonts.dart';
 class SupplementsPage extends StatefulWidget {
   const SupplementsPage({
     Key? key,
-    required this.user,
   }) : super(key: key);
-
-  final User user;
 
   @override
   State<SupplementsPage> createState() => _SupplementsPageState();
@@ -120,8 +116,7 @@ class CollagenButton extends StatelessWidget {
       onPressed: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) =>
-                CollagenPage(user: FirebaseAuth.instance.currentUser!),
+            builder: (_) => const CollagenPage(),
           ),
         );
       },
@@ -141,8 +136,7 @@ class GlutamineButton extends StatelessWidget {
       onPressed: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) =>
-                GlutaminePage(user: FirebaseAuth.instance.currentUser!),
+            builder: (_) => const GlutaminePage(),
           ),
         );
       },
@@ -162,8 +156,7 @@ class BetaAlanineButton extends StatelessWidget {
       onPressed: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) =>
-                BetaAlaninePage(user: FirebaseAuth.instance.currentUser!),
+            builder: (_) => const BetaAlaninePage(),
           ),
         );
       },
@@ -183,8 +176,7 @@ class CitrullineButton extends StatelessWidget {
       onPressed: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) =>
-                CitrullinePage(user: FirebaseAuth.instance.currentUser!),
+            builder: (_) => const CitrullinePage(),
           ),
         );
       },
@@ -204,7 +196,7 @@ class AAKGButton extends StatelessWidget {
       onPressed: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) => AAKGPage(user: FirebaseAuth.instance.currentUser!),
+            builder: (_) => const AAKGPage(),
           ),
         );
       },
@@ -224,7 +216,7 @@ class BCAAButton extends StatelessWidget {
       onPressed: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) => BCAAPage(user: FirebaseAuth.instance.currentUser!),
+            builder: (_) => const BCAAPage(),
           ),
         );
       },
@@ -244,8 +236,7 @@ class ProteinPowderButton extends StatelessWidget {
       onPressed: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) =>
-                ProteinPowder(user: FirebaseAuth.instance.currentUser!),
+            builder: (_) => const ProteinPowder(),
           ),
         );
       },
@@ -265,7 +256,7 @@ class CreatineButton extends StatelessWidget {
       onPressed: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) => Creatine(user: FirebaseAuth.instance.currentUser!),
+            builder: (_) => const Creatine(),
           ),
         );
       },

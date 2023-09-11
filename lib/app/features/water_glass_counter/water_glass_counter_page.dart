@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,10 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class WaterGlassCounterPage extends StatefulWidget {
   const WaterGlassCounterPage({
     Key? key,
-    required this.user,
   }) : super(key: key);
-
-  final User user;
 
   @override
   State<WaterGlassCounterPage> createState() => _WaterGlassCounterPageState();

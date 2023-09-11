@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,10 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 class MotivationQuotesPage extends StatefulWidget {
   const MotivationQuotesPage({
     Key? key,
-    required this.user,
   }) : super(key: key);
-
-  final User user;
 
   @override
   State<MotivationQuotesPage> createState() => _MotivationQuotesPageState();

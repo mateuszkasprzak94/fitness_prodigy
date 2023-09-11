@@ -284,8 +284,7 @@ class DietButton extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) =>
-                    DietPage(user: FirebaseAuth.instance.currentUser!),
+                builder: (_) => const DietPage(),
               ),
             );
           },
@@ -336,8 +335,7 @@ class SupplementsButton extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) =>
-                    SupplementsPage(user: FirebaseAuth.instance.currentUser!),
+                builder: (_) => const SupplementsPage(),
               ),
             );
           },
@@ -390,8 +388,7 @@ class GoalsButton extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) =>
-                    GoalsPage(user: FirebaseAuth.instance.currentUser!),
+                builder: (_) => const GoalsPage(),
               ),
             );
           },
@@ -444,8 +441,7 @@ class MotivationQuotesButton extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) => MotivationQuotesPage(
-                    user: FirebaseAuth.instance.currentUser!),
+                builder: (_) => const MotivationQuotesPage(),
               ),
             );
           },
@@ -498,8 +494,7 @@ class WaterGlassCounterButton extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) => WaterGlassCounterPage(
-                    user: FirebaseAuth.instance.currentUser!),
+                builder: (_) => const WaterGlassCounterPage(),
               ),
             );
           },
@@ -550,8 +545,7 @@ class FitStopwatchButton extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) =>
-                    FitStopwatchPage(user: FirebaseAuth.instance.currentUser!),
+                builder: (_) => const FitStopwatchPage(),
               ),
             );
           },
@@ -602,8 +596,7 @@ class ProgressTrackingButton extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) => ProgressTrackingPage(
-                    user: FirebaseAuth.instance.currentUser!),
+                builder: (_) => const ProgressTrackingPage(),
               ),
             );
           },

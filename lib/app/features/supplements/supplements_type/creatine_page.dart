@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,10 +17,7 @@ String end =
 class Creatine extends StatelessWidget {
   const Creatine({
     Key? key,
-    required this.user,
   }) : super(key: key);
-
-  final User user;
 
   @override
   Widget build(BuildContext context) {
