@@ -3,7 +3,7 @@ import 'package:fitness_prodigy/app/features/exercies_examples/exercies_examples
 import 'package:fitness_prodigy/app/features/goals/goals_page.dart';
 import 'package:fitness_prodigy/app/features/motivation_quotes/motivations_quotes_page.dart';
 import 'package:fitness_prodigy/app/features/progress_tracking/progress_tracking_page.dart';
-import 'package:fitness_prodigy/app/features/event_planner/event_planner_page.dart';
+import 'package:fitness_prodigy/app/features/event_planner/event_planner_page/page/event_planner_page.dart';
 import 'package:fitness_prodigy/app/features/stopwatch/stopwatch_page.dart';
 import 'package:fitness_prodigy/app/features/supplements/supplements_page.dart';
 import 'package:fitness_prodigy/app/features/user_profile/user_profile_page.dart';
@@ -654,8 +654,7 @@ class EventPlannerButton extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) =>
-                    EventPlannerPage(user: FirebaseAuth.instance.currentUser!),
+                builder: (_) => const EventPlannerPage(),
               ),
             );
           },
