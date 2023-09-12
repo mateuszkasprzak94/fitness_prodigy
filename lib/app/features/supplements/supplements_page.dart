@@ -1,4 +1,4 @@
-import 'package:fitness_prodigy/app/features/supplements/model/supplements_model.dart';
+import 'package:fitness_prodigy/app/models/supplements_model.dart';
 import 'package:fitness_prodigy/app/features/supplements/supplements_type/aakg_page.dart';
 import 'package:fitness_prodigy/app/features/supplements/supplements_type/bcaa_page.dart';
 import 'package:fitness_prodigy/app/features/supplements/supplements_type/beta_alanine_page.dart';
