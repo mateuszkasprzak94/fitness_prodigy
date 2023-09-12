@@ -38,6 +38,9 @@ class _AddPageState extends State<EventPlannerAddPage> {
         },
         child: BlocBuilder<AddCubit, AddState>(
           builder: (context, state) {
+            final result =
+                _imageURL == null || _title == null || _releaseDate == null;
+            final colorchange = result;
             return Scaffold(
               appBar: AppBar(
                 title: const Text('Add new upcoming event'),
@@ -54,7 +57,9 @@ class _AddPageState extends State<EventPlannerAddPage> {
                                   _releaseDate!,
                                 );
                           },
-                    icon: const Icon(Icons.check),
+                    icon: Icon(Icons.check,
+                        color:
+                            colorchange == true ? Colors.grey : Colors.green),
                   ),
                 ],
               ),
