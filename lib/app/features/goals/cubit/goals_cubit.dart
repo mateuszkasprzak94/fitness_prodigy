@@ -3,18 +3,12 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fitness_prodigy/app/models/goal_model.dart';
 
 part 'goals_state.dart';
 
 class GoalsCubit extends Cubit<GoalsState> {
-  GoalsCubit()
-      : super(
-          const GoalsState(
-            documents: [],
-            errorMessage: '',
-            isLoading: false,
-          ),
-        );
+  GoalsCubit() : super(const GoalsState());
 
   StreamSubscription? _streamSubscription;
 
@@ -25,7 +19,7 @@ class GoalsCubit extends Cubit<GoalsState> {
     }
     emit(
       const GoalsState(
-        documents: [],
+        items: [],
         errorMessage: '',
         isLoading: true,
       ),
@@ -37,19 +31,20 @@ class GoalsCubit extends Cubit<GoalsState> {
         .collection('goals')
         .orderBy('timestamp')
         .snapshots()
-        .listen((data) {
-      emit(
-        GoalsState(
-          documents: data.docs,
-          isLoading: false,
-          errorMessage: '',
-        ),
-      );
+        .listen((items) {
+      final goalModels = items.docs.map((doc) {
+        return GoalModel(
+          id: doc.id,
+          title: doc['title'],
+          timestamp: doc['timestamp'],
+        );
+      }).toList();
+      emit(GoalsState(items: goalModels));
     })
       ..onError((error) {
         emit(
           GoalsState(
-            documents: const [],
+            items: const [],
             isLoading: false,
             errorMessage: error.toString(),
           ),
@@ -83,7 +78,7 @@ class GoalsCubit extends Cubit<GoalsState> {
   //   );
   // }
 
-  Future<void> delete(String documentId) async {
+  Future<void> delete(String documentID) async {
     final userID = FirebaseAuth.instance.currentUser?.uid;
     if (userID == null) {
       throw Exception('User is not logged in');
@@ -92,7 +87,7 @@ class GoalsCubit extends Cubit<GoalsState> {
         .collection('users')
         .doc(userID)
         .collection('goals')
-        .doc(documentId)
+        .doc(documentID)
         .delete();
   }
 

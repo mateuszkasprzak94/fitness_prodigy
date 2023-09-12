@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fitness_prodigy/app/features/goals/cubit/goals_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -43,6 +42,7 @@ class _GoalsPageState extends State<GoalsPage> {
         create: (context) => GoalsCubit()..start(),
         child: BlocBuilder<GoalsCubit, GoalsState>(
           builder: (context, state) {
+            final goalModels = state.items;
             if (state.errorMessage.isNotEmpty) {
               return Center(
                 child: Text(
@@ -56,25 +56,22 @@ class _GoalsPageState extends State<GoalsPage> {
               );
             }
 
-            final documents = state.documents;
-
             return Scaffold(
               floatingActionButton: const FloatingButton(),
               body: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: ListView(
                   children: [
-                    for (final document in documents) ...[
+                    for (final goalModel in goalModels) ...[
                       Dismissible(
-                        key: ValueKey(document.id),
+                        key: ValueKey(goalModel.id),
                         direction: DismissDirection.endToStart,
                         onDismissed: (_) {
-                          final deletedGoal = document['title'] as String;
-                          final documentId = document.id;
-                          final originalTimestamp =
-                              document['timestamp'] as Timestamp;
+                          final deletedGoal = goalModel.title;
+                          final documentID = goalModel.id;
+                          final originalTimestamp = goalModel.timestamp;
 
-                          context.read<GoalsCubit>().delete(documentId);
+                          context.read<GoalsCubit>().delete(documentID);
 
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
@@ -97,7 +94,7 @@ class _GoalsPageState extends State<GoalsPage> {
                           child: const Icon(Icons.delete, color: Colors.black),
                         ),
                         child: GoalTextWidget(
-                          document['title'],
+                          goalModel.title,
                         ),
                       ),
                     ],
