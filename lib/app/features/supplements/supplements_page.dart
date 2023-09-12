@@ -46,21 +46,93 @@ class _SupplementsPageState extends State<SupplementsPage> {
         child: ListView(
           children: [
             const SizedBox(height: 10),
-            const CreatineButton(),
+            customSupplementsButton(
+              text: 'Creatine Monohydrate',
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => const Creatine(),
+                  ),
+                );
+              },
+            ),
             const SizedBox(height: 10),
-            const ProteinPowderButton(),
+            customSupplementsButton(
+              text: 'Protein Powder',
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => const ProteinPowder(),
+                  ),
+                );
+              },
+            ),
             const SizedBox(height: 10),
-            const BCAAButton(),
+            customSupplementsButton(
+              text: 'BCAA',
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => const BCAAPage(),
+                  ),
+                );
+              },
+            ),
             const SizedBox(height: 10),
-            const AAKGButton(),
+            customSupplementsButton(
+              text: 'AAKG',
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => const AAKGPage(),
+                  ),
+                );
+              },
+            ),
             const SizedBox(height: 10),
-            const CitrullineButton(),
+            customSupplementsButton(
+              text: 'Cytruline',
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => const CitrullinePage(),
+                  ),
+                );
+              },
+            ),
             const SizedBox(height: 10),
-            const BetaAlanineButton(),
+            customSupplementsButton(
+              text: 'Beta-Alanine',
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => const BetaAlaninePage(),
+                  ),
+                );
+              },
+            ),
             const SizedBox(height: 10),
-            const GlutamineButton(),
+            customSupplementsButton(
+              text: 'Glutamine',
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => const GlutaminePage(),
+                  ),
+                );
+              },
+            ),
             const SizedBox(height: 10),
-            const CollagenButton(),
+            customSupplementsButton(
+              text: 'Collagen',
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => const CollagenPage(),
+                  ),
+                );
+              },
+            ),
             const SizedBox(height: 10),
             //Expanded button for Vitamins
             ExpansionTile(
@@ -82,374 +154,6 @@ class _SupplementsPageState extends State<SupplementsPage> {
               ],
             ),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class CollagenButton extends StatelessWidget {
-  const CollagenButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
-        ),
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const CollagenPage(),
-              ),
-            );
-          },
-          child: const Text(
-            'Collagen',
-            style: TextStyle(color: Colors.black),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class GlutamineButton extends StatelessWidget {
-  const GlutamineButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
-        ),
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const GlutaminePage(),
-              ),
-            );
-          },
-          child: const Text(
-            'Glutamine',
-            style: TextStyle(color: Colors.black),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class BetaAlanineButton extends StatelessWidget {
-  const BetaAlanineButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
-        ),
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const BetaAlaninePage(),
-              ),
-            );
-          },
-          child: const Text(
-            'Beta-Alanine',
-            style: TextStyle(color: Colors.black),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class CitrullineButton extends StatelessWidget {
-  const CitrullineButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
-        ),
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const CitrullinePage(),
-              ),
-            );
-          },
-          child: const Text(
-            'Cytruline',
-            style: TextStyle(color: Colors.black),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class AAKGButton extends StatelessWidget {
-  const AAKGButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
-        ),
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const AAKGPage(),
-              ),
-            );
-          },
-          child: const Text(
-            'AAKG',
-            style: TextStyle(color: Colors.black),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class BCAAButton extends StatelessWidget {
-  const BCAAButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
-        ),
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const BCAAPage(),
-              ),
-            );
-          },
-          child: const Text(
-            'BCAA',
-            style: TextStyle(color: Colors.black),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class ProteinPowderButton extends StatelessWidget {
-  const ProteinPowderButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
-        ),
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const ProteinPowder(),
-              ),
-            );
-          },
-          child: const Text(
-            'Protein Powder',
-            style: TextStyle(color: Colors.black),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class CreatineButton extends StatelessWidget {
-  const CreatineButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
-        ),
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const Creatine(),
-              ),
-            );
-          },
-          child: const Text(
-            'Creatine monohydrate',
-            style: TextStyle(color: Colors.black),
-          ),
         ),
       ),
     );
