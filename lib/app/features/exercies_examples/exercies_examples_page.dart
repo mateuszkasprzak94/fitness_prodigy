@@ -10,6 +10,7 @@ import 'package:fitness_prodigy/app/features/exercies_examples/muscle_anatomy/tr
 import 'package:fitness_prodigy/app/features/features_page.dart';
 import 'package:fitness_prodigy/app/features/user_profile/user_profile_page.dart';
 import 'package:fitness_prodigy/app/features/workout_plans/workout_plans_page.dart';
+import 'package:fitness_prodigy/app/models/exercise_examples_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -54,22 +55,103 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
         child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: ListView(
-            children: const [
-              ChestButton(),
-              SizedBox(height: 10),
-              BackButton(),
-              SizedBox(height: 10),
-              ShouldersButton(),
-              SizedBox(height: 10),
-              BicepsButton(),
-              SizedBox(height: 10),
-              TricepsButton(),
-              SizedBox(height: 10),
-              ForearmsButton(),
-              SizedBox(height: 10),
-              LegsButton(),
-              SizedBox(height: 10),
-              AbsButton(),
+            children: [
+              customExerciseButton(
+                  title: 'Chest',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) =>
+                            ChestPage(user: FirebaseAuth.instance.currentUser!),
+                      ),
+                    );
+                  },
+                  image: 'exercise examples page images/chest.png'),
+              const SizedBox(height: 10),
+              customExerciseButton(
+                  title: 'Back',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) =>
+                            BackPage(user: FirebaseAuth.instance.currentUser!),
+                      ),
+                    );
+                  },
+                  image: 'exercise examples page images/back.png'),
+              const SizedBox(height: 10),
+              customExerciseButton(
+                  title: 'Shoulders',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => ShouldersPage(
+                            user: FirebaseAuth.instance.currentUser!),
+                      ),
+                    );
+                  },
+                  image: 'exercise examples page images/shoulders.png'),
+              const SizedBox(height: 10),
+              customExerciseButton(
+                  title: 'Biceps',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => BicepsPage(
+                            user: FirebaseAuth.instance.currentUser!),
+                      ),
+                    );
+                  },
+                  image: 'exercise examples page images/biceps.png'),
+              const SizedBox(height: 10),
+              customExerciseButton(
+                  title: 'Triceps',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => TricepsPage(
+                            user: FirebaseAuth.instance.currentUser!),
+                      ),
+                    );
+                  },
+                  image: 'exercise examples page images/triceps.png'),
+              const SizedBox(height: 10),
+              customExerciseButton(
+                  title: 'Forearms',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) => ForearmsPage(
+                            user: FirebaseAuth.instance.currentUser!),
+                      ),
+                    );
+                  },
+                  image: 'exercise examples page images/forearms.png'),
+              const SizedBox(height: 10),
+              customExerciseButton(
+                  title: 'Legs',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) =>
+                            LegsPage(user: FirebaseAuth.instance.currentUser!),
+                      ),
+                    );
+                  },
+                  image: 'exercise examples page images/legs.png'),
+              const SizedBox(height: 10),
+              customExerciseButton(
+                  title: 'Abs',
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (_) =>
+                            AbsPage(user: FirebaseAuth.instance.currentUser!),
+                      ),
+                    );
+                  },
+                  image: 'exercise examples page images/abs.png'),
+              const SizedBox(height: 10),
             ],
           ),
         ),
@@ -129,528 +211,6 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
             label: 'User Profile',
           ),
         ],
-      ),
-    );
-  }
-}
-
-class ChestButton extends StatelessWidget {
-  const ChestButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(164, 0, 0, 0),
-              Colors.white,
-            ],
-          ),
-        ),
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) =>
-                    ChestPage(user: FirebaseAuth.instance.currentUser!),
-              ),
-            );
-          },
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-
-            /// deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Image.asset(
-                'exercise examples page images/chest.png',
-                width: 100,
-                height: 100,
-              ),
-              const SizedBox(width: 10),
-              const Text(
-                'Chest',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class BackButton extends StatelessWidget {
-  const BackButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(164, 0, 0, 0),
-              Colors.white,
-            ],
-          ),
-        ),
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) =>
-                    BackPage(user: FirebaseAuth.instance.currentUser!),
-              ),
-            );
-          },
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-
-            /// deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Image.asset(
-                'exercise examples page images/back.png',
-                width: 100,
-                height: 100,
-              ),
-              const SizedBox(width: 10),
-              const Text(
-                'Back',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class ShouldersButton extends StatelessWidget {
-  const ShouldersButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(164, 0, 0, 0),
-              Colors.white,
-            ],
-          ),
-        ),
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) =>
-                    ShouldersPage(user: FirebaseAuth.instance.currentUser!),
-              ),
-            );
-          },
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-
-            /// deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Image.asset(
-                'exercise examples page images/shoulders.png',
-                width: 100,
-                height: 100,
-              ),
-              const SizedBox(width: 10),
-              const Text(
-                'Shoulders',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class BicepsButton extends StatelessWidget {
-  const BicepsButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(164, 0, 0, 0),
-              Colors.white,
-            ],
-          ),
-        ),
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) =>
-                    BicepsPage(user: FirebaseAuth.instance.currentUser!),
-              ),
-            );
-          },
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-
-            /// deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Image.asset(
-                'exercise examples page images/biceps.png',
-                width: 100,
-                height: 100,
-              ),
-              const SizedBox(width: 10),
-              const Text(
-                'Biceps',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class TricepsButton extends StatelessWidget {
-  const TricepsButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(164, 0, 0, 0),
-              Colors.white,
-            ],
-          ),
-        ),
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) =>
-                    TricepsPage(user: FirebaseAuth.instance.currentUser!),
-              ),
-            );
-          },
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-
-            /// deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Image.asset(
-                'exercise examples page images/triceps.png',
-                width: 100,
-                height: 100,
-              ),
-              const SizedBox(width: 10),
-              const Text(
-                'Triceps',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class ForearmsButton extends StatelessWidget {
-  const ForearmsButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(164, 0, 0, 0),
-              Colors.white,
-            ],
-          ),
-        ),
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) =>
-                    ForearmsPage(user: FirebaseAuth.instance.currentUser!),
-              ),
-            );
-          },
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-
-            /// deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Image.asset(
-                'exercise examples page images/forearms.png',
-                width: 100,
-                height: 100,
-              ),
-              const SizedBox(width: 10),
-              const Text(
-                'Forearms',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class LegsButton extends StatelessWidget {
-  const LegsButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(164, 0, 0, 0),
-              Colors.white,
-            ],
-          ),
-        ),
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) =>
-                    LegsPage(user: FirebaseAuth.instance.currentUser!),
-              ),
-            );
-          },
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-
-            /// deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Image.asset(
-                'exercise examples page images/legs.png',
-                width: 100,
-                height: 100,
-              ),
-              const SizedBox(width: 10),
-              const Text(
-                'Legs',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class AbsButton extends StatelessWidget {
-  const AbsButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Container(
-      decoration: const ShapeDecoration(
-        shape: shape,
-        gradient: LinearGradient(
-          colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ],
-        ),
-      ),
-      child: ElevatedButton(
-        onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (_) => AbsPage(user: FirebaseAuth.instance.currentUser!),
-            ),
-          );
-        },
-        style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-
-          ///deactivate color and shadow
-          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          backgroundColor: Colors.transparent,
-          shadowColor: Colors.transparent,
-          elevation: 0,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Image.asset(
-              'exercise examples page images/abs.png',
-              width: 100,
-              height: 100,
-            ),
-            const SizedBox(width: 10),
-            const Text(
-              'Abs',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-              ),
-            )
-          ],
-        ),
       ),
     );
   }

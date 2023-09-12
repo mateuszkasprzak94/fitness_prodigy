@@ -22,13 +22,14 @@ Widget customSupplementsButton({
   required String text,
   required VoidCallback onPressed,
 }) {
+  const shape = StadiumBorder();
   return Material(
     color: Colors.transparent,
-    shape: const StadiumBorder(),
+    shape: shape,
     elevation: 8,
     child: Container(
       decoration: const ShapeDecoration(
-        shape: StadiumBorder(),
+        shape: shape,
         gradient: LinearGradient(colors: [
           Color.fromARGB(164, 0, 0, 0),
           Colors.white,
