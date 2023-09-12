@@ -1,3 +1,4 @@
+import 'package:fitness_prodigy/app/features/supplements/model/supplements_model.dart';
 import 'package:fitness_prodigy/app/features/supplements/supplements_type/aakg_page.dart';
 import 'package:fitness_prodigy/app/features/supplements/supplements_type/bcaa_page.dart';
 import 'package:fitness_prodigy/app/features/supplements/supplements_type/beta_alanine_page.dart';
@@ -44,58 +45,40 @@ class _SupplementsPageState extends State<SupplementsPage> {
       body: Center(
         child: ListView(
           children: [
+            const SizedBox(height: 10),
             const CreatineButton(),
-            const SizedBox(height: 5),
+            const SizedBox(height: 10),
             const ProteinPowderButton(),
-            const SizedBox(height: 5),
+            const SizedBox(height: 10),
             const BCAAButton(),
-            const SizedBox(height: 5),
+            const SizedBox(height: 10),
             const AAKGButton(),
-            const SizedBox(height: 5),
+            const SizedBox(height: 10),
             const CitrullineButton(),
-            const SizedBox(height: 5),
+            const SizedBox(height: 10),
             const BetaAlanineButton(),
-            const SizedBox(height: 5),
+            const SizedBox(height: 10),
             const GlutamineButton(),
-            const SizedBox(height: 5),
+            const SizedBox(height: 10),
             const CollagenButton(),
-            const SizedBox(height: 5),
+            const SizedBox(height: 10),
             //Expanded button for Vitamins
             ExpansionTile(
-              title: const Text('Vitamins'),
+              title: const Text(
+                'Vitamins',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
               children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Vitamin C'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Vitamin D'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Vitamin B'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Magnesium'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Omega3'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Zync'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Ashwagandha'),
-                ),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('D3K2'),
-                ),
+                customButtonExpansionTile(text: 'Vitamin C', onPressed: () {}),
+                customButtonExpansionTile(text: 'Vitamin D', onPressed: () {}),
+                customButtonExpansionTile(text: 'Vitamin B', onPressed: () {}),
+                customButtonExpansionTile(text: 'Magnesium', onPressed: () {}),
+                customButtonExpansionTile(text: 'Omega 3', onPressed: () {}),
+                customButtonExpansionTile(text: 'Zync', onPressed: () {}),
+                customButtonExpansionTile(
+                    text: 'Ashwagandha', onPressed: () {}),
+                customButtonExpansionTile(text: 'D3K2', onPressed: () {}),
+                const SizedBox(height: 15),
               ],
             ),
           ],
@@ -112,15 +95,41 @@ class CollagenButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => const CollagenPage(),
+    const shape = StadiumBorder();
+    return Material(
+      color: Colors.transparent,
+      shape: shape,
+      elevation: 8,
+      child: Container(
+        decoration: const ShapeDecoration(
+          shape: shape,
+          gradient: LinearGradient(colors: [
+            Color.fromARGB(164, 0, 0, 0),
+            Colors.white,
+          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
+        ),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            //deactivate color and shadow
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            backgroundColor: Colors.transparent,
+            shadowColor: Colors.transparent,
+            elevation: 0,
           ),
-        );
-      },
-      child: const Text('Collagen'),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const CollagenPage(),
+              ),
+            );
+          },
+          child: const Text(
+            'Collagen',
+            style: TextStyle(color: Colors.black),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -132,15 +141,41 @@ class GlutamineButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => const GlutaminePage(),
+    const shape = StadiumBorder();
+    return Material(
+      color: Colors.transparent,
+      shape: shape,
+      elevation: 8,
+      child: Container(
+        decoration: const ShapeDecoration(
+          shape: shape,
+          gradient: LinearGradient(colors: [
+            Color.fromARGB(164, 0, 0, 0),
+            Colors.white,
+          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
+        ),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            //deactivate color and shadow
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            backgroundColor: Colors.transparent,
+            shadowColor: Colors.transparent,
+            elevation: 0,
           ),
-        );
-      },
-      child: const Text('Glutamine'),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const GlutaminePage(),
+              ),
+            );
+          },
+          child: const Text(
+            'Glutamine',
+            style: TextStyle(color: Colors.black),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -152,15 +187,41 @@ class BetaAlanineButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => const BetaAlaninePage(),
+    const shape = StadiumBorder();
+    return Material(
+      color: Colors.transparent,
+      shape: shape,
+      elevation: 8,
+      child: Container(
+        decoration: const ShapeDecoration(
+          shape: shape,
+          gradient: LinearGradient(colors: [
+            Color.fromARGB(164, 0, 0, 0),
+            Colors.white,
+          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
+        ),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            //deactivate color and shadow
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            backgroundColor: Colors.transparent,
+            shadowColor: Colors.transparent,
+            elevation: 0,
           ),
-        );
-      },
-      child: const Text('Beta-Alanine'),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const BetaAlaninePage(),
+              ),
+            );
+          },
+          child: const Text(
+            'Beta-Alanine',
+            style: TextStyle(color: Colors.black),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -172,15 +233,41 @@ class CitrullineButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => const CitrullinePage(),
+    const shape = StadiumBorder();
+    return Material(
+      color: Colors.transparent,
+      shape: shape,
+      elevation: 8,
+      child: Container(
+        decoration: const ShapeDecoration(
+          shape: shape,
+          gradient: LinearGradient(colors: [
+            Color.fromARGB(164, 0, 0, 0),
+            Colors.white,
+          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
+        ),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            //deactivate color and shadow
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            backgroundColor: Colors.transparent,
+            shadowColor: Colors.transparent,
+            elevation: 0,
           ),
-        );
-      },
-      child: const Text('Cytruline'),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const CitrullinePage(),
+              ),
+            );
+          },
+          child: const Text(
+            'Cytruline',
+            style: TextStyle(color: Colors.black),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -192,15 +279,41 @@ class AAKGButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => const AAKGPage(),
+    const shape = StadiumBorder();
+    return Material(
+      color: Colors.transparent,
+      shape: shape,
+      elevation: 8,
+      child: Container(
+        decoration: const ShapeDecoration(
+          shape: shape,
+          gradient: LinearGradient(colors: [
+            Color.fromARGB(164, 0, 0, 0),
+            Colors.white,
+          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
+        ),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            //deactivate color and shadow
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            backgroundColor: Colors.transparent,
+            shadowColor: Colors.transparent,
+            elevation: 0,
           ),
-        );
-      },
-      child: const Text('AAKG'),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const AAKGPage(),
+              ),
+            );
+          },
+          child: const Text(
+            'AAKG',
+            style: TextStyle(color: Colors.black),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -212,15 +325,41 @@ class BCAAButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => const BCAAPage(),
+    const shape = StadiumBorder();
+    return Material(
+      color: Colors.transparent,
+      shape: shape,
+      elevation: 8,
+      child: Container(
+        decoration: const ShapeDecoration(
+          shape: shape,
+          gradient: LinearGradient(colors: [
+            Color.fromARGB(164, 0, 0, 0),
+            Colors.white,
+          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
+        ),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            //deactivate color and shadow
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            backgroundColor: Colors.transparent,
+            shadowColor: Colors.transparent,
+            elevation: 0,
           ),
-        );
-      },
-      child: const Text('BCAA'),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const BCAAPage(),
+              ),
+            );
+          },
+          child: const Text(
+            'BCAA',
+            style: TextStyle(color: Colors.black),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -232,15 +371,41 @@ class ProteinPowderButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => const ProteinPowder(),
+    const shape = StadiumBorder();
+    return Material(
+      color: Colors.transparent,
+      shape: shape,
+      elevation: 8,
+      child: Container(
+        decoration: const ShapeDecoration(
+          shape: shape,
+          gradient: LinearGradient(colors: [
+            Color.fromARGB(164, 0, 0, 0),
+            Colors.white,
+          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
+        ),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            //deactivate color and shadow
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            backgroundColor: Colors.transparent,
+            shadowColor: Colors.transparent,
+            elevation: 0,
           ),
-        );
-      },
-      child: const Text('Protein Powder'),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const ProteinPowder(),
+              ),
+            );
+          },
+          child: const Text(
+            'Protein Powder',
+            style: TextStyle(color: Colors.black),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -252,15 +417,41 @@ class CreatineButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (_) => const Creatine(),
+    const shape = StadiumBorder();
+    return Material(
+      color: Colors.transparent,
+      shape: shape,
+      elevation: 8,
+      child: Container(
+        decoration: const ShapeDecoration(
+          shape: shape,
+          gradient: LinearGradient(colors: [
+            Color.fromARGB(164, 0, 0, 0),
+            Colors.white,
+          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
+        ),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            //deactivate color and shadow
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            backgroundColor: Colors.transparent,
+            shadowColor: Colors.transparent,
+            elevation: 0,
           ),
-        );
-      },
-      child: const Text('Creatine monohydrate'),
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const Creatine(),
+              ),
+            );
+          },
+          child: const Text(
+            'Creatine monohydrate',
+            style: TextStyle(color: Colors.black),
+          ),
+        ),
+      ),
     );
   }
 }
