@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:fitness_prodigy/app/models/item_model.dart';
+import 'package:fitness_prodigy/app/models/event_planner_item_model.dart';
 import 'package:fitness_prodigy/app/repositories/items_repository.dart';
 
 part 'event_planner_page_state.dart';

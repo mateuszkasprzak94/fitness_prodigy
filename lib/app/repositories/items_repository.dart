@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fitness_prodigy/app/models/item_model.dart';
+import 'package:fitness_prodigy/app/models/event_planner_item_model.dart';
 
 class ItemsRepository {
   Stream<List<ItemModel>> getItemsStream() {
