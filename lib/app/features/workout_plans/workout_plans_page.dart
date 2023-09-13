@@ -13,7 +13,8 @@ import 'package:fitness_prodigy/app/features/workout_plans/workout_plans_pages/i
 import 'package:fitness_prodigy/app/features/workout_plans/workout_plans_pages/legs_workout_page.dart';
 import 'package:fitness_prodigy/app/features/workout_plans/workout_plans_pages/shoulders_workout_page.dart';
 import 'package:fitness_prodigy/app/features/workout_plans/workout_plans_pages/triceps_workout_page.dart';
-import 'package:fitness_prodigy/app/models/workout_plans_page_model.dart';
+import 'package:fitness_prodigy/app/models/button_model.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';

@@ -1,4 +1,3 @@
-import 'package:fitness_prodigy/app/models/supplements_model.dart';
 import 'package:fitness_prodigy/app/features/supplements/supplements_type/aakg_page.dart';
 import 'package:fitness_prodigy/app/features/supplements/supplements_type/bcaa_page.dart';
 import 'package:fitness_prodigy/app/features/supplements/supplements_type/beta_alanine_page.dart';
@@ -7,6 +6,7 @@ import 'package:fitness_prodigy/app/features/supplements/supplements_type/creati
 import 'package:fitness_prodigy/app/features/supplements/supplements_type/citrulline_page.dart';
 import 'package:fitness_prodigy/app/features/supplements/supplements_type/glutamine_page.dart';
 import 'package:fitness_prodigy/app/features/supplements/supplements_type/protein_powder_page.dart';
+import 'package:fitness_prodigy/app/models/button_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';

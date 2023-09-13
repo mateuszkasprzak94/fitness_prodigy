@@ -10,7 +10,7 @@ import 'package:fitness_prodigy/app/features/exercies_examples/muscle_anatomy/tr
 import 'package:fitness_prodigy/app/features/features_page.dart';
 import 'package:fitness_prodigy/app/features/user_profile/user_profile_page.dart';
 import 'package:fitness_prodigy/app/features/workout_plans/workout_plans_page.dart';
-import 'package:fitness_prodigy/app/models/exercise_examples_model.dart';
+import 'package:fitness_prodigy/app/models/button_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
