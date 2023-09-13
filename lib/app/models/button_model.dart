@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// BUTTON FOR EXERCISE PAGE
+// BUTTON FOR EXERCISES PAGE
 
 Widget customExerciseButton({
   required String title,
@@ -143,6 +143,93 @@ Widget customWorkoutButton({
           title,
           style: const TextStyle(color: Colors.black),
         ),
+      ),
+    ),
+  );
+}
+
+//BUTTON FOR FEATURES PAGE
+
+Widget customFeaturesButton({
+  required String title,
+  required VoidCallback onPressed,
+  required IconData icon,
+}) {
+  const shape = StadiumBorder();
+  return Material(
+    color: Colors.transparent,
+    shape: shape,
+    elevation: 8,
+    child: Container(
+      decoration: const ShapeDecoration(
+        shape: shape,
+        gradient: LinearGradient(colors: [
+          Color.fromARGB(164, 0, 0, 0),
+          Colors.white,
+        ], begin: Alignment.bottomRight, end: Alignment.topLeft),
+      ),
+      child: ElevatedButton.icon(
+        icon: Icon(
+          icon,
+          color: Colors.black,
+        ),
+        label: Text(
+          title,
+          style: const TextStyle(color: Colors.black),
+        ),
+        style: ElevatedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+          //deactivate color and shadow
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          backgroundColor: Colors.transparent,
+          shadowColor: Colors.transparent,
+          elevation: 0,
+        ),
+        onPressed: onPressed,
+      ),
+    ),
+  );
+}
+
+Widget customFeaturesButtonWithImage({
+  required String title,
+  required VoidCallback onPressed,
+  required String assetImage,
+}) {
+  const shape = StadiumBorder();
+
+  return Material(
+    color: Colors.transparent,
+    shape: shape,
+    elevation: 8,
+    child: Container(
+      decoration: const ShapeDecoration(
+        shape: shape,
+        gradient: LinearGradient(colors: [
+          Color.fromARGB(164, 0, 0, 0),
+          Colors.white,
+        ], begin: Alignment.centerRight, end: Alignment.centerLeft),
+      ),
+      child: ElevatedButton.icon(
+        icon: ImageIcon(
+          AssetImage(
+            assetImage,
+          ),
+          color: Colors.black,
+        ),
+        label: Text(
+          title,
+          style: const TextStyle(color: Colors.black),
+        ),
+        style: ElevatedButton.styleFrom(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+          //deactivate color and shadow
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          backgroundColor: Colors.transparent,
+          shadowColor: Colors.transparent,
+          elevation: 0,
+        ),
+        onPressed: onPressed,
       ),
     ),
   );

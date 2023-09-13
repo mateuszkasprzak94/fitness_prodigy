@@ -9,6 +9,7 @@ import 'package:fitness_prodigy/app/features/supplements/supplements_page.dart';
 import 'package:fitness_prodigy/app/features/user_profile/user_profile_page.dart';
 import 'package:fitness_prodigy/app/features/water_glass_counter/water_glass_counter_page.dart';
 import 'package:fitness_prodigy/app/features/workout_plans/workout_plans_page.dart';
+import 'package:fitness_prodigy/app/models/button_model.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
@@ -52,34 +53,100 @@ class _FeaturesState extends State<Features> {
       backgroundColor: Colors.white,
       body: Center(
         child: ListView(
-          children: const [
-            Image(
+          children: [
+            const Image(
               image: AssetImage('images/step4mm.png'),
               fit: BoxFit.cover,
             ),
-            SizedBox(height: 15),
-            // ExerciseExamplesButton(),
-            // SizedBox(height: 15),
-            // WorkoutPlansButton(),
-            // SizedBox(height: 15),
-            DietButton(),
-            SizedBox(height: 15),
-            SupplementsButton(),
-            SizedBox(height: 15),
-            GoalsButton(),
-            SizedBox(height: 15),
-            MotivationQuotesButton(),
-            SizedBox(height: 15),
-            WaterGlassCounterButton(),
-            SizedBox(height: 15),
-            FitStopwatchButton(),
-            SizedBox(height: 15),
-            ProgressTrackingButton(),
-            SizedBox(height: 15),
-            EventPlannerButton(),
-            SizedBox(height: 15),
-            // UserProfileButton(),
-            // SizedBox(height: 15),
+            const SizedBox(height: 15),
+            customFeaturesButton(
+                title: 'DIET',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const DietPage(),
+                    ),
+                  );
+                },
+                icon: Icons.fastfood),
+            const SizedBox(height: 15),
+            customFeaturesButton(
+                title: 'SUPPLEMENTS',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const SupplementsPage(),
+                    ),
+                  );
+                },
+                icon: Icons.local_pharmacy),
+            const SizedBox(height: 15),
+            customFeaturesButtonWithImage(
+                title: 'GOALS',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const GoalsPage(),
+                    ),
+                  );
+                },
+                assetImage: 'images/goals.png'),
+            const SizedBox(height: 15),
+            customFeaturesButtonWithImage(
+                title: 'MOTIVATION QUOTES',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const MotivationQuotesPage(),
+                    ),
+                  );
+                },
+                assetImage: 'images/motivation.png'),
+            const SizedBox(height: 15),
+            customFeaturesButtonWithImage(
+                title: 'WATER GLASS COUNTER',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const WaterGlassCounterPage(),
+                    ),
+                  );
+                },
+                assetImage: 'images/water.png'),
+            const SizedBox(height: 15),
+            customFeaturesButton(
+                title: 'STOPWATCH',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const FitStopwatchPage(),
+                    ),
+                  );
+                },
+                icon: Icons.watch_rounded),
+            const SizedBox(height: 15),
+            customFeaturesButton(
+                title: 'PROGRESS TRACKING',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const ProgressTrackingPage(),
+                    ),
+                  );
+                },
+                icon: Icons.hourglass_bottom),
+            const SizedBox(height: 15),
+            customFeaturesButton(
+                title: 'EVENT PLANNER',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const EventPlannerPage(),
+                    ),
+                  );
+                },
+                icon: Icons.calendar_today),
+            const SizedBox(height: 15),
           ],
         ),
       ),
@@ -134,576 +201,6 @@ class _FeaturesState extends State<Features> {
             label: 'User Profile',
           ),
         ],
-      ),
-    );
-  }
-}
-
-class ExerciseExamplesButton extends StatelessWidget {
-  const ExerciseExamplesButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
-        ),
-        child: ElevatedButton.icon(
-          icon: const Icon(
-            Icons.accessibility,
-            color: Colors.black,
-          ),
-          label: const Text(
-            'EXERCISE EXAMPLES',
-            style: TextStyle(color: Colors.black),
-          ),
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => ExerciseExamplesPage(
-                    user: FirebaseAuth.instance.currentUser!),
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class WorkoutPlansButton extends StatelessWidget {
-  const WorkoutPlansButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
-        ),
-        child: ElevatedButton.icon(
-          icon: const Icon(
-            Icons.fitness_center,
-            color: Colors.black,
-          ),
-          label: const Text(
-            'WORKOUT PLANS',
-            style: TextStyle(color: Colors.black),
-          ),
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) =>
-                    WorkoutPlansPage(user: FirebaseAuth.instance.currentUser!),
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class DietButton extends StatelessWidget {
-  const DietButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.bottomRight, end: Alignment.topLeft),
-        ),
-        child: ElevatedButton.icon(
-          icon: const Icon(
-            Icons.fastfood,
-            color: Colors.black,
-          ),
-          label: const Text(
-            'DIET',
-            style: TextStyle(color: Colors.black),
-          ),
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const DietPage(),
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class SupplementsButton extends StatelessWidget {
-  const SupplementsButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
-        ),
-        child: ElevatedButton.icon(
-          icon: const Icon(
-            Icons.local_pharmacy,
-            color: Colors.black,
-          ),
-          label: const Text(
-            'SUPPLEMENTS',
-            style: TextStyle(color: Colors.black),
-          ),
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const SupplementsPage(),
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class GoalsButton extends StatelessWidget {
-  const GoalsButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.topRight, end: Alignment.topLeft),
-        ),
-        child: ElevatedButton.icon(
-          icon: const ImageIcon(
-            AssetImage(
-              'images/goals.png',
-            ),
-            color: Colors.black,
-          ),
-          label: const Text(
-            'GOALS',
-            style: TextStyle(color: Colors.black),
-          ),
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const GoalsPage(),
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class MotivationQuotesButton extends StatelessWidget {
-  const MotivationQuotesButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
-        ),
-        child: ElevatedButton.icon(
-          icon: const ImageIcon(
-            AssetImage(
-              'images/motivation.png',
-            ),
-            color: Colors.black,
-          ),
-          label: const Text(
-            'MOTIVATION QUOTES',
-            style: TextStyle(color: Colors.black),
-          ),
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const MotivationQuotesPage(),
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class WaterGlassCounterButton extends StatelessWidget {
-  const WaterGlassCounterButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
-        ),
-        child: ElevatedButton.icon(
-          icon: const ImageIcon(
-            AssetImage(
-              'images/water.png',
-            ),
-            color: Colors.black,
-          ),
-          label: const Text(
-            'WATER GLASS COUNTER',
-            style: TextStyle(color: Colors.black),
-          ),
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const WaterGlassCounterPage(),
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class FitStopwatchButton extends StatelessWidget {
-  const FitStopwatchButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
-        ),
-        child: ElevatedButton.icon(
-          icon: const Icon(
-            Icons.watch_rounded,
-            color: Colors.black,
-          ),
-          label: const Text(
-            'STOPWATCH',
-            style: TextStyle(color: Colors.black),
-          ),
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const FitStopwatchPage(),
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class ProgressTrackingButton extends StatelessWidget {
-  const ProgressTrackingButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
-        ),
-        child: ElevatedButton.icon(
-          icon: const Icon(
-            Icons.hourglass_bottom,
-            color: Colors.black,
-          ),
-          label: const Text(
-            'PROGRESS TRACKING',
-            style: TextStyle(color: Colors.black),
-          ),
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const ProgressTrackingPage(),
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class EventPlannerButton extends StatelessWidget {
-  const EventPlannerButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.centerRight, end: Alignment.centerLeft),
-        ),
-        child: ElevatedButton.icon(
-          icon: const Icon(
-            Icons.calendar_today,
-            color: Colors.black,
-          ),
-          label: const Text(
-            'EVENT PLANNER',
-            style: TextStyle(color: Colors.black),
-          ),
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) => const EventPlannerPage(),
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class UserProfileButton extends StatelessWidget {
-  const UserProfileButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
-    return Material(
-      color: Colors.transparent,
-      shape: shape,
-      elevation: 8,
-      child: Container(
-        decoration: const ShapeDecoration(
-          shape: shape,
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
-          ], begin: Alignment.bottomCenter, end: Alignment.topCenter),
-        ),
-        child: ElevatedButton.icon(
-          icon: const Icon(
-            Icons.account_box,
-            color: Colors.black,
-          ),
-          label: const Text(
-            'USER PROFILE',
-            style: TextStyle(color: Colors.black),
-          ),
-          style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            //deactivate color and shadow
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: Colors.transparent,
-            shadowColor: Colors.transparent,
-            elevation: 0,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(
-                builder: (_) =>
-                    UserProfilePage(user: FirebaseAuth.instance.currentUser!),
-              ),
-            );
-          },
-        ),
       ),
     );
   }
