@@ -58,7 +58,7 @@ class _FeaturesState extends State<Features> {
               image: AssetImage('images/step4mm.png'),
               fit: BoxFit.cover,
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 5),
             customFeaturesButton(
                 title: 'DIET',
                 onPressed: () {
@@ -69,7 +69,7 @@ class _FeaturesState extends State<Features> {
                   );
                 },
                 icon: Icons.fastfood),
-            const SizedBox(height: 15),
+            // const SizedBox(height: 5),
             customFeaturesButton(
                 title: 'SUPPLEMENTS',
                 onPressed: () {
@@ -80,7 +80,7 @@ class _FeaturesState extends State<Features> {
                   );
                 },
                 icon: Icons.local_pharmacy),
-            const SizedBox(height: 15),
+            // const SizedBox(height: 5),
             customFeaturesButtonWithImage(
                 title: 'GOALS',
                 onPressed: () {
@@ -91,7 +91,7 @@ class _FeaturesState extends State<Features> {
                   );
                 },
                 assetImage: 'images/goals.png'),
-            const SizedBox(height: 15),
+            // const SizedBox(height: 5),
             customFeaturesButtonWithImage(
                 title: 'MOTIVATION QUOTES',
                 onPressed: () {
@@ -102,7 +102,7 @@ class _FeaturesState extends State<Features> {
                   );
                 },
                 assetImage: 'images/motivation.png'),
-            const SizedBox(height: 15),
+            // const SizedBox(height: 5),
             customFeaturesButtonWithImage(
                 title: 'WATER GLASS COUNTER',
                 onPressed: () {
@@ -113,7 +113,7 @@ class _FeaturesState extends State<Features> {
                   );
                 },
                 assetImage: 'images/water.png'),
-            const SizedBox(height: 15),
+            // const SizedBox(height: 5),
             customFeaturesButton(
                 title: 'STOPWATCH',
                 onPressed: () {
@@ -124,7 +124,7 @@ class _FeaturesState extends State<Features> {
                   );
                 },
                 icon: Icons.watch_rounded),
-            const SizedBox(height: 15),
+            // const SizedBox(height: 5),
             customFeaturesButton(
                 title: 'PROGRESS TRACKING',
                 onPressed: () {
@@ -135,7 +135,7 @@ class _FeaturesState extends State<Features> {
                   );
                 },
                 icon: Icons.hourglass_bottom),
-            const SizedBox(height: 15),
+            // const SizedBox(height: 5),
             customFeaturesButton(
                 title: 'EVENT PLANNER',
                 onPressed: () {
@@ -146,7 +146,7 @@ class _FeaturesState extends State<Features> {
                   );
                 },
                 icon: Icons.calendar_today),
-            const SizedBox(height: 15),
+            const SizedBox(height: 5),
           ],
         ),
       ),
