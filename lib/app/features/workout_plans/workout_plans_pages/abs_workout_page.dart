@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/features/workout_plans/text_for_workout_plans_pages/text_for_workouts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,10 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 class AbsWorkoutPage extends StatelessWidget {
   const AbsWorkoutPage({
     Key? key,
-    required this.user,
   }) : super(key: key);
-
-  final User user;
 
   @override
   Widget build(BuildContext context) {
