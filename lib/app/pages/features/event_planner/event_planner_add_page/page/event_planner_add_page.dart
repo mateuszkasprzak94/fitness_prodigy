@@ -43,7 +43,10 @@ class _AddPageState extends State<EventPlannerAddPage> {
             final colorchange = result;
             return Scaffold(
               appBar: AppBar(
-                title: const Text('Add new upcoming event'),
+                title: const Text(
+                  'Add new upcoming event',
+                  maxLines: 2,
+                ),
                 actions: [
                   IconButton(
                     onPressed: _imageURL == null ||
@@ -160,7 +163,7 @@ class _AddPageBody extends StatelessWidget {
               onDateChanged(selectedDate);
             },
             child: Text(
-              selectedDateFormatted ?? 'Choose release date',
+              selectedDateFormatted ?? 'Choose event date',
               style: const TextStyle(color: Colors.black),
             ),
           ),
