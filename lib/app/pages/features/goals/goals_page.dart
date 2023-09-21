@@ -101,6 +101,7 @@ class _GoalsPageState extends State<GoalsPage> {
                     TextField(
                       controller: controller,
                       decoration: const InputDecoration(
+                        contentPadding: EdgeInsets.all(10),
                         hintText: 'Enter a new goal',
                       ),
                     )
