@@ -24,10 +24,10 @@ class _LoginPageState extends State<LoginPage> {
         child: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('images/arnold 2.png'), fit: BoxFit.fill),
+                image: AssetImage('images/step3.png'), fit: BoxFit.fill),
           ),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 3, 20, 165),
+            padding: const EdgeInsets.fromLTRB(20, 3, 20, 10),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -82,7 +82,7 @@ class _LoginPageState extends State<LoginPage> {
                     color: Colors.grey,
                   ),
                 ),
-                const SizedBox(height: 25),
+                // const SizedBox(height: 25),
                 ElevatedButton(
                   onPressed: () async {
                     if (isCreatingAccount == true) {
@@ -118,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     isCreatingAccount == true ? 'Register' : 'Login',
                     style: const TextStyle(
-                      color: Colors.amber,
+                      color: Colors.white,
                       fontSize: 18,
                     ),
                   ),
@@ -134,7 +134,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: const Text(
                       'Create Account',
                       style: TextStyle(
-                        color: Colors.orange,
+                        color: Colors.white,
                         fontSize: 18,
                       ),
                     ),
@@ -150,7 +150,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: const Text(
                       'Have an account?',
                       style: TextStyle(
-                        color: Colors.orange,
+                        color: Colors.white,
                         fontSize: 18,
                       ),
                     ),
