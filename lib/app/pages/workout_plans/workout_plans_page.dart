@@ -24,8 +24,6 @@ class WorkoutPlansPage extends StatefulWidget {
 }
 
 class _WorkoutPlansPageState extends State<WorkoutPlansPage> {
-  var currentIndex = 2;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

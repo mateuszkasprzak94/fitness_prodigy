@@ -21,8 +21,6 @@ class Features extends StatefulWidget {
 }
 
 class _FeaturesState extends State<Features> {
-  var currentIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -21,8 +21,6 @@ class ExerciseExamplesPage extends StatefulWidget {
 }
 
 class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
-  var currentIndex = 1;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

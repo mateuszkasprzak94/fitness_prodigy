@@ -18,8 +18,6 @@ class UserProfilePage extends StatefulWidget {
 }
 
 class _UserProfilePageState extends State<UserProfilePage> {
-  var currentIndex = 3;
-
   @override
   Widget build(BuildContext context) {
     const shape = StadiumBorder();
@@ -42,69 +40,62 @@ class _UserProfilePageState extends State<UserProfilePage> {
         systemOverlayStyle: SystemUiOverlayStyle.light,
         automaticallyImplyLeading: false,
       ),
-      body: BlocProvider(
-        create: (context) => AuthCubit(),
-        child: BlocBuilder<AuthCubit, AuthState>(
-          builder: (context, state) {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'You are logged as ${widget.user.email}',
-                    style: GoogleFonts.libreFranklin(fontSize: 20),
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 2,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'You are logged as ${widget.user.email}',
+              style: GoogleFonts.libreFranklin(fontSize: 20),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Material(
+              color: Colors.transparent,
+              shape: shape,
+              elevation: 8,
+              child: Container(
+                decoration: const ShapeDecoration(
+                  shape: shape,
+                  gradient: LinearGradient(
+                    colors: [
+                      Color.fromARGB(164, 0, 0, 0),
+                      Colors.white,
+                    ],
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  Material(
-                    color: Colors.transparent,
-                    shape: shape,
-                    elevation: 8,
-                    child: Container(
-                      decoration: const ShapeDecoration(
-                        shape: shape,
-                        gradient: LinearGradient(
-                          colors: [
-                            Color.fromARGB(164, 0, 0, 0),
-                            Colors.white,
-                          ],
-                        ),
-                      ),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 10),
+                ),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
 
-                          // deactivate color and shadow
-                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          backgroundColor: Colors.transparent,
-                          shadowColor: Colors.transparent,
-                          elevation: 0,
-                        ),
-                        onPressed: () {
-                          context.read<AuthCubit>().signOut();
-                          // FirebaseAuth.instance.signOut();
-                          Navigator.pushNamedAndRemoveUntil(
-                            context,
-                            '/', // Replace with the route name for your login page
-                            (route) => false,
-                          );
-                        },
-                        child: const Text(
-                          'Logout',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.black),
-                        ),
-                      ),
-                    ),
+                    // deactivate color and shadow
+                    tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    backgroundColor: Colors.transparent,
+                    shadowColor: Colors.transparent,
+                    elevation: 0,
                   ),
-                ],
+                  onPressed: () {
+                    context.read<AuthCubit>().signOut();
+                    // FirebaseAuth.instance.signOut();
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      '/', // Replace with the route name for your login page
+                      (route) => false,
+                    );
+                  },
+                  child: const Text(
+                    'Logout',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.black),
+                  ),
+                ),
               ),
-            );
-          },
+            ),
+          ],
         ),
       ),
       floatingActionButton: const Align(
