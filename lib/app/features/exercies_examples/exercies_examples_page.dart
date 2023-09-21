@@ -59,8 +59,7 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (_) =>
-                          ChestPage(user: FirebaseAuth.instance.currentUser!),
+                      builder: (_) => const ChestPage(),
                     ),
                   );
                 },
@@ -71,8 +70,7 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (_) =>
-                          BackPage(user: FirebaseAuth.instance.currentUser!),
+                      builder: (_) => const BackPage(),
                     ),
                   );
                 },
@@ -83,8 +81,7 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (_) => ShouldersPage(
-                          user: FirebaseAuth.instance.currentUser!),
+                      builder: (_) => const ShouldersPage(),
                     ),
                   );
                 },
@@ -95,8 +92,7 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (_) =>
-                          BicepsPage(user: FirebaseAuth.instance.currentUser!),
+                      builder: (_) => const BicepsPage(),
                     ),
                   );
                 },
@@ -107,8 +103,7 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (_) =>
-                          TricepsPage(user: FirebaseAuth.instance.currentUser!),
+                      builder: (_) => const TricepsPage(),
                     ),
                   );
                 },
@@ -119,8 +114,7 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (_) => ForearmsPage(
-                          user: FirebaseAuth.instance.currentUser!),
+                      builder: (_) => const ForearmsPage(),
                     ),
                   );
                 },
@@ -131,8 +125,7 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (_) =>
-                          LegsPage(user: FirebaseAuth.instance.currentUser!),
+                      builder: (_) => const LegsPage(),
                     ),
                   );
                 },
@@ -143,8 +136,7 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
                 onPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (_) =>
-                          AbsPage(user: FirebaseAuth.instance.currentUser!),
+                      builder: (_) => const AbsPage(),
                     ),
                   );
                 },
