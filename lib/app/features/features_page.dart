@@ -1,27 +1,23 @@
 import 'package:fitness_prodigy/app/features/diet/diet_page.dart';
-import 'package:fitness_prodigy/app/features/exercies_examples/exercies_examples_page.dart';
+import 'package:fitness_prodigy/app/features/event_planner/event_planner_page/page/event_planner_page.dart';
 import 'package:fitness_prodigy/app/features/goals/goals_page.dart';
 import 'package:fitness_prodigy/app/features/motivation_quotes/motivations_quotes_page.dart';
 import 'package:fitness_prodigy/app/features/progress_tracking/progress_tracking_page.dart';
-import 'package:fitness_prodigy/app/features/event_planner/event_planner_page/page/event_planner_page.dart';
 import 'package:fitness_prodigy/app/features/stopwatch/stopwatch_page.dart';
 import 'package:fitness_prodigy/app/features/supplements/supplements_page.dart';
-import 'package:fitness_prodigy/app/features/user_profile/user_profile_page.dart';
 import 'package:fitness_prodigy/app/features/water_glass_counter/water_glass_counter_page.dart';
-import 'package:fitness_prodigy/app/features/workout_plans/workout_plans_page.dart';
 import 'package:fitness_prodigy/app/models/button_model.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Features extends StatefulWidget {
   const Features({
     Key? key,
-    required this.user,
+    // required this.user,
   }) : super(key: key);
 
-  final User user;
+  // final User user;
 
   @override
   State<Features> createState() => _FeaturesState();
@@ -150,59 +146,59 @@ class _FeaturesState extends State<Features> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: currentIndex,
-        onTap: (newIndex) {
-          setState(() {
-            currentIndex = newIndex;
-          });
-          if (newIndex == 1) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => ExerciseExamplesPage(user: widget.user),
-              ),
-            );
-          } else if (newIndex == 2) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => WorkoutPlansPage(user: widget.user),
-              ),
-            );
-          } else if (newIndex == 3) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => UserProfilePage(user: widget.user),
-              ),
-            );
-          }
-        },
-        selectedItemColor: Colors.amber,
-        unselectedItemColor: Colors.black,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.accessibility),
-            label: 'Exercises',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.fitness_center),
-            label: 'Workouts',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_box),
-            label: 'User Profile',
-          ),
-        ],
-      ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   type: BottomNavigationBarType.fixed,
+      //   currentIndex: currentIndex,
+      //   onTap: (newIndex) {
+      //     setState(() {
+      //       currentIndex = newIndex;
+      //     });
+      //     // if (newIndex == 1) {
+      //     //   Navigator.push(
+      //     //     context,
+      //     //     MaterialPageRoute(
+      //     //       builder: (_) => ExerciseExamplesPage(user: widget.user),
+      //     //     ),
+      //     //   );
+      //     // } else if (newIndex == 2) {
+      //     //   Navigator.push(
+      //     //     context,
+      //     //     MaterialPageRoute(
+      //     //       builder: (_) => WorkoutPlansPage(user: widget.user),
+      //     //     ),
+      //     //   );
+      //     // } else if (newIndex == 3) {
+      //     //   Navigator.push(
+      //     //     context,
+      //     //     MaterialPageRoute(
+      //     //       builder: (_) => UserProfilePage(user: widget.user),
+      //     //     ),
+      //     //   );
+      //     // }
+      //   },
+      //   selectedItemColor: Colors.amber,
+      //   unselectedItemColor: Colors.black,
+      //   showSelectedLabels: true,
+      //   showUnselectedLabels: true,
+      //   items: const [
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.home),
+      //       label: 'Home',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.accessibility),
+      //       label: 'Exercises',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.fitness_center),
+      //       label: 'Workouts',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.account_box),
+      //       label: 'User Profile',
+      //     ),
+      //   ],
+      // ),
     );
   }
 }
