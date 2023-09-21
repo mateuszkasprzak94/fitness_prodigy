@@ -81,11 +81,11 @@ class _UserProfilePageState extends State<UserProfilePage> {
                   onPressed: () {
                     context.read<AuthCubit>().signOut();
                     // FirebaseAuth.instance.signOut();
-                    Navigator.pushNamedAndRemoveUntil(
-                      context,
-                      '/', // Replace with the route name for your login page
-                      (route) => false,
-                    );
+                    // Navigator.pushNamedAndRemoveUntil(
+                    //   context,
+                    //   '/', // Replace with the route name for your login page
+                    //   (route) => false,
+                    // );
                   },
                   child: const Text(
                     'Logout',

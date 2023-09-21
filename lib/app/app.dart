@@ -16,14 +16,14 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      // home: const HomePage(),
-      initialRoute: '/', // Set the initial route
-      routes: {
-        '/': (context) => const HomePage(),
-        // '/login': (context) =>
-        //     MainLoginPage(), // Define the route for your login page
-        // Define other routes here
-      },
+      home: const HomePage(),
+      // initialRoute: '/', // Set the initial route
+      // routes: {
+      //   '/': (context) => const HomePage(),
+      // '/login': (context) =>
+      //     MainLoginPage(), // Define the route for your login page
+      //   // Define other routes here
+      // },
     );
   }
 }
