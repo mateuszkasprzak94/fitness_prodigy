@@ -107,61 +107,6 @@ class _UserProfilePageState extends State<UserProfilePage> {
           },
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   type: BottomNavigationBarType.fixed,
-      //   currentIndex: currentIndex,
-      //   onTap: (newIndex) {
-      //     setState(() {
-      //       currentIndex = newIndex;
-      //     });
-      //     if (newIndex == 0) {
-      //       Navigator.push(
-      //         context,
-      //         MaterialPageRoute(
-      //           builder: (_) => Features(
-      //             user: widget.user,
-      //           ),
-      //         ),
-      //       );
-      //     } else if (newIndex == 1) {
-      //       Navigator.push(
-      //         context,
-      //         MaterialPageRoute(
-      //           builder: (_) => ExerciseExamplesPage(user: widget.user),
-      //         ),
-      //       );
-      //     } else if (newIndex == 2) {
-      //       Navigator.push(
-      //         context,
-      //         MaterialPageRoute(
-      //           builder: (_) => WorkoutPlansPage(user: widget.user),
-      //         ),
-      //       );
-      //     }
-      //   },
-      //   selectedItemColor: Colors.amber,
-      //   unselectedItemColor: Colors.black,
-      //   showSelectedLabels: true,
-      //   showUnselectedLabels: true,
-      //   items: const [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.home),
-      //       label: 'Home',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.accessibility),
-      //       label: 'Exercises',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.fitness_center),
-      //       label: 'Workouts',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.account_box),
-      //       label: 'User Profile',
-      //     ),
-      //   ],
-      // ),
       floatingActionButton: const Align(
         alignment: Alignment.bottomRight,
         child: Padding(

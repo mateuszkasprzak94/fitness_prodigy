@@ -14,10 +14,7 @@ import 'package:google_fonts/google_fonts.dart';
 class ExerciseExamplesPage extends StatefulWidget {
   const ExerciseExamplesPage({
     Key? key,
-    // required this.user,
   }) : super(key: key);
-
-  // final User user;
 
   @override
   State<ExerciseExamplesPage> createState() => _ExerciseExamplesPageState();
@@ -141,63 +138,6 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
           ],
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   type: BottomNavigationBarType.fixed,
-      //   currentIndex: currentIndex,
-      //   onTap: (newIndex) {
-      //     setState(() {
-      //       currentIndex = newIndex;
-      //     });
-      //     // if (newIndex == 0) {
-      //     //   Navigator.push(
-      //     //     context,
-      //     //     MaterialPageRoute(
-      //     //       builder: (_) => Features(
-      //     //         user: widget.user,
-      //     //       ),
-      //     //     ),
-      //     //   );
-      //     // } else if (newIndex == 2) {
-      //     //   Navigator.push(
-      //     //     context,
-      //     //     MaterialPageRoute(
-      //     //       builder: (_) => WorkoutPlansPage(
-      //     //         user: widget.user,
-      //     //       ),
-      //     //     ),
-      //     //   );
-      //     // } else if (newIndex == 3) {
-      //     //   Navigator.push(
-      //     //     context,
-      //     //     MaterialPageRoute(
-      //     //       builder: (_) => UserProfilePage(user: widget.user),
-      //     //     ),
-      //     //   );
-      //     // }
-      //   },
-      //   selectedItemColor: Colors.amber,
-      //   unselectedItemColor: Colors.black,
-      //   showSelectedLabels: true,
-      //   showUnselectedLabels: true,
-      //   items: const [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.home),
-      //       label: 'Home',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.accessibility),
-      //       label: 'Exercises',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.fitness_center),
-      //       label: 'Workouts',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.account_box),
-      //       label: 'User Profile',
-      //     ),
-      //   ],
-      // ),
     );
   }
 }
