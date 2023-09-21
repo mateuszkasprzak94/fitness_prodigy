@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 
 class AfterLogin extends StatefulWidget {
   const AfterLogin({
-    Key? key,
+    super.key,
     required this.user,
-  }) : super(key: key);
+  });
 
   final User user;
 
@@ -19,15 +19,15 @@ class AfterLogin extends StatefulWidget {
 
 class _AfterLoginState extends State<AfterLogin> {
   int currentIndex = 0;
-  final screens = [
-    const Features(),
-    const ExerciseExamplesPage(),
-    const WorkoutPlansPage(),
-    UserProfilePage(user: FirebaseAuth.instance.currentUser!),
-  ];
 
   @override
   Widget build(BuildContext context) {
+    final screens = [
+      const Features(),
+      const ExerciseExamplesPage(),
+      const WorkoutPlansPage(),
+      UserProfilePage(email: widget.user.email),
+    ];
     return Scaffold(
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(

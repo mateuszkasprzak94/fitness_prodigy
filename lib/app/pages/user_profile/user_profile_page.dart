@@ -1,23 +1,17 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/cubit/auth_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class UserProfilePage extends StatefulWidget {
+class UserProfilePage extends StatelessWidget {
   const UserProfilePage({
-    Key? key,
-    required this.user,
-  }) : super(key: key);
+    super.key,
+    required this.email,
+  });
 
-  final User user;
+  final String? email;
 
-  @override
-  State<UserProfilePage> createState() => _UserProfilePageState();
-}
-
-class _UserProfilePageState extends State<UserProfilePage> {
   @override
   Widget build(BuildContext context) {
     const shape = StadiumBorder();
@@ -45,7 +39,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'You are logged as ${widget.user.email}',
+              'You are logged as $email',
               style: GoogleFonts.libreFranklin(fontSize: 20),
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
