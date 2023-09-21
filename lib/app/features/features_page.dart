@@ -151,6 +151,7 @@ class _FeaturesState extends State<Features> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
         onTap: (newIndex) {
           setState(() {

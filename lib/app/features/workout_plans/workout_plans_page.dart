@@ -180,6 +180,7 @@ class _WorkoutPlansPageState extends State<WorkoutPlansPage> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
         onTap: (newIndex) {
           setState(() {

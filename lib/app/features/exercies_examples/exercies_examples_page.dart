@@ -52,111 +52,109 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
         automaticallyImplyLeading: false,
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: ListView(
-            children: [
-              customExerciseButton(
-                  title: 'Chest',
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) =>
-                            ChestPage(user: FirebaseAuth.instance.currentUser!),
-                      ),
-                    );
-                  },
-                  image: 'exercise examples page images/chest.png'),
-              const SizedBox(height: 10),
-              customExerciseButton(
-                  title: 'Back',
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) =>
-                            BackPage(user: FirebaseAuth.instance.currentUser!),
-                      ),
-                    );
-                  },
-                  image: 'exercise examples page images/back.png'),
-              const SizedBox(height: 10),
-              customExerciseButton(
-                  title: 'Shoulders',
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) => ShouldersPage(
-                            user: FirebaseAuth.instance.currentUser!),
-                      ),
-                    );
-                  },
-                  image: 'exercise examples page images/shoulders.png'),
-              const SizedBox(height: 10),
-              customExerciseButton(
-                  title: 'Biceps',
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) => BicepsPage(
-                            user: FirebaseAuth.instance.currentUser!),
-                      ),
-                    );
-                  },
-                  image: 'exercise examples page images/biceps.png'),
-              const SizedBox(height: 10),
-              customExerciseButton(
-                  title: 'Triceps',
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) => TricepsPage(
-                            user: FirebaseAuth.instance.currentUser!),
-                      ),
-                    );
-                  },
-                  image: 'exercise examples page images/triceps.png'),
-              const SizedBox(height: 10),
-              customExerciseButton(
-                  title: 'Forearms',
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) => ForearmsPage(
-                            user: FirebaseAuth.instance.currentUser!),
-                      ),
-                    );
-                  },
-                  image: 'exercise examples page images/forearms.png'),
-              const SizedBox(height: 10),
-              customExerciseButton(
-                  title: 'Legs',
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) =>
-                            LegsPage(user: FirebaseAuth.instance.currentUser!),
-                      ),
-                    );
-                  },
-                  image: 'exercise examples page images/legs.png'),
-              const SizedBox(height: 10),
-              customExerciseButton(
-                  title: 'Abs',
-                  onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (_) =>
-                            AbsPage(user: FirebaseAuth.instance.currentUser!),
-                      ),
-                    );
-                  },
-                  image: 'exercise examples page images/abs.png'),
-              const SizedBox(height: 10),
-            ],
-          ),
+        child: ListView(
+          children: [
+            customExerciseButton(
+                title: 'Chest',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          ChestPage(user: FirebaseAuth.instance.currentUser!),
+                    ),
+                  );
+                },
+                image: 'exercise examples page images/chest.png'),
+            const SizedBox(height: 5),
+            customExerciseButton(
+                title: 'Back',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          BackPage(user: FirebaseAuth.instance.currentUser!),
+                    ),
+                  );
+                },
+                image: 'exercise examples page images/back.png'),
+            const SizedBox(height: 5),
+            customExerciseButton(
+                title: 'Shoulders',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => ShouldersPage(
+                          user: FirebaseAuth.instance.currentUser!),
+                    ),
+                  );
+                },
+                image: 'exercise examples page images/shoulders.png'),
+            const SizedBox(height: 5),
+            customExerciseButton(
+                title: 'Biceps',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          BicepsPage(user: FirebaseAuth.instance.currentUser!),
+                    ),
+                  );
+                },
+                image: 'exercise examples page images/biceps.png'),
+            const SizedBox(height: 5),
+            customExerciseButton(
+                title: 'Triceps',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          TricepsPage(user: FirebaseAuth.instance.currentUser!),
+                    ),
+                  );
+                },
+                image: 'exercise examples page images/triceps.png'),
+            const SizedBox(height: 5),
+            customExerciseButton(
+                title: 'Forearms',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => ForearmsPage(
+                          user: FirebaseAuth.instance.currentUser!),
+                    ),
+                  );
+                },
+                image: 'exercise examples page images/forearms.png'),
+            const SizedBox(height: 5),
+            customExerciseButton(
+                title: 'Legs',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          LegsPage(user: FirebaseAuth.instance.currentUser!),
+                    ),
+                  );
+                },
+                image: 'exercise examples page images/legs.png'),
+            const SizedBox(height: 5),
+            customExerciseButton(
+                title: 'Abs',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) =>
+                          AbsPage(user: FirebaseAuth.instance.currentUser!),
+                    ),
+                  );
+                },
+                image: 'exercise examples page images/abs.png'),
+            const SizedBox(height: 5),
+          ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
         onTap: (newIndex) {
           setState(() {

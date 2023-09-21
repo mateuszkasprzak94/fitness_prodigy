@@ -13,6 +13,7 @@ Widget customExerciseButton({
     shape: shape,
     elevation: 8,
     child: Container(
+      margin: const EdgeInsets.all(8),
       decoration: const ShapeDecoration(
         shape: shape,
         gradient: LinearGradient(
