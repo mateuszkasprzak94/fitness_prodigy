@@ -22,20 +22,40 @@ class AuthCubit extends Cubit<AuthState> {
     String emailController,
     String passwordController,
   ) async {
-    await FirebaseAuth.instance.createUserWithEmailAndPassword(
-      email: emailController,
-      password: passwordController,
-    );
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: emailController,
+        password: passwordController,
+      );
+    } catch (error) {
+      emit(
+        AuthState(
+          user: state.user,
+          isLoading: false,
+          errorMessage: error.toString(),
+        ),
+      );
+    }
   }
 
   Future<void> signIn(
     String emailController,
     String passwordController,
   ) async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: emailController,
-      password: passwordController,
-    );
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController,
+        password: passwordController,
+      );
+    } catch (error) {
+      emit(
+        AuthState(
+          user: state.user,
+          isLoading: false,
+          errorMessage: error.toString(),
+        ),
+      );
+    }
   }
 
   Future<void> signOut() async {
