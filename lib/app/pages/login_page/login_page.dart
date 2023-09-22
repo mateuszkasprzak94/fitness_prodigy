@@ -1,5 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fitness_prodigy/app/cubit/auth_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({
@@ -88,11 +89,14 @@ class _LoginPageState extends State<LoginPage> {
                     if (isCreatingAccount == true) {
                       // rejestracja
                       try {
-                        await FirebaseAuth.instance
-                            .createUserWithEmailAndPassword(
-                          email: widget.emailController.text,
-                          password: widget.passwordController.text,
-                        );
+                        context.read<AuthCubit>().register(
+                            widget.emailController.text,
+                            widget.passwordController.text);
+                        // await FirebaseAuth.instance
+                        //     .createUserWithEmailAndPassword(
+                        //   email: widget.emailController.text,
+                        //   password: widget.passwordController.text,
+                        // );
                       } catch (error) {
                         setState(() {
                           errorMessage = error.toString();
@@ -101,10 +105,13 @@ class _LoginPageState extends State<LoginPage> {
                     } else {
                       // logowanie
                       try {
-                        await FirebaseAuth.instance.signInWithEmailAndPassword(
-                          email: widget.emailController.text,
-                          password: widget.passwordController.text,
-                        );
+                        context.read<AuthCubit>().signIn(
+                            widget.emailController.text,
+                            widget.passwordController.text);
+                        // await FirebaseAuth.instance.signInWithEmailAndPassword(
+                        //   email: widget.emailController.text,
+                        //   password: widget.passwordController.text,
+                        // );
                       } catch (error) {
                         setState(() {
                           errorMessage = error.toString();

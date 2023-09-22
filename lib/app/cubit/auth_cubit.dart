@@ -18,6 +18,26 @@ class AuthCubit extends Cubit<AuthState> {
 
   StreamSubscription? _streamSubscription;
 
+  Future<void> register(
+    String emailController,
+    String passwordController,
+  ) async {
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: emailController,
+      password: passwordController,
+    );
+  }
+
+  Future<void> signIn(
+    String emailController,
+    String passwordController,
+  ) async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: emailController,
+      password: passwordController,
+    );
+  }
+
   Future<void> signOut() async {
     FirebaseAuth.instance.signOut();
   }
