@@ -12,7 +12,6 @@ class FitStopwatchPage extends StatefulWidget {
 }
 
 class _FitStopwatchPageState extends State<FitStopwatchPage> {
-  var currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

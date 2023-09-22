@@ -12,7 +12,6 @@ class MotivationQuotesPage extends StatefulWidget {
 }
 
 class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
-  var currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

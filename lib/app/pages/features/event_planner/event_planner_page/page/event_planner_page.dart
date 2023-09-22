@@ -15,7 +15,6 @@ class EventPlannerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // var currentIndex = 0;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -62,71 +61,6 @@ class EventPlannerPage extends StatelessWidget {
           ),
         ),
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   currentIndex: currentIndex,
-      //   onTap: (newIndex) {
-      //     setState(() {
-      //       currentIndex = newIndex;
-      //     });
-      //     if (newIndex == 0) {
-      //       Navigator.push(
-      //         context,
-      //         MaterialPageRoute(
-      //           builder: (_) => Features(
-      //             user: widget.user,
-      //           ),
-      //         ),
-      //       );
-      //     } else if (newIndex == 1) {
-      //       Navigator.push(
-      //         context,
-      //         MaterialPageRoute(
-      //           builder: (_) => ExerciseExamplesPage(
-      //             user: widget.user,
-      //           ),
-      //         ),
-      //       );
-      //     } else if (newIndex == 2) {
-      //       Navigator.push(
-      //         context,
-      //         MaterialPageRoute(
-      //           builder: (_) => WorkoutPlansPage(
-      //             user: widget.user,
-      //           ),
-      //         ),
-      //       );
-      //     } else if (newIndex == 3) {
-      //       Navigator.push(
-      //         context,
-      //         MaterialPageRoute(
-      //           builder: (_) => UserProfilePage(user: widget.user),
-      //         ),
-      //       );
-      //     }
-      //   },
-      //   selectedItemColor: Colors.black,
-      //   unselectedItemColor: Colors.black,
-      //   showSelectedLabels: true,
-      //   showUnselectedLabels: true,
-      //   items: const [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.home),
-      //       label: 'Home',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.accessibility),
-      //       label: 'Exercises',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.fitness_center),
-      //       label: 'Workouts',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.account_box),
-      //       label: 'User Profile',
-      //     ),
-      //   ],
-      // ),
     );
   }
 }

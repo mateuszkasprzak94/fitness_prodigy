@@ -13,7 +13,6 @@ class WaterGlassCounterPage extends StatefulWidget {
 }
 
 class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
-  var currentIndex = 0;
   var waterGlassCount = 0;
   var goalReached = false;
   var goal = 1;

@@ -12,7 +12,6 @@ class ProgressTrackingPage extends StatefulWidget {
 }
 
 class _ProgressTrackingPageState extends State<ProgressTrackingPage> {
-  var currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

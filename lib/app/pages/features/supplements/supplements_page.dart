@@ -21,7 +21,6 @@ class SupplementsPage extends StatefulWidget {
 }
 
 class _SupplementsPageState extends State<SupplementsPage> {
-  var currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
