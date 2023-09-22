@@ -66,10 +66,10 @@ class _GoalsPageState extends State<GoalsPage> {
                         direction: DismissDirection.endToStart,
                         onDismissed: (_) {
                           final deletedGoal = goalModel.title;
-                          final documentID = goalModel.id;
-                          final originalTimestamp = goalModel.timestamp;
 
-                          context.read<GoalsCubit>().delete(documentID);
+                          context
+                              .read<GoalsCubit>()
+                              .delete(documentID: goalModel.id);
 
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
@@ -77,9 +77,9 @@ class _GoalsPageState extends State<GoalsPage> {
                               action: SnackBarAction(
                                 label: 'Undo',
                                 onPressed: () {
-                                  context
-                                      .read<GoalsCubit>()
-                                      .undo(deletedGoal, originalTimestamp);
+                                  context.read<GoalsCubit>().undo(
+                                      deletedGoal: goalModel.title,
+                                      originalTimestamp: goalModel.timestamp);
                                 },
                               ),
                             ),
@@ -136,21 +136,8 @@ class FloatingButton extends StatelessWidget {
         shape: const StadiumBorder(),
         onPressed: () {
           if (controller.text.isNotEmpty) {
-            // final userID = FirebaseAuth.instance.currentUser?.uid;
-            // if (userID == null) {
-            //   throw Exception('User is not logged in');
-            // }
             context.read<GoalsCubit>().add(controller.text);
-            // FirebaseFirestore.instance
-            //     .collection('users')
-            //     .doc(userID)
-            //     .collection('goals')
-            //     .add(
-            //   {
-            //     'title': controller.text,
-            //     'timestamp': FieldValue.serverTimestamp(),
-            //   },
-            // );
+
             controller.clear();
           }
         },

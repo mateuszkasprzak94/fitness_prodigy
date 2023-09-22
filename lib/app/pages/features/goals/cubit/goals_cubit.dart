@@ -78,7 +78,7 @@ class GoalsCubit extends Cubit<GoalsState> {
   //   );
   // }
 
-  Future<void> delete(String documentID) async {
+  Future<void> delete({required String documentID}) async {
     final userID = FirebaseAuth.instance.currentUser?.uid;
     if (userID == null) {
       throw Exception('User is not logged in');
@@ -91,7 +91,9 @@ class GoalsCubit extends Cubit<GoalsState> {
         .delete();
   }
 
-  Future<void> undo(String deletedGoal, Timestamp originalTimestamp) async {
+  Future<void> undo(
+      {required String deletedGoal,
+      required Timestamp originalTimestamp}) async {
     final userID = FirebaseAuth.instance.currentUser?.uid;
     if (userID == null) {
       throw Exception('User is not logged in');
