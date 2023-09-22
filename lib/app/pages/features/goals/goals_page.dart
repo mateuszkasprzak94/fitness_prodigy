@@ -16,8 +16,6 @@ class GoalsPage extends StatefulWidget {
 final controller = TextEditingController();
 
 class _GoalsPageState extends State<GoalsPage> {
-  var currentIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
