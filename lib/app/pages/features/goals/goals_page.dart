@@ -1,3 +1,4 @@
+import 'package:fitness_prodigy/app/models/goal_model.dart';
 import 'package:fitness_prodigy/app/pages/features/goals/cubit/goals_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -92,7 +93,7 @@ class _GoalsPageState extends State<GoalsPage> {
                           child: const Icon(Icons.delete, color: Colors.black),
                         ),
                         child: GoalTextWidget(
-                          goalModel.title,
+                          goalModel: goalModel,
                         ),
                       ),
                     ],
@@ -151,12 +152,9 @@ class FloatingButton extends StatelessWidget {
 }
 
 class GoalTextWidget extends StatelessWidget {
-  const GoalTextWidget(
-    this.title, {
-    super.key,
-  });
+  const GoalTextWidget({Key? key, required this.goalModel}) : super(key: key);
 
-  final String title;
+  final GoalModel goalModel;
 
   @override
   Widget build(BuildContext context) {
@@ -169,7 +167,7 @@ class GoalTextWidget extends StatelessWidget {
         children: [
           Expanded(
             child: Text(
-              title,
+              goalModel.title,
               style: const TextStyle(color: Colors.white),
               maxLines: 5,
               overflow: TextOverflow.ellipsis,
