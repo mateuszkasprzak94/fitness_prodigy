@@ -48,6 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                         height: 20,
                       ),
                       TextField(
+                        keyboardType: TextInputType.emailAddress,
                         controller: widget.emailController,
                         decoration: const InputDecoration(
                           hintText: 'E-mail',

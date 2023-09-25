@@ -17,10 +17,15 @@ class _WeatherContentState extends State<WeatherContent> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(30),
+          ),
+        ),
+        backgroundColor: Colors.black.withOpacity(0.15),
         title: Text(
           'Welcome to the Weather Center! 🌦️',
-          style: GoogleFonts.satisfy(fontSize: 24, color: Colors.black),
+          style: GoogleFonts.satisfy(fontSize: 24, color: Colors.white),
           maxLines: 2,
         ),
         centerTitle: true,
@@ -37,8 +42,19 @@ class _WeatherContentState extends State<WeatherContent> {
           padding: const EdgeInsets.all(8.0),
           child: ListView(
             children: [
-              Text(
-                description,
+              Container(
+                color: Colors.black.withOpacity(0.25),
+                child: Text(
+                  description,
+                  style: const TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              const TextField(
+                decoration: InputDecoration(
+                    labelText: 'City', border: OutlineInputBorder()),
               ),
             ],
           ),

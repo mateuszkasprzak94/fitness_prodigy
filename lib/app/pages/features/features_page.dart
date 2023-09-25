@@ -28,9 +28,8 @@ class _FeaturesState extends State<Features> {
       appBar: AppBar(
         actions: [
           IconButton(
-            icon: const Icon(
-              Icons.wb_cloudy,
-              color: Color.fromARGB(209, 68, 137, 255),
+            icon: const ImageIcon(
+              AssetImage('images/weather_icon.png'),
             ),
             tooltip: 'Check weather for outdoor workout',
             onPressed: () {
