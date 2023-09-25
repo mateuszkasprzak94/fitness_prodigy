@@ -5,15 +5,20 @@ String description =
     "Are you planning to take your workout outdoors? Don't let unexpected weather catch you off guard! Check the current conditions in your location to make the most of your fitness routine. Whether it's a sunny day perfect for a run or a chance of rain that calls for an indoor workout, we've got you covered. Stay informed and stay active! 💪⛅️🌧️";
 
 class WeatherContent extends StatefulWidget {
-  const WeatherContent({super.key});
+  const WeatherContent({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<WeatherContent> createState() => _WeatherContentState();
 }
 
+final cityController = TextEditingController();
+
 class _WeatherContentState extends State<WeatherContent> {
   @override
   Widget build(BuildContext context) {
+    cityController.addListener(() => setState(() {}));
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -52,14 +57,18 @@ class _WeatherContentState extends State<WeatherContent> {
                 ),
               ),
               const SizedBox(height: 20),
-              const TextField(
+              TextField(
+                controller: cityController,
                 decoration: InputDecoration(
                   labelText: 'City',
                   hintText: 'City',
-                  prefixIcon: Icon(
-                    Icons.home,
-                  ),
-                  border: OutlineInputBorder(),
+                  prefixIcon: const Icon(Icons.home),
+                  suffixIcon: cityController.text.isEmpty
+                      ? Container(width: 0)
+                      : IconButton(
+                          onPressed: () => cityController.clear(),
+                          icon: const Icon(Icons.close)),
+                  border: const OutlineInputBorder(),
                 ),
               ),
             ],
