@@ -7,6 +7,7 @@ import 'package:fitness_prodigy/app/pages/features/stopwatch/stopwatch_page.dart
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_page.dart';
 import 'package:fitness_prodigy/app/pages/features/water_glass_counter/water_glass_counter_page.dart';
 import 'package:fitness_prodigy/app/models/button_model.dart';
+import 'package:fitness_prodigy/app/pages/features/weather/weather_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -25,6 +26,23 @@ class _FeaturesState extends State<Features> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            icon: const Icon(
+              Icons.wb_cloudy,
+              color: Color.fromARGB(209, 68, 137, 255),
+            ),
+            tooltip: 'Check weather for outdoor workout',
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const WeatherContent(),
+                  fullscreenDialog: true,
+                ),
+              );
+            },
+          ),
+        ],
         title: Text(
           '# Fitness Prodigy',
           style: GoogleFonts.lobster(fontSize: 40, color: Colors.black),
