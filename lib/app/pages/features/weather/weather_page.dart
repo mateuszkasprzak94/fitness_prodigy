@@ -54,7 +54,13 @@ class _WeatherContentState extends State<WeatherContent> {
               const SizedBox(height: 20),
               const TextField(
                 decoration: InputDecoration(
-                    labelText: 'City', border: OutlineInputBorder()),
+                  labelText: 'City',
+                  hintText: 'City',
+                  prefixIcon: Icon(
+                    Icons.home,
+                  ),
+                  border: OutlineInputBorder(),
+                ),
               ),
             ],
           ),
