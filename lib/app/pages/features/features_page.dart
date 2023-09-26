@@ -29,7 +29,7 @@ class _FeaturesState extends State<Features> {
         actions: [
           IconButton(
             icon: const ImageIcon(
-              AssetImage('images/weather_icon.png'),
+              AssetImage('images/cloudy.png'),
             ),
             tooltip: 'Check weather for outdoor workout',
             onPressed: () {
