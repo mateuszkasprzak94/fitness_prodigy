@@ -11,6 +11,7 @@ import 'package:fitness_prodigy/app/pages/features/weather/weather_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class Features extends StatefulWidget {
   const Features({
@@ -27,19 +28,21 @@ class _FeaturesState extends State<Features> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          IconButton(
-            icon: const ImageIcon(
-              AssetImage('images/cloudy.png'),
+          Animate(
+            child: IconButton(
+              icon: const ImageIcon(
+                AssetImage('images/cloudy.png'),
+              ).animate().fade(delay: 500.ms).slide().then().shake(),
+              tooltip: 'Check weather for outdoor workout',
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => const WeatherContent(),
+                    fullscreenDialog: true,
+                  ),
+                );
+              },
             ),
-            tooltip: 'Check weather for outdoor workout',
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => const WeatherContent(),
-                  fullscreenDialog: true,
-                ),
-              );
-            },
           ),
         ],
         title: Text(
