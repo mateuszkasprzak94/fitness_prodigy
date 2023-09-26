@@ -16,7 +16,8 @@ class ChestPage extends StatelessWidget {
         title: Text(
           'Forge Your Pectoral Power',
           style: GoogleFonts.lancelot(
-              fontSize: 30, color: Colors.black, fontWeight: FontWeight.bold),
+              fontSize: 29, color: Colors.black, fontWeight: FontWeight.bold),
+          maxLines: 2,
         ),
         centerTitle: true,
         flexibleSpace: Container(
