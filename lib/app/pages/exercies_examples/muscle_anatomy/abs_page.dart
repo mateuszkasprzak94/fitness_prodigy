@@ -15,7 +15,7 @@ class AbsPage extends StatelessWidget {
         title: Text(
           'Sculpting Strong Core: Unveiling Abdominal Power',
           style: GoogleFonts.lancelot(
-              fontSize: 26, color: Colors.black, fontWeight: FontWeight.bold),
+              fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
           maxLines: 2,
         ),
         centerTitle: true,
@@ -28,6 +28,7 @@ class AbsPage extends StatelessWidget {
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
+        titleSpacing: 0,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
