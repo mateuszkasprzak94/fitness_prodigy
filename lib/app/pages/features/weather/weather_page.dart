@@ -68,7 +68,8 @@ class _WeatherContentState extends State<WeatherContent> {
                       : IconButton(
                           onPressed: () => cityController.clear(),
                           icon: const Icon(Icons.close)),
-                  border: const OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15)),
                 ),
               ),
             ],

@@ -118,7 +118,8 @@ class _GoalsPageState extends State<GoalsPage> {
                             : IconButton(
                                 onPressed: () => controller.clear(),
                                 icon: const Icon(Icons.close)),
-                        border: const OutlineInputBorder(),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10)),
                       ),
                     )
                   ],
