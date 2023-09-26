@@ -17,9 +17,11 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   var errorMessage = '';
   var isCreatingAccount = false;
+  bool isPasswordVisible = true;
 
   @override
   Widget build(BuildContext context) {
+    widget.emailController.addListener(() => setState(() {}));
     return Scaffold(
       body: BlocProvider(
         create: (context) => AuthCubit(),
@@ -50,11 +52,18 @@ class _LoginPageState extends State<LoginPage> {
                       TextField(
                         keyboardType: TextInputType.emailAddress,
                         controller: widget.emailController,
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
+                          prefixIcon: const Icon(Icons.email),
+                          suffixIcon: widget.emailController.text.isEmpty
+                              ? Container(width: 0)
+                              : IconButton(
+                                  onPressed: () =>
+                                      widget.emailController.clear(),
+                                  icon: const Icon(Icons.close)),
                           hintText: 'E-mail',
                           filled: true,
-                          fillColor: Color.fromARGB(69, 255, 255, 255),
-                          hintStyle: TextStyle(
+                          fillColor: const Color.fromARGB(69, 255, 255, 255),
+                          hintStyle: const TextStyle(
                               color: Colors.grey,
                               fontSize: 16,
                               fontWeight: FontWeight.bold),
@@ -65,12 +74,19 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       TextField(
                         controller: widget.passwordController,
-                        obscureText: true,
-                        decoration: const InputDecoration(
+                        obscureText: isPasswordVisible,
+                        decoration: InputDecoration(
+                          suffixIcon: IconButton(
+                            icon: isPasswordVisible
+                                ? const Icon(Icons.visibility_off)
+                                : const Icon(Icons.visibility),
+                            onPressed: () => setState(
+                                () => isPasswordVisible = !isPasswordVisible),
+                          ),
                           hintText: 'Password',
                           filled: true,
-                          fillColor: Color.fromARGB(69, 255, 255, 255),
-                          hintStyle: TextStyle(
+                          fillColor: const Color.fromARGB(69, 255, 255, 255),
+                          hintStyle: const TextStyle(
                             color: Colors.grey,
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
