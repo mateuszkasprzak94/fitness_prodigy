@@ -28,6 +28,7 @@ class BicepsPage extends StatelessWidget {
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
+        titleSpacing: 0,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
