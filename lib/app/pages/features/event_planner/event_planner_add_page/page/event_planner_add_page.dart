@@ -110,65 +110,68 @@ class _AddPageBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 30,
-        vertical: 20,
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: ListView(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 30,
+          vertical: 20,
+        ),
+        children: [
+          TextField(
+            onChanged: onTitleChanged,
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'Mr. Olympia',
+              label: Text('Title'),
+            ),
+          ),
+          const SizedBox(height: 20),
+          TextField(
+            onChanged: onImageUrlChanged,
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'http:// ... .jpg',
+              label: Text('Image URL'),
+            ),
+          ),
+          const SizedBox(height: 20),
+          Container(
+            decoration: const ShapeDecoration(
+              shape: StadiumBorder(),
+              gradient: LinearGradient(colors: [
+                Color.fromARGB(164, 0, 0, 0),
+                Colors.white,
+              ], begin: Alignment.centerRight, end: Alignment.centerLeft),
+            ),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+                //deactivate color and shadow
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                backgroundColor: Colors.transparent,
+                shadowColor: Colors.transparent,
+                elevation: 0,
+              ),
+              onPressed: () async {
+                final selectedDate = await showDatePicker(
+                  context: context,
+                  initialDate: DateTime.now(),
+                  firstDate: DateTime.now(),
+                  lastDate: DateTime.now().add(
+                    const Duration(days: 365 * 10),
+                  ),
+                );
+                onDateChanged(selectedDate);
+              },
+              child: Text(
+                selectedDateFormatted ?? 'Choose event date',
+                style: const TextStyle(color: Colors.black),
+              ),
+            ),
+          ),
+        ],
       ),
-      children: [
-        TextField(
-          onChanged: onTitleChanged,
-          decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'Mr. Olympia',
-            label: Text('Title'),
-          ),
-        ),
-        const SizedBox(height: 20),
-        TextField(
-          onChanged: onImageUrlChanged,
-          decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'http:// ... .jpg',
-            label: Text('Image URL'),
-          ),
-        ),
-        const SizedBox(height: 20),
-        Container(
-          decoration: const ShapeDecoration(
-            shape: StadiumBorder(),
-            gradient: LinearGradient(colors: [
-              Color.fromARGB(164, 0, 0, 0),
-              Colors.white,
-            ], begin: Alignment.centerRight, end: Alignment.centerLeft),
-          ),
-          child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-              //deactivate color and shadow
-              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-              backgroundColor: Colors.transparent,
-              shadowColor: Colors.transparent,
-              elevation: 0,
-            ),
-            onPressed: () async {
-              final selectedDate = await showDatePicker(
-                context: context,
-                initialDate: DateTime.now(),
-                firstDate: DateTime.now(),
-                lastDate: DateTime.now().add(
-                  const Duration(days: 365 * 10),
-                ),
-              );
-              onDateChanged(selectedDate);
-            },
-            child: Text(
-              selectedDateFormatted ?? 'Choose event date',
-              style: const TextStyle(color: Colors.black),
-            ),
-          ),
-        ),
-      ],
     );
   }
 }
