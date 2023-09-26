@@ -21,6 +21,7 @@ final controller = TextEditingController();
 class _GoalsPageState extends State<GoalsPage> {
   @override
   Widget build(BuildContext context) {
+    controller.addListener(() => setState(() {}));
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -99,11 +100,25 @@ class _GoalsPageState extends State<GoalsPage> {
                         ),
                       ),
                     ],
+                    const SizedBox(height: 15),
                     TextField(
                       controller: controller,
-                      decoration: const InputDecoration(
-                        contentPadding: EdgeInsets.all(10),
+                      decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.all(10),
+                        labelText: 'Goal',
                         hintText: 'Enter a new goal',
+                        prefixIcon: controller.text.isEmpty
+                            ? const Icon(Icons.check)
+                            : const Icon(
+                                Icons.check,
+                                color: Colors.green,
+                              ),
+                        suffixIcon: controller.text.isEmpty
+                            ? Container(width: 0)
+                            : IconButton(
+                                onPressed: () => controller.clear(),
+                                icon: const Icon(Icons.close)),
+                        border: const OutlineInputBorder(),
                       ),
                     )
                   ],
