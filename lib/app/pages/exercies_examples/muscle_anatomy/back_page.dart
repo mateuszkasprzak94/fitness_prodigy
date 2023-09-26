@@ -16,6 +16,7 @@ class BackPage extends StatelessWidget {
           "Unlock Your Back's Full Potential",
           style: GoogleFonts.lancelot(
               fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
+          maxLines: 2,
         ),
         centerTitle: true,
         flexibleSpace: Container(
@@ -27,6 +28,7 @@ class BackPage extends StatelessWidget {
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
+        titleSpacing: 0,
       ),
       body: CustomScrollView(
         slivers: [
