@@ -32,7 +32,12 @@ class _FeaturesState extends State<Features> {
             child: IconButton(
               icon: const ImageIcon(
                 AssetImage('images/cloudy.png'),
-              ).animate().fade(delay: 500.ms).slide().then().shake(),
+              )
+                  .animate()
+                  .fade(delay: 500.ms, duration: 1000.ms)
+                  .slide()
+                  .then()
+                  .shake(),
               tooltip: 'Check weather for outdoor workout',
               onPressed: () {
                 Navigator.of(context).push(
