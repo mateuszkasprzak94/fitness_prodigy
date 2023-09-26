@@ -21,111 +21,115 @@ class _GoalsPageState extends State<GoalsPage> {
   @override
   Widget build(BuildContext context) {
     controller.addListener(() => setState(() {}));
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Goals',
-          style: GoogleFonts.satisfy(fontSize: 30, color: Colors.black),
-        ),
-        centerTitle: true,
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(colors: [
-              Color.fromARGB(164, 0, 0, 0),
-              Colors.white,
-            ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Goals',
+            style: GoogleFonts.satisfy(fontSize: 30, color: Colors.black),
           ),
+          centerTitle: true,
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(colors: [
+                Color.fromARGB(164, 0, 0, 0),
+                Colors.white,
+              ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+            ),
+          ),
+          systemOverlayStyle: SystemUiOverlayStyle.light,
+          automaticallyImplyLeading: true,
         ),
-        systemOverlayStyle: SystemUiOverlayStyle.light,
-        automaticallyImplyLeading: true,
-      ),
-      body: BlocProvider(
-        create: (context) => GoalsCubit(GoalsRepository())..start(),
-        child: BlocBuilder<GoalsCubit, GoalsState>(
-          builder: (context, state) {
-            final goalModels = state.items;
-            if (state.errorMessage.isNotEmpty) {
-              return Center(
-                child: Text(
-                    'An unexpected problem has occurred: ${state.errorMessage}'),
-              );
-            }
+        body: BlocProvider(
+          create: (context) => GoalsCubit(GoalsRepository())..start(),
+          child: BlocBuilder<GoalsCubit, GoalsState>(
+            builder: (context, state) {
+              final goalModels = state.items;
+              if (state.errorMessage.isNotEmpty) {
+                return Center(
+                  child: Text(
+                      'An unexpected problem has occurred: ${state.errorMessage}'),
+                );
+              }
 
-            if (state.isLoading) {
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            }
+              if (state.isLoading) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
 
-            return Scaffold(
-              floatingActionButton: const FloatingButton(),
-              body: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ListView(
-                  children: [
-                    for (final goalModel in goalModels) ...[
-                      Dismissible(
-                        key: ValueKey(goalModel.id),
-                        direction: DismissDirection.endToStart,
-                        onDismissed: (_) {
-                          final deletedGoal = goalModel.title;
+              return Scaffold(
+                floatingActionButton: const FloatingButton(),
+                body: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListView(
+                    children: [
+                      for (final goalModel in goalModels) ...[
+                        Dismissible(
+                          key: ValueKey(goalModel.id),
+                          direction: DismissDirection.endToStart,
+                          onDismissed: (_) {
+                            final deletedGoal = goalModel.title;
 
-                          context
-                              .read<GoalsCubit>()
-                              .delete(documentID: goalModel.id);
+                            context
+                                .read<GoalsCubit>()
+                                .delete(documentID: goalModel.id);
 
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text('Goal "$deletedGoal" deleted'),
-                              action: SnackBarAction(
-                                label: 'Undo',
-                                onPressed: () {
-                                  context.read<GoalsCubit>().undo(
-                                      deletedGoal: goalModel.title,
-                                      originalTimestamp: goalModel.timestamp);
-                                },
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text('Goal "$deletedGoal" deleted'),
+                                action: SnackBarAction(
+                                  label: 'Undo',
+                                  onPressed: () {
+                                    context.read<GoalsCubit>().undo(
+                                        deletedGoal: goalModel.title,
+                                        originalTimestamp: goalModel.timestamp);
+                                  },
+                                ),
                               ),
-                            ),
-                          );
-                        },
-                        background: Container(
-                          color: Colors.red,
-                          alignment: Alignment.centerRight,
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
-                          child: const Icon(Icons.delete, color: Colors.black),
+                            );
+                          },
+                          background: Container(
+                            color: Colors.red,
+                            alignment: Alignment.centerRight,
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
+                            child:
+                                const Icon(Icons.delete, color: Colors.black),
+                          ),
+                          child: GoalTextWidget(
+                            goalModel: goalModel,
+                          ),
                         ),
-                        child: GoalTextWidget(
-                          goalModel: goalModel,
+                      ],
+                      const SizedBox(height: 15),
+                      TextField(
+                        controller: controller,
+                        decoration: InputDecoration(
+                          contentPadding: const EdgeInsets.all(10),
+                          labelText: 'Your Goal',
+                          hintText: 'Enter a new goal',
+                          prefixIcon: controller.text.isEmpty
+                              ? const Icon(Icons.check)
+                              : const Icon(
+                                  Icons.check,
+                                  color: Colors.green,
+                                ),
+                          suffixIcon: controller.text.isEmpty
+                              ? Container(width: 0)
+                              : IconButton(
+                                  onPressed: () => controller.clear(),
+                                  icon: const Icon(Icons.close)),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10)),
                         ),
-                      ),
+                      )
                     ],
-                    const SizedBox(height: 15),
-                    TextField(
-                      controller: controller,
-                      decoration: InputDecoration(
-                        contentPadding: const EdgeInsets.all(10),
-                        labelText: 'Your Goal',
-                        hintText: 'Enter a new goal',
-                        prefixIcon: controller.text.isEmpty
-                            ? const Icon(Icons.check)
-                            : const Icon(
-                                Icons.check,
-                                color: Colors.green,
-                              ),
-                        suffixIcon: controller.text.isEmpty
-                            ? Container(width: 0)
-                            : IconButton(
-                                onPressed: () => controller.clear(),
-                                icon: const Icon(Icons.close)),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10)),
-                      ),
-                    )
-                  ],
+                  ),
                 ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
       ),
     );
