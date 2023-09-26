@@ -105,7 +105,7 @@ class _GoalsPageState extends State<GoalsPage> {
                       controller: controller,
                       decoration: InputDecoration(
                         contentPadding: const EdgeInsets.all(10),
-                        labelText: 'Goal',
+                        labelText: 'Your Goal',
                         hintText: 'Enter a new goal',
                         prefixIcon: controller.text.isEmpty
                             ? const Icon(Icons.check)
