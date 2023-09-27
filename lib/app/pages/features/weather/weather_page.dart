@@ -13,12 +13,9 @@ class WeatherContent extends StatefulWidget {
   State<WeatherContent> createState() => _WeatherContentState();
 }
 
-final _cityController = TextEditingController();
-
 class _WeatherContentState extends State<WeatherContent> {
   @override
   Widget build(BuildContext context) {
-    _cityController.addListener(() => setState(() {}));
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -37,7 +34,9 @@ class _WeatherContentState extends State<WeatherContent> {
               children: [
                 _descriptionText(),
                 const SizedBox(height: 20),
-                _searchRow(),
+                const SearchWidget(),
+                const SizedBox(height: 60),
+                const _DisplayWeatherWidget(),
               ],
             ),
           ),
@@ -46,7 +45,69 @@ class _WeatherContentState extends State<WeatherContent> {
     );
   }
 
-  Row _searchRow() {
+  Container _descriptionText() {
+    return Container(
+      color: Colors.black.withOpacity(0.25),
+      child: Text(
+        description,
+        style: const TextStyle(
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+
+  AppBar _appBar() {
+    return AppBar(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(30),
+        ),
+      ),
+      backgroundColor: Colors.black.withOpacity(0.15),
+      title: Text(
+        'Welcome to the Weather Center! 🌦️',
+        style: GoogleFonts.satisfy(fontSize: 24, color: Colors.white),
+        maxLines: 2,
+      ),
+      centerTitle: true,
+      automaticallyImplyLeading: true,
+    );
+  }
+}
+
+class _DisplayWeatherWidget extends StatelessWidget {
+  const _DisplayWeatherWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text('Lublin', style: Theme.of(context).textTheme.displayLarge),
+        const SizedBox(height: 60),
+        Text('27.0 C', style: Theme.of(context).textTheme.displayLarge),
+      ],
+    );
+  }
+}
+
+class SearchWidget extends StatefulWidget {
+  const SearchWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<SearchWidget> createState() => _SearchWidgetState();
+}
+
+class _SearchWidgetState extends State<SearchWidget> {
+  final _cityController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    _cityController.addListener(() => setState(() {}));
     return Row(
       children: [
         Expanded(
@@ -83,36 +144,6 @@ class _WeatherContentState extends State<WeatherContent> {
           ),
         ),
       ],
-    );
-  }
-
-  Container _descriptionText() {
-    return Container(
-      color: Colors.black.withOpacity(0.25),
-      child: Text(
-        description,
-        style: const TextStyle(
-          color: Colors.white,
-        ),
-      ),
-    );
-  }
-
-  AppBar _appBar() {
-    return AppBar(
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(
-          bottom: Radius.circular(30),
-        ),
-      ),
-      backgroundColor: Colors.black.withOpacity(0.15),
-      title: Text(
-        'Welcome to the Weather Center! 🌦️',
-        style: GoogleFonts.satisfy(fontSize: 24, color: Colors.white),
-        maxLines: 2,
-      ),
-      centerTitle: true,
-      automaticallyImplyLeading: true,
     );
   }
 }
