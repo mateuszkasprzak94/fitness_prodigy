@@ -1,6 +1,12 @@
 part of 'weather_cubit.dart';
 
-@immutable
-sealed class WeatherState {}
-
-final class WeatherInitial extends WeatherState {}
+class WeatherState {
+  const WeatherState({
+    this.model,
+    this.status = Status.initial,
+    this.errorMessage,
+  });
+  final WeatherModel? model;
+  final Status status;
+  final String? errorMessage;
+}

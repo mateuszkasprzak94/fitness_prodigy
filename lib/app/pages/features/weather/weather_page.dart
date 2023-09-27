@@ -46,18 +46,6 @@ class _WeatherContentState extends State<WeatherContent> {
     );
   }
 
-  Container _descriptionText() {
-    return Container(
-      color: Colors.black.withOpacity(0.25),
-      child: Text(
-        description,
-        style: const TextStyle(
-          color: Colors.white,
-        ),
-      ),
-    );
-  }
-
   Row _searchRow() {
     return Row(
       children: [
@@ -95,6 +83,18 @@ class _WeatherContentState extends State<WeatherContent> {
           ),
         ),
       ],
+    );
+  }
+
+  Container _descriptionText() {
+    return Container(
+      color: Colors.black.withOpacity(0.25),
+      child: Text(
+        description,
+        style: const TextStyle(
+          color: Colors.white,
+        ),
+      ),
     );
   }
 
