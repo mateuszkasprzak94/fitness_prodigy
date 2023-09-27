@@ -28,25 +28,27 @@ class _FeaturesState extends State<Features> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          Animate(
-            child: IconButton(
-              icon: const ImageIcon(
-                AssetImage('images/cloudy.png'),
-              )
-                  .animate()
-                  .fade(delay: 500.ms, duration: 1000.ms)
-                  .slide()
-                  .then()
-                  .shake(),
-              tooltip: 'Check weather for outdoor workout',
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => const WeatherContent(),
-                    fullscreenDialog: true,
-                  ),
-                );
-              },
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const WeatherContent(),
+                  fullscreenDialog: true,
+                ),
+              );
+            },
+            child: Animate(
+              child: Container(
+                margin: const EdgeInsets.all(10),
+                alignment: Alignment.center,
+                width: 30,
+                child: Image.asset('images/weather_icon.png')
+                    .animate()
+                    .fade(delay: 500.ms, duration: 1000.ms)
+                    .slide()
+                    .then()
+                    .shake(),
+              ),
             ),
           ),
         ],
