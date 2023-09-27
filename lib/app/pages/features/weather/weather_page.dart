@@ -13,12 +13,12 @@ class WeatherContent extends StatefulWidget {
   State<WeatherContent> createState() => _WeatherContentState();
 }
 
-final cityController = TextEditingController();
+final _cityController = TextEditingController();
 
 class _WeatherContentState extends State<WeatherContent> {
   @override
   Widget build(BuildContext context) {
-    cityController.addListener(() => setState(() {}));
+    _cityController.addListener(() => setState(() {}));
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -59,20 +59,40 @@ class _WeatherContentState extends State<WeatherContent> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                TextField(
-                  controller: cityController,
-                  decoration: InputDecoration(
-                    labelText: 'City',
-                    hintText: 'City',
-                    prefixIcon: const Icon(Icons.home),
-                    suffixIcon: cityController.text.isEmpty
-                        ? Container(width: 0)
-                        : IconButton(
-                            onPressed: () => cityController.clear(),
-                            icon: const Icon(Icons.close)),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(15)),
-                  ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        controller: _cityController,
+                        decoration: InputDecoration(
+                          labelText: 'City',
+                          hintText: 'City',
+                          prefixIcon: const Icon(Icons.home),
+                          suffixIcon: _cityController.text.isEmpty
+                              ? Container(width: 0)
+                              : IconButton(
+                                  onPressed: () => _cityController.clear(),
+                                  icon: const Icon(Icons.close)),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 30),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        backgroundColor: Colors.transparent,
+                        shadowColor: Colors.transparent,
+                        elevation: 0,
+                      ),
+                      onPressed: () {},
+                      child: const Text(
+                        'Get',
+                        style: TextStyle(fontSize: 20, color: Colors.blue),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
