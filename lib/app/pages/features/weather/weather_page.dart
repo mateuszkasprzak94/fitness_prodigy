@@ -82,14 +82,16 @@ class _WeatherContentState extends State<WeatherContent> {
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        backgroundColor: Colors.transparent,
-                        shadowColor: Colors.transparent,
+                        backgroundColor: Colors.white.withOpacity(0.35),
                         elevation: 0,
                       ),
                       onPressed: () {},
                       child: const Text(
                         'Get',
-                        style: TextStyle(fontSize: 20, color: Colors.blue),
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                        ),
                       ),
                     ),
                   ],
