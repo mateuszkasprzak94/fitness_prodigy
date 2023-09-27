@@ -23,21 +23,7 @@ class _WeatherContentState extends State<WeatherContent> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-              bottom: Radius.circular(30),
-            ),
-          ),
-          backgroundColor: Colors.black.withOpacity(0.15),
-          title: Text(
-            'Welcome to the Weather Center! 🌦️',
-            style: GoogleFonts.satisfy(fontSize: 24, color: Colors.white),
-            maxLines: 2,
-          ),
-          centerTitle: true,
-          automaticallyImplyLeading: true,
-        ),
+        appBar: _appBar(),
         body: Container(
           decoration: const BoxDecoration(
             image: DecorationImage(
@@ -49,58 +35,84 @@ class _WeatherContentState extends State<WeatherContent> {
             padding: const EdgeInsets.all(8.0),
             child: ListView(
               children: [
-                Container(
-                  color: Colors.black.withOpacity(0.25),
-                  child: Text(
-                    description,
-                    style: const TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
+                _descriptionText(),
                 const SizedBox(height: 20),
-                Row(
-                  children: [
-                    Expanded(
-                      child: TextField(
-                        controller: _cityController,
-                        decoration: InputDecoration(
-                          labelText: 'City',
-                          hintText: 'City',
-                          prefixIcon: const Icon(Icons.home),
-                          suffixIcon: _cityController.text.isEmpty
-                              ? Container(width: 0)
-                              : IconButton(
-                                  onPressed: () => _cityController.clear(),
-                                  icon: const Icon(Icons.close)),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15)),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 30),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                        backgroundColor: Colors.white.withOpacity(0.35),
-                        elevation: 0,
-                      ),
-                      onPressed: () {},
-                      child: const Text(
-                        'Get',
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                _searchRow(),
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+
+  Container _descriptionText() {
+    return Container(
+      color: Colors.black.withOpacity(0.25),
+      child: Text(
+        description,
+        style: const TextStyle(
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+
+  Row _searchRow() {
+    return Row(
+      children: [
+        Expanded(
+          child: TextField(
+            controller: _cityController,
+            decoration: InputDecoration(
+              labelText: 'City',
+              hintText: 'City',
+              prefixIcon: const Icon(Icons.home),
+              suffixIcon: _cityController.text.isEmpty
+                  ? Container(width: 0)
+                  : IconButton(
+                      onPressed: () => _cityController.clear(),
+                      icon: const Icon(Icons.close)),
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+            ),
+          ),
+        ),
+        const SizedBox(width: 30),
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            backgroundColor: Colors.white.withOpacity(0.35),
+            elevation: 0,
+          ),
+          onPressed: () {},
+          child: const Text(
+            'Get',
+            style: TextStyle(
+              fontSize: 20,
+              color: Colors.black,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  AppBar _appBar() {
+    return AppBar(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(30),
+        ),
+      ),
+      backgroundColor: Colors.black.withOpacity(0.15),
+      title: Text(
+        'Welcome to the Weather Center! 🌦️',
+        style: GoogleFonts.satisfy(fontSize: 24, color: Colors.white),
+        maxLines: 2,
+      ),
+      centerTitle: true,
+      automaticallyImplyLeading: true,
     );
   }
 }
