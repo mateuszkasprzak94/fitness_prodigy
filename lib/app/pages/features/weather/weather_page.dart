@@ -1,4 +1,5 @@
-import 'package:fitness_prodigy/app/pages/features/goals/goals_page.dart';
+import 'package:fitness_prodigy/app/core/enums.dart';
+import 'package:fitness_prodigy/app/models/weather_model.dart';
 import 'package:fitness_prodigy/app/pages/features/weather/cubit/weather_cubit.dart';
 import 'package:fitness_prodigy/app/repositories/weather_repository.dart';
 import 'package:flutter/material.dart';
@@ -24,45 +25,59 @@ class _WeatherContentState extends State<WeatherContent> {
       create: (context) => WeatherCubit(WeatherRepository()),
       child: BlocBuilder<WeatherCubit, WeatherState>(
         builder: (context, state) {
+          final weatherModel = state.model;
           return GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),
             child: Scaffold(
               extendBodyBehindAppBar: true,
               appBar: _appBar(),
-              body: Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('images/weather4.png'),
-                    fit: BoxFit.fill,
+              body: Builder(builder: (context) {
+                if (state.status == Status.loading) {
+                  return const Text('Loading');
+                }
+                return Container(
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('images/weather4.png'),
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8),
                   child: ListView(
                     children: [
-                      _descriptionText(),
+                      const _DescriptionText(),
                       const SizedBox(height: 20),
-                      const SearchWidget(),
+                      const _SearchWidget(),
                       const SizedBox(height: 60),
+                      if (weatherModel != null)
+                        _DisplayWeatherWidget(
+                          weatherModel: weatherModel,
+                        )
                     ],
                   ),
-                ),
-              ),
+                  // child: Builder(builder: (context) {
+                  //   if (state.status == Status.loading) {
+                  //     return const Text('Loading');
+                  //   }
+                  // return Padding(
+                  //   padding: const EdgeInsets.all(8.0),
+                  //   child: ListView(
+                  //     children: [
+                  //       if (weatherModel != null) const SizedBox(height: 20),
+                  //       const _DescriptionText(),
+                  //       const SizedBox(height: 20),
+                  //       const _SearchWidget(),
+                  //       const SizedBox(height: 60),
+                  //       _DisplayWeatherWidget(weatherModel: weatherModel),
+                  //     ],
+                  //   ),
+                  // );
+                  // }),
+                );
+              }),
             ),
           );
         },
-      ),
-    );
-  }
-
-  Container _descriptionText() {
-    return Container(
-      color: Colors.black.withOpacity(0.25),
-      child: Text(
-        description,
-        style: const TextStyle(
-          color: Colors.white,
-        ),
       ),
     );
   }
@@ -86,10 +101,32 @@ class _WeatherContentState extends State<WeatherContent> {
   }
 }
 
-class _DisplayWeatherWidget extends StatelessWidget {
-  const _DisplayWeatherWidget({
+class _DescriptionText extends StatelessWidget {
+  const _DescriptionText({
     Key? key,
   }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.black.withOpacity(0.25),
+      child: Text(
+        description,
+        style: const TextStyle(
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+}
+
+class _DisplayWeatherWidget extends StatelessWidget {
+  const _DisplayWeatherWidget({
+    required this.weatherModel,
+    Key? key,
+  }) : super(key: key);
+
+  final WeatherModel weatherModel;
 
   @override
   Widget build(BuildContext context) {
@@ -97,10 +134,11 @@ class _DisplayWeatherWidget extends StatelessWidget {
       builder: (context, state) {
         return Column(
           children: [
-            Text(controller.text,
+            Text(weatherModel.city,
                 style: Theme.of(context).textTheme.displayLarge),
             const SizedBox(height: 60),
-            Text('27.0 C', style: Theme.of(context).textTheme.displayLarge),
+            Text(weatherModel.temperature.toString(),
+                style: Theme.of(context).textTheme.displayLarge),
           ],
         );
       },
@@ -108,16 +146,16 @@ class _DisplayWeatherWidget extends StatelessWidget {
   }
 }
 
-class SearchWidget extends StatefulWidget {
-  const SearchWidget({
+class _SearchWidget extends StatefulWidget {
+  const _SearchWidget({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<SearchWidget> createState() => _SearchWidgetState();
+  State<_SearchWidget> createState() => _SearchWidgetState();
 }
 
-class _SearchWidgetState extends State<SearchWidget> {
+class _SearchWidgetState extends State<_SearchWidget> {
   final _cityController = TextEditingController();
 
   @override
@@ -150,7 +188,9 @@ class _SearchWidgetState extends State<SearchWidget> {
             elevation: 0,
           ),
           onPressed: () {
-            _DisplayWeatherWidget;
+            context
+                .read<WeatherCubit>()
+                .getWeatherModel(city: _cityController.text);
           },
           child: const Text(
             'Get',
