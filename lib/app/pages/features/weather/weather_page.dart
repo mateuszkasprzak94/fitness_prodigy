@@ -188,9 +188,13 @@ class _SearchWidgetState extends State<_SearchWidget> {
             elevation: 0,
           ),
           onPressed: () {
-            context
-                .read<WeatherCubit>()
-                .getWeatherModel(city: _cityController.text);
+            if (_cityController.text.isNotEmpty) {
+              context
+                  .read<WeatherCubit>()
+                  .getWeatherModel(city: _cityController.text);
+
+              _cityController.clear();
+            }
           },
           child: const Text(
             'Get',
