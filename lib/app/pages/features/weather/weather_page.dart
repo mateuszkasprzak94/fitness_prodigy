@@ -1,5 +1,6 @@
 import 'package:fitness_prodigy/app/pages/features/goals/goals_page.dart';
 import 'package:fitness_prodigy/app/pages/features/weather/cubit/weather_cubit.dart';
+import 'package:fitness_prodigy/app/repositories/weather_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,7 +21,7 @@ class _WeatherContentState extends State<WeatherContent> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => WeatherCubit(),
+      create: (context) => WeatherCubit(WeatherRepository()),
       child: BlocBuilder<WeatherCubit, WeatherState>(
         builder: (context, state) {
           return GestureDetector(
