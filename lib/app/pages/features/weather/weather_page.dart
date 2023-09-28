@@ -55,24 +55,6 @@ class _WeatherContentState extends State<WeatherContent> {
                         )
                     ],
                   ),
-                  // child: Builder(builder: (context) {
-                  //   if (state.status == Status.loading) {
-                  //     return const Text('Loading');
-                  //   }
-                  // return Padding(
-                  //   padding: const EdgeInsets.all(8.0),
-                  //   child: ListView(
-                  //     children: [
-                  //       if (weatherModel != null) const SizedBox(height: 20),
-                  //       const _DescriptionText(),
-                  //       const SizedBox(height: 20),
-                  //       const _SearchWidget(),
-                  //       const SizedBox(height: 60),
-                  //       _DisplayWeatherWidget(weatherModel: weatherModel),
-                  //     ],
-                  //   ),
-                  // );
-                  // }),
                 );
               }),
             ),
