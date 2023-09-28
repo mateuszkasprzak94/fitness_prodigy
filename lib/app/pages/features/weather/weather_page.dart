@@ -25,45 +25,58 @@ class _WeatherContentState extends State<WeatherContent> {
     return BlocProvider(
       create: (context) =>
           WeatherCubit(WeatherRepository(WeatherRemoteDataSource())),
-      child: BlocBuilder<WeatherCubit, WeatherState>(
-        builder: (context, state) {
-          final weatherModel = state.model;
-          return GestureDetector(
-            onTap: () => FocusScope.of(context).unfocus(),
-            child: Scaffold(
-              extendBodyBehindAppBar: true,
-              appBar: _appBar(),
-              body: Center(
-                child: Builder(builder: (context) {
-                  if (state.status == Status.loading) {
-                    return const CircularProgressIndicator();
-                  }
-                  return Container(
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('images/weather4.png'),
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                    padding: const EdgeInsets.all(8),
-                    child: ListView(
-                      children: [
-                        const _DescriptionText(),
-                        const SizedBox(height: 20),
-                        const _SearchWidget(),
-                        const SizedBox(height: 60),
-                        if (weatherModel != null)
-                          _DisplayWeatherWidget(
-                            weatherModel: weatherModel,
-                          )
-                      ],
-                    ),
-                  );
-                }),
+      child: BlocListener<WeatherCubit, WeatherState>(
+        listener: (context, state) {
+          if (state.status == Status.error) {
+            final errorMessage = state.errorMessage ?? 'Unkown error';
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(errorMessage),
+                backgroundColor: Colors.red,
               ),
-            ),
-          );
+            );
+          }
         },
+        child: BlocBuilder<WeatherCubit, WeatherState>(
+          builder: (context, state) {
+            final weatherModel = state.model;
+            return GestureDetector(
+              onTap: () => FocusScope.of(context).unfocus(),
+              child: Scaffold(
+                extendBodyBehindAppBar: true,
+                appBar: _appBar(),
+                body: Center(
+                  child: Builder(builder: (context) {
+                    if (state.status == Status.loading) {
+                      return const CircularProgressIndicator();
+                    }
+                    return Container(
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('images/weather4.png'),
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      padding: const EdgeInsets.all(8),
+                      child: ListView(
+                        children: [
+                          const _DescriptionText(),
+                          const SizedBox(height: 20),
+                          const _SearchWidget(),
+                          const SizedBox(height: 60),
+                          if (weatherModel != null)
+                            _DisplayWeatherWidget(
+                              weatherModel: weatherModel,
+                            )
+                        ],
+                      ),
+                    );
+                  }),
+                ),
+              ),
+            );
+          },
+        ),
       ),
     );
   }
