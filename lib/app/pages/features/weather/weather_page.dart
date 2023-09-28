@@ -1,4 +1,7 @@
+import 'package:fitness_prodigy/app/pages/features/goals/goals_page.dart';
+import 'package:fitness_prodigy/app/pages/features/weather/cubit/weather_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 String description =
@@ -16,32 +19,37 @@ class WeatherContent extends StatefulWidget {
 class _WeatherContentState extends State<WeatherContent> {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
-      child: Scaffold(
-        extendBodyBehindAppBar: true,
-        appBar: _appBar(),
-        body: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('images/weather4.png'),
-              fit: BoxFit.fill,
+    return BlocProvider(
+      create: (context) => WeatherCubit(),
+      child: BlocBuilder<WeatherCubit, WeatherState>(
+        builder: (context, state) {
+          return GestureDetector(
+            onTap: () => FocusScope.of(context).unfocus(),
+            child: Scaffold(
+              extendBodyBehindAppBar: true,
+              appBar: _appBar(),
+              body: Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('images/weather4.png'),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListView(
+                    children: [
+                      _descriptionText(),
+                      const SizedBox(height: 20),
+                      const SearchWidget(),
+                      const SizedBox(height: 60),
+                    ],
+                  ),
+                ),
+              ),
             ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(8, 8, 8, 100),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                _descriptionText(),
-                const SizedBox(height: 20),
-                const SearchWidget(),
-                const SizedBox(height: 60),
-                const _DisplayWeatherWidget(),
-              ],
-            ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }
@@ -84,12 +92,17 @@ class _DisplayWeatherWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text('Lublin', style: Theme.of(context).textTheme.displayLarge),
-        const SizedBox(height: 60),
-        Text('27.0 C', style: Theme.of(context).textTheme.displayLarge),
-      ],
+    return BlocBuilder<WeatherCubit, WeatherState>(
+      builder: (context, state) {
+        return Column(
+          children: [
+            Text(controller.text,
+                style: Theme.of(context).textTheme.displayLarge),
+            const SizedBox(height: 60),
+            Text('27.0 C', style: Theme.of(context).textTheme.displayLarge),
+          ],
+        );
+      },
     );
   }
 }
@@ -135,7 +148,9 @@ class _SearchWidgetState extends State<SearchWidget> {
             backgroundColor: Colors.white.withOpacity(0.35),
             elevation: 0,
           ),
-          onPressed: () {},
+          onPressed: () {
+            _DisplayWeatherWidget;
+          },
           child: const Text(
             'Get',
             style: TextStyle(
