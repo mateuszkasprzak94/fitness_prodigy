@@ -5,4 +5,8 @@ class WeatherModel {
   });
   final String city;
   final double temperature;
+
+  WeatherModel.fromJson(Map<String, dynamic> json)
+      : city = json['location']['name'],
+        temperature = json['current']['temp_c'] + 0.0;
 }
