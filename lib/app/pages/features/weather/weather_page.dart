@@ -29,8 +29,9 @@ class _WeatherContentState extends State<WeatherContent> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ListView(
+            padding: const EdgeInsets.fromLTRB(8, 8, 8, 100),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 _descriptionText(),
                 const SizedBox(height: 20),
