@@ -1,4 +1,5 @@
 import 'package:fitness_prodigy/app/core/enums.dart';
+import 'package:fitness_prodigy/app/data/remote_data_sources/weather_remote_data_source.dart';
 import 'package:fitness_prodigy/app/models/weather_model.dart';
 import 'package:fitness_prodigy/app/pages/features/weather/cubit/weather_cubit.dart';
 import 'package:fitness_prodigy/app/repositories/weather_repository.dart';
@@ -22,7 +23,8 @@ class _WeatherContentState extends State<WeatherContent> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => WeatherCubit(WeatherRepository()),
+      create: (context) =>
+          WeatherCubit(WeatherRepository(WeatherRemoteDataSource())),
       child: BlocBuilder<WeatherCubit, WeatherState>(
         builder: (context, state) {
           final weatherModel = state.model;

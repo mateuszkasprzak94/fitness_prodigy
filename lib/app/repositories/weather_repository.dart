@@ -1,14 +1,16 @@
-import 'package:dio/dio.dart';
+import 'package:fitness_prodigy/app/data/remote_data_sources/weather_remote_data_source.dart';
 import 'package:fitness_prodigy/app/models/weather_model.dart';
 
 class WeatherRepository {
+  WeatherRepository(this._weatherRemoteDataSource);
+
+  final WeatherRemoteDataSource _weatherRemoteDataSource;
+
   Future<WeatherModel?> getWeatherModel({
     required String city,
   }) async {
-    // http://api.weatherapi.com/v1/current.json?key=1b041a2453fb453099e90924231409&q=Lublin&aqi=no
-    final response = await Dio().get<Map<String, dynamic>>(
-        'http://api.weatherapi.com/v1/current.json?key=1b041a2453fb453099e90924231409&q=$city&aqi=no');
-    final responseData = response.data;
+    final responseData =
+        await _weatherRemoteDataSource.getWeatherData(city: city);
 
     if (responseData == null) {
       return null;
