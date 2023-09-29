@@ -106,7 +106,11 @@ class _DescriptionText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.black.withOpacity(0.25),
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Colors.black.withOpacity(0.25),
+      ),
       child: Text(
         description,
         style: const TextStyle(
@@ -129,14 +133,20 @@ class _DisplayWeatherWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<WeatherCubit, WeatherState>(
       builder: (context, state) {
-        return Column(
-          children: [
-            Text(weatherModel.city,
-                style: Theme.of(context).textTheme.displayLarge),
-            const SizedBox(height: 60),
-            Text('${weatherModel.temperature} °C',
-                style: Theme.of(context).textTheme.displayLarge),
-          ],
+        return Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Colors.black.withOpacity(0.25),
+          ),
+          child: Column(
+            children: [
+              Text(weatherModel.city,
+                  style: const TextStyle(color: Colors.white, fontSize: 50)),
+              const SizedBox(height: 20),
+              Text('${weatherModel.temperature} °C',
+                  style: const TextStyle(color: Colors.white, fontSize: 50)),
+            ],
+          ),
         );
       },
     );
