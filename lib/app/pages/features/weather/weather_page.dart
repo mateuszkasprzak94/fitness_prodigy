@@ -134,7 +134,7 @@ class _DisplayWeatherWidget extends StatelessWidget {
             Text(weatherModel.city,
                 style: Theme.of(context).textTheme.displayLarge),
             const SizedBox(height: 60),
-            Text(weatherModel.temperature.toString(),
+            Text('${weatherModel.temperature} °C',
                 style: Theme.of(context).textTheme.displayLarge),
           ],
         );
