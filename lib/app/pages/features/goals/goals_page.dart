@@ -190,8 +190,6 @@ class GoalTextWidget extends StatelessWidget {
             child: Text(
               goalModel.title,
               style: const TextStyle(color: Colors.white),
-              maxLines: 5,
-              overflow: TextOverflow.ellipsis,
             ),
           ),
           const Icon(

@@ -42,117 +42,124 @@ class _SupplementsPageState extends State<SupplementsPage> {
         automaticallyImplyLeading: true,
       ),
       body: Center(
-        child: ListView(
-          children: [
-            const SizedBox(height: 10),
-            customSupplementsButton(
-              text: 'Creatine Monohydrate',
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => const Creatine(),
-                  ),
-                );
-              },
-            ),
-            const SizedBox(height: 10),
-            customSupplementsButton(
-              text: 'Protein Powder',
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => const ProteinPowder(),
-                  ),
-                );
-              },
-            ),
-            const SizedBox(height: 10),
-            customSupplementsButton(
-              text: 'BCAA',
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => const BCAAPage(),
-                  ),
-                );
-              },
-            ),
-            const SizedBox(height: 10),
-            customSupplementsButton(
-              text: 'AAKG',
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => const AAKGPage(),
-                  ),
-                );
-              },
-            ),
-            const SizedBox(height: 10),
-            customSupplementsButton(
-              text: 'Cytruline',
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => const CitrullinePage(),
-                  ),
-                );
-              },
-            ),
-            const SizedBox(height: 10),
-            customSupplementsButton(
-              text: 'Beta-Alanine',
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => const BetaAlaninePage(),
-                  ),
-                );
-              },
-            ),
-            const SizedBox(height: 10),
-            customSupplementsButton(
-              text: 'Glutamine',
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => const GlutaminePage(),
-                  ),
-                );
-              },
-            ),
-            const SizedBox(height: 10),
-            customSupplementsButton(
-              text: 'Collagen',
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (_) => const CollagenPage(),
-                  ),
-                );
-              },
-            ),
-            const SizedBox(height: 10),
-            //Expanded button for Vitamins
-            ExpansionTile(
-              title: const Text(
-                'Vitamins',
-                style: TextStyle(fontWeight: FontWeight.bold),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ListView(
+            children: [
+              const SizedBox(height: 10),
+              customSupplementsButton(
+                text: 'Creatine Monohydrate',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const Creatine(),
+                    ),
+                  );
+                },
               ),
-              children: [
-                customButtonExpansionTile(text: 'Vitamin C', onPressed: () {}),
-                customButtonExpansionTile(text: 'Vitamin D', onPressed: () {}),
-                customButtonExpansionTile(text: 'Vitamin B', onPressed: () {}),
-                customButtonExpansionTile(text: 'Magnesium', onPressed: () {}),
-                customButtonExpansionTile(text: 'Omega 3', onPressed: () {}),
-                customButtonExpansionTile(text: 'Zync', onPressed: () {}),
-                customButtonExpansionTile(
-                    text: 'Ashwagandha', onPressed: () {}),
-                customButtonExpansionTile(text: 'D3K2', onPressed: () {}),
-                const SizedBox(height: 15),
-              ],
-            ),
-          ],
+              const SizedBox(height: 10),
+              customSupplementsButton(
+                text: 'Protein Powder',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const ProteinPowder(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 10),
+              customSupplementsButton(
+                text: 'BCAA',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const BCAAPage(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 10),
+              customSupplementsButton(
+                text: 'AAKG',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const AAKGPage(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 10),
+              customSupplementsButton(
+                text: 'Cytruline',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const CitrullinePage(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 10),
+              customSupplementsButton(
+                text: 'Beta-Alanine',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const BetaAlaninePage(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 10),
+              customSupplementsButton(
+                text: 'Glutamine',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const GlutaminePage(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 10),
+              customSupplementsButton(
+                text: 'Collagen',
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const CollagenPage(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 10),
+              //Expanded button for Vitamins
+              ExpansionTile(
+                title: const Text(
+                  'Vitamins',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                children: [
+                  customButtonExpansionTile(
+                      text: 'Vitamin C', onPressed: () {}),
+                  customButtonExpansionTile(
+                      text: 'Vitamin D', onPressed: () {}),
+                  customButtonExpansionTile(
+                      text: 'Vitamin B', onPressed: () {}),
+                  customButtonExpansionTile(
+                      text: 'Magnesium', onPressed: () {}),
+                  customButtonExpansionTile(text: 'Omega 3', onPressed: () {}),
+                  customButtonExpansionTile(text: 'Zync', onPressed: () {}),
+                  customButtonExpansionTile(
+                      text: 'Ashwagandha', onPressed: () {}),
+                  customButtonExpansionTile(text: 'D3K2', onPressed: () {}),
+                  const SizedBox(height: 15),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
