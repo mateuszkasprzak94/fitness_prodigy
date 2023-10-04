@@ -1,4 +1,5 @@
 import 'package:fitness_prodigy/app/pages/features/event_planner/event_planner_add_page/cubit/add_cubit.dart';
+import 'package:fitness_prodigy/app/pages/features/event_planner/event_planner_add_page/page/text_for_event_planner_add_page.dart';
 import 'package:fitness_prodigy/app/repositories/items_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -170,6 +171,8 @@ class _AddPageBody extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(height: 30),
+          Center(child: Text(descriptionadd)),
         ],
       ),
     );
