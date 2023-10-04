@@ -33,8 +33,8 @@ class CitrullinePage extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           children: [
             const Image(
-              image:
-                  AssetImage('images supplements/'), //add image of Citrulline
+              image: AssetImage(
+                  'images supplements/cytruline.jpg'), //add image of Citrulline
             ),
             const SizedBox(height: 15),
             _buildSupplements1('Description:', citrullinedescription),

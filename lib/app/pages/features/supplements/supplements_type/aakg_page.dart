@@ -33,7 +33,8 @@ class AAKGPage extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           children: [
             const Image(
-              image: AssetImage('images supplements/'), //add image of AAKG
+              image:
+                  AssetImage('images supplements/aakg.jpg'), //add image of AAKG
             ),
             const SizedBox(height: 15),
             _buildSupplements1('Description:', aakgdescription),

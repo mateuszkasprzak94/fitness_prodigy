@@ -33,7 +33,8 @@ class CollagenPage extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           children: [
             const Image(
-              image: AssetImage('images supplements/'), //add image of Collagen
+              image: AssetImage(
+                  'images supplements/collagen.jpg'), //add image of Collagen
             ),
             const SizedBox(height: 15),
             _buildSupplements1('Description:', collagendescription),

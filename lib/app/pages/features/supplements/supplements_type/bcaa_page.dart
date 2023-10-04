@@ -33,7 +33,8 @@ class BCAAPage extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           children: [
             const Image(
-              image: AssetImage('images supplements/'), //add image of BCAA
+              image:
+                  AssetImage('images supplements/bcaa.jpg'), //add image of BCAA
             ),
             const SizedBox(height: 15),
             _buildSupplements1('Description:', bcaadescription),

@@ -33,8 +33,8 @@ class BetaAlaninePage extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           children: [
             const Image(
-              image:
-                  AssetImage('images supplements/'), //add image of Beta-Alanine
+              image: AssetImage(
+                  'images supplements/beta.jpg'), //add image of Beta-Alanine
             ),
             const SizedBox(height: 15),
             _buildSupplements1('Description:', betadescription),

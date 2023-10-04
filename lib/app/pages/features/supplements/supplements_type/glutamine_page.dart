@@ -33,8 +33,8 @@ class GlutaminePage extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           children: [
             const Image(
-              image:
-                  AssetImage('images supplements/'), //add image of Beta-Alanine
+              image: AssetImage(
+                  'images supplements/glutamine.png'), //add image of Glutamine
             ),
             const SizedBox(height: 15),
             _buildSupplements1('Description:', glutaminedescription),
