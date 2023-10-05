@@ -322,22 +322,41 @@ String conclusionAshwagandha =
 
 // D3K2
 
-String descriptionD3k2 = '';
+String descriptionD3k2 =
+    'Vitamin D3 and Vitamin K2 are essential nutrients that play crucial roles in maintaining overall health. While they serve different functions in the body, they often work synergistically to support various physiological processes.';
 
-String benefits1D3k2 = '';
+String benefits1D3k2 =
+    'Vitamin D3 is a fat-soluble vitamin that is primarily known for its role in regulating calcium absorption in the intestines. It helps maintain proper calcium and phosphate levels in the blood, which are essential for strong bones and teeth.';
 
-String benefits2D3k2 = '';
+String benefits2D3k2 =
+    'The body can produce Vitamin D3 when exposed to sunlight, particularly UVB rays. Additionally, it can be obtained from dietary sources such as fatty fish (salmon, mackerel, tuna), fortified dairy products, and supplements.';
 
-String benefits3D3k2 = '';
+String benefits3D3k2 = """
+● Bone Health: Vitamin D3 is critical for bone health as it enhances calcium absorption, reducing the risk of osteoporosis and fractures.
+● Immune Support: It plays a role in supporting the immune system's function, potentially reducing the risk of infections.
+● Mood Regulation: Some studies suggest that Vitamin D3 may have a positive impact on mood and may help combat symptoms of depression.
+● Heart Health: There is emerging research on its potential cardiovascular benefits, including blood pressure regulation. """;
 
-String benefits4D3k2 = '';
+String benefits4D3k2 =
+    'Vitamin K2 is involved in the activation of proteins that regulate calcium distribution in the body. It ensures that calcium is directed to the bones and teeth rather than accumulating in soft tissues.';
 
-String benefits5D3k2 = '';
+String benefits5D3k2 =
+    'Dietary sources of Vitamin K2 include fermented foods like natto, cheese, and sauerkraut. It can also be synthesized by gut bacteria. Supplements are another option to ensure an adequate intake.';
 
-String sourceD3k2 = '';
+String benefits6D3k2 = """
+● Bone Health: Vitamin K2 works in synergy with Vitamin D3 to support bone health by preventing calcium from being deposited in arteries and soft tissues and ensuring it is utilized in bones.
+● Heart Health: Some research suggests that Vitamin K2 may contribute to cardiovascular health by preventing arterial calcification.
+● Blood Clotting: Vitamin K2 is essential for proper blood clotting, as it activates clotting factors in the liver.""";
 
-String supplementationD3k2 = '';
+String synergyD3k2 =
+    "Vitamin D3 and Vitamin K2 often work together to optimize calcium metabolism. Vitamin D3 helps absorb calcium from the digestive tract, while Vitamin K2 directs that calcium to where it's needed in the bones and teeth and prevents its buildup in arteries.";
 
-String intakeD3k2 = '';
+String intakeD3k2 = """
+● Vitamin D3: The recommended daily intake varies by age and individual factors. A typical range is 600 to 2,000 IU per day, but it's essential to consult with a healthcare provider to determine your specific needs.
+● Vitamin K2: Adequate intake levels for Vitamin K2 have not been established, but supplementation typically ranges from 45 to 180 micrograms daily. """;
 
-String cautionD3k2 = '';
+String cautionD3k2 =
+    "While both vitamins are generally considered safe, it's important not to exceed recommended doses, especially when taking supplements. Excessive intake can lead to toxicity. Always consult with a healthcare professional before starting any new supplement regimen, particularly if you have underlying health conditions or are taking medications.";
+
+String conclusionD3k2 =
+    'Vitamin D3 and Vitamin K2 are vital nutrients with diverse health benefits, ranging from bone health and cardiovascular support to immune function. They are often found in combination supplements due to their synergistic effects. To determine the right supplementation for your needs, consult a healthcare provider or nutritionist.';
