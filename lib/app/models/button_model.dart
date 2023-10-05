@@ -70,6 +70,7 @@ Widget customButtonExpansionTile({
       //deactivate color and shadow
       tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       backgroundColor: Colors.transparent,
+      foregroundColor: Colors.black,
       shadowColor: Colors.transparent,
       elevation: 0,
     ),

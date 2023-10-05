@@ -26,6 +26,7 @@ class _FeaturesState extends State<Features> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade300,
       appBar: _appBar(),
       body: Center(
         child: _listView(),
@@ -37,7 +38,7 @@ class _FeaturesState extends State<Features> {
     return ListView(
       children: [
         const Image(
-          image: AssetImage('images/step4mm.png'),
+          image: AssetImage('images/features.jpg'),
           fit: BoxFit.cover,
         ),
         const SizedBox(height: 5),
@@ -166,10 +167,10 @@ class _FeaturesState extends State<Features> {
       ),
       centerTitle: true,
       flexibleSpace: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(colors: [
-            Color.fromARGB(164, 0, 0, 0),
-            Colors.white,
+            const Color.fromARGB(164, 0, 0, 0),
+            Colors.grey.shade300,
           ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
         ),
       ),

@@ -12,7 +12,7 @@ class MagnesiumContent extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Magnesium',
-          style: GoogleFonts.lancelot(fontSize: 24, color: Colors.black),
+          style: GoogleFonts.lancelot(fontSize: 30, color: Colors.black),
         ),
         centerTitle: true,
         titleSpacing: 0,
