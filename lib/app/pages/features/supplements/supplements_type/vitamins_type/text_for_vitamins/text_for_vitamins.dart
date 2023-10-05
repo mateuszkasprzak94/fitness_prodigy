@@ -231,25 +231,48 @@ As with any supplement, it's important to consult with a healthcare professional
 
 // ZINC
 
-String descriptionZinc = '';
+String descriptionZinc =
+    'Zinc is an essential mineral that plays a crucial role in various aspects of human health. It is involved in numerous bodily functions, making it an important nutrient for overall well-being. Zinc is essential for the proper functioning of the immune system, wound healing, DNA synthesis, and more.';
 
-String benefits1Zinc = '';
+String benefits1Zinc =
+    'Zinc is well-known for its role in supporting the immune system. It helps in the production and function of immune cells, making your body better equipped to fight off infections.';
 
-String benefits2Zinc = '';
+String benefits2Zinc =
+    'Zinc is essential for wound healing and tissue repair. It plays a crucial role in collagen synthesis, which is necessary for skin, muscle, and tissue repair.';
 
-String benefits3Zinc = '';
+String benefits3Zinc =
+    'Zinc is an antioxidant, which means it helps protect cells from oxidative stress and damage caused by free radicals. This can contribute to a reduced risk of chronic diseases.';
 
-String benefits4Zinc = '';
+String benefits4Zinc =
+    'Zinc is commonly used in skincare products due to its role in maintaining healthy skin. It can help manage conditions like acne and promote clear skin.';
 
-String benefits5Zinc = '';
+String benefits5Zinc =
+    'Zinc is necessary for normal growth and development, especially in children. It supports proper growth, cognitive development, and the functioning of the reproductive system.';
 
-String sourceZinc = '';
+String benefits6Zinc =
+    "Zinc is essential for maintaining proper vision and smell. It's involved in the functioning of the eyes and olfactory (smell) receptors.";
 
-String supplementationZinc = '';
+String sourceZinc =
+    """Zinc can be obtained from various dietary sources, including:
 
-String intakeZinc = '';
+● Meat: Beef, pork, and lamb are rich sources of zinc.
+● Shellfish: Oysters, crab, and lobster contain high levels of zinc.
+● Nuts and Seeds: Pumpkin seeds, cashews, and almonds provide zinc.
+● Legumes: Beans, lentils, and chickpeas are good plant-based sources.
+● Dairy Products: Milk, cheese, and yogurt contain zinc.
+● Whole Grains: Whole grains like wheat, rice, and oats provide some zinc.
+● Fortified Foods: Some cereals and plant-based milk alternatives are fortified with zinc.
+● Supplements: Zinc supplements are available over-the-counter and can be used if dietary intake is insufficient. However, it's essential not to exceed recommended doses, as excessive zinc intake can lead to adverse effects. """;
 
-String cautionZinc = '';
+String intakeZinc =
+    'The recommended daily intake of zinc varies by age, sex, and life stage. In general, adults need around 8-11 milligrams of zinc per day. Pregnant and breastfeeding women may require slightly more.';
+
+String cautionZinc =
+    """Zinc deficiency can lead to a weakened immune system, delayed wound healing, hair loss, and other health issues. On the other hand, excessive zinc intake from supplements can interfere with the absorption of other minerals and cause adverse effects.
+
+It's important to strike a balance and obtain the right amount of zinc from your diet or supplements if necessary. If you suspect a deficiency or are considering zinc supplementation, it's advisable to consult a healthcare provider or registered dietitian for guidance tailored to your individual needs.
+
+Remember that a well-balanced diet that includes a variety of foods can help you meet your zinc requirements naturally. """;
 
 // ASHWAGANDHA
 

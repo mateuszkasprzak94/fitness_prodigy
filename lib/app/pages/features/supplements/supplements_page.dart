@@ -12,6 +12,7 @@ import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_b.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_c.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_d.dart';
+import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/zinc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -177,7 +178,12 @@ class _SupplementsPageState extends State<SupplementsPage> {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (_) => const Omega3Content()));
                       }),
-                  customButtonExpansionTile(text: 'Zync', onPressed: () {}),
+                  customButtonExpansionTile(
+                      text: 'Zinc',
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => const ZincContent()));
+                      }),
                   customButtonExpansionTile(
                       text: 'Ashwagandha', onPressed: () {}),
                   customButtonExpansionTile(text: 'D3K2', onPressed: () {}),

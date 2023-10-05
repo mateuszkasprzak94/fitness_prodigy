@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Omega3Content extends StatelessWidget {
-  const Omega3Content({super.key});
+class ZincContent extends StatelessWidget {
+  const ZincContent({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Omega-3 Fatty Acids',
+          'Zinc',
           style: GoogleFonts.lancelot(fontSize: 30, color: Colors.black),
         ),
         centerTitle: true,
@@ -19,8 +19,8 @@ class Omega3Content extends StatelessWidget {
         flexibleSpace: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(colors: [
-              Colors.black,
-              Color.fromARGB(255, 206, 188, 29),
+              Colors.grey,
+              Color.fromARGB(255, 10, 166, 238),
               Colors.white,
             ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
           ),
@@ -31,39 +31,29 @@ class Omega3Content extends StatelessWidget {
           child: ListView(
         children: [
           const Image(
-            image: AssetImage('images supplements/omega3.jpg'),
+            image: AssetImage('images supplements/zinc.jpg'),
           ),
           const SizedBox(height: 15),
-          _buildSupplements1('Overview:', descriptionOmega3),
-          const Divider(height: 5, thickness: 5),
-          const SizedBox(height: 15),
-          _buildSupplements1('Types of Omega-3 Fatty Acids:',
-              'There are three main types of Omega-3 fatty acids:'),
-          _buildSupplements2('1. Eicosapentaenoic Acid (EPA):', type1Omega3),
-          _buildSupplements2('2. Docosahexaenoic Acid (DHA):', type2Omega3),
-          _buildSupplements2('3. Alpha-Linolenic Acid (ALA):', type3Omega3),
+          _buildSupplements1('Overview:', descriptionZinc),
           const Divider(height: 5, thickness: 5),
           const SizedBox(height: 15),
           _buildSupplements1('Health Benefits:',
-              'Omega-3 fatty acids offer a wide range of health benefits, including:'),
-          _buildSupplements2('● Heart Health:   ', benefits1Omega3),
-          _buildSupplements2('● Brain Health: ', benefits2Omega3),
-          _buildSupplements2('● Inflammation:', benefits3Omega3),
-          _buildSupplements2('● Eye Health:', benefits4Omega3),
-          _buildSupplements2('● Mood and Mental Health: ', benefits5Omega3),
-          _buildSupplements2('● Skin Health: ', benefits6Omega3),
+              'Here are some of the key health benefits of zinc:'),
+          _buildSupplements2('● Immune System Support: ', benefits1Zinc),
+          _buildSupplements2('● Wound Healing: ', benefits2Zinc),
+          _buildSupplements2('● Antioxidant Properties: ', benefits3Zinc),
+          _buildSupplements2('● Skin Health:', benefits4Zinc),
+          _buildSupplements2('● Growth and Development: ', benefits5Zinc),
+          _buildSupplements2('● Sensory Organs: ', benefits6Zinc),
           const Divider(height: 5, thickness: 5),
           const SizedBox(height: 15),
-          _buildSupplements1('Sources:', sourceOmega3),
+          _buildSupplements1('Sources:', sourceZinc),
           const Divider(height: 5, thickness: 5),
           const SizedBox(height: 15),
-          _buildSupplements1('Supplementation:', supplementationOmega3),
+          _buildSupplements1('Recommended Daily Intake:', intakeZinc),
           const Divider(height: 5, thickness: 5),
           const SizedBox(height: 15),
-          _buildSupplements1('Dosage:', intakeOmega3),
-          const Divider(height: 5, thickness: 5),
-          const SizedBox(height: 15),
-          _buildSupplements1('Caution:', cautionOmega3),
+          _buildSupplements1('Deficiency and Excess: ', cautionZinc),
         ],
       )),
     );
@@ -79,7 +69,7 @@ _buildSupplements1(String title, String description) {
         Text(
           title,
           style: const TextStyle(
-            color: Color.fromARGB(255, 206, 188, 29),
+            color: Color.fromARGB(255, 41, 142, 189),
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
             fontSize: 17,
@@ -107,7 +97,7 @@ _buildSupplements2(String title, String description) {
         Text(
           title,
           style: const TextStyle(
-            color: Color.fromARGB(255, 206, 188, 29),
+            color: Color.fromARGB(255, 41, 142, 189),
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
             fontSize: 16,
