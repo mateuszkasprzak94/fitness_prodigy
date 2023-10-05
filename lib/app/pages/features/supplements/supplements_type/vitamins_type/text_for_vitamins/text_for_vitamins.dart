@@ -175,25 +175,59 @@ As always, individual requirements may vary, so it's advisable to consult with a
 
 // OMEGA3
 
-String descriptionOmega3 = '';
+String descriptionOmega3 =
+    'Omega-3 fatty acids are a group of essential fats that play a fundamental role in maintaining good health. These polyunsaturated fats are considered essential because the body cannot produce them on its own, so they must be obtained through your diet or supplements. Omega-3s are renowned for their numerous health benefits, particularly for heart and brain health.';
 
-String benefits1Omega3 = '';
+String type1Omega3 =
+    'EPA is primarily found in fish and seafood. It is known for its anti-inflammatory properties and is often recommended for heart health.';
 
-String benefits2Omega3 = '';
+String type2Omega3 =
+    'Like EPA, DHA is found in fatty fish and is crucial for brain health, especially during pregnancy and infancy.';
 
-String benefits3Omega3 = '';
+String type3Omega3 =
+    'ALA is found in plant-based sources like flaxseeds, chia seeds, and walnuts. It can be converted into EPA and DHA in the body, although the conversion rate is limited.';
 
-String benefits4Omega3 = '';
+String benefits1Omega3 =
+    'Omega-3s can help reduce the risk of heart disease by lowering blood pressure, reducing triglycerides, and preventing the formation of blood clots.';
 
-String benefits5Omega3 = '';
+String benefits2Omega3 =
+    'DHA, in particular, is essential for brain development and function. It may improve cognitive function and lower the risk of cognitive decline.';
 
-String sourceOmega3 = '';
+String benefits3Omega3 =
+    'Omega-3s have strong anti-inflammatory properties, which can help alleviate symptoms of chronic inflammatory conditions like arthritis.';
 
-String supplementationOmega3 = '';
+String benefits4Omega3 =
+    'DHA is a major component of the retina, and omega-3s may reduce the risk of age-related macular degeneration.';
 
-String intakeOmega3 = '';
+String benefits5Omega3 =
+    'Some studies suggest that Omega-3s may help manage depression and anxiety.';
 
-String cautionOmega3 = '';
+String benefits6Omega3 =
+    'Omega-3s can help keep your skin healthy by reducing inflammation and keeping it moisturized.';
+
+String sourceOmega3 =
+    """You can obtain Omega-3 fatty acids from both animal and plant-based sources:
+
+● Fatty Fish: Salmon, mackerel, sardines, trout, and herring are rich in EPA and DHA.
+
+● Flaxseeds: These seeds are an excellent source of ALA. Ground flaxseeds are more easily absorbed by the body.
+
+● Chia Seeds: Chia seeds are high in ALA and provide a variety of other nutrients.
+
+● Walnuts: Walnuts are a good source of ALA and also provide healthy fats and antioxidants.
+
+● Fish Oil Supplements: Fish oil supplements are a convenient way to increase your Omega-3 intake, especially if you don't regularly consume fatty fish.""";
+
+String supplementationOmega3 =
+    'Omega-3 supplements, such as fish oil capsules or algae oil capsules (for vegetarians and vegans), are available and can be a practical way to ensure an adequate intake of these essential fatty acids.';
+
+String intakeOmega3 =
+    "The recommended dosage of Omega-3 supplements varies depending on individual health needs. It's essential to consult with a healthcare provider or a registered dietitian to determine the appropriate dosage for your specific circumstances.";
+
+String cautionOmega3 =
+    """While Omega-3 supplements are generally considered safe, high doses can lead to bleeding problems in some individuals. If you have bleeding disorders or take blood-thinning medications, consult your healthcare provider before starting Omega-3 supplements.
+
+As with any supplement, it's important to consult with a healthcare professional to determine the right Omega-3 supplementation for your unique health goals and needs. """;
 
 // ZINC
 
