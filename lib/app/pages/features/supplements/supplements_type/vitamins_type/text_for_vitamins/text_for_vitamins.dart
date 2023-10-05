@@ -276,25 +276,49 @@ Remember that a well-balanced diet that includes a variety of foods can help you
 
 // ASHWAGANDHA
 
-String descriptionAshwagandha = '';
+String descriptionAshwagandha =
+    'Ashwagandha, scientifically known as Withania somnifera, is a powerful medicinal herb that has been used in traditional Ayurvedic medicine for centuries. It is often referred to as the "Indian ginseng" due to its rejuvenating properties. Ashwagandha is valued for its ability to help the body adapt to stress and promote overall well-being.';
 
-String benefits1Ashwagandha = '';
+String benefits1Ashwagandha =
+    'Ashwagandha is classified as an adaptogen, which means it helps the body adapt to stress. It can reduce the production of stress hormones, helping you feel more relaxed and less anxious.';
 
-String benefits2Ashwagandha = '';
+String benefits2Ashwagandha =
+    'Ashwagandha has a calming effect on the nervous system, making it useful for those struggling with insomnia or disrupted sleep patterns.';
 
-String benefits3Ashwagandha = '';
+String benefits3Ashwagandha =
+    'Some studies suggest that Ashwagandha may help alleviate symptoms of depression and anxiety. It may also improve overall emotional well-being.';
 
-String benefits4Ashwagandha = '';
+String benefits4Ashwagandha =
+    "Regular consumption of Ashwagandha may enhance the immune system's function, making it more effective at warding off infections.";
 
-String benefits5Ashwagandha = '';
+String benefits5Ashwagandha =
+    'Ashwagandha has anti-inflammatory properties that may help reduce inflammation in the body, which is linked to various chronic diseases.';
 
-String sourceAshwagandha = '';
+String benefits6Ashwagandha =
+    'Some research indicates that Ashwagandha may enhance cognitive function, including memory and attention span.';
 
-String supplementationAshwagandha = '';
+String benefits7Ashwagandha =
+    'Ashwagandha may help balance hormones, making it potentially beneficial for conditions like PCOS (Polycystic Ovary Syndrome) and irregular menstrual cycles.';
 
-String intakeAshwagandha = '';
+String benefits8Ashwagandha =
+    'It contains antioxidants that can help protect cells from oxidative damage caused by free radicals.';
 
-String cautionAshwagandha = '';
+String sourceAshwagandha =
+    """Ashwagandha can be consumed in various forms, including:
+
+● Powder: Ashwagandha root is dried and ground into a fine powder, which can be added to smoothies, teas, or taken as a supplement.
+● Capsules: Ashwagandha supplements are available in capsule form, providing a convenient way to incorporate it into your routine.
+● Tincture: Liquid extracts of Ashwagandha can be added to water or other beverages.
+● Tea: Ashwagandha tea is made by steeping the dried root in hot water. """;
+
+String dosageAshwagandha =
+    "The appropriate dosage of Ashwagandha can vary depending on individual needs and the form of the supplement. Generally, a typical dose ranges from 300 to 500 milligrams of standardized root extract taken one to two times per day. It's advisable to start with a lower dose and gradually increase it, as needed.";
+
+String cautionAshwagandha =
+    'While Ashwagandha is generally considered safe for most people when used as directed, it may interact with certain medications or medical conditions. If you are pregnant, breastfeeding, have a medical condition, or are taking medications, consult with a healthcare professional before using Ashwagandha supplements.';
+
+String conclusionAshwagandha =
+    "Ashwagandha is a versatile herb that offers a wide range of potential health benefits, particularly in managing stress and promoting overall well-being. As with any supplement, it's essential to use it responsibly and consult a healthcare provider if you have any concerns or questions about its suitability for your individual health needs.";
 
 // D3K2
 
