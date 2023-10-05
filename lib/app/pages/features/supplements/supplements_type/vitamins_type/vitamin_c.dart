@@ -68,7 +68,7 @@ _buildSupplements1(String title, String description) {
         Text(
           title,
           style: const TextStyle(
-            color: Colors.orange,
+            color: Color.fromARGB(255, 245, 222, 18),
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
             fontSize: 17,
@@ -96,7 +96,7 @@ _buildSupplements2(String title, String description) {
         Text(
           title,
           style: const TextStyle(
-            color: Colors.orange,
+            color: Color.fromARGB(255, 245, 222, 18),
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
             fontSize: 16,

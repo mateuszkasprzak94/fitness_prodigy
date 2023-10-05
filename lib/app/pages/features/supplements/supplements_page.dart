@@ -8,6 +8,7 @@ import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/protein_powder_page.dart';
 import 'package:fitness_prodigy/app/models/button_model.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_c.dart';
+import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_d.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -150,7 +151,11 @@ class _SupplementsPageState extends State<SupplementsPage> {
                             builder: (_) => const VitaminCContent()));
                       }),
                   customButtonExpansionTile(
-                      text: 'Vitamin D', onPressed: () {}),
+                      text: 'Vitamin D',
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => const VitaminDContent()));
+                      }),
                   customButtonExpansionTile(
                       text: 'Vitamin B', onPressed: () {}),
                   customButtonExpansionTile(
