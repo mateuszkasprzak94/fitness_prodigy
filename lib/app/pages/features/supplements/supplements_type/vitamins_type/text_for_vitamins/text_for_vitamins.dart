@@ -76,3 +76,55 @@ String cautionVitaminD =
     """While Vitamin D is essential for health, excessive intake of supplements can lead to Vitamin D toxicity, which can have adverse effects on your health. Always follow the recommended dosage guidelines, and consult with a healthcare professional if you're unsure about your Vitamin D needs.
 
 Remember that this overview provides general information, and specific recommendations may vary based on your unique health situation. If you have questions or concerns about Vitamin D supplementation, it's best to consult with a healthcare provider for personalized advice. """;
+
+// VITAMIN B
+
+String descriptionVitaminB =
+    "Vitamin B is a group of essential water-soluble vitamins that play diverse and crucial roles in maintaining overall health. The B-vitamin complex consists of eight distinct vitamins, each with its own unique functions and benefits. These vitamins are essential for various bodily processes, including energy metabolism, nerve function, and maintaining healthy skin, hair, and eyes.";
+
+String typesVitaminB = """The B-vitamin complex includes the following vitamins:
+
+● B1 (Thiamine): Supports energy metabolism and nerve function.
+● B2 (Riboflavin): Involved in energy production and antioxidant activity.
+● B3 (Niacin): Important for DNA repair and skin health.
+● B5 (Pantothenic Acid): Essential for fatty acid synthesis and hormone production.
+● B6 (Pyridoxine): Supports brain development and function.
+● B7 (Biotin): Promotes healthy hair, skin, and nails.
+● B9 (Folate): Crucial for cell division and preventing birth defects.
+● B12 (Cobalamin): Supports nerve function and red blood cell formation. """;
+
+String benefits1VitaminB =
+    'B-vitamins play a fundamental role in converting the food you eat into energy your body can use. They are essential for maintaining energy levels and combating fatigue.';
+
+String benefits2VitaminB =
+    'Several B-vitamins, particularly B6, B9, and B12, are critical for brain development, cognitive function, and nerve health. They help in the production of neurotransmitters and support the nervous system.';
+
+String benefits3VitaminB =
+    'Biotin (B7) is often associated with promoting healthy skin, hair, and nails. Riboflavin (B2) and Niacin (B3) contribute to maintaining good eye health.';
+
+String benefits4VitaminB =
+    'Folate (B9) plays a role in reducing the risk of heart disease by helping to lower levels of homocysteine, an amino acid associated with heart issues.';
+
+String benefits5VitaminB =
+    'Folate (B9) is crucial for healthy cell division and fetal development, making it especially important during pregnancy.';
+
+String sourceVitaminB =
+    """You can obtain B-vitamins from various dietary sources, including:
+
+1. Whole Grains: Such as brown rice, oats, and whole wheat bread.
+2. Meats and Fish: Lean meats, poultry, fish, and seafood.
+3. Dairy Products: Milk, yogurt, and cheese.
+4. Legumes: Lentils, beans, and peas.
+5. Leafy Greens: Spinach, kale, and broccoli.
+6. Nuts and Seeds: Almonds, sunflower seeds, and peanuts. """;
+
+String supplementationVitaminB =
+    'In most cases, getting your B-vitamins through a balanced diet is sufficient. However, some individuals, such as vegetarians or those with certain medical conditions, may require B-vitamin supplements. Always consult with a healthcare provider before starting any new supplements.';
+
+String intakeVitaminB =
+    "The recommended daily intake of each B-vitamin can vary based on factors like age, gender, and individual needs. To ensure you're meeting your B-vitamin requirements, it's best to consult with a healthcare professional or registered dietitian.";
+
+String cautionVitaminB =
+    """While B-vitamins are generally safe, excessive intake of some B-vitamins can lead to adverse effects. It's essential to follow recommended dosage guidelines and seek medical advice if you have concerns about B-vitamin supplementation.
+
+Remember that this overview provides general information, and specific recommendations may vary based on your unique health situation. If you have questions or concerns about B-vitamin supplementation, it's best to consult with a healthcare provider for personalized advice. """;
