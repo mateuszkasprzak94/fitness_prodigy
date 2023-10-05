@@ -128,3 +128,135 @@ String cautionVitaminB =
     """While B-vitamins are generally safe, excessive intake of some B-vitamins can lead to adverse effects. It's essential to follow recommended dosage guidelines and seek medical advice if you have concerns about B-vitamin supplementation.
 
 Remember that this overview provides general information, and specific recommendations may vary based on your unique health situation. If you have questions or concerns about B-vitamin supplementation, it's best to consult with a healthcare provider for personalized advice. """;
+
+// MAGNESIUM
+
+String descriptionMagnesium =
+    'Magnesium is an essential mineral that plays a crucial role in various bodily functions. It is involved in over 300 biochemical reactions, making it essential for maintaining overall health. Magnesium is known for its role in supporting muscle and nerve function, bone health, and cardiovascular wellness.';
+
+String benefits1Magnesium =
+    'Magnesium plays a vital role in muscle contraction and relaxation, making it essential for proper muscle function. It also supports healthy nerve function.';
+
+String benefits2Magnesium =
+    'Magnesium is involved in bone formation and density. It works in conjunction with calcium and vitamin D to help maintain strong and healthy bones.';
+
+String benefits3Magnesium =
+    'Adequate magnesium intake is linked to a lower risk of cardiovascular issues. It helps regulate heart rhythm, supports blood vessel health, and may help lower blood pressure.';
+
+String benefits4Magnesium =
+    'Magnesium is involved in energy metabolism, helping to convert food into energy that the body can use.';
+
+String benefits5Magnesium =
+    'Magnesium may promote relaxation and aid in getting better sleep by helping to relax muscles and calm the nervous system.';
+
+String benefits6Magnesium =
+    'Magnesium supports proper digestive function and helps prevent constipation.';
+
+String sourceMagnesium =
+    """You can obtain magnesium from a variety of dietary sources, including:
+
+● Nuts and Seeds: Almonds, cashews, and pumpkin seeds are excellent sources.
+● Whole Grains: Oats, brown rice, and whole wheat provide magnesium.
+● Leafy Greens: Spinach, kale, and Swiss chard are rich in magnesium.
+● Legumes: Lentils, chickpeas, and black beans contain magnesium.
+● Fish: Some fish, such as mackerel and salmon, are good sources.
+● Dairy: Dairy products like yogurt can be a source of magnesium.""";
+
+String supplementationMagnesium =
+    """Most people can meet their magnesium needs through a balanced diet. However, some individuals may require magnesium supplements, especially if they have certain medical conditions or dietary restrictions. It's important to consult with a healthcare provider before starting any new supplements.""";
+
+String intakeMagnesium =
+    """The recommended daily intake of magnesium varies depending on age, gender, and individual needs. It's best to consult with a healthcare professional or registered dietitian to determine your specific magnesium requirements.""";
+
+String cautionMagnesium =
+    """While magnesium supplements are generally considered safe, excessive intake can lead to digestive issues or interact with certain medications. Always follow recommended dosage guidelines and seek medical advice if you have concerns about magnesium supplementation.
+
+As always, individual requirements may vary, so it's advisable to consult with a healthcare provider for personalized advice regarding magnesium supplementation.""";
+
+// OMEGA3
+
+String descriptionOmega3 = '';
+
+String benefits1Omega3 = '';
+
+String benefits2Omega3 = '';
+
+String benefits3Omega3 = '';
+
+String benefits4Omega3 = '';
+
+String benefits5Omega3 = '';
+
+String sourceOmega3 = '';
+
+String supplementationOmega3 = '';
+
+String intakeOmega3 = '';
+
+String cautionOmega3 = '';
+
+// ZINC
+
+String descriptionZinc = '';
+
+String benefits1Zinc = '';
+
+String benefits2Zinc = '';
+
+String benefits3Zinc = '';
+
+String benefits4Zinc = '';
+
+String benefits5Zinc = '';
+
+String sourceZinc = '';
+
+String supplementationZinc = '';
+
+String intakeZinc = '';
+
+String cautionZinc = '';
+
+// ASHWAGANDHA
+
+String descriptionAshwagandha = '';
+
+String benefits1Ashwagandha = '';
+
+String benefits2Ashwagandha = '';
+
+String benefits3Ashwagandha = '';
+
+String benefits4Ashwagandha = '';
+
+String benefits5Ashwagandha = '';
+
+String sourceAshwagandha = '';
+
+String supplementationAshwagandha = '';
+
+String intakeAshwagandha = '';
+
+String cautionAshwagandha = '';
+
+// D3K2
+
+String descriptionD3k2 = '';
+
+String benefits1D3k2 = '';
+
+String benefits2D3k2 = '';
+
+String benefits3D3k2 = '';
+
+String benefits4D3k2 = '';
+
+String benefits5D3k2 = '';
+
+String sourceD3k2 = '';
+
+String supplementationD3k2 = '';
+
+String intakeD3k2 = '';
+
+String cautionD3k2 = '';
