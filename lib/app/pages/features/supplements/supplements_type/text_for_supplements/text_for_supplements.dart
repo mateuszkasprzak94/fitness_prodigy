@@ -1,3 +1,43 @@
+// CREATINE
+
+String descriptionCreatine =
+    'Creatine Monohydrate is a popular dietary supplement known for its potential to enhance athletic performance, particularly in activities that involve short bursts of high-intensity effort. It is one of the most extensively studied and researched supplements in the world of sports and fitness.';
+
+String roleCreatine =
+    "Creatine is a naturally occurring compound found in small amounts in certain foods and synthesized by the body, primarily in the liver, kidneys, and pancreas. It is stored in muscle cells as creatine phosphate and plays a crucial role in the production of adenosine triphosphate (ATP), which is the primary energy currency of cells. During short, intense bursts of activity (e.g., weightlifting, sprinting), the body relies heavily on ATP for energy. Creatine supplementation aims to enhance the body's ATP availability, leading to improved exercise performance.";
+
+String sourceCreatine =
+    'Creatine is found in foods like red meat, pork, poultry, and fish, although in relatively small amounts. Most individuals, especially athletes and bodybuilders, turn to creatine supplements to ensure they get a sufficient daily intake.';
+
+String benefits1Creatine =
+    "Creatine Monohydrate is known for its ability to increase the body's phosphocreatine stores, which can lead to improved performance in activities that require short bursts of energy. This includes weightlifting, sprinting, and high-intensity interval training (HIIT).";
+
+String benefits2Creatine =
+    'Creatine supplementation may support muscle growth by increasing water content in muscle cells and promoting cell volumization. It can also stimulate muscle protein synthesis.';
+
+String benefits3Creatine =
+    'Some studies suggest that creatine can help reduce muscle damage and inflammation following intense exercise, potentially speeding up recovery.';
+
+String benefits4Creatine =
+    'Emerging research indicates that creatine may have cognitive benefits, including improved memory and mental clarity. It may be particularly relevant for tasks requiring short-term memory and quick thinking.';
+
+String benefits5Creatine =
+    'Creatine supplementation has shown promise in the treatment of certain neuromuscular disorders, such as muscular dystrophy.';
+
+String usage1Creatine =
+    'Some individuals choose to begin creatine supplementation with a loading phase, taking around 20 grams per day (divided into 4 doses) for 5-7 days. This aims to saturate muscle cells with creatine quickly.';
+
+String usage2Creatine =
+    'After the loading phase, a daily dose of 3-5 grams is typically sufficient to maintain elevated creatine levels in the muscles. Some people skip the loading phase and start with this maintenance dose directly.';
+
+String cautionCreatine = """
+● Creatine is generally safe when used as directed. However, it's essential to stay hydrated while taking creatine, as it can increase water retention in the body.
+● Individuals with kidney issues should consult a healthcare professional before using creatine supplements.
+● Some people may experience gastrointestinal discomfort when taking creatine. If this occurs, reducing the dose or taking it with food may help. """;
+
+String conclusionCreatine =
+    "Creatine Monohydrate is a well-researched and widely used dietary supplement with a range of potential benefits for athletes, bodybuilders, and individuals looking to enhance exercise performance and support muscle growth. It's essential to follow recommended dosages and consult with a healthcare provider before starting any new supplementation regimen.";
+
 //PROTEIN POWDER
 
 String proteindescription =

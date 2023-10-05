@@ -1,3 +1,4 @@
+import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/text_for_supplements/text_for_supplements.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -40,25 +41,40 @@ class Creatine extends StatelessWidget {
       ),
       body: Center(
         child: ListView(
-          padding: const EdgeInsets.all(16),
           children: [
             const Image(
               image: AssetImage(
                   'images supplements/creatine.jpg'), //add image of creatine
             ),
             const SizedBox(height: 15),
-            _buildSupplements('Description:', description),
+            _buildSupplements1('Overview:', descriptionCreatine),
+            const Divider(height: 5, thickness: 5),
             const SizedBox(height: 15),
-            _buildSupplements('Benefits:', benefits),
+            _buildSupplements1('Role in the Body::', roleCreatine),
+            const Divider(height: 5, thickness: 5),
             const SizedBox(height: 15),
-            _buildSupplements('Side Effects:', side),
+            _buildSupplements1('Sources:', sourceCreatine),
+            const Divider(height: 5, thickness: 5),
             const SizedBox(height: 15),
-            const Divider(
-              height: 5,
-              thickness: 5,
-            ),
+            _buildSupplements1('Health Benefits:', ''),
+            _buildSupplements2(
+                '● Enhanced Muscle Performance: ', benefits1Creatine),
+            _buildSupplements2('● Muscle Growth:  ', benefits2Creatine),
+            _buildSupplements2('● Recovery: ', benefits3Creatine),
+            _buildSupplements2('● Brain Health: ', benefits4Creatine),
+            _buildSupplements2('● Neuromuscular Disorders:', benefits5Creatine),
+            const Divider(height: 5, thickness: 5),
             const SizedBox(height: 15),
-            Text(end),
+            _buildSupplements1('Usage and Dosage: ', ''),
+            _buildSupplements2('● Loading Phase:', usage1Creatine),
+            _buildSupplements2('● Maintenance Phase: ', usage2Creatine),
+            const Divider(height: 5, thickness: 5),
+            const SizedBox(height: 15),
+            _buildSupplements1('Caution', cautionCreatine),
+            const Divider(height: 5, thickness: 5),
+            const SizedBox(height: 15),
+            _buildSupplements1('Conclusion', conclusionCreatine),
+            const SizedBox(height: 15),
           ],
         ),
       ),
@@ -66,26 +82,59 @@ class Creatine extends StatelessWidget {
   }
 }
 
-_buildSupplements(String title, String description) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Text(
-        title,
-        style: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontStyle: FontStyle.italic,
-          fontSize: 17,
+_buildSupplements1(String title, String description) {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: TextStyle(
+            color: Colors.grey.shade800,
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            fontSize: 17,
+          ),
         ),
-      ),
-      Text(
-        description,
-        style: const TextStyle(
-          fontWeight: FontWeight.normal,
-          fontSize: 15,
-          fontStyle: FontStyle.normal,
+        Text(
+          description,
+          style: const TextStyle(
+            fontWeight: FontWeight.normal,
+            fontSize: 15,
+            fontStyle: FontStyle.normal,
+          ),
+        )
+      ],
+    ),
+  );
+}
+
+_buildSupplements2(String title, String description) {
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: TextStyle(
+            color: Colors.grey.shade800,
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            fontSize: 16,
+          ),
         ),
-      )
-    ],
+        Text(
+          description,
+          style: const TextStyle(
+            fontWeight: FontWeight.normal,
+            fontSize: 15,
+            fontStyle: FontStyle.normal,
+          ),
+        ),
+        const SizedBox(height: 5),
+      ],
+    ),
   );
 }
