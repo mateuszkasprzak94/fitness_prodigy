@@ -30,7 +30,6 @@ class GlutaminePage extends StatelessWidget {
       ),
       body: Center(
         child: ListView(
-          padding: const EdgeInsets.all(16),
           children: [
             const Image(
               image: AssetImage(
@@ -77,50 +76,56 @@ class GlutaminePage extends StatelessWidget {
 }
 
 _buildSupplements1(String title, String description) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Text(
-        title,
-        style: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontStyle: FontStyle.italic,
-          fontSize: 17,
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            fontSize: 17,
+          ),
         ),
-      ),
-      Text(
-        description,
-        style: const TextStyle(
-          fontWeight: FontWeight.normal,
-          fontSize: 15,
-          fontStyle: FontStyle.normal,
-        ),
-      )
-    ],
+        Text(
+          description,
+          style: const TextStyle(
+            fontWeight: FontWeight.normal,
+            fontSize: 15,
+            fontStyle: FontStyle.normal,
+          ),
+        )
+      ],
+    ),
   );
 }
 
 _buildSupplements2(String title, String description) {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Text(
-        title,
-        style: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontStyle: FontStyle.italic,
-          fontSize: 16,
+  return Padding(
+    padding: const EdgeInsets.all(8.0),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            fontSize: 16,
+          ),
         ),
-      ),
-      Text(
-        description,
-        style: const TextStyle(
-          fontWeight: FontWeight.normal,
-          fontSize: 15,
-          fontStyle: FontStyle.normal,
+        Text(
+          description,
+          style: const TextStyle(
+            fontWeight: FontWeight.normal,
+            fontSize: 15,
+            fontStyle: FontStyle.normal,
+          ),
         ),
-      ),
-      const SizedBox(height: 5),
-    ],
+        const SizedBox(height: 5),
+      ],
+    ),
   );
 }
