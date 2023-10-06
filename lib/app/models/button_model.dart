@@ -164,11 +164,13 @@ Widget customFeaturesButton({
     elevation: 8,
     child: Container(
       margin: const EdgeInsets.all(8),
-      decoration: const ShapeDecoration(
+      decoration: ShapeDecoration(
         shape: shape,
         gradient: LinearGradient(colors: [
-          Color.fromARGB(164, 0, 0, 0),
-          Colors.white,
+          Colors.yellow.shade600,
+          Colors.orange.shade300,
+          Colors.grey,
+          Colors.black,
         ], begin: Alignment.bottomRight, end: Alignment.topLeft),
       ),
       child: ElevatedButton.icon(
@@ -207,11 +209,13 @@ Widget customFeaturesButtonWithImage({
     elevation: 8,
     child: Container(
       margin: const EdgeInsets.all(8),
-      decoration: const ShapeDecoration(
+      decoration: ShapeDecoration(
         shape: shape,
         gradient: LinearGradient(colors: [
-          Color.fromARGB(164, 0, 0, 0),
-          Colors.white,
+          Colors.yellow.shade400,
+          Colors.orange.shade300,
+          Colors.grey,
+          Colors.black,
         ], begin: Alignment.centerRight, end: Alignment.centerLeft),
       ),
       child: ElevatedButton.icon(
