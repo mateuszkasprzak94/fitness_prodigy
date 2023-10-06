@@ -167,8 +167,8 @@ Widget customFeaturesButton({
       decoration: ShapeDecoration(
         shape: shape,
         gradient: LinearGradient(colors: [
-          Colors.yellow.shade600,
-          Colors.orange.shade300,
+          Colors.yellow.shade500,
+          Colors.orange.shade400,
           Colors.grey,
           Colors.black,
         ], begin: Alignment.bottomRight, end: Alignment.topLeft),
@@ -212,8 +212,8 @@ Widget customFeaturesButtonWithImage({
       decoration: ShapeDecoration(
         shape: shape,
         gradient: LinearGradient(colors: [
-          Colors.yellow.shade400,
-          Colors.orange.shade300,
+          Colors.yellow.shade500,
+          Colors.orange.shade400,
           Colors.grey,
           Colors.black,
         ], begin: Alignment.centerRight, end: Alignment.centerLeft),
