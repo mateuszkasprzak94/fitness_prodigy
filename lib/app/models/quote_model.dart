@@ -1,13 +1,13 @@
 class QuoteModel {
   QuoteModel({
-    required this.text,
+    required this.quote,
     required this.author,
   });
 
-  final String text;
+  final String quote;
   final String author;
 
   QuoteModel.fromJson(Map<String, dynamic> json)
-      : text = json['quotes']['text'],
+      : quote = json['quotes']['quote'],
         author = json['quotes']['author'];
 }

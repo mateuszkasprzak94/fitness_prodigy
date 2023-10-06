@@ -12,8 +12,6 @@ class MotivationQuotesPage extends StatefulWidget {
 }
 
 class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
-  String currentQuote = 'Random';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,14 +23,6 @@ class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
           style: GoogleFonts.satisfy(fontSize: 30, color: Colors.white),
         ),
         centerTitle: true,
-        flexibleSpace: Container(
-            // decoration: const BoxDecoration(
-            //   gradient: LinearGradient(colors: [
-            //     Color.fromARGB(164, 0, 0, 0),
-            //     Colors.white,
-            //   ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
-            // ),
-            ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
         automaticallyImplyLeading: true,
         foregroundColor: Colors.white,
@@ -46,26 +36,37 @@ class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
         ),
         child: Center(
           child: ListView(
-            children: [
-              const SizedBox(height: 15),
-              const RandomQuoteButton(),
-              const SizedBox(height: 15),
-              const FavoriteQuoteButton(),
-              const SizedBox(height: 190),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.grey.withOpacity(0.25),
-                ),
-                child: Text(
-                  currentQuote,
-                  style: const TextStyle(fontSize: 24, color: Colors.white),
-                  textAlign: TextAlign.center,
-                ),
-              ),
+            children: const [
+              SizedBox(height: 15),
+              RandomQuoteButton(),
+              SizedBox(height: 15),
+              FavoriteQuoteButton(),
+              SizedBox(height: 190),
+              _DisplayQuote(),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _DisplayQuote extends StatelessWidget {
+  const _DisplayQuote({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.grey.withOpacity(0.25),
+      ),
+      child: const Text(
+        '',
+        style: TextStyle(fontSize: 24, color: Colors.white),
+        textAlign: TextAlign.center,
       ),
     );
   }
