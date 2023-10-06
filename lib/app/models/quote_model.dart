@@ -8,6 +8,6 @@ class QuoteModel {
   final String author;
 
   QuoteModel.fromJson(Map<String, dynamic> json)
-      : text = json['quote']['text'],
-        author = json['quote']['author'];
+      : text = json['quotes']['text'],
+        author = json['quotes']['author'];
 }
