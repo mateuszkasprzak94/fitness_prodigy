@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,6 +14,8 @@ class MotivationQuotesPage extends StatefulWidget {
 }
 
 class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
+  String currentQuote = 'Random';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,11 +48,23 @@ class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
         ),
         child: Center(
           child: ListView(
-            children: const [
-              SizedBox(height: 15),
-              RandomQuoteButton(),
-              SizedBox(height: 15),
-              FavoriteQuoteButton(),
+            children: [
+              const SizedBox(height: 15),
+              const RandomQuoteButton(),
+              const SizedBox(height: 15),
+              const FavoriteQuoteButton(),
+              const SizedBox(height: 190),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.grey.withOpacity(0.25),
+                ),
+                child: Text(
+                  currentQuote,
+                  style: const TextStyle(fontSize: 24, color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
+              ),
             ],
           ),
         ),
@@ -112,7 +128,6 @@ class RandomQuoteButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const shape = StadiumBorder();
-
     return Container(
       decoration: const ShapeDecoration(
         shape: shape,
