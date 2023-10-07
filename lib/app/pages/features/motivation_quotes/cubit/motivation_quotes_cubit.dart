@@ -11,12 +11,14 @@ class MotivationQuotesCubit extends Cubit<MotivationQuotesState> {
 
   final MotivationQuotesRepository _motivationQuotesRepository;
 
-  Future<void> getQuoteModel() async {
-    emit(const MotivationQuotesState(status: Status.initial));
+  Future<void> getRandomQuote() async {
+    emit(const MotivationQuotesState(status: Status.loading));
     try {
-      final quoteModel = await _motivationQuotesRepository.getQuoteModel();
+      final quoteModel = await _motivationQuotesRepository.getRandomQuote();
+      print("Fetched quote: $quoteModel");
       emit(MotivationQuotesState(model: quoteModel, status: Status.success));
     } catch (error) {
+      print("Error fetching quote: $error");
       emit(
         MotivationQuotesState(
           status: Status.error,

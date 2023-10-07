@@ -1,5 +1,10 @@
+import 'package:fitness_prodigy/app/data/remote_data_sources/motivation_quote_data_source.dart';
+import 'package:fitness_prodigy/app/models/quote_model.dart';
+import 'package:fitness_prodigy/app/pages/features/motivation_quotes/cubit/motivation_quotes_cubit.dart';
+import 'package:fitness_prodigy/app/repositories/motivation_quotes_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MotivationQuotesPage extends StatefulWidget {
@@ -27,24 +32,34 @@ class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
         automaticallyImplyLeading: true,
         foregroundColor: Colors.white,
       ),
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/Motivation page.png'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Center(
-          child: ListView(
-            children: const [
-              SizedBox(height: 15),
-              RandomQuoteButton(),
-              SizedBox(height: 15),
-              FavoriteQuoteButton(),
-              SizedBox(height: 190),
-              _DisplayQuote(),
-            ],
-          ),
+      body: BlocProvider(
+        create: (context) => MotivationQuotesCubit(
+            MotivationQuotesRepository(MotivationQuotesRemoteDataSource())),
+        child: BlocBuilder<MotivationQuotesCubit, MotivationQuotesState>(
+          builder: (context, state) {
+            final quoteModel = state.model;
+            return Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('images/Motivation page.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Center(
+                child: ListView(
+                  children: [
+                    const SizedBox(height: 15),
+                    const RandomQuoteButton(),
+                    const SizedBox(height: 15),
+                    const FavoriteQuoteButton(),
+                    const SizedBox(height: 190),
+                    if (quoteModel != null)
+                      _DisplayQuote(quoteModel: state.model),
+                  ],
+                ),
+              ),
+            );
+          },
         ),
       ),
     );
@@ -53,20 +68,33 @@ class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
 
 class _DisplayQuote extends StatelessWidget {
   const _DisplayQuote({
+    required this.quoteModel,
     Key? key,
   }) : super(key: key);
+
+  final QuoteModel? quoteModel;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Colors.grey.withOpacity(0.25),
+        color: Colors.black.withOpacity(0.70),
       ),
-      child: const Text(
-        '',
-        style: TextStyle(fontSize: 24, color: Colors.white),
-        textAlign: TextAlign.center,
+      child: Column(
+        children: [
+          Text(
+            quoteModel!.quote,
+            style: const TextStyle(fontSize: 24, color: Colors.amber),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 15),
+          Text(
+            quoteModel!.author,
+            style: const TextStyle(fontSize: 24, color: Colors.amber),
+            textAlign: TextAlign.center,
+          ),
+        ],
       ),
     );
   }
@@ -151,7 +179,9 @@ class RandomQuoteButton extends StatelessWidget {
           shadowColor: Colors.transparent,
           elevation: 0,
         ),
-        onPressed: () {},
+        onPressed: () {
+          context.read<MotivationQuotesCubit>().getRandomQuote();
+        },
         icon: const Icon(
           Icons.all_inclusive,
           color: Colors.amber,
