@@ -147,16 +147,19 @@ class _FeaturesState extends State<Features> {
             );
           },
           child: Animate(
-            child: Container(
-              margin: const EdgeInsets.all(10),
-              alignment: Alignment.center,
-              width: 30,
-              child: Image.asset('images/weather_icon.png')
-                  .animate()
-                  .fade(delay: 500.ms, duration: 1000.ms)
-                  .slide()
-                  .then()
-                  .shake(),
+            child: Tooltip(
+              message: 'Check Weather',
+              child: Container(
+                margin: const EdgeInsets.all(10),
+                alignment: Alignment.center,
+                width: 30,
+                child: Image.asset('images/weather_icon.png')
+                    .animate()
+                    .fade(delay: 500.ms, duration: 1000.ms)
+                    .slide()
+                    .then()
+                    .shake(),
+              ),
             ),
           ),
         ),
