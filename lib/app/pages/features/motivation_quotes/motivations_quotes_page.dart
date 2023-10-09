@@ -85,7 +85,8 @@ class _DisplayQuote extends StatelessWidget {
         children: [
           Text(
             quoteModel!.quote,
-            style: const TextStyle(fontSize: 24, color: Colors.amber),
+            style: const TextStyle(
+                fontSize: 24, fontStyle: FontStyle.italic, color: Colors.amber),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 15),
