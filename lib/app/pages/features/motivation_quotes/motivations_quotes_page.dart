@@ -23,7 +23,7 @@ class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
     return BlocProvider(
       create: (context) => MotivationQuotesCubit(
           MotivationQuotesRepository(MotivationQuotesRemoteDataSource())),
-      child: BlocListener<MotivationQuotesCubit, MotivationQuotesState>(
+      child: BlocConsumer<MotivationQuotesCubit, MotivationQuotesState>(
         listener: (context, state) {
           if (state.status == Status.error) {
             final errorMessage = state.errorMessage ?? 'Unkown error';
@@ -35,46 +35,44 @@ class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
             );
           }
         },
-        child: BlocBuilder<MotivationQuotesCubit, MotivationQuotesState>(
-          builder: (context, state) {
-            final quoteModel = state.model;
-            return Scaffold(
-              extendBodyBehindAppBar: true,
-              appBar: AppBar(
-                backgroundColor: Colors.transparent,
-                title: Text(
-                  'Motivation Quotes',
-                  style: GoogleFonts.satisfy(fontSize: 30, color: Colors.white),
-                ),
-                centerTitle: true,
-                systemOverlayStyle: SystemUiOverlayStyle.light,
-                automaticallyImplyLeading: true,
-                foregroundColor: Colors.white,
+        builder: (context, state) {
+          final quoteModel = state.model;
+          return Scaffold(
+            extendBodyBehindAppBar: true,
+            appBar: AppBar(
+              backgroundColor: Colors.transparent,
+              title: Text(
+                'Motivation Quotes',
+                style: GoogleFonts.satisfy(fontSize: 30, color: Colors.white),
               ),
-              body: Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage('images/Motivation page.png'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                child: Center(
-                  child: ListView(
-                    children: [
-                      const SizedBox(height: 15),
-                      const RandomQuoteButton(),
-                      const SizedBox(height: 15),
-                      const FavoriteQuoteButton(),
-                      const SizedBox(height: 190),
-                      if (quoteModel != null)
-                        _DisplayQuote(quoteModel: state.model),
-                    ],
-                  ),
+              centerTitle: true,
+              systemOverlayStyle: SystemUiOverlayStyle.light,
+              automaticallyImplyLeading: true,
+              foregroundColor: Colors.white,
+            ),
+            body: Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('images/Motivation page.png'),
+                  fit: BoxFit.cover,
                 ),
               ),
-            );
-          },
-        ),
+              child: Center(
+                child: ListView(
+                  children: [
+                    const SizedBox(height: 15),
+                    const RandomQuoteButton(),
+                    const SizedBox(height: 15),
+                    const FavoriteQuoteButton(),
+                    const SizedBox(height: 190),
+                    if (quoteModel != null)
+                      _DisplayQuote(quoteModel: state.model),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }
