@@ -1,3 +1,4 @@
+import 'package:fitness_prodigy/app/core/enums.dart';
 import 'package:fitness_prodigy/app/data/remote_data_sources/motivation_quote_data_source.dart';
 import 'package:fitness_prodigy/app/models/quote_model.dart';
 import 'package:fitness_prodigy/app/pages/features/motivation_quotes/cubit/motivation_quotes_cubit.dart';
@@ -22,51 +23,58 @@ class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
     return BlocProvider(
       create: (context) => MotivationQuotesCubit(
           MotivationQuotesRepository(MotivationQuotesRemoteDataSource())),
-      child: BlocBuilder<MotivationQuotesCubit, MotivationQuotesState>(
-        builder: (context, state) {
-          final quoteModel = state.model;
-          return Scaffold(
-            extendBodyBehindAppBar: true,
-            appBar: AppBar(
-              backgroundColor: Colors.transparent,
-              title: Text(
-                'Motivation Quotes',
-                style: GoogleFonts.satisfy(fontSize: 30, color: Colors.white),
+      child: BlocListener<MotivationQuotesCubit, MotivationQuotesState>(
+        listener: (context, state) {
+          if (state.status == Status.error) {
+            final errorMessage = state.errorMessage ?? 'Unkown error';
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(errorMessage),
+                backgroundColor: Colors.red,
               ),
-              centerTitle: true,
-              systemOverlayStyle: SystemUiOverlayStyle.light,
-              automaticallyImplyLeading: true,
-              foregroundColor: Colors.white,
-            ),
-            // body: BlocProvider(
-            //   create: (context) => MotivationQuotesCubit(
-            //       MotivationQuotesRepository(MotivationQuotesRemoteDataSource())),
-            //   child: BlocBuilder<MotivationQuotesCubit, MotivationQuotesState>(
-            //     builder: (context, state) {
-            //       final quoteModel = state.model;
-            body: Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('images/Motivation page.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Center(
-                child: ListView(
-                  children: [
-                    const SizedBox(height: 15),
-                    const RandomQuoteButton(),
-                    const SizedBox(height: 15),
-                    const FavoriteQuoteButton(),
-                    const SizedBox(height: 190),
-                    if (quoteModel != null)
-                      _DisplayQuote(quoteModel: state.model),
-                  ],
-                ),
-              ),
-            ),
-          );
+            );
+          }
         },
+        child: BlocBuilder<MotivationQuotesCubit, MotivationQuotesState>(
+          builder: (context, state) {
+            final quoteModel = state.model;
+            return Scaffold(
+              extendBodyBehindAppBar: true,
+              appBar: AppBar(
+                backgroundColor: Colors.transparent,
+                title: Text(
+                  'Motivation Quotes',
+                  style: GoogleFonts.satisfy(fontSize: 30, color: Colors.white),
+                ),
+                centerTitle: true,
+                systemOverlayStyle: SystemUiOverlayStyle.light,
+                automaticallyImplyLeading: true,
+                foregroundColor: Colors.white,
+              ),
+              body: Container(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('images/Motivation page.png'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                child: Center(
+                  child: ListView(
+                    children: [
+                      const SizedBox(height: 15),
+                      const RandomQuoteButton(),
+                      const SizedBox(height: 15),
+                      const FavoriteQuoteButton(),
+                      const SizedBox(height: 190),
+                      if (quoteModel != null)
+                        _DisplayQuote(quoteModel: state.model),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
       ),
     );
   }
