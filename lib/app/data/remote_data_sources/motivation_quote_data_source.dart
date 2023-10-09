@@ -7,7 +7,8 @@ class MotivationQuotesRemoteDataSource {
           'https://my-json-server.typicode.com/mateuszkasprzak94/quotes/db');
       return respone.data;
     } on DioException catch (error) {
-      throw Exception(error.response?.data ?? 'Unknown error');
+      throw Exception(
+          error.response?.data['error']['message'] ?? 'Unknown error');
     }
   }
 }
