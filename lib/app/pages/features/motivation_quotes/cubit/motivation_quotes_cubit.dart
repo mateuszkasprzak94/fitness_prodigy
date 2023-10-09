@@ -15,10 +15,8 @@ class MotivationQuotesCubit extends Cubit<MotivationQuotesState> {
     emit(const MotivationQuotesState(status: Status.loading));
     try {
       final quoteModel = await _motivationQuotesRepository.getRandomQuote();
-      print("Fetched quote: $quoteModel");
       emit(MotivationQuotesState(model: quoteModel, status: Status.success));
     } catch (error) {
-      print("Error fetching quote: $error");
       emit(
         MotivationQuotesState(
           status: Status.error,

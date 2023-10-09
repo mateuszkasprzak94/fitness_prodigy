@@ -19,26 +19,32 @@ class MotivationQuotesPage extends StatefulWidget {
 class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        title: Text(
-          'Motivation Quotes',
-          style: GoogleFonts.satisfy(fontSize: 30, color: Colors.white),
-        ),
-        centerTitle: true,
-        systemOverlayStyle: SystemUiOverlayStyle.light,
-        automaticallyImplyLeading: true,
-        foregroundColor: Colors.white,
-      ),
-      body: BlocProvider(
-        create: (context) => MotivationQuotesCubit(
-            MotivationQuotesRepository(MotivationQuotesRemoteDataSource())),
-        child: BlocBuilder<MotivationQuotesCubit, MotivationQuotesState>(
-          builder: (context, state) {
-            final quoteModel = state.model;
-            return Container(
+    return BlocProvider(
+      create: (context) => MotivationQuotesCubit(
+          MotivationQuotesRepository(MotivationQuotesRemoteDataSource())),
+      child: BlocBuilder<MotivationQuotesCubit, MotivationQuotesState>(
+        builder: (context, state) {
+          final quoteModel = state.model;
+          return Scaffold(
+            extendBodyBehindAppBar: true,
+            appBar: AppBar(
+              backgroundColor: Colors.transparent,
+              title: Text(
+                'Motivation Quotes',
+                style: GoogleFonts.satisfy(fontSize: 30, color: Colors.white),
+              ),
+              centerTitle: true,
+              systemOverlayStyle: SystemUiOverlayStyle.light,
+              automaticallyImplyLeading: true,
+              foregroundColor: Colors.white,
+            ),
+            // body: BlocProvider(
+            //   create: (context) => MotivationQuotesCubit(
+            //       MotivationQuotesRepository(MotivationQuotesRemoteDataSource())),
+            //   child: BlocBuilder<MotivationQuotesCubit, MotivationQuotesState>(
+            //     builder: (context, state) {
+            //       final quoteModel = state.model;
+            body: Container(
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('images/Motivation page.png'),
@@ -58,9 +64,9 @@ class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
                   ],
                 ),
               ),
-            );
-          },
-        ),
+            ),
+          );
+        },
       ),
     );
   }
