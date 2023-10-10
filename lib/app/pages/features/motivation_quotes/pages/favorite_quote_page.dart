@@ -40,11 +40,21 @@ class _FavoriteQuotePageState extends State<FavoriteQuotePage> {
                   final quote = favoriteQuotes[index];
                   return Dismissible(
                     key: ValueKey(quote.quote),
-                    onDismissed: (direction) {
+                    direction: DismissDirection.startToEnd,
+                    onDismissed: (_) {
                       context
                           .read<MotivationQuotesCubit>()
                           .removeQuoteFromFavorites(quote);
                     },
+                    background: Container(
+                      color: Colors.red,
+                      alignment: Alignment.centerRight,
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: const Icon(
+                        Icons.delete,
+                        color: Colors.white,
+                      ),
+                    ),
                     child: Container(
                       decoration:
                           BoxDecoration(color: Colors.black.withOpacity(0.25)),
