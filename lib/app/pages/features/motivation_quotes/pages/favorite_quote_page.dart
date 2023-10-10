@@ -40,7 +40,7 @@ class _FavoriteQuotePageState extends State<FavoriteQuotePage> {
                   final quote = favoriteQuotes[index];
                   return Dismissible(
                     key: ValueKey(quote.quote),
-                    direction: DismissDirection.startToEnd,
+                    direction: DismissDirection.endToStart,
                     onDismissed: (_) {
                       context
                           .read<MotivationQuotesCubit>()
