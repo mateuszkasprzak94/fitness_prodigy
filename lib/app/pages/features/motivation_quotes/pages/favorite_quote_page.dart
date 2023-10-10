@@ -38,7 +38,7 @@ class _FavoriteQuotePageState extends State<FavoriteQuotePage> {
                 children: [
                   for (final favoriteQuote in favoriteQuotes) ...[
                     Dismissible(
-                      key: ValueKey(favoriteQuote.quote),
+                      key: ValueKey(favoriteQuote.id),
                       direction: DismissDirection.endToStart,
                       onDismissed: (_) {
                         context
