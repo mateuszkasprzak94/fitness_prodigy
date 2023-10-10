@@ -57,7 +57,7 @@ class _FavoriteQuotePageState extends State<FavoriteQuotePage> {
                     ),
                     child: Container(
                       decoration:
-                          BoxDecoration(color: Colors.black.withOpacity(0.25)),
+                          BoxDecoration(color: Colors.black.withOpacity(0.45)),
                       child: ListTile(
                         title: Text(
                           quote.quote,
