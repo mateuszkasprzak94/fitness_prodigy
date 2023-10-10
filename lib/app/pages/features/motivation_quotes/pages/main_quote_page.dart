@@ -21,7 +21,8 @@ class _MainQuotePageState extends State<MainQuotePage> {
         length: 2,
         child: BlocProvider(
           create: (context) => MotivationQuotesCubit(
-              MotivationQuotesRepository(MotivationQuotesRemoteDataSource())),
+              MotivationQuotesRepository(MotivationQuotesRemoteDataSource()))
+            ..start(),
           child: BlocBuilder<MotivationQuotesCubit, MotivationQuotesState>(
             builder: (context, state) {
               return Scaffold(

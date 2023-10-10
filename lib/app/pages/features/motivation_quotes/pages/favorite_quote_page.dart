@@ -15,8 +15,8 @@ class _FavoriteQuotePageState extends State<FavoriteQuotePage> {
     return Scaffold(
       body: BlocBuilder<MotivationQuotesCubit, MotivationQuotesState>(
         builder: (context, state) {
-          final favoriteQuotes =
-              context.read<MotivationQuotesCubit>().favoriteQuotes;
+          final favoriteQuotes = state.favoriteQuotes;
+          // context.read<MotivationQuotesCubit>().favoriteQuotes;
           if (favoriteQuotes.isEmpty) {
             return Container(
               decoration: const BoxDecoration(
@@ -34,44 +34,46 @@ class _FavoriteQuotePageState extends State<FavoriteQuotePage> {
                   fit: BoxFit.cover,
                 ),
               ),
-              child: ListView.builder(
-                itemCount: favoriteQuotes.length,
-                itemBuilder: (context, index) {
-                  final quote = favoriteQuotes[index];
-                  return Dismissible(
-                    key: ValueKey(quote.quote),
-                    direction: DismissDirection.endToStart,
-                    onDismissed: (_) {
-                      context
-                          .read<MotivationQuotesCubit>()
-                          .removeQuoteFromFavorites(quote);
-                    },
-                    background: Container(
-                      color: Colors.red,
-                      alignment: Alignment.centerRight,
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: const Icon(
-                        Icons.delete,
-                        color: Colors.white,
-                      ),
-                    ),
-                    child: Container(
-                      decoration:
-                          BoxDecoration(color: Colors.black.withOpacity(0.45)),
-                      child: ListTile(
-                        title: Text(
-                          quote.quote,
-                          style: const TextStyle(
-                              color: Colors.white, fontStyle: FontStyle.italic),
-                        ),
-                        subtitle: Text(
-                          quote.author,
-                          style: const TextStyle(color: Colors.white),
+              child: ListView(
+                children: [
+                  for (final favoriteQuote in favoriteQuotes) ...[
+                    Dismissible(
+                      key: ValueKey(favoriteQuote.quote),
+                      direction: DismissDirection.endToStart,
+                      onDismissed: (_) {
+                        context
+                            .read<MotivationQuotesCubit>()
+                            .removeQuoteFromFavorites(
+                                documentID: favoriteQuote.id);
+                      },
+                      background: Container(
+                        color: Colors.red,
+                        alignment: Alignment.centerRight,
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: const Icon(
+                          Icons.delete,
+                          color: Colors.white,
                         ),
                       ),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.black.withOpacity(0.45)),
+                        child: ListTile(
+                          title: Text(
+                            favoriteQuote.quote,
+                            style: const TextStyle(
+                                color: Colors.white,
+                                fontStyle: FontStyle.italic),
+                          ),
+                          subtitle: Text(
+                            favoriteQuote.author,
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ),
                     ),
-                  );
-                },
+                  ],
+                ],
               ),
             );
           }
