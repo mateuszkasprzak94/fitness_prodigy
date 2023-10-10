@@ -25,4 +25,22 @@ class MotivationQuotesCubit extends Cubit<MotivationQuotesState> {
       );
     }
   }
+
+  final List<QuoteModel> favoriteQuotes = [];
+
+  Future<void> addQuoteToFavorites(QuoteModel quote) async {
+    favoriteQuotes.add(quote);
+    emit(MotivationQuotesState(
+        model: state.model,
+        status: state.status,
+        favoriteQuotes: favoriteQuotes));
+  }
+
+  Future<void> removeQuoteFromFavorites(QuoteModel quoteModel) async {
+    favoriteQuotes.remove(quoteModel);
+    emit(MotivationQuotesState(
+        model: state.model,
+        status: state.status,
+        favoriteQuotes: favoriteQuotes));
+  }
 }

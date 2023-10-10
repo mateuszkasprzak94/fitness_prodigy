@@ -1,12 +1,8 @@
 import 'package:fitness_prodigy/app/core/enums.dart';
-import 'package:fitness_prodigy/app/data/remote_data_sources/motivation_quote_data_source.dart';
 import 'package:fitness_prodigy/app/models/quote_model.dart';
 import 'package:fitness_prodigy/app/pages/features/motivation_quotes/cubit/motivation_quotes_cubit.dart';
-import 'package:fitness_prodigy/app/repositories/motivation_quotes_repository.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class MotivationQuotesPage extends StatefulWidget {
   const MotivationQuotesPage({
@@ -20,60 +16,44 @@ class MotivationQuotesPage extends StatefulWidget {
 class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => MotivationQuotesCubit(
-          MotivationQuotesRepository(MotivationQuotesRemoteDataSource())),
-      child: BlocConsumer<MotivationQuotesCubit, MotivationQuotesState>(
-        listener: (context, state) {
-          if (state.status == Status.error) {
-            final errorMessage = state.errorMessage ?? 'Unkown error';
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(errorMessage),
-                backgroundColor: Colors.red,
-              ),
-            );
-          }
-        },
-        builder: (context, state) {
-          final quoteModel = state.model;
-          return Scaffold(
-            extendBodyBehindAppBar: true,
-            appBar: AppBar(
-              backgroundColor: Colors.transparent,
-              title: Text(
-                'Motivation Quotes',
-                style: GoogleFonts.satisfy(fontSize: 30, color: Colors.white),
-              ),
-              centerTitle: true,
-              systemOverlayStyle: SystemUiOverlayStyle.light,
-              automaticallyImplyLeading: true,
-              foregroundColor: Colors.white,
-            ),
-            body: Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('images/Motivation page.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Center(
-                child: ListView(
-                  children: [
-                    const SizedBox(height: 15),
-                    const RandomQuoteButton(),
-                    const SizedBox(height: 15),
-                    const FavoriteQuoteButton(),
-                    const SizedBox(height: 190),
-                    if (quoteModel != null)
-                      _DisplayQuote(quoteModel: state.model),
-                  ],
-                ),
-              ),
+    return BlocConsumer<MotivationQuotesCubit, MotivationQuotesState>(
+      listener: (context, state) {
+        if (state.status == Status.error) {
+          final errorMessage = state.errorMessage ?? 'Unkown error';
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(errorMessage),
+              backgroundColor: Colors.red,
             ),
           );
-        },
-      ),
+        }
+      },
+      builder: (context, state) {
+        final quoteModel = state.model;
+        return Scaffold(
+          body: Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('images/Motivation page.png'),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Center(
+              child: ListView(
+                children: [
+                  const SizedBox(height: 15),
+                  const RandomQuoteButton(),
+                  const SizedBox(height: 15),
+                  FavoriteQuoteButton(quoteModel: state.model),
+                  const SizedBox(height: 190),
+                  if (quoteModel != null)
+                    _DisplayQuote(quoteModel: state.model),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }
@@ -115,8 +95,11 @@ class _DisplayQuote extends StatelessWidget {
 
 class FavoriteQuoteButton extends StatelessWidget {
   const FavoriteQuoteButton({
+    required this.quoteModel,
     super.key,
   });
+
+  final QuoteModel? quoteModel;
 
   @override
   Widget build(BuildContext context) {
@@ -146,13 +129,21 @@ class FavoriteQuoteButton extends StatelessWidget {
           shadowColor: Colors.transparent,
           elevation: 0,
         ),
-        onPressed: () {},
+        onPressed: () {
+          final quoteModel = context.read<MotivationQuotesCubit>().state.model;
+          if (quoteModel != null) {
+            context
+                .read<MotivationQuotesCubit>()
+                .addQuoteToFavorites(quoteModel);
+            DefaultTabController.of(context).animateTo(1);
+          }
+        },
         icon: const Icon(
           Icons.favorite,
           color: Colors.red,
         ),
         label: const Text(
-          'FAVORITE QUOTE',
+          'ADD QUOTE TO FAVORITE',
           style: TextStyle(fontSize: 16, color: Colors.black),
         ),
       ),
@@ -207,3 +198,19 @@ class RandomQuoteButton extends StatelessWidget {
     );
   }
 }
+
+
+
+
+// extendBodyBehindAppBar: true,
+            // appBar: AppBar(
+            //   backgroundColor: Colors.transparent,
+            //   title: Text(
+            //     'Motivation Quotes',
+            //     style: GoogleFonts.satisfy(fontSize: 30, color: Colors.white),
+            //   ),
+            //   centerTitle: true,
+            //   systemOverlayStyle: SystemUiOverlayStyle.light,
+            //   automaticallyImplyLeading: true,
+            //   foregroundColor: Colors.white,
+            // ),
