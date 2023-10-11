@@ -12,7 +12,8 @@ class VitaminDContent extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Vitamin D(The Sunshine Vitamin)',
-          style: GoogleFonts.lancelot(fontSize: 26, color: Colors.black),
+          style: GoogleFonts.lancelot(fontSize: 23, color: Colors.black),
+          // maxLines: 2,
         ),
         centerTitle: true,
         titleSpacing: 0,

@@ -12,7 +12,7 @@ class VitaminBContent extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           'Vitamin B (The B-Complex Vitamins)',
-          style: GoogleFonts.lancelot(fontSize: 24, color: Colors.black),
+          style: GoogleFonts.lancelot(fontSize: 22, color: Colors.black),
         ),
         centerTitle: true,
         titleSpacing: 0,
