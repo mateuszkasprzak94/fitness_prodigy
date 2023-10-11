@@ -46,4 +46,34 @@ class MotivationQuotesRepository {
       ).toList();
     });
   }
+
+  Future<void> add(QuoteModel quote) async {
+    final userID = FirebaseAuth.instance.currentUser?.uid;
+    if (userID == null) {
+      throw Exception('User is not logged in');
+    }
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(userID)
+        .collection('quotes')
+        .add({
+      'quote': quote.quote,
+      'author': quote.author,
+    });
+  }
+
+  final List<QuoteModel> favoriteQuotes = [];
+
+  Future<void> delete({required String documentID}) {
+    final userID = FirebaseAuth.instance.currentUser?.uid;
+    if (userID == null) {
+      throw Exception('User is not logged in');
+    }
+    return FirebaseFirestore.instance
+        .collection('users')
+        .doc(userID)
+        .collection('quotes')
+        .doc(documentID)
+        .delete();
+  }
 }
