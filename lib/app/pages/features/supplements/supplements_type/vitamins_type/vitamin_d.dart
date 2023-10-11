@@ -31,7 +31,7 @@ class VitaminDContent extends StatelessWidget {
           child: ListView(
         children: [
           const Image(
-            image: AssetImage('images supplements/vitamin_d.jpg'),
+            image: AssetImage('images_supplements/vitamin_d.jpg'),
           ),
           const SizedBox(height: 15),
           _buildSupplements1('Overview:', descriptionVitaminD),

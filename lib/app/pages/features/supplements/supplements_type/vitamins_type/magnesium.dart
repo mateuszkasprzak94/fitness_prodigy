@@ -30,7 +30,7 @@ class MagnesiumContent extends StatelessWidget {
           child: ListView(
         children: [
           const Image(
-            image: AssetImage('images supplements/magnesium.jpg'),
+            image: AssetImage('images_supplements/magnesium.jpg'),
           ),
           const SizedBox(height: 15),
           _buildSupplements1('Overview:', descriptionMagnesium),

@@ -44,7 +44,7 @@ class Creatine extends StatelessWidget {
           children: [
             const Image(
               image: AssetImage(
-                  'images supplements/creatine.jpg'), //add image of creatine
+                  'images_supplements/creatine.jpg'), //add image of creatine
             ),
             const SizedBox(height: 15),
             _buildSupplements1('Overview:', descriptionCreatine),

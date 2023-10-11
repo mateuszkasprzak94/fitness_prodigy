@@ -33,7 +33,7 @@ class AAKGPage extends StatelessWidget {
           children: [
             const Image(
               image:
-                  AssetImage('images supplements/aakg.jpg'), //add image of AAKG
+                  AssetImage('images_supplements/aakg.jpg'), //add image of AAKG
             ),
             const SizedBox(height: 15),
             _buildSupplements1('Description:', aakgdescription),

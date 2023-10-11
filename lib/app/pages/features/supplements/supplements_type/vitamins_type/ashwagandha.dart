@@ -30,7 +30,7 @@ class AshwagandhaContent extends StatelessWidget {
           child: ListView(
         children: [
           const Image(
-            image: AssetImage('images supplements/ashwagandha.jpg'),
+            image: AssetImage('images_supplements/ashwagandha.jpg'),
           ),
           const SizedBox(height: 15),
           _buildSupplements1('Overview:', descriptionAshwagandha),

@@ -79,8 +79,9 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/
-    - exercise examples page images/
-    - images supplements/
+    - exercise_examples_page_images/
+    - images_supplements/
+    - images_diet/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

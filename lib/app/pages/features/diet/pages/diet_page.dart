@@ -1,3 +1,6 @@
+import 'package:fitness_prodigy/app/pages/features/diet/pages/nutrients_tab_page.dart';
+import 'package:fitness_prodigy/app/pages/features/diet/pages/recipes_tap_page.dart';
+import 'package:fitness_prodigy/app/pages/features/diet/pages/tips_tab_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -33,24 +36,30 @@ class _DietPageState extends State<DietPage> {
             systemOverlayStyle: SystemUiOverlayStyle.light,
             automaticallyImplyLeading: true,
             bottom: TabBar(
-                labelColor: Colors.black,
-                unselectedLabelColor: Colors.grey,
-                tabs: [
-                  const Tab(
-                      text: 'Nutrients',
-                      icon: Icon(Icons.local_dining,
-                          color: Color.fromARGB(255, 52, 153, 204))),
-                  const Tab(
-                      text: 'Tips',
-                      icon: Icon(Icons.lightbulb, color: Colors.yellow)),
-                  Tab(
-                      text: 'Recipes',
-                      icon: Icon(
-                        Icons.fastfood_outlined,
-                        color: Colors.orange.shade400,
-                      )),
-                ]),
+              labelColor: Colors.black,
+              unselectedLabelColor: Colors.grey,
+              tabs: [
+                const Tab(
+                    text: 'Nutrients',
+                    icon: Icon(Icons.local_dining,
+                        color: Color.fromARGB(255, 52, 153, 204))),
+                const Tab(
+                    text: 'Tips',
+                    icon: Icon(Icons.lightbulb, color: Colors.yellow)),
+                Tab(
+                    text: 'Recipes',
+                    icon: Icon(
+                      Icons.fastfood_outlined,
+                      color: Colors.orange.shade400,
+                    )),
+              ],
+            ),
           ),
+          body: const TabBarView(children: [
+            NutrientsTabPage(),
+            TipsTabPage(),
+            RecipesTabPage(),
+          ]),
         ),
       );
 }

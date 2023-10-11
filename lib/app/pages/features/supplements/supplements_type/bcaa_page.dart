@@ -33,7 +33,7 @@ class BCAAPage extends StatelessWidget {
           children: [
             const Image(
               image:
-                  AssetImage('images supplements/bcaa.jpg'), //add image of BCAA
+                  AssetImage('images_supplements/bcaa.jpg'), //add image of BCAA
             ),
             const SizedBox(height: 15),
             _buildSupplements1('Description:', bcaadescription),
