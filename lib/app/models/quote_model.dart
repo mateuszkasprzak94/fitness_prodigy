@@ -14,11 +14,11 @@ class QuoteModel {
         quote = json['quote'] ?? 'No quote available',
         author = json['author'] ?? 'Unknown author';
 
-  Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'quote': quote,
-      'author': author,
-    };
-  }
+  // Map<String, dynamic> toMap() {
+  //   return {
+  //     'id': id,
+  //     'quote': quote,
+  //     'author': author,
+  //   };
+  // }
 }
