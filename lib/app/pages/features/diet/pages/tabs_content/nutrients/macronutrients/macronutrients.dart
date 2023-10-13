@@ -1,4 +1,5 @@
 import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/nutrients/macronutrients/content/carbohydrates.dart';
+import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/nutrients/macronutrients/content/fats.dart';
 import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/nutrients/macronutrients/content/protein.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -112,7 +113,13 @@ class _MacronutrientsState extends State<Macronutrients> {
                     borderRadius: BorderRadius.circular(28),
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const FatsContent(),
+                          ),
+                        );
+                      },
                       child: Ink.image(
                         image: const AssetImage('images_diet/fats.jpg'),
                         height: 250,
