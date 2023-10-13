@@ -1,3 +1,4 @@
+import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/nutrients/macronutrients/content/protein.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -49,7 +50,13 @@ class _MacronutrientsState extends State<Macronutrients> {
                     borderRadius: BorderRadius.circular(28),
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const ProteinContent(),
+                          ),
+                        );
+                      },
                       child: Ink.image(
                         image:
                             const AssetImage('images_diet/protein_button.jpg'),
@@ -108,7 +115,7 @@ class _MacronutrientsState extends State<Macronutrients> {
                     ),
                   ),
                   Text(
-                    'FATS',
+                    '',
                     style: GoogleFonts.asul(fontSize: 24, color: Colors.white),
                   ),
                 ],
