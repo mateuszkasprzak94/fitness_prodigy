@@ -19,20 +19,22 @@ class _DietPageState extends State<DietPage> {
   Widget build(BuildContext context) => DefaultTabController(
         length: 3,
         child: Scaffold(
+          extendBodyBehindAppBar: true,
           appBar: AppBar(
+            backgroundColor: Colors.transparent,
             title: Text(
               'Diet',
               style: GoogleFonts.satisfy(fontSize: 30, color: Colors.black),
             ),
             centerTitle: true,
-            flexibleSpace: Container(
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(colors: [
-                  Color.fromARGB(164, 0, 0, 0),
-                  Colors.white,
-                ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
-              ),
-            ),
+            // flexibleSpace: Container(
+            //   decoration: const BoxDecoration(
+            //     gradient: LinearGradient(colors: [
+            //       Color.fromARGB(164, 0, 0, 0),
+            //       Colors.white,
+            //     ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+            //   ),
+            // ),
             systemOverlayStyle: SystemUiOverlayStyle.light,
             automaticallyImplyLeading: true,
             bottom: TabBar(
