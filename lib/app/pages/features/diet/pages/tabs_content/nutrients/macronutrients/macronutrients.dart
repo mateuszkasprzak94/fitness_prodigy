@@ -21,14 +21,14 @@ class _MacronutrientsState extends State<Macronutrients> {
           style: GoogleFonts.satisfy(fontSize: 30, color: Colors.black),
         ),
         centerTitle: true,
-        // flexibleSpace: Container(
-        //   decoration: const BoxDecoration(
-        //     gradient: LinearGradient(colors: [
-        //       Color.fromARGB(164, 0, 0, 0),
-        //       Colors.white,
-        //     ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
-        //   ),
-        // ),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(colors: [
+              Color.fromARGB(162, 79, 216, 102),
+              Colors.white,
+            ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+          ),
+        ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
         automaticallyImplyLeading: true,
       ),
