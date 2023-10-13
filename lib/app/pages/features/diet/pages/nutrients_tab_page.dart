@@ -1,4 +1,5 @@
 import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/nutrients/macronutrients/macronutrients.dart';
+import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/nutrients/micrnonutrients/micronutrients.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -59,7 +60,13 @@ class _NutrientsTabPageState extends State<NutrientsTabPage> {
                     borderRadius: BorderRadius.circular(28),
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const Micronutrients(),
+                          ),
+                        );
+                      },
                       child: Ink.image(
                         image: const AssetImage('images_diet/micro.jpg'),
                         height: 250,

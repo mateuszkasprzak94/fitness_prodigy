@@ -49,13 +49,7 @@ class _MacronutrientsState extends State<Macronutrients> {
                     borderRadius: BorderRadius.circular(28),
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => const Macronutrients(),
-                          ),
-                        );
-                      },
+                      onTap: () {},
                       child: Ink.image(
                         image:
                             const AssetImage('images_diet/protein_button.jpg'),
