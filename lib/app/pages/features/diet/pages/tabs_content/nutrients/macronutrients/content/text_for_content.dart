@@ -83,3 +83,41 @@ String carbointake =
 
 String carboconclusion =
     "Carbohydrates are a vital component of a healthy diet, serving as the body's primary energy source. It's essential to make informed choices about the types and amounts of carbohydrates consumed to support overall health and well-being. Prioritizing complex carbohydrates and dietary fiber can help maintain energy levels, promote digestive health, and reduce the risk of chronic diseases.";
+
+// FATS
+
+String fatsdescription =
+    "Fats, also known as lipids, are a group of essential nutrients that play a fundamental role in maintaining good health. While they are sometimes associated with negative connotations, it's important to understand that fats are crucial for various bodily functions. Let's explore the different types of fats, their functions, dietary sources, and their impact on health.";
+
+String fatstypes =
+    """1.	Saturated Fats: These fats have no double bonds between the carbon atoms of their fatty acid chains. They are usually solid at room temperature and are commonly found in animal products like red meat, butter, and full-fat dairy products.
+2.	Monounsaturated Fats: Monounsaturated fats have one double bond in their fatty acid chains. Olive oil, avocados, and certain nuts, such as almonds and cashews, are rich in monounsaturated fats.
+3.	Polyunsaturated Fats: Polyunsaturated fats have multiple double bonds in their fatty acid chains. Common sources include fatty fish (e.g., salmon, mackerel), flaxseeds, walnuts, and sunflower oil.
+4.	Trans Fats: Trans fats are artificially created through hydrogenation, a process that turns liquid oils into solid fats. These fats are often found in processed and fried foods and are linked to various health issues. Many countries have banned or restricted their use.
+""";
+
+String fatsfuntions =
+    """1.	Energy Storage: Fats provide a concentrated source of energy, storing excess calories for later use. In this role, they support metabolic processes and help maintain body temperature.
+2.	Cell Membranes: Fats are vital components of cell membranes, contributing to their structure and function.
+3.	Insulation: Adipose tissue (fat) serves as insulation, helping to preserve body heat and protect organs.
+4.	Absorption of Fat-Soluble Vitamins: Fats aid in the absorption of fat-soluble vitamins (A, D, E, and K) and other fat-soluble compounds in the digestive system.
+5.	Flavor and Texture: Fats contribute to the flavor, texture, and mouthfeel of foods.
+6.	Hormone Production: They play a role in the synthesis of various hormones, including sex hormones.
+""";
+
+String fatsimpact =
+    """1.	Heart Health: Excessive consumption of saturated and trans fats is associated with an increased risk of heart disease. In contrast, unsaturated fats, particularly polyunsaturated and monounsaturated fats, can have a positive effect on heart health when consumed in moderation.
+2.	Weight Management: Dietary fats, when eaten in appropriate amounts, can promote satiety and help with weight management by curbing overeating.
+3.	Cholesterol Levels: Saturated and trans fats can raise LDL (low-density lipoprotein) cholesterol levels in the blood, which is associated with an increased risk of heart disease. Unsaturated fats can have the opposite effect.
+""";
+
+String fatssource =
+    """•	Animal Sources: Fatty cuts of meat, poultry skin, butter, whole milk, and cheese are rich in saturated fats.
+•	Plant Sources: Olive oil, avocados, nuts, seeds, and fatty fish (like salmon and mackerel) provide healthier fats like monounsaturated and polyunsaturated fats.
+""";
+
+String fatsintake =
+    "A well-balanced diet includes a mix of fats from various sources, with an emphasis on unsaturated fats. The American Heart Association recommends that most of your fat intake come from these healthier sources.";
+
+String fatsconclusion =
+    "Fats are an essential component of a healthy diet and play a crucial role in various bodily functions. It's important to make informed choices about the types and amounts of fats consumed to support overall health and well-being. Balancing fat intake and choosing healthy sources of fats can help you maintain good health and reduce the risk of chronic diseases.";
