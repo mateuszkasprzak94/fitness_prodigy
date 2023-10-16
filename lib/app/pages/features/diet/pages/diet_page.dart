@@ -21,7 +21,7 @@ class _DietPageState extends State<DietPage> {
         child: Scaffold(
           extendBodyBehindAppBar: true,
           appBar: AppBar(
-            backgroundColor: Colors.transparent,
+            backgroundColor: Colors.transparent.withOpacity(0.45),
             title: Text(
               'Diet',
               style: GoogleFonts.satisfy(fontSize: 30, color: Colors.black),

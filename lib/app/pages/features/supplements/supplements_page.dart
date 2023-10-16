@@ -146,7 +146,7 @@ class _SupplementsPageState extends State<SupplementsPage> {
               //Expanded button for Vitamins
               ExpansionTile(
                 title: const Text(
-                  'Vitamins',
+                  'Vitamins & Minerals',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 children: [

@@ -1,3 +1,4 @@
+import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/tips/content/portion_control.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -28,7 +29,13 @@ class _TipsTabPageState extends State<TipsTabPage> {
                     borderRadius: BorderRadius.circular(28),
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const PortionControlContent(),
+                          ),
+                        );
+                      },
                       child: Ink.image(
                         image: const AssetImage('images_diet/portion.jpg'),
                         height: 250,
@@ -52,7 +59,13 @@ class _TipsTabPageState extends State<TipsTabPage> {
                     borderRadius: BorderRadius.circular(28),
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const PortionControlContent(),
+                          ),
+                        );
+                      },
                       child: Ink.image(
                         image: const AssetImage('images_diet/planning1.jpg'),
                         height: 250,
