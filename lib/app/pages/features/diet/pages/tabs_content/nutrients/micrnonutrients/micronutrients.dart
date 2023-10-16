@@ -17,20 +17,20 @@ class _MicronutrientsState extends State<Micronutrients> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         title: Text(
           'Micronutrients',
           style: GoogleFonts.satisfy(fontSize: 30, color: Colors.black),
         ),
         centerTitle: true,
-        // flexibleSpace: Container(
-        //   decoration: const BoxDecoration(
-        //     gradient: LinearGradient(colors: [
-        //       Color.fromARGB(162, 79, 216, 102),
-        //       Colors.white,
-        //     ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
-        //   ),
-        // ),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(colors: [
+              Color.fromARGB(161, 79, 150, 216),
+              Colors.white,
+            ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+          ),
+        ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
         automaticallyImplyLeading: true,
       ),
