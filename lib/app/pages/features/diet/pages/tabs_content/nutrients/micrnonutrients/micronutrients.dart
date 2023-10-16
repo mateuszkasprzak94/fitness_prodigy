@@ -1,3 +1,4 @@
+import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/nutrients/micrnonutrients/content/minerals.dart';
 import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/nutrients/micrnonutrients/content/vitamins.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -80,7 +81,13 @@ class _MicronutrientsState extends State<Micronutrients> {
                     borderRadius: BorderRadius.circular(28),
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const MineralsContent(),
+                          ),
+                        );
+                      },
                       child: Ink.image(
                         image: const AssetImage('images_diet/minerals.jpg'),
                         height: 250,

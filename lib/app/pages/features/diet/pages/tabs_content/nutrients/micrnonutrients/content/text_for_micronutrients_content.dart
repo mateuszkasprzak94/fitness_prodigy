@@ -29,3 +29,36 @@ String vitaminsdaily =
 
 String vitaminsnote =
     "While vitamins are crucial for health, excessive intake can lead to health issues. It's important to meet your vitamin needs through a balanced diet and, if necessary, consult with a healthcare professional before taking supplements.";
+
+// MINERALS
+
+String mineralsdescription =
+    "Minerals are inorganic nutrients that are essential for various physiological functions in the human body. They are categorized into two groups: major minerals (macrominerals) and trace minerals (microminerals).";
+
+String mineralsmajor =
+    """•	Calcium: Essential for strong bones and teeth, blood clotting, and muscle function. Dairy products, leafy greens, and fortified foods are good sources.
+•	Magnesium: Involved in muscle and nerve function, bone health, and the immune system. Nuts, seeds, and whole grains are rich in magnesium.
+•	Potassium: Helps regulate blood pressure, fluid balance, and muscle contractions. Bananas, sweet potatoes, and beans are high in potassium.
+•	Sodium: Plays a crucial role in maintaining fluid balance and nerve function. Table salt is the most common source of sodium.
+""";
+
+String mineralstrace =
+    """•	Iron: Necessary for the formation of hemoglobin, which carries oxygen in the blood. Good sources include red meat, spinach, and fortified cereals.
+•	Zinc: Essential for immune function, wound healing, and DNA synthesis. It is found in oysters, beef, and beans.
+•	Copper: Required for the formation of red blood cells and the function of nerves and the immune system. Nuts, seeds, and shellfish are good sources.
+•	Selenium: Acts as an antioxidant, protecting cells from damage. Selenium is found in nuts, seafood, and whole grains.""";
+
+String mineralsbenefits = """•	Support bone health.
+•	Regulate fluid balance.
+•	Aid in muscle and nerve function.
+•	Play a role in oxygen transport.
+•	Enhance immune function.
+•	Assist in energy production.
+•	Act as antioxidants.
+""";
+
+String mineralsdaily =
+    "The recommended daily intake of minerals varies based on age, gender, and specific dietary needs. It's essential to maintain a balanced diet to meet these requirements.";
+
+String mineralsnote =
+    'While minerals are vital for health, excessive intake of certain minerals can be harmful. Maintaining a balanced diet and consulting with a healthcare professional if necessary is crucial.';
