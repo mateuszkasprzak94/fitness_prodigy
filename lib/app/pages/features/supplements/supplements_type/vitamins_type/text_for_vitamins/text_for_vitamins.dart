@@ -455,3 +455,36 @@ String vitaminkexcess =
 
 String vitaminknote =
     'Remember that while both vitamin K1 and K2 are essential, they serve slightly different functions in the body. Vitamin K1 is primarily associated with blood clotting, while vitamin K2 has more impact on bone and heart health.';
+
+// POTASSIUM
+
+String potassiumdescription =
+    'Potassium is a vital mineral and electrolyte that plays a crucial role in various bodily functions. It is a positively charged ion (cation) found mainly inside your cells.';
+
+String potassiumbenefits =
+    """•	Electrolyte Balance: Potassium helps maintain proper electrolyte balance in the body, which is essential for various functions, including muscle contractions and nerve impulses.
+•	Blood Pressure: Adequate potassium intake can help regulate blood pressure, as it counteracts the effects of sodium (salt). It relaxes blood vessels, lowering the risk of high blood pressure.
+•	Heart Health: Potassium is essential for maintaining a healthy heartbeat and preventing irregular heart rhythms.
+""";
+
+String potassiumsource =
+    """•	Bananas: These are a well-known source of potassium.
+•	Oranges: Oranges and orange juice provide potassium.
+•	Leafy Greens: Spinach, Swiss chard, and kale are excellent sources.
+•	Beans: Beans, such as kidney beans and black beans, are rich in potassium.
+•	Potatoes: Baked potatoes with the skin are good sources.
+•	Fish: Fish like salmon and tuna contain potassium.
+•	Avocado: Avocado is another potassium-rich food.
+""";
+
+String potassiumintake =
+    "The recommended daily intake of potassium is around 2,500 to 3,400 milligrams (mg) for adults, although individual needs may vary. It's essential to maintain a balance between potassium and sodium intake for optimal health.";
+
+String potassiumdeficiency =
+    'Potassium deficiency, known as hypokalemia, can lead to muscle weakness, cramps, and irregular heart rhythms. Severe deficiency can be life-threatening.';
+
+String potassiumexcess =
+    "Hyperkalemia, or excess potassium in the blood, can also be dangerous and may cause muscle weakness, tingling sensations, and an irregular heartbeat. It's usually the result of kidney problems or certain medications.";
+
+String potassiumnote =
+    "If you have kidney problems or other health issues that affect potassium levels, it's important to consult with a healthcare provider to manage your potassium intake.";
