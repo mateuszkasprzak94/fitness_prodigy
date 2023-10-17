@@ -521,3 +521,36 @@ String calciumexcess =
 
 String calciumnote =
     "Calcium's absorption can be affected by other nutrients in your diet, like vitamin D. So, it's crucial to maintain a balanced diet to ensure your body can make the most of the calcium you consume.";
+
+// SELENIUM
+
+String seleniumdescription =
+    "Selenium is a trace mineral, which means it's only required in small amounts by the body, but its role is essential for various biological functions.";
+
+String seleniumbenefits =
+    """•	Antioxidant Properties: Selenium acts as a powerful antioxidant, protecting cells from damage caused by free radicals. This helps reduce the risk of chronic diseases.
+•	Thyroid Function: Selenium plays a crucial role in the production of thyroid hormones, which are vital for regulating metabolism.
+•	Immune System Support: It supports the immune system's function and helps the body defend against infections.
+•	Cognitive Health: Selenium may play a role in maintaining cognitive function and reducing the risk of age-related cognitive decline.
+""";
+
+String seleniumsource =
+    """•	Brazil Nuts: These nuts are among the richest sources of selenium. A single Brazil nut can provide your daily recommended intake.
+•	Fish: Tuna, halibut, and sardines are good sources of selenium.
+•	Lean Meat: Lean meats like turkey and chicken are selenium-rich foods.
+•	Whole Grains: Foods like brown rice and whole wheat bread contain selenium.
+•	Dairy Products: Milk and yogurt also provide selenium.
+•	Vegetables: Some vegetables, including spinach and broccoli, contain selenium, although the content can vary based on soil conditions.
+""";
+
+String seleniumintake =
+    "The recommended daily intake of selenium for adults is around 55 micrograms (mcg). While selenium is essential, it's also toxic in high amounts, so it's crucial not to exceed recommended levels.";
+
+String seleniumdeficiency =
+    'Selenium deficiency is relatively rare but can result in muscle pain, fatigue, and weakened immune function.';
+
+String seleniumexcess =
+    "Excessive selenium intake can lead to selenosis, a condition characterized by symptoms like hair and nail loss, nausea, and digestive issues. It's important not to overconsume selenium.";
+
+String seleniumnote =
+    'The selenium content in foods can vary significantly based on the selenium content of the soil in which the plants or animals were raised.';

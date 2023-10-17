@@ -13,6 +13,7 @@ import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/magnesium.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/omega3.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/potassium.dart';
+import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/selenium.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_a.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_b.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_c.dart';
@@ -192,10 +193,22 @@ class _SupplementsPageState extends State<SupplementsPage> {
                             builder: (_) => const VitaminKContent()));
                       }),
                   customButtonExpansionTile(
+                      text: 'Ashwagandha',
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => const AshwagandhaContent()));
+                      }),
+                  customButtonExpansionTile(
                       text: 'Calcium',
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (_) => const CalciumContent()));
+                      }),
+                  customButtonExpansionTile(
+                      text: 'D3K2',
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => const D3k2Content()));
                       }),
                   customButtonExpansionTile(
                       text: 'Magnesium',
@@ -204,34 +217,28 @@ class _SupplementsPageState extends State<SupplementsPage> {
                             builder: (_) => const MagnesiumContent()));
                       }),
                   customButtonExpansionTile(
-                      text: 'Potassium',
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (_) => const PotassiumContent()));
-                      }),
-                  customButtonExpansionTile(
                       text: 'Omega 3',
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (_) => const Omega3Content()));
                       }),
                   customButtonExpansionTile(
+                      text: 'Potassium',
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => const PotassiumContent()));
+                      }),
+                  customButtonExpansionTile(
+                      text: 'Selenium',
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => const SeleniumContent()));
+                      }),
+                  customButtonExpansionTile(
                       text: 'Zinc',
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (_) => const ZincContent()));
-                      }),
-                  customButtonExpansionTile(
-                      text: 'Ashwagandha',
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (_) => const AshwagandhaContent()));
-                      }),
-                  customButtonExpansionTile(
-                      text: 'D3K2',
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (_) => const D3k2Content()));
                       }),
                   const SizedBox(height: 15),
                 ],
