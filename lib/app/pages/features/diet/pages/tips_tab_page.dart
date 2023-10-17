@@ -1,3 +1,4 @@
+import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/tips/content/eating_habits.dart';
 import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/tips/content/meal_planning.dart';
 import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/tips/content/portion_control.dart';
 import 'package:flutter/material.dart';
@@ -90,7 +91,13 @@ class _TipsTabPageState extends State<TipsTabPage> {
                     borderRadius: BorderRadius.circular(28),
                     clipBehavior: Clip.antiAliasWithSaveLayer,
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (_) => const EatingHabitsContent(),
+                          ),
+                        );
+                      },
                       child: Ink.image(
                         image: const AssetImage('images_diet/habits1.jpg'),
                         height: 250,

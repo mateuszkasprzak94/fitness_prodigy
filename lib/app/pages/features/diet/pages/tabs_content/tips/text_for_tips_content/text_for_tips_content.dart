@@ -73,3 +73,53 @@ String planning10 =
 
 String planningend =
     "Meal planning is a skill that gets easier with practice. It empowers you to take control of your diet, save time, and make better food choices. It's also an excellent way to maintain a balanced and nutritious diet in the long run.";
+
+// EATING HABITS
+
+String habitsdescription =
+    'Our eating habits significantly influence our overall health and well-being. Developing healthy eating habits can be a positive step toward a more energetic and vibrant life. Here are some tips to help you establish and maintain healthy eating habits:';
+
+String habits1 =
+    'Pay attention to what and how much you eat. Avoid mindless or distracted eating, as it can lead to overconsumption. Savor each bite, and enjoy the flavors and textures of your food.';
+
+String habits2 =
+    'Aim for regular, balanced meals throughout the day. Skipping meals can lead to overeating later on. Breakfast, in particular, provides essential energy for the day.';
+
+String habits3 =
+    'Stay well-hydrated by drinking enough water throughout the day. Sometimes, thirst can be mistaken for hunger. Try to limit sugary drinks and opt for water, herbal teas, or infused water.';
+
+String habits4 =
+    'Consume a variety of foods from all food groups. Different foods provide different nutrients, so a diverse diet helps ensure you get all the essential vitamins and minerals.';
+
+String habits5 =
+    "Be mindful of portion sizes. Using smaller plates can help control portion sizes and prevent overeating. Listen to your body's hunger and fullness cues.";
+
+String habits6 =
+    'Processed and highly refined foods often contain added sugars, unhealthy fats, and excessive salt. Aim to reduce your intake of these foods.';
+
+String habits7 =
+    'Aim to fill half your plate with fruits and vegetables. They are rich in vitamins, minerals, fiber, and antioxidants.';
+
+String habits8 =
+    'Choose whole grains over refined grains for added fiber and nutrients. Look for whole grain bread, pasta, rice, and cereals.';
+
+String habits9 =
+    'If you enjoy snacks, opt for nutritious options like yogurt, fruit, or mixed nuts. Avoid excessive snacking, especially on sugary or high-calorie snacks.';
+
+String habits10 =
+    "Treat yourself occasionally. It's perfectly fine to enjoy your favorite indulgent foods in moderation. Depriving yourself can lead to cravings.";
+
+String habits11 =
+    "Eating slowly allows your body to register when it's full. This can help prevent overeating. Put your fork down between bites and savor your meals.";
+
+String habits12 =
+    "Learn to recognize hunger and fullness cues. Eat when you're hungry and stop when you're satisfied.";
+
+String habits13 =
+    'Planning your meals and snacks in advance can help you make healthier choices and avoid impulse eating.';
+
+String habits14 =
+    'If you have specific dietary concerns or are working toward specific health goals, consider consulting a registered dietitian or nutritionist for personalized guidance.';
+
+String habitsend =
+    "Developing healthy eating habits is a journey, and it's all about progress, not perfection. Small, sustainable changes can lead to significant improvements in your overall well-being.";
