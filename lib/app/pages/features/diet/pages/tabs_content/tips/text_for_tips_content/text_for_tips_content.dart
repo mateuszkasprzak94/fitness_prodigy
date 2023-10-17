@@ -123,3 +123,56 @@ String habits14 =
 
 String habitsend =
     "Developing healthy eating habits is a journey, and it's all about progress, not perfection. Small, sustainable changes can lead to significant improvements in your overall well-being.";
+
+// MEAL PREPARATION
+
+String mealdescription =
+    'Meal preparation is a key element of maintaining a healthy diet. It empowers you to make nutritious choices, save time, and reduce the temptation of unhealthy fast food. Here are some tips for effective meal preparation:';
+
+String meal1 =
+    'Start by planning your meals for the week. Choose recipes that are balanced and include a variety of nutrients. Consider including vegetables, lean proteins, whole grains, and healthy fats in your planning.';
+
+String meal2 =
+    'Once you have your meal plan, create a shopping list. Organize it by sections of the grocery store to save time and avoid impulse purchases.';
+
+String meal3 =
+    'Consider batch cooking on the weekend or when you have extra time. Prepare large batches of staples like grains, beans, or proteins that you can use in different meals throughout the week.';
+
+String meal4 =
+    'Invest in quality storage containers to keep your prepared meals fresh. Label containers with the date to ensure you use items before they spoil.';
+
+String meal5 =
+    'Save time during the week by pre-cutting and washing vegetables and fruits. This makes it easier to throw together a salad or add veggies to a meal.';
+
+String meal6 =
+    'To avoid overeating, pre-portion snacks like nuts, yogurt, or sliced fruit into small containers. This helps with portion control.';
+
+String meal7 =
+    "These kitchen appliances are a busy person's best friend. They can help you prepare hearty, nutritious meals with minimal effort.";
+
+String meal8 =
+    "Prepare extra portions of your meals and freeze them for those days when you're too busy to cook. This can prevent relying on takeout.";
+
+String meal9 =
+    'Experiment with meal prep ideas, such as mason jar salads, smoothie packs, or overnight oats. These can make breakfast and lunch preparation a breeze.';
+
+String meal10 =
+    'Keep your kitchen organized. Knowing where everything is makes meal preparation faster and less stressful.';
+
+String meal11 =
+    "Don't get stuck in a routine. Include a variety of flavors and cuisines in your meal planning to keep things interesting.";
+
+String meal12 =
+    'If you or your family members have dietary restrictions or allergies, be mindful of ingredients to avoid cross-contamination.';
+
+String meal13 =
+    "Practice good food safety. Wash your hands, surfaces, and produce thoroughly to prevent foodborne illnesses.";
+
+String meal14 =
+    "Get the whole family involved in meal preparation. It's a great way to teach cooking skills and spend time together.";
+
+String meal15 =
+    'If you have a busy day, pack your meals and snacks to take with you. It helps you avoid less healthy on-the-go options.';
+
+String mealend =
+    'Effective meal preparation can simplify your daily routine, save you money, and contribute to your overall health. The key is to find a routine that works for you and stick with it.';
