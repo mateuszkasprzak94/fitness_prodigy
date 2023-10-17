@@ -11,6 +11,7 @@ import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/d3k2.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/magnesium.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/omega3.dart';
+import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_a.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_b.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_c.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_d.dart';
@@ -150,6 +151,12 @@ class _SupplementsPageState extends State<SupplementsPage> {
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
                 children: [
+                  customButtonExpansionTile(
+                      text: 'Vitamin A',
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => const VitaminAContent()));
+                      }),
                   customButtonExpansionTile(
                       text: 'Vitamin C',
                       onPressed: () {

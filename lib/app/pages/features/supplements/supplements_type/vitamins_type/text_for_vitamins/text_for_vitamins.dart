@@ -360,3 +360,37 @@ String cautionD3k2 =
 
 String conclusionD3k2 =
     'Vitamin D3 and Vitamin K2 are vital nutrients with diverse health benefits, ranging from bone health and cardiovascular support to immune function. They are often found in combination supplements due to their synergistic effects. To determine the right supplementation for your needs, consult a healthcare provider or nutritionist.';
+
+// VITAMIN A
+
+String vitaminadescription =
+    "Vitamin A is a fat-soluble vitamin that plays a crucial role in maintaining good health. It's essential for maintaining proper vision, a strong immune system, and healthy skin. Vitamin A can be obtained from a variety of sources, including animal and plant-based foods and supplements. There are two primary forms of vitamin A:";
+
+String vitamina1 = 'Found in animal products, such as dairy, eggs, and liver.';
+
+String vitamina2 =
+    'Found in plant-based foods, like carrots, sweet potatoes, and spinach. The body can convert carotenoids into active vitamin A.';
+
+String vitaminabenefits =
+    """•	Vision: Vitamin A is crucial for maintaining good eyesight. It helps the eye's light-detecting cells function correctly.
+•	Immune System: This vitamin supports the immune system by playing a role in the production and functioning of white blood cells.
+•	Skin Health: Vitamin A is known for promoting healthy skin. It's often used in topical skincare products to treat various skin conditions.
+•	Reproductive Health: Vitamin A is necessary for normal reproduction and fetal development.
+""";
+
+String vitaminasource =
+    """•	Animal Sources: Beef liver, eggs, dairy products (milk, cheese, butter), and fish (particularly cod liver oil).
+•	Plant Sources: Carrots, sweet potatoes, butternut squash, spinach, kale, and collard greens.
+""";
+
+String vitaminaintake =
+    'The recommended daily intake of vitamin A varies by age, gender, and life stage. On average, adult men need about 900 micrograms (mcg) per day, while adult women need around 700 mcg per day. Pregnant and breastfeeding women may need slightly more.';
+
+String vitaminadeficiency =
+    'Vitamin A deficiency can lead to night blindness, dry skin, increased susceptibility to infections, and impaired growth in children.';
+
+String vitaminaexcess =
+    'Excessive vitamin A intake from supplements can be harmful. It can cause nausea, dizziness, and, in severe cases, even lead to more severe health issues.';
+
+String vitaminaremember =
+    "It's essential to consult with a healthcare provider before taking vitamin A supplements to ensure you meet your daily requirements without consuming excess.";
