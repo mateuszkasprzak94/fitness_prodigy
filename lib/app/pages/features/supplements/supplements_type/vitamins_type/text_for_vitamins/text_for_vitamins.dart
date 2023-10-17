@@ -488,3 +488,36 @@ String potassiumexcess =
 
 String potassiumnote =
     "If you have kidney problems or other health issues that affect potassium levels, it's important to consult with a healthcare provider to manage your potassium intake.";
+
+// CALCIUM
+
+String calciumdescription =
+    'Calcium is a vital mineral in the body, known primarily for its role in maintaining strong bones and teeth. However, it also plays a crucial role in other essential bodily functions.';
+
+String calciumbenefits =
+    """•	Bone Health: Calcium is the primary building block for bones and teeth. It's essential for their development, growth, and maintenance.
+•	Muscle Function: Calcium is involved in muscle contractions, including the heartbeat and skeletal muscles.
+•	Blood Clotting: It plays a role in blood clotting, helping to prevent excessive bleeding from injuries.
+•	Nerve Transmission: Calcium is necessary for nerve signal transmission, allowing you to feel sensations and move your muscles.
+""";
+
+String calciumsource =
+    """•	Dairy Products: Milk, yogurt, and cheese are some of the best sources of dietary calcium.
+•	Leafy Greens: Dark, leafy greens like kale and broccoli also contain calcium.
+•	Fortified Foods: Many foods are fortified with calcium, such as fortified plant-based milk (soy, almond, etc.).
+•	Canned Fish: Certain fish with soft, edible bones, like salmon and sardines, provide calcium.
+•	Nuts and Seeds: Almonds and chia seeds are good sources of calcium.
+•	Tofu: Tofu made with calcium sulfate is an excellent plant-based source.
+""";
+
+String calciumintake =
+    'The recommended daily intake of calcium varies by age and gender but is generally around 1,000 to 1,300 milligrams (mg) for most adults. Children, teenagers, and older adults may have different needs.';
+
+String calciumdeficiency =
+    'Calcium deficiency can lead to weakened bones and a higher risk of osteoporosis, a condition characterized by fragile bones.';
+
+String calciumexcess =
+    "Excessive calcium intake, especially from supplements, can result in kidney stones and other health issues. It's essential not to exceed the recommended daily intake.";
+
+String calciumnote =
+    "Calcium's absorption can be affected by other nutrients in your diet, like vitamin D. So, it's crucial to maintain a balanced diet to ensure your body can make the most of the calcium you consume.";

@@ -8,6 +8,7 @@ import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/protein_powder_page.dart';
 import 'package:fitness_prodigy/app/models/button_model.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/ashwagandha.dart';
+import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/calcium.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/d3k2.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/magnesium.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/omega3.dart';
@@ -189,6 +190,12 @@ class _SupplementsPageState extends State<SupplementsPage> {
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (_) => const VitaminKContent()));
+                      }),
+                  customButtonExpansionTile(
+                      text: 'Calcium',
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => const CalciumContent()));
                       }),
                   customButtonExpansionTile(
                       text: 'Magnesium',
