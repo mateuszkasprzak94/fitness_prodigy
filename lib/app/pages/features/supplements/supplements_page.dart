@@ -15,6 +15,7 @@ import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_b.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_c.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_d.dart';
+import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_e.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/zinc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -158,6 +159,12 @@ class _SupplementsPageState extends State<SupplementsPage> {
                             builder: (_) => const VitaminAContent()));
                       }),
                   customButtonExpansionTile(
+                      text: 'Vitamin B',
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => const VitaminBContent()));
+                      }),
+                  customButtonExpansionTile(
                       text: 'Vitamin C',
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
@@ -170,10 +177,10 @@ class _SupplementsPageState extends State<SupplementsPage> {
                             builder: (_) => const VitaminDContent()));
                       }),
                   customButtonExpansionTile(
-                      text: 'Vitamin B',
+                      text: 'Vitamin E',
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (_) => const VitaminBContent()));
+                            builder: (_) => const VitaminEContent()));
                       }),
                   customButtonExpansionTile(
                       text: 'Magnesium',

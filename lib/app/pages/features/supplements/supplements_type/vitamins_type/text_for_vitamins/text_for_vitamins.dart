@@ -394,3 +394,34 @@ String vitaminaexcess =
 
 String vitaminaremember =
     "It's essential to consult with a healthcare provider before taking vitamin A supplements to ensure you meet your daily requirements without consuming excess.";
+
+// VITAMIN E
+
+String vitaminedescription =
+    'Vitamin E is a fat-soluble antioxidant that plays a crucial role in protecting cells from damage. It is essential for maintaining good health and preventing chronic diseases. There are several different forms of vitamin E, but the most biologically active one is alpha-tocopherol.';
+
+String vitaminebenefits =
+    """•	Antioxidant Protection: Vitamin E is a potent antioxidant that helps protect cells from damage caused by free radicals. This protective function is vital for overall health and well-being.
+•	Skin Health: It's known for promoting healthy skin and is often used in skincare products to prevent premature aging.
+•	Immune System: Vitamin E may enhance the body's immune response, helping it fight off infections.
+•	Heart Health: Some research suggests that vitamin E may contribute to heart health by preventing the oxidation of low-density lipoprotein (LDL) cholesterol.
+""";
+
+String vitaminesource =
+    """•	Nuts and Seeds: Almonds, sunflower seeds, hazelnuts.
+•	Vegetable Oils: Sunflower, safflower, and wheat germ oils.
+•	Green Vegetables: Spinach, broccoli, and kiwi.
+•	Fortified Foods: Some cereals, fruit juices, and spreads are fortified with vitamin E.
+""";
+
+String vitamineintake =
+    'The recommended daily intake of vitamin E varies depending on age and gender. For most adults, a daily intake of around 15 milligrams (mg) is recommended.';
+
+String vitaminedeficiency =
+    'Vitamin E deficiency is rare but can lead to nerve and muscle damage. Symptoms might include muscle weakness, loss of muscle mass, abnormal eye movements, and vision problems.';
+
+String vitamineexcess =
+    "Excessive vitamin E intake from supplements can cause bleeding problems. It's essential not to exceed the recommended dosage without consulting a healthcare provider.";
+
+String vitaminenote =
+    "As with any supplement, it's wise to consult with a healthcare provider before taking vitamin E supplements to ensure that they are appropriate for your specific health needs.";
