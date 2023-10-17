@@ -425,3 +425,33 @@ String vitamineexcess =
 
 String vitaminenote =
     "As with any supplement, it's wise to consult with a healthcare provider before taking vitamin E supplements to ensure that they are appropriate for your specific health needs.";
+
+// VITAMIN K
+
+String vitaminkdescription =
+    'Vitamin K is a fat-soluble vitamin that plays a crucial role in blood clotting and bone metabolism. There are two primary forms of vitamin K: vitamin K1 (phylloquinone), which is found in plant foods, and vitamin K2 (menaquinone), which is synthesized by bacteria in the human gut.';
+
+String vitaminkbenefits =
+    """•	Blood Clotting: Vitamin K is essential for the production of clotting factors in the blood. This ensures that when you get a cut, your blood can form a clot to stop bleeding.
+•	Bone Health: Vitamin K helps in maintaining bone density and reducing the risk of fractures. It regulates calcium in the bones and blood vessels.
+•	Heart Health: Some studies suggest that vitamin K may help prevent the calcification of arteries, which is a risk factor for heart disease.
+""";
+
+String vitaminksource =
+    """•	Leafy Greens: Kale, spinach, collard greens, and Swiss chard are excellent sources of vitamin K1.
+•	Vegetable Oils: Soybean, cottonseed, and canola oils are rich in vitamin K1.
+•	Fermented Foods: Certain fermented foods like natto contain vitamin K2.
+•	Meat and Dairy: These foods provide some vitamin K2 as well.
+""";
+
+String vitaminkintake =
+    "The recommended daily intake of vitamin K can vary based on age, gender, and life stage. For adult men, it's typically around 120 micrograms (mcg), and for adult women, it's about 90 mcg.";
+
+String vitaminkdeficiency =
+    'Vitamin K deficiency is rare but can lead to increased bleeding and poor blood clotting. It may also impact bone health, potentially contributing to osteoporosis.';
+
+String vitaminkexcess =
+    'There is no established upper limit for vitamin K intake from natural food sources. However, excessive intake from supplements can interfere with blood-thinning medications like warfarin. Always consult with a healthcare provider before taking supplements.';
+
+String vitaminknote =
+    'Remember that while both vitamin K1 and K2 are essential, they serve slightly different functions in the body. Vitamin K1 is primarily associated with blood clotting, while vitamin K2 has more impact on bone and heart health.';

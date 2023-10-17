@@ -16,6 +16,7 @@ import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_c.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_d.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_e.dart';
+import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/vitamin_k.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/zinc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -181,6 +182,12 @@ class _SupplementsPageState extends State<SupplementsPage> {
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (_) => const VitaminEContent()));
+                      }),
+                  customButtonExpansionTile(
+                      text: 'Vitamin K',
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (_) => const VitaminKContent()));
                       }),
                   customButtonExpansionTile(
                       text: 'Magnesium',
