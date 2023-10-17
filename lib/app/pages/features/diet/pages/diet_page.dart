@@ -1,5 +1,5 @@
 import 'package:fitness_prodigy/app/pages/features/diet/pages/nutrients_tab_page.dart';
-import 'package:fitness_prodigy/app/pages/features/diet/pages/recipes_tap_page.dart';
+// import 'package:fitness_prodigy/app/pages/features/diet/pages/recipes_tap_page.dart';
 import 'package:fitness_prodigy/app/pages/features/diet/pages/tips_tab_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -17,7 +17,7 @@ class DietPage extends StatefulWidget {
 class _DietPageState extends State<DietPage> {
   @override
   Widget build(BuildContext context) => DefaultTabController(
-        length: 3,
+        length: 2,
         child: Scaffold(
           extendBodyBehindAppBar: true,
           appBar: AppBar(
@@ -37,30 +37,30 @@ class _DietPageState extends State<DietPage> {
             // ),
             systemOverlayStyle: SystemUiOverlayStyle.light,
             automaticallyImplyLeading: true,
-            bottom: TabBar(
+            bottom: const TabBar(
               labelColor: Colors.black,
               unselectedLabelColor: Colors.grey,
               tabs: [
-                const Tab(
+                Tab(
                     text: 'Nutrients',
                     icon: Icon(Icons.local_dining,
                         color: Color.fromARGB(255, 52, 153, 204))),
-                const Tab(
+                Tab(
                     text: 'Tips',
                     icon: Icon(Icons.lightbulb, color: Colors.yellow)),
-                Tab(
-                    text: 'Recipes',
-                    icon: Icon(
-                      Icons.fastfood_outlined,
-                      color: Colors.orange.shade400,
-                    )),
+                // Tab(
+                //     text: 'Recipes',
+                //     icon: Icon(
+                //       Icons.fastfood_outlined,
+                //       color: Colors.orange.shade400,
+                //     )),
               ],
             ),
           ),
           body: const TabBarView(children: [
             NutrientsTabPage(),
             TipsTabPage(),
-            RecipesTabPage(),
+            // RecipesTabPage(),
           ]),
         ),
       );
