@@ -3,28 +3,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class PortionControlContent extends StatefulWidget {
-  const PortionControlContent({super.key});
+class MealPlanningContent extends StatefulWidget {
+  const MealPlanningContent({super.key});
 
   @override
-  State<PortionControlContent> createState() => _PortionControlContentState();
+  State<MealPlanningContent> createState() => _MealPlanningContentState();
 }
 
-class _PortionControlContentState extends State<PortionControlContent> {
+class _MealPlanningContentState extends State<MealPlanningContent> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          'Portion Control',
+          'Meal Planning',
           style: GoogleFonts.sahitya(fontSize: 30, color: Colors.black),
         ),
         centerTitle: true,
         flexibleSpace: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(colors: [
-              Color.fromARGB(159, 27, 183, 255),
+              Color.fromARGB(255, 57, 173, 119),
               Colors.white,
             ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
           ),
@@ -35,22 +35,22 @@ class _PortionControlContentState extends State<PortionControlContent> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('images_diet/portionpage.jpg'),
+              image: AssetImage('images_diet/planningpage.jpg'),
               fit: BoxFit.cover),
         ),
         child: ListView(children: [
-          _buildVitamins('Portion Control:', portiondescription),
-          _buildVitamins('1.	Understand Serving Sizes:  ', portion1),
-          _buildVitamins('2.	Use Measuring Tools: ', portion2),
-          _buildVitamins('3.	Divide Your Plate:  ', portion3),
-          _buildVitamins('4.	Read Labels:  ', portion4),
-          _buildVitamins('5.	Avoid Eating from Large Packages:   ', portion5),
-          _buildVitamins('6.	Mindful Eating:   ', portion6),
-          _buildVitamins('7.	Use Smaller Plates:    ', portion7),
-          _buildVitamins('8.	Drink Water:    ', portion8),
-          _buildVitamins('9.	Listen to Your Body:   ', portion9),
-          _buildVitamins('10.	Practice Moderation:    ', portion10),
-          _buildVitamins('', portionend),
+          _buildVitamins('Meal Planning:', planningdescription),
+          _buildVitamins('1.	Set Your Goals:   ', planning1),
+          _buildVitamins('2.	Create a Weekly Menu:  ', planning2),
+          _buildVitamins('3.	Balance Nutrients:   ', planning3),
+          _buildVitamins('4.	Choose Recipes:   ', planning4),
+          _buildVitamins('5.	Prepare a Shopping List:  ', planning5),
+          _buildVitamins('6.	Cook in Batches: ', planning6),
+          _buildVitamins('7.	Embrace Leftovers: ', planning7),
+          _buildVitamins('8.	Use Portion Control: ', planning8),
+          _buildVitamins('9.	Flexibility is Key: ', planning9),
+          _buildVitamins('10.	Experiment and Enjoy: ', planning10),
+          _buildVitamins('', planningend),
           const SizedBox(height: 20),
         ]),
       ),
@@ -65,7 +65,7 @@ Widget _buildVitamins(String title, String description) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          color: const Color.fromARGB(159, 27, 183, 255).withOpacity(0.75),
+          color: const Color.fromARGB(255, 57, 173, 119).withOpacity(0.75),
           child: Text(
             title,
             style: const TextStyle(

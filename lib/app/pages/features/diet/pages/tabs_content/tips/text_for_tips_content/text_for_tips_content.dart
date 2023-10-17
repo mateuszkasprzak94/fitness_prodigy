@@ -35,3 +35,41 @@ String portion10 =
 
 String portionend =
     "Remember that portion control is a personalized journey. What works for one person may not work for another. It's important to find an approach that suits your lifestyle and dietary needs. By mastering portion control, you'll take a significant step towards maintaining a balanced and nutritious diet.";
+
+// MEAL PLANNING
+
+String planningdescription =
+    "Meal planning is a strategic approach to ensure you're eating nutritious, balanced, and satisfying meals. Whether your goal is to save time, stick to a budget, or make healthier food choices, meal planning can be a game-changer. Here's how to get started:";
+
+String planning1 =
+    "Determine your meal planning objectives. Are you trying to eat healthier, save money, or reduce food waste? Understanding your goals will shape your meal plans.";
+
+String planning2 =
+    "Start by planning your meals for the week. Include breakfast, lunch, dinner, and snacks. This not only provides structure but also helps you make healthier choices.";
+
+String planning3 =
+    "Ensure your meals incorporate a variety of nutrients. Include lean proteins, whole grains, plenty of fruits and vegetables, and healthy fats.";
+
+String planning4 =
+    "Find recipes that align with your dietary preferences and nutritional goals. Explore cookbooks, food websites, or apps to discover new and exciting dishes.";
+
+String planning5 =
+    "Once you've selected your recipes, make a comprehensive shopping list. Organize it by food categories to expedite your grocery store visit.";
+
+String planning6 =
+    "To save time, cook larger portions and freeze individual servings. This is particularly helpful for busy days when you don't have time to prepare a fresh meal.";
+
+String planning7 =
+    "Don't underestimate the power of leftovers. They make excellent next-day lunches or dinners. Plus, they reduce food waste.";
+
+String planning8 =
+    "Be mindful of portion sizes when plating your meals. This ensures you're not overeating and that your nutrient intake aligns with your goals.";
+
+String planning9 =
+    "Understand that life can be unpredictable. Be flexible with your meal plan. If you can't follow it precisely, adapt and make healthier choices when dining out or ordering in.";
+
+String planning10 =
+    "Meal planning doesn't have to be boring. Experiment with new recipes, flavors, and ingredients. The more you enjoy your meals, the more sustainable your meal planning will be.";
+
+String planningend =
+    "Meal planning is a skill that gets easier with practice. It empowers you to take control of your diet, save time, and make better food choices. It's also an excellent way to maintain a balanced and nutritious diet in the long run.";

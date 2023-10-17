@@ -1,3 +1,4 @@
+import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/tips/content/meal_planning.dart';
 import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/tips/content/portion_control.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -62,7 +63,7 @@ class _TipsTabPageState extends State<TipsTabPage> {
                       onTap: () {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (_) => const PortionControlContent(),
+                            builder: (_) => const MealPlanningContent(),
                           ),
                         );
                       },
