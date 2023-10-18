@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -98,118 +99,135 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(20, 20, 20, 100),
           child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                goalReached
-                    ? Column(
-                        children: [
-                          Image.asset(
-                            'images/water glass.png',
-                            width: 200,
-                            height: 200,
+            child: Animate(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  goalReached
+                      ? Column(
+                          children: [
+                            Image.asset(
+                              'images/water glass.png',
+                              width: 200,
+                              height: 200,
+                            )
+                                .animate()
+                                .fade(delay: 500.ms, duration: 1000.ms)
+                                .slide()
+                                .then()
+                                .shake(),
+                            const SizedBox(height: 10),
+                            const Text(
+                              'GOAL REACHED!',
+                              style: TextStyle(
+                                color: Color.fromARGB(255, 25, 187, 30),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 25,
+                              ),
+                            )
+                                .animate()
+                                .fade(delay: 500.ms, duration: 1000.ms)
+                                .slide()
+                                .then()
+                                .shake(),
+                          ],
+                        )
+                      : Image.asset(
+                          'images/empty.png',
+                          width: 200,
+                          height: 200,
+                        )
+                          .animate()
+                          .fade(delay: 500.ms, duration: 1000.ms)
+                          .slide()
+                          .then()
+                          .shake(),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Text(
+                    'Water Glass Count: $waterGlassCount / Goal: $goal',
+                    style: const TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        decoration: const ShapeDecoration(
+                          shape: StadiumBorder(),
+                          gradient: LinearGradient(
+                            colors: [Colors.blue, Colors.white],
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
                           ),
-                          const SizedBox(height: 10),
-                          const Text(
-                            'GOAL REACHED!',
-                            style: TextStyle(
-                              color: Color.fromARGB(255, 25, 187, 30),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 25,
-                            ),
+                        ),
+                        child: ElevatedButton(
+                          onPressed: _incrementWaterGlassCount,
+                          style: ElevatedButton.styleFrom(
+                            //deactivate color and shadow
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            backgroundColor: Colors.transparent,
+                            shadowColor: Colors.transparent,
+                            elevation: 0,
+                            fixedSize: const Size(50, 50),
                           ),
-                        ],
-                      )
-                    : Image.asset(
-                        'images/empty.png',
-                        width: 200,
-                        height: 200,
-                      ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  'Water Glass Count: $waterGlassCount / Goal: $goal',
-                  style: const TextStyle(
-                      fontSize: 20,
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      decoration: const ShapeDecoration(
-                        shape: StadiumBorder(),
-                        gradient: LinearGradient(
-                          colors: [Colors.blue, Colors.white],
-                          begin: Alignment.bottomCenter,
-                          end: Alignment.topCenter,
+                          child: const Text(
+                            '+',
+                            style: TextStyle(fontSize: 17, color: Colors.black),
+                          ),
                         ),
                       ),
-                      child: ElevatedButton(
-                        onPressed: _incrementWaterGlassCount,
-                        style: ElevatedButton.styleFrom(
-                          //deactivate color and shadow
-                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          backgroundColor: Colors.transparent,
-                          shadowColor: Colors.transparent,
-                          elevation: 0,
-                          fixedSize: const Size(50, 50),
+                      const SizedBox(
+                        width: 20,
+                      ),
+                      Container(
+                        decoration: const ShapeDecoration(
+                          shape: StadiumBorder(),
+                          gradient: LinearGradient(
+                            colors: [Colors.blue, Colors.white],
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                          ),
                         ),
-                        child: const Text(
-                          '+',
-                          style: TextStyle(fontSize: 17, color: Colors.black),
+                        child: ElevatedButton(
+                          onPressed: _decrementWaterGlassCount,
+                          style: ElevatedButton.styleFrom(
+                            //deactivate color and shadow
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            backgroundColor: Colors.transparent,
+                            shadowColor: Colors.transparent,
+                            elevation: 0,
+                            fixedSize: const Size(50, 50),
+                          ),
+                          child: const Text('-',
+                              style:
+                                  TextStyle(fontSize: 17, color: Colors.black)),
                         ),
                       ),
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    Container(
-                      decoration: const ShapeDecoration(
-                        shape: StadiumBorder(),
-                        gradient: LinearGradient(
-                          colors: [Colors.blue, Colors.white],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                        ),
-                      ),
-                      child: ElevatedButton(
-                        onPressed: _decrementWaterGlassCount,
-                        style: ElevatedButton.styleFrom(
-                          //deactivate color and shadow
-                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          backgroundColor: Colors.transparent,
-                          shadowColor: Colors.transparent,
-                          elevation: 0,
-                          fixedSize: const Size(50, 50),
-                        ),
-                        child: const Text('-',
-                            style:
-                                TextStyle(fontSize: 17, color: Colors.black)),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                Slider(
-                  onChanged: (newValue) {
-                    setState(() {
-                      goal = newValue.toInt();
-                    });
-                  },
-                  value: goal.toDouble(),
-                  min: 1.0,
-                  max: 20.0,
-                  divisions: 19,
-                  label: goal.toString(),
-                  activeColor: Colors.blue,
-                ),
-              ],
+                    ],
+                  ),
+                  const SizedBox(height: 20),
+                  Slider(
+                    onChanged: (newValue) {
+                      setState(() {
+                        goal = newValue.toInt();
+                      });
+                    },
+                    value: goal.toDouble(),
+                    min: 1.0,
+                    max: 20.0,
+                    divisions: 19,
+                    label: goal.toString(),
+                    activeColor: Colors.blue,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
