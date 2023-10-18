@@ -6,6 +6,7 @@ import 'package:fitness_prodigy/app/repositories/weather_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 String description =
     "Are you planning to take your workout outdoors? Don't let unexpected weather catch you off guard! Check the current conditions in your location to make the most of your fitness routine. Whether it's a sunny day perfect for a run or a chance of rain that calls for an indoor workout, we've got you covered. Stay informed and stay active! 💪⛅️🌧️";
@@ -62,7 +63,7 @@ class _WeatherContentState extends State<WeatherContent> {
                         const _DescriptionText(),
                         const SizedBox(height: 20),
                         const _SearchWidget(),
-                        const SizedBox(height: 60),
+                        const SizedBox(height: 30),
                         if (weatherModel != null)
                           _DisplayWeatherWidget(
                             weatherModel: weatherModel,
@@ -140,11 +141,13 @@ class _DisplayWeatherWidget extends StatelessWidget {
           ),
           child: Column(
             children: [
+              Lottie.asset(getWeatherAnimation(weatherModel.condition)),
               Text(weatherModel.city,
-                  style: const TextStyle(color: Colors.white, fontSize: 50)),
-              const SizedBox(height: 20),
+                  style: const TextStyle(color: Colors.white, fontSize: 40)),
               Text('${weatherModel.temperature} °C',
-                  style: const TextStyle(color: Colors.white, fontSize: 50)),
+                  style: const TextStyle(color: Colors.white, fontSize: 40)),
+              Text(weatherModel.condition,
+                  style: const TextStyle(color: Colors.white, fontSize: 30)),
             ],
           ),
         );
@@ -213,5 +216,34 @@ class _SearchWidgetState extends State<_SearchWidget> {
         ),
       ],
     );
+  }
+}
+
+// Weather animations
+String getWeatherAnimation(String? condition) {
+  if (condition == null) {
+    return 'assets_weather/sunny.json'; // default to sunny
+  }
+  switch (condition.toLowerCase()) {
+    case 'partly cloudy':
+    case 'clouds':
+    case 'mist':
+    case 'smoke':
+    case 'haze':
+    case 'dust':
+    case 'fog':
+      return 'assets_weather/cloud.json';
+    case 'rain':
+    case 'drizzle':
+    case 'shower rain':
+      return 'assets_weather/rain.json';
+    case 'thunderstorm':
+      return 'assets_weather/thunder.json';
+    case 'snow':
+      return 'assets_weather/snow.json';
+    case 'clear':
+      return 'assets_weather/sunny.json';
+    default:
+      return 'assets_weather/sunny.json';
   }
 }

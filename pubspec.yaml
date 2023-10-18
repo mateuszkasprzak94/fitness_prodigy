@@ -83,6 +83,7 @@ flutter:
     - exercise_examples_page_images/
     - images_supplements/
     - images_diet/
+    - assets_weather/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
