@@ -47,6 +47,7 @@ dependencies:
   flutter_animate: ^4.2.0+1
   keyboard_dismisser: ^3.0.0
   dio: ^5.3.3
+  lottie: ^2.6.0
 
 dev_dependencies:
   flutter_test:
