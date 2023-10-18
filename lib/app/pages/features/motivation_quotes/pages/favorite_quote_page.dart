@@ -73,7 +73,8 @@ class _FavoriteQuotePageState extends State<FavoriteQuotePage> {
                             ),
                             subtitle: Text(
                               favoriteQuote.author,
-                              style: const TextStyle(color: Colors.white),
+                              style: const TextStyle(
+                                  color: Color.fromARGB(255, 201, 36, 24)),
                             ),
                           ),
                         ),
