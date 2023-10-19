@@ -72,7 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                                 fontWeight: FontWeight.bold),
                           ),
                           style: const TextStyle(
-                            color: Colors.white,
+                            color: Colors.black87,
                           ),
                         ),
                         TextField(
@@ -96,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ),
                           style: const TextStyle(
-                            color: Colors.white,
+                            color: Colors.black87,
                           ),
                         ),
                         const SizedBox(
