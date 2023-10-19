@@ -4,7 +4,7 @@ import 'package:fitness_prodigy/app/models/weather_model.dart';
 class WeatherRepository {
   WeatherRepository(this._weatherRemoteDataSource);
 
-  final WeatherRemoteDataSource _weatherRemoteDataSource;
+  final WeatherRemoteDioDataSource _weatherRemoteDataSource;
 
   Future<WeatherModel?> getWeatherModel({
     required String city,

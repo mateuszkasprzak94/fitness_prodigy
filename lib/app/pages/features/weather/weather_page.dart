@@ -25,7 +25,7 @@ class _WeatherContentState extends State<WeatherContent> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          WeatherCubit(WeatherRepository(WeatherRemoteDataSource())),
+          WeatherCubit(WeatherRepository(WeatherRemoteDioDataSource())),
       child: BlocConsumer<WeatherCubit, WeatherState>(
         listener: (context, state) {
           if (state.status == Status.error) {

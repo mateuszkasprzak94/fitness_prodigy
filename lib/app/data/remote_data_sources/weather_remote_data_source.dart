@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-class WeatherRemoteDataSource {
+class WeatherRemoteDioDataSource {
   Future<Map<String, dynamic>?> getWeatherData({
     required String city,
   }) async {
