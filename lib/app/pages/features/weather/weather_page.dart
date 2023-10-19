@@ -232,8 +232,11 @@ String getWeatherAnimation(String? condition) {
     case 'haze':
     case 'dust':
     case 'fog':
+    case 'overcast':
       return 'assets_weather/cloud.json';
+    case 'patchy rain possible':
     case 'rain':
+    case 'light rain':
     case 'drizzle':
     case 'shower rain':
       return 'assets_weather/rain.json';
