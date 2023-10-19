@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-class MotivationQuotesRemoteDataSource {
+class MotivationQuotesRemoteDioDataSource {
   Future<Map<String, dynamic>?> getQuoteData() async {
     try {
       final respone = await Dio().get<Map<String, dynamic>>(

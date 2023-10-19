@@ -16,7 +16,7 @@ class _FavoriteQuotePageState extends State<FavoriteQuotePage> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => MotivationQuotesCubit(
-          MotivationQuotesRepository(MotivationQuotesRemoteDataSource()))
+          MotivationQuotesRepository(MotivationQuotesRemoteDioDataSource()))
         ..start(),
       child: Scaffold(
         body: BlocBuilder<MotivationQuotesCubit, MotivationQuotesState>(

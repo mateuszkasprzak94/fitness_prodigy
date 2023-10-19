@@ -8,7 +8,7 @@ import 'package:fitness_prodigy/app/models/quote_model.dart';
 class MotivationQuotesRepository {
   MotivationQuotesRepository(this._motivationQuotesRemoteDataSource);
 
-  final MotivationQuotesRemoteDataSource _motivationQuotesRemoteDataSource;
+  final MotivationQuotesRemoteDioDataSource _motivationQuotesRemoteDataSource;
 
   Future<QuoteModel?> getRandomQuote() async {
     final json = await _motivationQuotesRemoteDataSource.getQuoteData();
