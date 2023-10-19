@@ -40,46 +40,56 @@ class _FavoriteQuotePageState extends State<FavoriteQuotePage> {
                     fit: BoxFit.cover,
                   ),
                 ),
-                child: ListView(
+                child: Column(
                   children: [
-                    for (final favoriteQuote in favoriteQuotes) ...[
-                      Dismissible(
-                        key: ValueKey(favoriteQuote.id),
-                        direction: DismissDirection.endToStart,
-                        onDismissed: (_) {
-                          context
-                              .read<MotivationQuotesCubit>()
-                              .removeQuoteFromFavorites(
-                                  documentID: favoriteQuote.id);
-                        },
-                        background: Container(
-                          color: Colors.red,
-                          alignment: Alignment.centerRight,
-                          padding: const EdgeInsets.symmetric(horizontal: 16),
-                          child: const Icon(
-                            Icons.delete,
-                            color: Colors.white,
-                          ),
-                        ),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: Colors.black.withOpacity(0.45)),
-                          child: ListTile(
-                            title: Text(
-                              favoriteQuote.quote,
-                              style: const TextStyle(
+                    const SizedBox(height: 180),
+                    Expanded(
+                      child: ListView(
+                        padding: const EdgeInsets.fromLTRB(8, 10, 8, 8),
+                        children: [
+                          for (final favoriteQuote in favoriteQuotes) ...[
+                            Dismissible(
+                              key: ValueKey(favoriteQuote.id),
+                              direction: DismissDirection.endToStart,
+                              onDismissed: (_) {
+                                context
+                                    .read<MotivationQuotesCubit>()
+                                    .removeQuoteFromFavorites(
+                                        documentID: favoriteQuote.id);
+                              },
+                              background: Container(
+                                color: Colors.red,
+                                alignment: Alignment.centerRight,
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 16),
+                                child: const Icon(
+                                  Icons.delete,
                                   color: Colors.white,
-                                  fontStyle: FontStyle.italic),
+                                ),
+                              ),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.black.withOpacity(0.45)),
+                                child: ListTile(
+                                  title: Text(
+                                    favoriteQuote.quote,
+                                    style: const TextStyle(
+                                        color: Colors.white,
+                                        fontStyle: FontStyle.italic),
+                                  ),
+                                  subtitle: Text(
+                                    favoriteQuote.author,
+                                    style: const TextStyle(
+                                        color:
+                                            Color.fromARGB(255, 201, 36, 24)),
+                                  ),
+                                ),
+                              ),
                             ),
-                            subtitle: Text(
-                              favoriteQuote.author,
-                              style: const TextStyle(
-                                  color: Color.fromARGB(255, 201, 36, 24)),
-                            ),
-                          ),
-                        ),
+                          ],
+                        ],
                       ),
-                    ],
+                    ),
                   ],
                 ),
               );

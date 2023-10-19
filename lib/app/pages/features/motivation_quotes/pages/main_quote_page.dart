@@ -26,9 +26,9 @@ class _MainQuotePageState extends State<MainQuotePage> {
           child: BlocBuilder<MotivationQuotesCubit, MotivationQuotesState>(
             builder: (context, state) {
               return Scaffold(
-                extendBodyBehindAppBar: false,
+                extendBodyBehindAppBar: true,
                 appBar: AppBar(
-                  backgroundColor: Colors.black,
+                  backgroundColor: Colors.transparent,
                   title: Text(
                     'Motivation Quotes',
                     style:
