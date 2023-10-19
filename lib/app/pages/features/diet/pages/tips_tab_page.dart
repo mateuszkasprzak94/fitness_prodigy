@@ -21,129 +21,145 @@ class _TipsTabPageState extends State<TipsTabPage> {
             image: DecorationImage(
                 image: AssetImage('images_diet/diet.jpg'), fit: BoxFit.cover)),
         child: Center(
-          child: ListView(
+          child: Column(
             children: [
-              const SizedBox(height: 50),
-              Stack(
-                alignment: Alignment.topCenter,
-                children: [
-                  Material(
-                    elevation: 8,
-                    borderRadius: BorderRadius.circular(28),
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => const PortionControlContent(),
+              const SizedBox(height: 220),
+              Expanded(
+                child: ListView(
+                  padding: const EdgeInsets.fromLTRB(8, 10, 8, 8),
+                  children: [
+                    // const SizedBox(height: 50),
+                    Stack(
+                      alignment: Alignment.topCenter,
+                      children: [
+                        Material(
+                          elevation: 8,
+                          borderRadius: BorderRadius.circular(28),
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => const PortionControlContent(),
+                                ),
+                              );
+                            },
+                            child: Ink.image(
+                              image:
+                                  const AssetImage('images_diet/portion.jpg'),
+                              height: 250,
+                              width: 250,
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                        );
-                      },
-                      child: Ink.image(
-                        image: const AssetImage('images_diet/portion.jpg'),
-                        height: 250,
-                        width: 250,
-                        fit: BoxFit.cover,
-                      ),
+                        ),
+                        Text(
+                          'Portion Control',
+                          style: GoogleFonts.asul(
+                              fontSize: 24, color: Colors.black),
+                        ),
+                      ],
                     ),
-                  ),
-                  Text(
-                    'Portion Control',
-                    style: GoogleFonts.asul(fontSize: 24, color: Colors.black),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 50),
-              Stack(
-                alignment: Alignment.topCenter,
-                children: [
-                  Material(
-                    elevation: 8,
-                    borderRadius: BorderRadius.circular(28),
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => const MealPlanningContent(),
+                    const SizedBox(height: 50),
+                    Stack(
+                      alignment: Alignment.topCenter,
+                      children: [
+                        Material(
+                          elevation: 8,
+                          borderRadius: BorderRadius.circular(28),
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => const MealPlanningContent(),
+                                ),
+                              );
+                            },
+                            child: Ink.image(
+                              image:
+                                  const AssetImage('images_diet/planning1.jpg'),
+                              height: 250,
+                              width: 250,
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                        );
-                      },
-                      child: Ink.image(
-                        image: const AssetImage('images_diet/planning1.jpg'),
-                        height: 250,
-                        width: 250,
-                        fit: BoxFit.cover,
-                      ),
+                        ),
+                        Text(
+                          'Meal Planning',
+                          style: GoogleFonts.asul(
+                              fontSize: 24, color: Colors.black),
+                        ),
+                      ],
                     ),
-                  ),
-                  Text(
-                    'Meal Planning',
-                    style: GoogleFonts.asul(fontSize: 24, color: Colors.black),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 50),
-              Stack(
-                alignment: Alignment.topCenter,
-                children: [
-                  Material(
-                    elevation: 8,
-                    borderRadius: BorderRadius.circular(28),
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => const EatingHabitsContent(),
+                    const SizedBox(height: 50),
+                    Stack(
+                      alignment: Alignment.topCenter,
+                      children: [
+                        Material(
+                          elevation: 8,
+                          borderRadius: BorderRadius.circular(28),
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) => const EatingHabitsContent(),
+                                ),
+                              );
+                            },
+                            child: Ink.image(
+                              image:
+                                  const AssetImage('images_diet/habits1.jpg'),
+                              height: 250,
+                              width: 250,
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                        );
-                      },
-                      child: Ink.image(
-                        image: const AssetImage('images_diet/habits1.jpg'),
-                        height: 250,
-                        width: 250,
-                        fit: BoxFit.cover,
-                      ),
+                        ),
+                        Text(
+                          'Eating Habits',
+                          style: GoogleFonts.asul(
+                              fontSize: 24, color: Colors.black),
+                        ),
+                      ],
                     ),
-                  ),
-                  Text(
-                    'Eating Habits',
-                    style: GoogleFonts.asul(fontSize: 24, color: Colors.black),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 50),
-              Stack(
-                alignment: Alignment.topCenter,
-                children: [
-                  Material(
-                    elevation: 8,
-                    borderRadius: BorderRadius.circular(28),
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => const MealPreparationContent(),
+                    const SizedBox(height: 50),
+                    Stack(
+                      alignment: Alignment.topCenter,
+                      children: [
+                        Material(
+                          elevation: 8,
+                          borderRadius: BorderRadius.circular(28),
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (_) =>
+                                      const MealPreparationContent(),
+                                ),
+                              );
+                            },
+                            child: Ink.image(
+                              image: const AssetImage('images_diet/meal.jpg'),
+                              height: 250,
+                              width: 250,
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                        );
-                      },
-                      child: Ink.image(
-                        image: const AssetImage('images_diet/meal.jpg'),
-                        height: 250,
-                        width: 250,
-                        fit: BoxFit.cover,
-                      ),
+                        ),
+                        Text(
+                          'Meal Preparation',
+                          style: GoogleFonts.asul(
+                              fontSize: 24, color: Colors.black),
+                        ),
+                      ],
                     ),
-                  ),
-                  Text(
-                    'Meal Preparation',
-                    style: GoogleFonts.asul(fontSize: 24, color: Colors.black),
-                  ),
-                ],
+                    const SizedBox(height: 50),
+                  ],
+                ),
               ),
-              const SizedBox(height: 50),
             ],
           ),
         ),

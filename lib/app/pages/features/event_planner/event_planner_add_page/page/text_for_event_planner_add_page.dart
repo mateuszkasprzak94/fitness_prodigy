@@ -8,6 +8,6 @@ Here's how it works:
 
 2. Event Image (Optional): Add a picture for inspiration.
 
-3. Date and Time: Choose when your event will take place.
+3. Date: Choose when your event will take place.
 
 With the Event Planner, organizing and tracking your fitness journey has never been easier. Stay committed, stay fit, and achieve your fitness goals, one event at a time! 💪🏋️‍♀️🚴""";
