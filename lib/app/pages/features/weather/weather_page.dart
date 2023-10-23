@@ -141,12 +141,13 @@ class _DisplayWeatherWidget extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Lottie.asset(getWeatherAnimation(weatherModel.condition)),
-              Text(weatherModel.city,
+              Lottie.asset(
+                  getWeatherAnimation(weatherModel.current.condition.text)),
+              Text(weatherModel.location.name,
                   style: const TextStyle(color: Colors.white, fontSize: 40)),
-              Text('${weatherModel.temperature} °C',
+              Text('${weatherModel.current.tempC} °C',
                   style: const TextStyle(color: Colors.white, fontSize: 40)),
-              Text(weatherModel.condition,
+              Text(weatherModel.current.condition.text,
                   style: const TextStyle(color: Colors.white, fontSize: 30)),
             ],
           ),
