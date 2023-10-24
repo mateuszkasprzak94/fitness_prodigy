@@ -1,7 +1,16 @@
 part of 'details_cubit.dart';
 
-class DetailsState {
-  DetailsState({required this.itemModel});
-
-  final ItemModel? itemModel;
+@freezed
+class DetailsState with _$DetailsState {
+  factory DetailsState(
+    ItemModel? itemModel,
+  ) = _DetailsState;
 }
+
+
+
+// class DetailsState {
+//   DetailsState({required this.itemModel});
+
+//   final ItemModel? itemModel;
+// }
