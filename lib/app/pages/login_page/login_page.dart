@@ -103,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                           height: 20,
                         ),
                         Text(
-                          errorMessage,
+                          errorMessage as String,
                           style: const TextStyle(
                             color: Colors.grey,
                           ),

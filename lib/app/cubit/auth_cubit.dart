@@ -2,14 +2,16 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:meta/meta.dart';
 
 part 'auth_state.dart';
+part 'auth_cubit.freezed.dart';
 
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit()
       : super(
-          const AuthState(
+          AuthState(
             user: null,
             isLoading: false,
             errorMessage: '',
@@ -64,7 +66,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   Future<void> start() async {
     emit(
-      const AuthState(
+      AuthState(
         user: null,
         isLoading: true,
         errorMessage: '',
