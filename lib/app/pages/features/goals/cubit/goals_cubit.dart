@@ -3,11 +3,13 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:fitness_prodigy/app/models/goal_model.dart';
 import 'package:fitness_prodigy/app/repositories/goals_repository.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'goals_state.dart';
+part 'goals_cubit.freezed.dart';
 
 class GoalsCubit extends Cubit<GoalsState> {
-  GoalsCubit(this._goalsRepository) : super(const GoalsState());
+  GoalsCubit(this._goalsRepository) : super(GoalsState());
 
   final GoalsRepository _goalsRepository;
 
@@ -15,7 +17,7 @@ class GoalsCubit extends Cubit<GoalsState> {
 
   Future<void> start() async {
     emit(
-      const GoalsState(
+      GoalsState(
         items: [],
         errorMessage: '',
         isLoading: true,

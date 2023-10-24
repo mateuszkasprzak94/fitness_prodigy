@@ -46,7 +46,7 @@ class _GoalsPageState extends State<GoalsPage> {
           child: BlocBuilder<GoalsCubit, GoalsState>(
             builder: (context, state) {
               final goalModels = state.items;
-              if (state.errorMessage.isNotEmpty) {
+              if (state.errorMessage!.isNotEmpty) {
                 return Center(
                   child: Text(
                       'An unexpected problem has occurred: ${state.errorMessage}'),
