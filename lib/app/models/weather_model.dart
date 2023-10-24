@@ -39,8 +39,9 @@ class Current with _$Current {
 
 @freezed
 class Condition with _$Condition {
-  factory Condition(@JsonKey(name: 'text') String weatherCondition) =
-      _Condition;
+  factory Condition(
+    @JsonKey(name: 'text') String weatherCondition,
+  ) = _Condition;
 
   factory Condition.fromJson(Map<String, dynamic> json) =>
       _$ConditionFromJson(json);
