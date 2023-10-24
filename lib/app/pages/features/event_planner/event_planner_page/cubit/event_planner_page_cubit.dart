@@ -3,12 +3,13 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:fitness_prodigy/app/models/event_planner_item_model.dart';
 import 'package:fitness_prodigy/app/repositories/items_repository.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'event_planner_page_state.dart';
+part 'event_planner_page_cubit.freezed.dart';
 
 class EventPlannerPageCubit extends Cubit<EventPlannerPageState> {
-  EventPlannerPageCubit(this._itemsRepository)
-      : super(const EventPlannerPageState());
+  EventPlannerPageCubit(this._itemsRepository) : super(EventPlannerPageState());
 
   final ItemsRepository _itemsRepository;
 
@@ -21,7 +22,7 @@ class EventPlannerPageCubit extends Cubit<EventPlannerPageState> {
       },
     )..onError(
         (error) {
-          emit(const EventPlannerPageState(loadingErrorOccured: true));
+          emit(EventPlannerPageState(loadingErrorOccured: true));
         },
       );
   }
@@ -31,7 +32,7 @@ class EventPlannerPageCubit extends Cubit<EventPlannerPageState> {
       await _itemsRepository.delete(id: documentID);
     } catch (error) {
       emit(
-        const EventPlannerPageState(removingErrorOccured: true),
+        EventPlannerPageState(removingErrorOccured: true),
       );
       start();
     }
