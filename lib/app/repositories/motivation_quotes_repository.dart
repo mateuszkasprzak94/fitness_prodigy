@@ -38,9 +38,9 @@ class MotivationQuotesRepository {
       return querySnapshot.docs.map(
         (doc) {
           return QuoteModel(
-            id: doc.id,
-            quote: doc['quote'],
-            author: doc['author'],
+            doc.id,
+            doc['quote'],
+            doc['author'],
           );
         },
       ).toList();
