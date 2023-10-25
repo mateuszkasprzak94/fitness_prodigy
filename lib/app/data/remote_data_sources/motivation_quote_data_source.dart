@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:injectable/injectable.dart';
 // import 'package:fitness_prodigy/app/models/quote_model.dart';
 
 // part 'motivation_quote_data_source.g.dart';
@@ -14,7 +13,6 @@ import 'package:injectable/injectable.dart';
 //   Future<QuoteModel> getQuoteData();
 // }
 
-@injectable
 class MotivationQuotesRemoteDioDataSource {
   Future<Map<String, dynamic>?> getQuoteData() async {
     try {

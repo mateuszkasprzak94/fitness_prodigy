@@ -3,12 +3,10 @@ import 'package:fitness_prodigy/app/core/enums.dart';
 import 'package:fitness_prodigy/app/models/weather_model.dart';
 import 'package:fitness_prodigy/app/repositories/weather_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:injectable/injectable.dart';
 
-part 'weather_state.dart';
 part 'weather_cubit.freezed.dart';
+part 'weather_state.dart';
 
-@injectable
 class WeatherCubit extends Cubit<WeatherState> {
   WeatherCubit({required this.weatherRepository}) : super(WeatherState());
 
