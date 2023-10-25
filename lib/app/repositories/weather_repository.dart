@@ -1,6 +1,8 @@
 import 'package:fitness_prodigy/app/data/remote_data_sources/weather_remote_data_source.dart';
 import 'package:fitness_prodigy/app/models/weather_model.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class WeatherRepository {
   WeatherRepository({required this.weatherRemoteDataSource});
 

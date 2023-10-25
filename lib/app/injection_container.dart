@@ -1,30 +1,30 @@
-import 'package:fitness_prodigy/app/data/remote_data_sources/motivation_quote_data_source.dart';
-import 'package:fitness_prodigy/app/data/remote_data_sources/weather_remote_data_source.dart';
-import 'package:fitness_prodigy/app/pages/features/goals/cubit/goals_cubit.dart';
-import 'package:fitness_prodigy/app/pages/features/motivation_quotes/cubit/motivation_quotes_cubit.dart';
-import 'package:fitness_prodigy/app/pages/features/weather/cubit/weather_cubit.dart';
-import 'package:fitness_prodigy/app/repositories/goals_repository.dart';
-import 'package:fitness_prodigy/app/repositories/motivation_quotes_repository.dart';
-import 'package:fitness_prodigy/app/repositories/weather_repository.dart';
+import 'package:fitness_prodigy/app/injection_container.config.dart';
 import 'package:get_it/get_it.dart';
+import 'package:injectable/injectable.dart';
 
 final getIt = GetIt.instance;
 
-void configureDependencies() {
-  // Bloc
-  getIt.registerFactory(
-      () => MotivationQuotesCubit(motivationQuotesRepository: getIt()));
-  getIt.registerFactory(() => WeatherCubit(weatherRepository: getIt()));
-  getIt.registerFactory(() => GoalsCubit(goalsRepository: getIt()));
+@InjectableInit()
+void configureDependencies() => getIt.init();  
 
-  // Repositories
-  getIt.registerFactory(() =>
-      MotivationQuotesRepository(motivationQuotesRemoteDataSource: getIt()));
-  getIt.registerFactory(
-      () => WeatherRepository(weatherRemoteDataSource: getIt()));
-  getIt.registerFactory(() => GoalsRepository());
 
-  // DataSources
-  getIt.registerFactory(() => MotivationQuotesRemoteDioDataSource());
-  getIt.registerFactory(() => WeatherRemoteDioDataSource());
-}
+
+
+// void configureDependencies() {
+//   // Bloc
+//   getIt.registerFactory(
+//       () => MotivationQuotesCubit(motivationQuotesRepository: getIt()));
+//   getIt.registerFactory(() => WeatherCubit(weatherRepository: getIt()));
+//   getIt.registerFactory(() => GoalsCubit(goalsRepository: getIt()));
+
+//   // Repositories
+//   getIt.registerFactory(() =>
+//       MotivationQuotesRepository(motivationQuotesRemoteDataSource: getIt()));
+//   getIt.registerFactory(
+//       () => WeatherRepository(weatherRemoteDataSource: getIt()));
+//   getIt.registerFactory(() => GoalsRepository());
+
+//   // DataSources
+//   getIt.registerFactory(() => MotivationQuotesRemoteDioDataSource());
+//   getIt.registerFactory(() => WeatherRemoteDioDataSource());
+// }

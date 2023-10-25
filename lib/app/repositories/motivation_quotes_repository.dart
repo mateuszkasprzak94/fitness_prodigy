@@ -4,7 +4,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/data/remote_data_sources/motivation_quote_data_source.dart';
 import 'package:fitness_prodigy/app/models/quote_model.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class MotivationQuotesRepository {
   MotivationQuotesRepository({required this.motivationQuotesRemoteDataSource});
 

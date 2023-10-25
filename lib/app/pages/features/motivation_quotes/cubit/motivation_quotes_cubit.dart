@@ -5,10 +5,12 @@ import 'package:fitness_prodigy/app/core/enums.dart';
 import 'package:fitness_prodigy/app/models/quote_model.dart';
 import 'package:fitness_prodigy/app/repositories/motivation_quotes_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 
 part 'motivation_quotes_state.dart';
 part 'motivation_quotes_cubit.freezed.dart';
 
+@injectable
 class MotivationQuotesCubit extends Cubit<MotivationQuotesState> {
   MotivationQuotesCubit({required this.motivationQuotesRepository})
       : super(MotivationQuotesState());

@@ -4,10 +4,12 @@ import 'package:bloc/bloc.dart';
 import 'package:fitness_prodigy/app/models/goal_model.dart';
 import 'package:fitness_prodigy/app/repositories/goals_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 
 part 'goals_state.dart';
 part 'goals_cubit.freezed.dart';
 
+@injectable
 class GoalsCubit extends Cubit<GoalsState> {
   GoalsCubit({required this.goalsRepository}) : super(GoalsState());
 
