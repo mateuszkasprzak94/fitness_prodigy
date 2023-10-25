@@ -1,6 +1,5 @@
-import 'package:fitness_prodigy/app/data/remote_data_sources/motivation_quote_data_source.dart';
+import 'package:fitness_prodigy/app/injection_container.dart';
 import 'package:fitness_prodigy/app/pages/features/motivation_quotes/cubit/motivation_quotes_cubit.dart';
-import 'package:fitness_prodigy/app/repositories/motivation_quotes_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,10 +13,8 @@ class FavoriteQuotePage extends StatefulWidget {
 class _FavoriteQuotePageState extends State<FavoriteQuotePage> {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => MotivationQuotesCubit(
-          MotivationQuotesRepository(MotivationQuotesRemoteDioDataSource()))
-        ..start(),
+    return BlocProvider<MotivationQuotesCubit>(
+      create: (context) => getIt()..start(),
       child: Scaffold(
         body: BlocBuilder<MotivationQuotesCubit, MotivationQuotesState>(
           builder: (context, state) {

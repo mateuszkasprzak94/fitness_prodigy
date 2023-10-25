@@ -1,8 +1,7 @@
-import 'package:fitness_prodigy/app/data/remote_data_sources/motivation_quote_data_source.dart';
+import 'package:fitness_prodigy/app/injection_container.dart';
 import 'package:fitness_prodigy/app/pages/features/motivation_quotes/cubit/motivation_quotes_cubit.dart';
 import 'package:fitness_prodigy/app/pages/features/motivation_quotes/pages/favorite_quote_page.dart';
 import 'package:fitness_prodigy/app/pages/features/motivation_quotes/pages/motivation_quotes_page.dart';
-import 'package:fitness_prodigy/app/repositories/motivation_quotes_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,10 +18,8 @@ class _MainQuotePageState extends State<MainQuotePage> {
   @override
   Widget build(BuildContext context) => DefaultTabController(
         length: 2,
-        child: BlocProvider(
-          create: (context) => MotivationQuotesCubit(
-              MotivationQuotesRepository(MotivationQuotesRemoteDioDataSource()))
-            ..start(),
+        child: BlocProvider<MotivationQuotesCubit>(
+          create: (context) => getIt()..start(),
           child: BlocBuilder<MotivationQuotesCubit, MotivationQuotesState>(
             builder: (context, state) {
               return Scaffold(

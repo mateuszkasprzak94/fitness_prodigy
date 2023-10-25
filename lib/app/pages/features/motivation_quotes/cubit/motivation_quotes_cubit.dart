@@ -10,10 +10,10 @@ part 'motivation_quotes_state.dart';
 part 'motivation_quotes_cubit.freezed.dart';
 
 class MotivationQuotesCubit extends Cubit<MotivationQuotesState> {
-  MotivationQuotesCubit(this._motivationQuotesRepository)
+  MotivationQuotesCubit({required this.motivationQuotesRepository})
       : super(MotivationQuotesState());
 
-  final MotivationQuotesRepository _motivationQuotesRepository;
+  final MotivationQuotesRepository motivationQuotesRepository;
 
   StreamSubscription? _streamSubscription;
 
@@ -26,7 +26,7 @@ class MotivationQuotesCubit extends Cubit<MotivationQuotesState> {
         favoriteQuotes: [],
       ),
     );
-    _streamSubscription = _motivationQuotesRepository
+    _streamSubscription = motivationQuotesRepository
         .getMotivationStream()
         .listen((favoriteQuotes) {
       emit(MotivationQuotesState(favoriteQuotes: favoriteQuotes));
@@ -45,7 +45,7 @@ class MotivationQuotesCubit extends Cubit<MotivationQuotesState> {
   Future<void> getRandomQuote() async {
     emit(MotivationQuotesState(status: Status.loading));
     try {
-      final quoteModel = await _motivationQuotesRepository.getRandomQuote();
+      final quoteModel = await motivationQuotesRepository.getRandomQuote();
       emit(MotivationQuotesState(model: quoteModel, status: Status.success));
     } catch (error) {
       emit(
@@ -58,13 +58,13 @@ class MotivationQuotesCubit extends Cubit<MotivationQuotesState> {
   }
 
   Future<void> addQuoteToFavorites(QuoteModel quote) async {
-    await _motivationQuotesRepository.add(quote);
+    await motivationQuotesRepository.add(quote);
   }
 
   // final List<QuoteModel> favoriteQuotes = [];
 
   Future<void> removeQuoteFromFavorites({required String documentID}) async {
-    await _motivationQuotesRepository.delete(documentID: documentID);
+    await motivationQuotesRepository.delete(documentID: documentID);
   }
 
   @override

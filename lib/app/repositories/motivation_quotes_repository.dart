@@ -6,12 +6,12 @@ import 'package:fitness_prodigy/app/data/remote_data_sources/motivation_quote_da
 import 'package:fitness_prodigy/app/models/quote_model.dart';
 
 class MotivationQuotesRepository {
-  MotivationQuotesRepository(this._motivationQuotesRemoteDataSource);
+  MotivationQuotesRepository({required this.motivationQuotesRemoteDataSource});
 
-  final MotivationQuotesRemoteDioDataSource _motivationQuotesRemoteDataSource;
+  final MotivationQuotesRemoteDioDataSource motivationQuotesRemoteDataSource;
 
   Future<QuoteModel?> getRandomQuote() async {
-    final json = await _motivationQuotesRemoteDataSource.getQuoteData();
+    final json = await motivationQuotesRemoteDataSource.getQuoteData();
 
     if (json == null) {
       return null;
