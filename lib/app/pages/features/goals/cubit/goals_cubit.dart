@@ -9,9 +9,9 @@ part 'goals_state.dart';
 part 'goals_cubit.freezed.dart';
 
 class GoalsCubit extends Cubit<GoalsState> {
-  GoalsCubit(this._goalsRepository) : super(GoalsState());
+  GoalsCubit({required this.goalsRepository}) : super(GoalsState());
 
-  final GoalsRepository _goalsRepository;
+  final GoalsRepository goalsRepository;
 
   StreamSubscription? _streamSubscription;
 
@@ -23,7 +23,7 @@ class GoalsCubit extends Cubit<GoalsState> {
         isLoading: true,
       ),
     );
-    _streamSubscription = _goalsRepository.getGoalsStream().listen((items) {
+    _streamSubscription = goalsRepository.getGoalsStream().listen((items) {
       emit(GoalsState(items: items));
     })
       ..onError((error) {
@@ -38,16 +38,16 @@ class GoalsCubit extends Cubit<GoalsState> {
   }
 
   Future<void> add(String controller) async {
-    await _goalsRepository.add(controller: controller);
+    await goalsRepository.add(controller: controller);
   }
 
   Future<void> delete({required String documentID}) async {
-    await _goalsRepository.delete(documentID: documentID);
+    await goalsRepository.delete(documentID: documentID);
   }
 
   Future<void> undo(
       {required String deletedGoal, required originalTimestamp}) async {
-    await _goalsRepository.undo(
+    await goalsRepository.undo(
         deletedGoal: deletedGoal, originalTimestamp: originalTimestamp);
   }
 
