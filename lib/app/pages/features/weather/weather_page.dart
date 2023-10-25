@@ -1,8 +1,7 @@
 import 'package:fitness_prodigy/app/core/enums.dart';
-import 'package:fitness_prodigy/app/data/remote_data_sources/weather_remote_data_source.dart';
+import 'package:fitness_prodigy/app/injection_container.dart';
 import 'package:fitness_prodigy/app/models/weather_model.dart';
 import 'package:fitness_prodigy/app/pages/features/weather/cubit/weather_cubit.dart';
-import 'package:fitness_prodigy/app/repositories/weather_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,9 +22,8 @@ class WeatherContent extends StatefulWidget {
 class _WeatherContentState extends State<WeatherContent> {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) =>
-          WeatherCubit(WeatherRepository(WeatherRemoteDioDataSource())),
+    return BlocProvider<WeatherCubit>(
+      create: (context) => getIt(),
       child: BlocConsumer<WeatherCubit, WeatherState>(
         listener: (context, state) {
           if (state.status == Status.error) {

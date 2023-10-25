@@ -2,14 +2,14 @@ import 'package:fitness_prodigy/app/data/remote_data_sources/weather_remote_data
 import 'package:fitness_prodigy/app/models/weather_model.dart';
 
 class WeatherRepository {
-  WeatherRepository(this._weatherRemoteDataSource);
+  WeatherRepository({required this.weatherRemoteDataSource});
 
-  final WeatherRemoteDioDataSource _weatherRemoteDataSource;
+  final WeatherRemoteDioDataSource weatherRemoteDataSource;
 
   Future<WeatherModel?> getWeatherModel({
     required String city,
   }) async {
-    final json = await _weatherRemoteDataSource.getWeatherData(
+    final json = await weatherRemoteDataSource.getWeatherData(
       city: city,
     );
 
