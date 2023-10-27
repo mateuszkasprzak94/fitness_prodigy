@@ -39,7 +39,13 @@ class UserProfilePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'You are logged as $email',
+              'You are logged as',
+              style: GoogleFonts.libreFranklin(fontSize: 20),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 2,
+            ),
+            Text(
+              '$email',
               style: GoogleFonts.libreFranklin(fontSize: 20),
               overflow: TextOverflow.ellipsis,
               maxLines: 2,

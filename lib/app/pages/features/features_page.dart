@@ -13,6 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Features extends StatefulWidget {
   const Features({
@@ -149,7 +150,7 @@ class _FeaturesState extends State<Features> {
           },
           child: Animate(
             child: Tooltip(
-              message: 'Check Weather',
+              message: AppLocalizations.of(context).checkweather,
               child: Container(
                 margin: const EdgeInsets.all(10),
                 alignment: Alignment.center,

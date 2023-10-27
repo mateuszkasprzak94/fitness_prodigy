@@ -4,6 +4,8 @@ import 'package:fitness_prodigy/app/pages/home/home_page.dart';
 import 'package:fitness_prodigy/app/pages/login_page/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -17,14 +19,18 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en'), // English
+        Locale('es'), // Spanish
+        Locale('pl'), // Polish
+      ],
       home: const HomePage(),
-      // initialRoute: '/', // Set the initial route
-      // routes: {
-      //   '/': (context) => const HomePage(),
-      // '/login': (context) =>
-      //     MainLoginPage(), // Define the route for your login page
-      //   // Define other routes here
-      // },
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:fitness_prodigy/app/cubit/auth_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({
@@ -43,7 +44,9 @@ class _LoginPageState extends State<LoginPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          isCreatingAccount == true ? 'Register' : 'Login',
+                          isCreatingAccount == true
+                              ? AppLocalizations.of(context).register
+                              : AppLocalizations.of(context).login,
                           style: const TextStyle(
                             color: Colors.white,
                             fontSize: 25,
@@ -63,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                                     onPressed: () =>
                                         widget.emailController.clear(),
                                     icon: const Icon(Icons.close)),
-                            hintText: 'E-mail',
+                            hintText: AppLocalizations.of(context).email,
                             filled: true,
                             fillColor: const Color.fromARGB(69, 255, 255, 255),
                             hintStyle: const TextStyle(
@@ -86,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                               onPressed: () => setState(
                                   () => isPasswordVisible = !isPasswordVisible),
                             ),
-                            hintText: 'Password',
+                            hintText: AppLocalizations.of(context).password,
                             filled: true,
                             fillColor: const Color.fromARGB(69, 255, 255, 255),
                             hintStyle: const TextStyle(
@@ -127,7 +130,9 @@ class _LoginPageState extends State<LoginPage> {
                             backgroundColor: Colors.white.withOpacity(0.5),
                           ),
                           child: Text(
-                            isCreatingAccount == true ? 'Register' : 'Login',
+                            isCreatingAccount == true
+                                ? AppLocalizations.of(context).registerr
+                                : AppLocalizations.of(context).loginn,
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 18,
@@ -142,9 +147,9 @@ class _LoginPageState extends State<LoginPage> {
                                 isCreatingAccount = true;
                               });
                             },
-                            child: const Text(
-                              'Create Account',
-                              style: TextStyle(
+                            child: Text(
+                              AppLocalizations.of(context).createAccount,
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
                               ),
@@ -158,9 +163,9 @@ class _LoginPageState extends State<LoginPage> {
                                 isCreatingAccount = false;
                               });
                             },
-                            child: const Text(
-                              'Have an account?',
-                              style: TextStyle(
+                            child: Text(
+                              AppLocalizations.of(context).haveAccount,
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 18,
                               ),
