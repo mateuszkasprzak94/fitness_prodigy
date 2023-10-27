@@ -1,25 +1,17 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "fitness_prodigy",
+            "name": "fitness_prodigy development",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "fitness_prodigy (profile mode)",
+            "name": "fitness_prodigy production",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
-            "name": "fitness_prodigy (release mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
+            "program": "lib/main_production.dart"
         }
     ]
 }

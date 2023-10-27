@@ -1,3 +1,4 @@
+import 'package:fitness_prodigy/app/core/config.dart';
 import 'package:fitness_prodigy/app/cubit/auth_cubit.dart';
 import 'package:fitness_prodigy/app/pages/after_login_page/after_login_page.dart';
 import 'package:fitness_prodigy/app/pages/home/home_page.dart';
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: Config.debugShowCheckedModeBanner,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),

@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:fitness_prodigy/app/core/config.dart';
 // import 'package:fitness_prodigy/app/models/quote_model.dart';
 
 // part 'motivation_quote_data_source.g.dart';
@@ -16,8 +17,7 @@ import 'package:dio/dio.dart';
 class MotivationQuotesRemoteDioDataSource {
   Future<Map<String, dynamic>?> getQuoteData() async {
     try {
-      final respone = await Dio().get<Map<String, dynamic>>(
-          'https://my-json-server.typicode.com/mateuszkasprzak94/quotes/db');
+      final respone = await Dio().get<Map<String, dynamic>>(Config.quoteUrl);
       return respone.data;
     } on DioException catch (error) {
       throw Exception(
