@@ -19,12 +19,7 @@ class MotivationQuotesCubit extends Cubit<MotivationQuotesState> {
 
   Future<void> start() async {
     emit(
-      MotivationQuotesState(
-        model: state.model,
-        status: state.status,
-        errorMessage: '',
-        favoriteQuotes: [],
-      ),
+      MotivationQuotesState(status: Status.loading),
     );
     _streamSubscription = motivationQuotesRepository
         .getMotivationStream()
