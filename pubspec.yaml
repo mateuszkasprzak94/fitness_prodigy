@@ -50,6 +50,7 @@ dev_dependencies:
   retrofit_generator: ^8.0.2
   injectable_generator: ^2.4.1
   mocktail: ^1.0.1
+  bloc_test: ^9.1.5
 
 flutter_launcher_icons:
   android: "launcher_icon"
