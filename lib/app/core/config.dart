@@ -9,9 +9,9 @@ class Config {
   static String get quoteUrl {
     switch (appFlavor) {
       case Flavor.development:
-        return 'https://my-json-server.typicode.com/mateuszkasprzak94/quotes/db';
+        return 'https://my-json-server.typicode.com/mateuszkasprzak94/quotes/quotes';
       case Flavor.production:
-        return 'https://my-json-server.typicode.com/mateuszkasprzak94/quotes/db';
+        return 'https://my-json-server.typicode.com/mateuszkasprzak94/quotes/quotes';
     }
   }
 

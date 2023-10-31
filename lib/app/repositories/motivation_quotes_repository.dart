@@ -17,7 +17,7 @@ class MotivationQuotesRepository {
       return null;
     }
 // Generate a random index to pick a random quote
-    final List<dynamic> quotesList = json['quotes'];
+    final List<dynamic> quotesList = json;
     final random = Random();
     final randomIndex = random.nextInt(quotesList.length);
 
