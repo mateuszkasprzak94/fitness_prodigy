@@ -19,9 +19,9 @@ class _NutrientsTabPageState extends State<NutrientsTabPage> {
             image: DecorationImage(
                 image: AssetImage('images_diet/diet.jpg'), fit: BoxFit.cover)),
         child: Center(
-          child: ListView(
+          child: Column(
             children: [
-              const SizedBox(height: 50),
+              const SizedBox(height: 200),
               Stack(
                 alignment: Alignment.topCenter,
                 children: [

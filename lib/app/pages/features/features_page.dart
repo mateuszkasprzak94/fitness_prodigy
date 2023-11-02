@@ -51,7 +51,6 @@ class _FeaturesState extends State<Features> {
               );
             },
             icon: Icons.fastfood),
-        // const SizedBox(height: 5),
         customFeaturesButton(
             title: 'SUPPLEMENTS',
             onPressed: () {
@@ -62,7 +61,6 @@ class _FeaturesState extends State<Features> {
               );
             },
             icon: Icons.local_pharmacy),
-        // const SizedBox(height: 5),
         customFeaturesButtonWithImage(
             title: 'GOALS',
             onPressed: () {
@@ -73,7 +71,6 @@ class _FeaturesState extends State<Features> {
               );
             },
             assetImage: 'images/goals.png'),
-        // const SizedBox(height: 5),
         customFeaturesButtonWithImage(
             title: 'MOTIVATION QUOTES',
             onPressed: () {
@@ -84,7 +81,6 @@ class _FeaturesState extends State<Features> {
               );
             },
             assetImage: 'images/motivation.png'),
-        // const SizedBox(height: 5),
         customFeaturesButtonWithImage(
             title: 'WATER GLASS COUNTER',
             onPressed: () {
@@ -95,7 +91,6 @@ class _FeaturesState extends State<Features> {
               );
             },
             assetImage: 'images/water.png'),
-        // const SizedBox(height: 5),
         customFeaturesButton(
             title: 'EVENT PLANNER',
             onPressed: () {

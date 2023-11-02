@@ -23,7 +23,7 @@ class _TipsTabPageState extends State<TipsTabPage> {
         child: Center(
           child: Column(
             children: [
-              const SizedBox(height: 220),
+              const SizedBox(height: 190),
               Expanded(
                 child: ListView(
                   padding: const EdgeInsets.fromLTRB(8, 10, 8, 8),
