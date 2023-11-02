@@ -2,8 +2,6 @@ import 'package:fitness_prodigy/app/pages/features/diet/pages/diet_page.dart';
 import 'package:fitness_prodigy/app/pages/features/event_planner/event_planner_page/page/event_planner_page.dart';
 import 'package:fitness_prodigy/app/pages/features/goals/goals_page.dart';
 import 'package:fitness_prodigy/app/pages/features/motivation_quotes/pages/main_quote_page.dart';
-import 'package:fitness_prodigy/app/pages/features/progress_tracking/progress_tracking_page.dart';
-import 'package:fitness_prodigy/app/pages/features/stopwatch/stopwatch_page.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_page.dart';
 import 'package:fitness_prodigy/app/pages/features/water_glass_counter/water_glass_counter_page.dart';
 import 'package:fitness_prodigy/app/models/button_model.dart';
@@ -97,28 +95,6 @@ class _FeaturesState extends State<Features> {
               );
             },
             assetImage: 'images/water.png'),
-        // const SizedBox(height: 5),
-        customFeaturesButton(
-            title: 'STOPWATCH',
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => const FitStopwatchPage(),
-                ),
-              );
-            },
-            icon: Icons.watch_rounded),
-        // const SizedBox(height: 5),
-        customFeaturesButton(
-            title: 'PROGRESS TRACKING',
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => const ProgressTrackingPage(),
-                ),
-              );
-            },
-            icon: Icons.hourglass_bottom),
         // const SizedBox(height: 5),
         customFeaturesButton(
             title: 'EVENT PLANNER',
