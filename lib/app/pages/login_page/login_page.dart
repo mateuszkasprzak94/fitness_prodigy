@@ -82,6 +82,7 @@ class _LoginPageState extends State<LoginPage> {
                           controller: widget.passwordController,
                           obscureText: isPasswordVisible,
                           decoration: InputDecoration(
+                            prefixIcon: const Icon(Icons.key),
                             suffixIcon: IconButton(
                               icon: isPasswordVisible
                                   ? const Icon(Icons.visibility_off)
