@@ -61,11 +61,15 @@ class CitrullinePage extends StatelessWidget {
             const SizedBox(height: 15),
             _buildSupplements1('Side Effects:', citrullinesideeffects),
             const Divider(height: 5, thickness: 5),
-            const SizedBox(height: 15),
-            Text(
-              citrullineend,
-              style: const TextStyle(fontStyle: FontStyle.italic),
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                citrullineend,
+                style: const TextStyle(fontStyle: FontStyle.italic),
+              ),
             ),
+            const SizedBox(height: 10),
           ],
         ),
       ),
