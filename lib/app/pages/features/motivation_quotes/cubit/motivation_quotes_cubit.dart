@@ -56,8 +56,6 @@ class MotivationQuotesCubit extends Cubit<MotivationQuotesState> {
     await motivationQuotesRepository.add(quote);
   }
 
-  // final List<QuoteModel> favoriteQuotes = [];
-
   Future<void> removeQuoteFromFavorites({required String documentID}) async {
     await motivationQuotesRepository.delete(documentID: documentID);
   }

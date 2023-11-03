@@ -132,10 +132,21 @@ class FavoriteQuoteButton extends StatelessWidget {
         onPressed: () {
           final quoteModel = context.read<MotivationQuotesCubit>().state.model;
           if (quoteModel != null) {
+            // Add the quote to favorites
             context
                 .read<MotivationQuotesCubit>()
                 .addQuoteToFavorites(quoteModel);
+
+            // Navigate to the Favorite Quotes Page
             DefaultTabController.of(context).animateTo(1);
+
+            // Show a snackbar on the Favorite Quotes Page
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Quote added to Favorites'),
+                backgroundColor: Colors.green,
+              ),
+            );
           }
         },
         icon: const Icon(
@@ -198,19 +209,3 @@ class RandomQuoteButton extends StatelessWidget {
     );
   }
 }
-
-
-
-
-// extendBodyBehindAppBar: true,
-            // appBar: AppBar(
-            //   backgroundColor: Colors.transparent,
-            //   title: Text(
-            //     'Motivation Quotes',
-            //     style: GoogleFonts.satisfy(fontSize: 30, color: Colors.white),
-            //   ),
-            //   centerTitle: true,
-            //   systemOverlayStyle: SystemUiOverlayStyle.light,
-            //   automaticallyImplyLeading: true,
-            //   foregroundColor: Colors.white,
-            // ),

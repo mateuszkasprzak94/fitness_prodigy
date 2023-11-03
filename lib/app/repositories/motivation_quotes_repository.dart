@@ -55,18 +55,30 @@ class MotivationQuotesRepository {
     if (userID == null) {
       throw Exception('User is not logged in');
     }
+
+    final querySnapshot = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(userID)
+        .collection('quotes')
+        .where('id', isEqualTo: quote.id)
+        .get();
+
+    if (querySnapshot.docs.isNotEmpty) {
+      // The document with the same id already exists
+      throw Exception('Quote with the same id already in favorites');
+    }
+
     await FirebaseFirestore.instance
         .collection('users')
         .doc(userID)
         .collection('quotes')
         .add({
+      'id': quote.id,
       'quote': quote.quote,
       'author': quote.author,
       'timestamp': FieldValue.serverTimestamp(),
     });
   }
-
-  final List<QuoteModel> favoriteQuotes = [];
 
   Future<void> delete({required String documentID}) {
     final userID = FirebaseAuth.instance.currentUser?.uid;
