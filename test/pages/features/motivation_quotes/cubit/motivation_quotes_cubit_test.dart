@@ -23,7 +23,12 @@ void main() {
     group('success', () {
       setUp(() {
         when(() => repository.getRandomQuote()).thenAnswer(
-          (_) async => QuoteModel('1', 'quote1', 'author1'),
+          (_) async => QuoteModel(
+            '1',
+            'quote1',
+            'author1',
+            DateTime(2023),
+          ),
         );
       });
 
@@ -34,8 +39,14 @@ void main() {
         expect: () => [
           MotivationQuotesState(status: Status.loading),
           MotivationQuotesState(
-              status: Status.success,
-              model: QuoteModel('1', 'quote1', 'author1'))
+            status: Status.success,
+            model: QuoteModel(
+              '1',
+              'quote1',
+              'author1',
+              DateTime(2023),
+            ),
+          )
         ],
       );
     });
@@ -59,15 +70,28 @@ void main() {
     });
     group('addQuotetoFavorites', () {
       setUp(() {
-        when(() => repository.add(QuoteModel('1', 'quote1', 'author1')))
-            .thenAnswer((_) async => QuoteModel('1', 'quote1', 'author1'));
+        when(() => repository.add(QuoteModel(
+              '1',
+              'quote1',
+              'author1',
+              DateTime(2023),
+            ))).thenAnswer((_) async => QuoteModel(
+              '1',
+              'quote1',
+              'author1',
+              DateTime(2023),
+            ));
       });
 
       blocTest<MotivationQuotesCubit, MotivationQuotesState>(
         'check if quote is added to favorites',
         build: () => sut,
-        act: (cubit) =>
-            cubit.addQuoteToFavorites(QuoteModel('1', 'quote1', 'author1')),
+        act: (cubit) => cubit.addQuoteToFavorites(QuoteModel(
+          '1',
+          'quote1',
+          'author1',
+          DateTime(2023),
+        )),
         expect: () => [],
       );
     });

@@ -18,13 +18,14 @@ void main() {
   });
 
   group('MotivationQuotesRepository', () {
-    test('', () async {
+    test('fetches a random quote', () async {
       // 1
       when(() => dataSource.getQuoteData()).thenAnswer((_) async => [
             {
               'id': '1',
               'quote': 'quote1',
               'author': 'author1',
+              'timestamp': DateTime.now()
             }
           ]);
       // 2
@@ -33,7 +34,12 @@ void main() {
       // 3
       expect(
         result,
-        QuoteModel('1', 'quote1', 'author1'),
+        QuoteModel(
+          '1',
+          'quote1',
+          'author1',
+          DateTime.now(),
+        ),
       );
     });
   });

@@ -11,6 +11,7 @@ _$QuoteModelImpl _$$QuoteModelImplFromJson(Map<String, dynamic> json) =>
       json['id'] as String,
       json['quote'] as String,
       json['author'] as String,
+      const TimestampSerializer().fromJson(json['dob']),
     );
 
 Map<String, dynamic> _$$QuoteModelImplToJson(_$QuoteModelImpl instance) =>
@@ -18,4 +19,5 @@ Map<String, dynamic> _$$QuoteModelImplToJson(_$QuoteModelImpl instance) =>
       'id': instance.id,
       'quote': instance.quote,
       'author': instance.author,
+      'dob': const TimestampSerializer().toJson(instance.dob),
     };

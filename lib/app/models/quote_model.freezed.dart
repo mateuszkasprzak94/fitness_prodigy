@@ -23,6 +23,8 @@ mixin _$QuoteModel {
   String get id => throw _privateConstructorUsedError;
   String get quote => throw _privateConstructorUsedError;
   String get author => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  DateTime get dob => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +38,11 @@ abstract class $QuoteModelCopyWith<$Res> {
           QuoteModel value, $Res Function(QuoteModel) then) =
       _$QuoteModelCopyWithImpl<$Res, QuoteModel>;
   @useResult
-  $Res call({String id, String quote, String author});
+  $Res call(
+      {String id,
+      String quote,
+      String author,
+      @TimestampSerializer() DateTime dob});
 }
 
 /// @nodoc
@@ -55,6 +61,7 @@ class _$QuoteModelCopyWithImpl<$Res, $Val extends QuoteModel>
     Object? id = null,
     Object? quote = null,
     Object? author = null,
+    Object? dob = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -69,6 +76,10 @@ class _$QuoteModelCopyWithImpl<$Res, $Val extends QuoteModel>
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as String,
+      dob: null == dob
+          ? _value.dob
+          : dob // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ) as $Val);
   }
 }
@@ -81,7 +92,11 @@ abstract class _$$QuoteModelImplCopyWith<$Res>
       __$$QuoteModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String quote, String author});
+  $Res call(
+      {String id,
+      String quote,
+      String author,
+      @TimestampSerializer() DateTime dob});
 }
 
 /// @nodoc
@@ -98,6 +113,7 @@ class __$$QuoteModelImplCopyWithImpl<$Res>
     Object? id = null,
     Object? quote = null,
     Object? author = null,
+    Object? dob = null,
   }) {
     return _then(_$QuoteModelImpl(
       null == id
@@ -112,6 +128,10 @@ class __$$QuoteModelImplCopyWithImpl<$Res>
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as String,
+      null == dob
+          ? _value.dob
+          : dob // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -119,7 +139,8 @@ class __$$QuoteModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$QuoteModelImpl implements _QuoteModel {
-  _$QuoteModelImpl(this.id, this.quote, this.author);
+  _$QuoteModelImpl(
+      this.id, this.quote, this.author, @TimestampSerializer() this.dob);
 
   factory _$QuoteModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$QuoteModelImplFromJson(json);
@@ -130,10 +151,13 @@ class _$QuoteModelImpl implements _QuoteModel {
   final String quote;
   @override
   final String author;
+  @override
+  @TimestampSerializer()
+  final DateTime dob;
 
   @override
   String toString() {
-    return 'QuoteModel(id: $id, quote: $quote, author: $author)';
+    return 'QuoteModel(id: $id, quote: $quote, author: $author, dob: $dob)';
   }
 
   @override
@@ -143,12 +167,13 @@ class _$QuoteModelImpl implements _QuoteModel {
             other is _$QuoteModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.quote, quote) || other.quote == quote) &&
-            (identical(other.author, author) || other.author == author));
+            (identical(other.author, author) || other.author == author) &&
+            (identical(other.dob, dob) || other.dob == dob));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, quote, author);
+  int get hashCode => Object.hash(runtimeType, id, quote, author, dob);
 
   @JsonKey(ignore: true)
   @override
@@ -165,9 +190,8 @@ class _$QuoteModelImpl implements _QuoteModel {
 }
 
 abstract class _QuoteModel implements QuoteModel {
-  factory _QuoteModel(
-          final String id, final String quote, final String author) =
-      _$QuoteModelImpl;
+  factory _QuoteModel(final String id, final String quote, final String author,
+      @TimestampSerializer() final DateTime dob) = _$QuoteModelImpl;
 
   factory _QuoteModel.fromJson(Map<String, dynamic> json) =
       _$QuoteModelImpl.fromJson;
@@ -178,6 +202,9 @@ abstract class _QuoteModel implements QuoteModel {
   String get quote;
   @override
   String get author;
+  @override
+  @TimestampSerializer()
+  DateTime get dob;
   @override
   @JsonKey(ignore: true)
   _$$QuoteModelImplCopyWith<_$QuoteModelImpl> get copyWith =>

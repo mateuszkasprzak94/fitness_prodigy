@@ -33,14 +33,17 @@ class MotivationQuotesRepository {
         .collection('users')
         .doc(userID)
         .collection('quotes')
+        .orderBy('timestamp', descending: true)
         .snapshots()
         .map((querySnapshot) {
       return querySnapshot.docs.map(
         (doc) {
+          final quoteTimestamp = doc['timestamp'] as Timestamp?;
           return QuoteModel(
             doc.id,
             doc['quote'],
             doc['author'],
+            quoteTimestamp != null ? quoteTimestamp.toDate() : DateTime.now(),
           );
         },
       ).toList();
@@ -59,6 +62,7 @@ class MotivationQuotesRepository {
         .add({
       'quote': quote.quote,
       'author': quote.author,
+      'timestamp': FieldValue.serverTimestamp(),
     });
   }
 
