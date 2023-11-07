@@ -478,7 +478,7 @@ String endlegs =
 // ABS WORKOUT
 
 String startabs =
-    '''TThis workout will help users effectively target their core muscles for strength and definition.  As always, include warm-up and cool-down sessions in each workout.''';
+    '''This workout will help users effectively target their core muscles for strength and definition.  As always, include warm-up and cool-down sessions in each workout.''';
 
 String warmupabs =
     '''Perform 5-10 minutes of light cardio and dynamic torso stretches to prepare the core and increase blood flow.''';
