@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                             filled: true,
                             fillColor: const Color.fromARGB(69, 255, 255, 255),
                             hintStyle: const TextStyle(
-                                color: Colors.grey,
+                                color: Colors.black,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -94,7 +94,7 @@ class _LoginPageState extends State<LoginPage> {
                             filled: true,
                             fillColor: const Color.fromARGB(69, 255, 255, 255),
                             hintStyle: const TextStyle(
-                              color: Colors.grey,
+                              color: Colors.black,
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
@@ -109,7 +109,7 @@ class _LoginPageState extends State<LoginPage> {
                         Text(
                           errorMessage as String,
                           style: const TextStyle(
-                            color: Colors.grey,
+                            color: Color.fromARGB(255, 253, 29, 13),
                           ),
                         ),
                         ElevatedButton(
@@ -121,7 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                                   widget.emailController.text,
                                   widget.passwordController.text);
                             } else {
-                              //   // logowanie
+                              // logowanie
                               context.read<AuthCubit>().signIn(
                                   widget.emailController.text,
                                   widget.passwordController.text);
