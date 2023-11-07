@@ -19,9 +19,9 @@ class _NutrientsTabPageState extends State<NutrientsTabPage> {
             image: DecorationImage(
                 image: AssetImage('images_diet/diet.jpg'), fit: BoxFit.cover)),
         child: Center(
-          child: Column(
+          child: ListView(
             children: [
-              const SizedBox(height: 200),
+              const SizedBox(height: 20),
               Stack(
                 alignment: Alignment.topCenter,
                 children: [
@@ -81,30 +81,6 @@ class _NutrientsTabPageState extends State<NutrientsTabPage> {
                   ),
                 ],
               ),
-              // const SizedBox(height: 50),
-              // Stack(
-              //   alignment: Alignment.topCenter,
-              //   children: [
-              //     Material(
-              //       elevation: 8,
-              //       borderRadius: BorderRadius.circular(28),
-              //       clipBehavior: Clip.antiAliasWithSaveLayer,
-              //       child: InkWell(
-              //         onTap: () {},
-              //         child: Ink.image(
-              //           image: const AssetImage('images_diet/visual.jpg'),
-              //           height: 250,
-              //           width: 250,
-              //           fit: BoxFit.cover,
-              //         ),
-              //       ),
-              //     ),
-              //     Text(
-              //       'Visual Aids',
-              //       style: GoogleFonts.asul(fontSize: 24, color: Colors.white),
-              //     ),
-              //   ],
-              // ),
               const SizedBox(height: 50),
             ],
           ),
