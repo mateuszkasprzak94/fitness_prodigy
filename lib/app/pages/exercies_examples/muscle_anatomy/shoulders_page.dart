@@ -43,22 +43,36 @@ class ShouldersPage extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           _buildExercise('1. Overhead Press:', shoulders1),
+          const Image(
+              image: AssetImage(
+                  'assets_exercise_examples/shoulders_overhead.jpg')),
           const SizedBox(height: 15),
           _buildExercise('2. Seated Dumbbell Shoulder Press:', shoulders2),
+          const Image(
+              image: AssetImage(
+                  'assets_exercise_examples/shoulders_seated_press.jpg')),
           const SizedBox(height: 15),
           _buildExercise('3. Barbell Front Raise:', shoulders3),
           const SizedBox(height: 15),
           _buildExercise('4. Dumbbell Lateral Raise:', shoulders4),
+          const Image(
+              image:
+                  AssetImage('assets_exercise_examples/shoulders_lateral.jpg')),
           const SizedBox(height: 15),
           _buildExercise('5. Barbell Upright Row:', shoulder5),
           const SizedBox(height: 15),
           _buildExercise('6. Reverse Dumbbell Flyes:', shoulders6),
           const SizedBox(height: 15),
           _buildExercise('7. Face Pull:', shoulders7),
+          const Image(
+              image: AssetImage('assets_exercise_examples/shoulders_face.jpg')),
           const SizedBox(height: 15),
           _buildExercise('8. Barbell Rear Delt Row:', shoulders8),
           const SizedBox(height: 15),
           _buildExercise('9. Arnold Press:', shoulders9),
+          const Image(
+              image:
+                  AssetImage('assets_exercise_examples/shoulders_arnold.jpg')),
           const SizedBox(height: 15),
           const Divider(
             height: 10,
