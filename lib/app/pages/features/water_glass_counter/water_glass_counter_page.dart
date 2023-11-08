@@ -1,3 +1,4 @@
+import 'package:fitness_prodigy/app/core/enums.dart';
 import 'package:fitness_prodigy/app/injection_container.dart';
 import 'package:fitness_prodigy/app/pages/features/water_glass_counter/cubit/water_glass_counter_dart_cubit.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,18 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
   Widget build(BuildContext context) {
     return BlocProvider<WaterGlassCounterCubit>(
       create: (context) => getIt()..start(),
-      child: BlocBuilder<WaterGlassCounterCubit, WaterGlassCounterState>(
+      child: BlocConsumer<WaterGlassCounterCubit, WaterGlassCounterState>(
+        listener: (context, state) {
+          if (state.status == Status.error) {
+            final errorMessage = state.errorMessage ?? 'Unknown error';
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(errorMessage),
+                backgroundColor: Colors.red,
+              ),
+            );
+          }
+        },
         builder: (context, state) {
           final waterModels = state.model;
           return Scaffold(
