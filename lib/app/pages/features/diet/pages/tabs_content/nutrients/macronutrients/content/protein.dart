@@ -68,7 +68,7 @@ Widget _buildProtein(String title, String description) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          color: const Color.fromARGB(161, 79, 166, 216).withOpacity(0.75),
+          color: const Color.fromARGB(161, 79, 166, 216).withOpacity(0.90),
           child: Text(
             title,
             style: const TextStyle(
@@ -79,7 +79,7 @@ Widget _buildProtein(String title, String description) {
           ),
         ),
         Container(
-          color: Colors.white.withOpacity(0.70),
+          color: Colors.white.withOpacity(0.90),
           child: Text(
             description,
             style: const TextStyle(

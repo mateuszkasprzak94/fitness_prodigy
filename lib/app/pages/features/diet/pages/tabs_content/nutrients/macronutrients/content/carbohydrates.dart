@@ -72,7 +72,7 @@ Widget _buildCarbohydrates(String title, String description) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          color: const Color.fromARGB(160, 216, 179, 79).withOpacity(0.75),
+          color: const Color.fromARGB(160, 216, 179, 79).withOpacity(0.90),
           child: Text(
             title,
             style: const TextStyle(
@@ -83,7 +83,7 @@ Widget _buildCarbohydrates(String title, String description) {
           ),
         ),
         Container(
-          color: Colors.white.withOpacity(0.70),
+          color: Colors.white.withOpacity(0.90),
           child: Text(
             description,
             style: const TextStyle(

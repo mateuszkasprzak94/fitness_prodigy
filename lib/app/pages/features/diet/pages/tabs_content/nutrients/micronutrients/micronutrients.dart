@@ -1,5 +1,5 @@
-import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/nutrients/micrnonutrients/content/minerals.dart';
-import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/nutrients/micrnonutrients/content/vitamins.dart';
+import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/nutrients/micronutrients/content/minerals.dart';
+import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/nutrients/micronutrients/content/vitamins.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
