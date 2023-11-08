@@ -80,12 +80,6 @@ class UserProfilePage extends StatelessWidget {
                   ),
                   onPressed: () {
                     context.read<AuthCubit>().signOut();
-                    // FirebaseAuth.instance.signOut();
-                    // Navigator.pushNamedAndRemoveUntil(
-                    //   context,
-                    //   '/', // Replace with the route name for your login page
-                    //   (route) => false,
-                    // );
                   },
                   child: const Text(
                     'Logout',
@@ -95,6 +89,57 @@ class UserProfilePage extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+
+                // deactivate color and shadow
+                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                backgroundColor: Colors.red,
+                shadowColor: Colors.transparent,
+                elevation: 0,
+              ),
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext child) {
+                    return AlertDialog(
+                      title: const Text('Delete your Account?'),
+                      content: const Text(
+                          '''If you select Delete we will delete your account on our server.
+
+Your app data will also be deleted and you won't be able to retrieve it.'''),
+                      actions: [
+                        TextButton(
+                          child: const Text('Cancel'),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                        TextButton(
+                          child: const Text(
+                            'Delete',
+                            style: TextStyle(color: Colors.red),
+                          ),
+                          onPressed: () {
+                            // Call the delete account function
+                            context.read<AuthCubit>().deleteUserAccount();
+
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
+              child: const Text(
+                'DELETE ACCOUNT',
+                style: TextStyle(color: Colors.white),
+              ),
+            )
           ],
         ),
       ),

@@ -39,7 +39,7 @@ class _DietPageState extends State<DietPage> {
             automaticallyImplyLeading: true,
             bottom: const TabBar(
               labelColor: Colors.black,
-              unselectedLabelColor: Colors.grey,
+              unselectedLabelColor: Color.fromARGB(255, 121, 120, 120),
               tabs: [
                 Tab(
                     text: 'Nutrients',
