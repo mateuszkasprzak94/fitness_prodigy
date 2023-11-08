@@ -195,7 +195,10 @@ class _ListViewItem extends StatelessWidget {
                       children: [
                         Text(
                           itemModel.daysLeft(),
-                          style: const TextStyle(
+                          style: TextStyle(
+                            color: int.parse(itemModel.daysLeft()) < 5
+                                ? Colors.red
+                                : Colors.green,
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
                           ),
