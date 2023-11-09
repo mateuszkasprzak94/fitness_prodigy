@@ -43,22 +43,42 @@ class BicepsPage extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           _buildExercise('1. Barbell Curls:', biceps1),
+          const Image(
+              image: AssetImage(
+                  'assets_exercise_examples/biceps_barbell_curl.jpg')),
           const SizedBox(height: 15),
           _buildExercise('2. Bar Cable Curls:', biceps2),
           const SizedBox(height: 15),
           _buildExercise('3. EZ Bar Preacher Curls:', biceps3),
+          const Image(
+              image: AssetImage(
+                  'assets_exercise_examples/biceps_preacher_ez.jpg')),
           const SizedBox(height: 15),
           _buildExercise('4. Incline Dumbbell Curls:', biceps4),
           const SizedBox(height: 15),
           _buildExercise('5. One-arm Dumbbell Preacher Curls:', biceps5),
+          const Image(
+              image: AssetImage('assets_exercise_examples/biceps_one_arm.jpg')),
           const SizedBox(height: 15),
           _buildExercise('6. Reverse Barbell Curls:', biceps6),
+          const Image(
+              image: AssetImage(
+                  'assets_exercise_examples/biceps_reverse_curl.jpg')),
           const SizedBox(height: 15),
           _buildExercise('7. Seated Dumbbell Curls:', biceps7),
+          const Image(
+              image: AssetImage(
+                  'assets_exercise_examples/biceps_seated_curl.jpg')),
           const SizedBox(height: 15),
           _buildExercise('8. Standing Biceps Cable Curl:', biceps8),
+          const Image(
+              image:
+                  AssetImage('assets_exercise_examples/biceps_cable_curl.jpg')),
           const SizedBox(height: 15),
           _buildExercise('9. Preacher Curl:', biceps9),
+          const Image(
+              image: AssetImage(
+                  'assets_exercise_examples/biceps_preacher_curl.jpg')),
           const SizedBox(height: 15),
           const Divider(
             height: 10,

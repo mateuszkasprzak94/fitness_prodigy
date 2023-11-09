@@ -37,12 +37,12 @@ String beginner6 = '''
 3. Light Cardio - 20-25 minutes''';
 
 String endbeginner = '''
-Remember, safety and proper form are essential, especially for beginners. Encourage users to start with lighter weights and focus on mastering the correct technique. Additionally, progress should be gradual to prevent overtraining and injuries. You can also consider including rest days in the plan for recovery.''';
+Remember, safety and proper form are essential, especially for beginners. Start with lighter weights and focus on mastering the correct technique. Additionally, progress should be gradual to prevent overtraining and injuries. You can also consider including rest days in the plan for recovery.''';
 
 // INTERMEDIATE WORKOUT
 
 String startintermediate =
-    '''Here's a 4-week intermediate workout plan that builds upon the beginner plan, adding more complexity and intensity to challenge users who have progressed beyond the beginner level. As always, remember to include warm-up and cool-down sessions in each workout.''';
+    '''Here's a 4-week intermediate workout plan that builds upon the beginner plan, adding more complexity and intensity to challenge people who have progressed beyond the beginner level. As always, remember to include warm-up and cool-down sessions in each workout.''';
 
 String intermediate1 = '''1. Barbell Bench Press - 3 sets of 8-10 reps
 2. Dumbbell Rows - 3 sets of 8-10 reps
@@ -74,12 +74,12 @@ String intermediate6 =
 3. High-Intensity Interval Training (HIIT) - 20-25 minutes''';
 
 String endintermediate = '''
-The intermediate workout plan focuses on building strength, hypertrophy, and increasing intensity. Users at this level should have a solid foundation of proper form and technique. Encourage them to track their progress and gradually increase weights as they feel comfortable.''';
+The intermediate workout plan focuses on building strength, hypertrophy, and increasing intensity. At this level you should have a solid foundation of proper form and technique. Remember to track your progress and gradually increase weights as they feel comfortable.''';
 
 // ADVANCED WORKOUT
 
 String startadvanced =
-    '''Here's a 4-week advanced workout plan that is designed for individuals with a high level of fitness experience. This plan incorporates challenging exercises and higher intensity to help users push their limits. Remember to prioritize safety, proper form, and adequate recovery. As always, include warm-up and cool-down sessions in each workout.''';
+    '''Here's a 4-week advanced workout plan that is designed for individuals with a high level of fitness experience. This plan incorporates challenging exercises and higher intensity to help push limits. Remember to prioritize safety, proper form, and adequate recovery. As always, include warm-up and cool-down sessions in each workout.''';
 
 String advanced1 = '''1. Weighted Pull-Ups - 4 sets of 6-8 reps
 2. Barbell Bench Press - 4 sets of 6-8 reps
@@ -110,7 +110,7 @@ String advanced6 = '''1. Hanging Straight Leg Raises - 3 sets of 8-10 reps
 3. Hill Sprints - 6-8 rounds (60 seconds sprint uphill, 90 seconds rest)''';
 
 String endadvanced = '''
-The advanced workout plan is designed to challenge experienced users with complex movements and high-intensity training. Emphasize the importance of listening to their bodies, adjusting weights as needed, and ensuring adequate recovery. Encourage users to track their progress and adjust the plan based on their individual goals and responses.''';
+The advanced workout plan is designed to challenge experienced individuals with complex movements and high-intensity training. Remember the importance of listening to your bodies, adjusting weights as needed, and ensuring adequate recovery. Track your progress and adjust the plan based on individual goals and responses.''';
 
 // CHEST WORKOUT
 
@@ -154,7 +154,7 @@ String cooldownchest =
     '''Stretch the chest and shoulders for 5-10 minutes to promote flexibility and reduce muscle tension.''';
 
 String endchest =
-    '''This chest workout provides a comprehensive routine targeting various areas of the chest. Make sure users use appropriate weights and focus on maintaining proper form throughout the workout. As always, encourage them to listen to their bodies and adjust the workout intensity as needed.''';
+    '''This chest workout provides a comprehensive routine targeting various areas of the chest. Make sure to use appropriate weights and focus on maintaining proper form throughout the workout. As always, remember to listen to your bodie and adjust the workout intensity as needed.''';
 
 // BACK WORKOUT
 
@@ -208,7 +208,7 @@ String cooldownback =
     '''Stretch the back and shoulders for 5-10 minutes to promote flexibility and reduce muscle tension.''';
 
 String endback =
-    '''This back workout provides a comprehensive routine targeting various areas of the back. Ensure users use appropriate weights and maintain proper form throughout the workout. Encourage them to listen to their bodies and adjust the workout intensity as needed.''';
+    '''This back workout provides a comprehensive routine targeting various areas of the back. Be sure to use appropriate weights and maintain proper form throughout the workout. As always, remember to listen to your bodie and adjust the workout intensity as needed.''';
 
 // SHOULDERS WORKOUT
 
@@ -262,7 +262,7 @@ String cooldownshoulders =
     '''Stretch the shoulders and upper body for 5-10 minutes to promote flexibility and reduce muscle tension.''';
 
 String endshoulders =
-    '''This shoulders workout provides a comprehensive routine targeting various parts of the shoulders. Encourage users to use appropriate weights, maintain proper form, and focus on mind-muscle connection. Remind them to listen to their bodies and adjust the workout intensity as needed.''';
+    '''This shoulders workout provides a comprehensive routine targeting various parts of the shoulders. Be sure to use appropriate weights, maintain proper form, and focus on mind-muscle connection. As always, remember to listen to your bodie and adjust the workout intensity as needed.''';
 
 // BICEPS WORKOUT
 
@@ -316,12 +316,12 @@ String cooldownbiceps =
     '''Stretch the biceps and arms for 5-10 minutes to promote flexibility and reduce muscle tension.''';
 
 String endbiceps =
-    '''This biceps workout provides a comprehensive routine targeting various aspects of the biceps muscles. Encourage users to use appropriate weights, maintain proper form, and focus on the mind-muscle connection. Remind them to listen to their bodies and adjust the workout intensity as needed.''';
+    '''This biceps workout provides a comprehensive routine targeting various aspects of the biceps muscles. Be sure to use appropriate weights, maintain proper form, and focus on mind-muscle connection. As always, remember to listen to your bodie and adjust the workout intensity as needed.''';
 
 // TRICEPS WORKOUT
 
 String starttriceps =
-    '''This workout will help users effectively target their triceps for strength and definition. As always, include warm-up and cool-down sessions in each workout.''';
+    '''This workout will help effectively target your triceps for strength and definition. As always, include warm-up and cool-down sessions in each workout.''';
 
 String warmuptriceps =
     '''Perform 5-10 minutes of light cardio and dynamic arm stretches to prepare the triceps and increase blood flow.''';
@@ -370,12 +370,12 @@ String cooldowntriceps =
     '''Stretch the triceps and arms for 5-10 minutes to promote flexibility and reduce muscle tension.''';
 
 String endtriceps =
-    '''This triceps-focused workout offers a comprehensive routine targeting the triceps muscles using a variety of exercises. Encourage users to select appropriate weights, maintain proper form, and concentrate on the mind-muscle connection. Remind them to pay attention to their bodies and adjust the workout intensity as necessary for their fitness level.''';
+    '''This triceps-focused workout offers a comprehensive routine targeting the triceps muscles using a variety of exercises. Select appropriate weights, maintain proper form, and concentrate on the mind-muscle connection. Pay attention to your bodie and adjust the workout intensity as necessary for your fitness level.''';
 
 // FOREARMS WORKOUT
 
 String startforearms =
-    '''This workout will help users effectively target their forearm muscles for strength and development. As always, include warm-up and cool-down sessions in each workout.''';
+    '''This workout will help effectively target your forearm muscles for strength and development. As always, include warm-up and cool-down sessions in each workout.''';
 
 String warmupforearms =
     '''Perform 5-10 minutes of light cardio and dynamic wrist stretches to prepare the forearms and increase blood flow.''';
@@ -419,12 +419,12 @@ String cooldownforearms =
     '''Stretch the forearms and wrists for 5-10 minutes to promote flexibility and reduce muscle tension.''';
 
 String endforearms =
-    '''This forearms-focused workout offers a comprehensive routine targeting the forearm muscles using various exercises. Encourage users to choose appropriate weights, maintain proper form, and focus on the mind-muscle connection. Remind them to listen to their bodies and adjust the workout intensity as needed for their fitness level.''';
+    '''This forearms-focused workout offers a comprehensive routine targeting the forearm muscles using various exercises. Remember to choose appropriate weights, maintain proper form, and focus on the mind-muscle connection. Listen to your bodie and adjust the workout intensity as needed for your fitness level.''';
 
 // LEGS WORKOUT
 
 String startlegs =
-    '''This workout will help users effectively target their leg muscles for strength and development. As always, include warm-up and cool-down sessions in each workout.''';
+    '''This workout will help effectively target your leg muscles for strength and development. As always, include warm-up and cool-down sessions in each workout.''';
 
 String warmuplegs =
     '''Perform 5-10 minutes of light cardio and dynamic leg stretches to prepare the legs and increase blood flow.''';
@@ -473,12 +473,12 @@ String cooldownlegs =
     '''Stretch the legs and hips for 5-10 minutes to promote flexibility and reduce muscle tension.''';
 
 String endlegs =
-    '''This legs-focused workout offers a comprehensive routine targeting various muscle groups of the lower body. Encourage users to choose appropriate weights, maintain proper form, and focus on the mind-muscle connection. Remind them to listen to their bodies and adjust the workout intensity as needed for their fitness level.''';
+    '''This legs-focused workout offers a comprehensive routine targeting various muscle groups of the lower body. Choose appropriate weights, maintain proper form, and focus on the mind-muscle connection. Listen to your bodie and adjust the workout intensity as needed for your fitness level.''';
 
 // ABS WORKOUT
 
 String startabs =
-    '''This workout will help users effectively target their core muscles for strength and definition.  As always, include warm-up and cool-down sessions in each workout.''';
+    '''This workout will help effectively target your core muscles for strength and definition. As always, include warm-up and cool-down sessions in each workout.''';
 
 String warmupabs =
     '''Perform 5-10 minutes of light cardio and dynamic torso stretches to prepare the core and increase blood flow.''';
@@ -527,4 +527,4 @@ String cooldownabs =
     '''Stretch the core and torso for 5-10 minutes to promote flexibility and reduce muscle tension.''';
 
 String endabs =
-    '''This abs-focused workout provides a comprehensive routine targeting the core muscles using various exercises. Encourage users to choose appropriate intensities, maintain proper form, and focus on the mind-muscle connection. Remind them to listen to their bodies and adjust the workout intensity as needed for their fitness level.''';
+    '''This abs-focused workout provides a comprehensive routine targeting the core muscles using various exercises. Remember to choose appropriate intensities, maintain proper form, and focus on the mind-muscle connection. Listen to your bodie and adjust the workout intensity as needed for your fitness level.''';

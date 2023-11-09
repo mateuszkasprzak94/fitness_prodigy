@@ -53,6 +53,9 @@ class ShouldersPage extends StatelessWidget {
                   'assets_exercise_examples/shoulders_seated_press.jpg')),
           const SizedBox(height: 15),
           _buildExercise('3. Barbell Front Raise:', shoulders3),
+          const Image(
+              image:
+                  AssetImage('assets_exercise_examples/shoulders_front.jpg')),
           const SizedBox(height: 15),
           _buildExercise('4. Dumbbell Lateral Raise:', shoulders4),
           const Image(

@@ -82,7 +82,7 @@ String biceps4 =
 String biceps5 =
     '''One-arm dumbbell preacher curls isolate each bicep independently. Sit or stand at a preacher curl bench, hold a dumbbell in one hand with your arm fully extended, and curl the dumbbell towards your shoulder. Lower the dumbbell back down with control. This exercise addresses muscle imbalances and enhances bicep symmetry.''';
 String biceps6 =
-    ''' Reverse barbell curls target the brachialis and forearms alongside the biceps. Stand with your feet hip-width apart, grip the barbell with palms facing down, and curl the barbell towards your shoulders. Lower the barbell back down with control. Reverse barbell curls contribute to overall arm strength and definition.''';
+    '''Reverse barbell curls target the brachialis and forearms alongside the biceps. Stand with your feet hip-width apart, grip the barbell with palms facing down, and curl the barbell towards your shoulders. Lower the barbell back down with control. Reverse barbell curls contribute to overall arm strength and definition.''';
 String biceps7 =
     '''Seated dumbbell curls isolate the biceps while minimizing momentum. Sit on a bench with back support, hold a dumbbell in each hand with palms facing up, and curl the dumbbells towards your shoulders. Lower the dumbbells back down with control. Seated dumbbell curls enhance bicep isolation and promote precise contraction.''';
 String biceps8 =
@@ -134,7 +134,7 @@ String forearms5 =
 String forearms6 =
     '''The Zottman curl combines both supination (palms up) and pronation (palms down) movements. Perform a regular biceps curl with palms facing up, then rotate your wrists to a palms-down position at the top of the movement before lowering the weight. The Zottman curl targets both forearm flexors and extensors.''';
 String forearms7 =
-    '''The farmer’s carry is a functional exercise that challenges grip strength and forearm endurance. Hold a heavy dumbbell or kettlebell in each hand and walk a designated distance. Focus on maintaining a tall posture and engaging your core. Farmer’s carries enhance overall grip and forearm stability.''';
+    '''The farmer's carry is a functional exercise that challenges grip strength and forearm endurance. Hold a heavy dumbbell or kettlebell in each hand and walk a designated distance. Focus on maintaining a tall posture and engaging your core. Farmer’s carries enhance overall grip and forearm stability.''';
 String forearms8 =
     '''Bar hangs, also known as passive hangs, involve simply hanging from a pull-up bar or sturdy surface. This exercise promotes grip strength and decompresses the spine. Hang for a designated time while keeping your shoulders relaxed and engaged. Bar hangs are a simple yet effective forearm-strengthening exercise.''';
 String endforearms =
