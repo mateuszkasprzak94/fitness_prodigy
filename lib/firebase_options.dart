@@ -17,19 +17,13 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -52,11 +46,30 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyAaO0VpV9CVp8ShM_rAxXWjLwjotkCTU8w',
+    appId: '1:1069765458708:web:d2729d0360163b22596001',
+    messagingSenderId: '1069765458708',
+    projectId: 'fitness-prodigy-94',
+    authDomain: 'fitness-prodigy-94.firebaseapp.com',
+    storageBucket: 'fitness-prodigy-94.appspot.com',
+    measurementId: 'G-DP6M1R5KJQ',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBLUEILG8kNISRJXseqyk7l9pgkU6TsnBM',
     appId: '1:1069765458708:android:f979e477f1c74e46596001',
     messagingSenderId: '1069765458708',
     projectId: 'fitness-prodigy-94',
     storageBucket: 'fitness-prodigy-94.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyAm8fAyGGSnUtyI5RJzcPr_v6UEN5DsKCA',
+    appId: '1:1069765458708:ios:c966798d4cc6217f596001',
+    messagingSenderId: '1069765458708',
+    projectId: 'fitness-prodigy-94',
+    storageBucket: 'fitness-prodigy-94.appspot.com',
+    iosBundleId: 'com.mateuszkasprzak.fitnessProdigy',
   );
 }
