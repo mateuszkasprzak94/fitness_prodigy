@@ -13,7 +13,7 @@
   "logout": "Cerrar sesión",
   "deleteAccount": "ELIMINAR CUENTA",
   "delete": "¿Eliminar tu cuenta?",
-  "warningDelete1": "Si seleccionas Eliminar, tu cuenta será eliminada de nuestro servidor.        Los datos de tu aplicación también se eliminarán y no podrán recuperarse.",
+  "warningDelete1": "Si seleccionas Eliminar, tu cuenta será eliminada de nuestro servidor.                         Los datos de tu aplicación también se eliminarán y no podrán recuperarse.",
   "cancel": "Cancelar",
   "deleteFinal": "Eliminar"
 }

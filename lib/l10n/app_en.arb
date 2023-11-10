@@ -13,7 +13,7 @@
   "logout": "Logout",
   "deleteAccount": "DELETE ACCOUNT",
   "delete": "Delete your Account?",
-  "warningDelete1": "If you select Delete we will delete your account on our server.        Your app data will also be deleted and you won't be able to retrieve it.",
+  "warningDelete1": "If you select Delete we will delete your account on our server.                         Your app data will also be deleted and you won't be able to retrieve it.",
   "cancel": "Cancel",
   "deleteFinal": "Delete"
 }
