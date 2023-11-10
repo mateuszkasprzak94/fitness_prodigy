@@ -8,6 +8,13 @@
   "registerr": "Zarejestruj się",
   "haveAccount": "Masz już konto?",
   "achive": "Osiągnij Swoje Cele",
-  "checkweather": "Sprawdź Pogodę"
+  "checkweather": "Sprawdź Pogodę",
+  "loggedAs": "Jesteś zalogowany jako",
+  "logout": "Wyloguj się",
+  "deleteAccount": "USUŃ KONTO",
+  "delete": "Usunąć konto?",
+  "warningDelete1": "Jeśli wybierzesz opcję Usuń, usuniemy Twoje konto na naszym serwerze.        Dane Twojej aplikacji również zostaną usunięte i nie będzie można ich odzyskać.",
+  "cancel": "Anuluj",
+  "deleteFinal": "Usuń"
   
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class UserProfilePage extends StatelessWidget {
   const UserProfilePage({
@@ -39,7 +40,7 @@ class UserProfilePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'You are logged as',
+              AppLocalizations.of(context).loggedAs,
               style: GoogleFonts.libreFranklin(fontSize: 20),
               overflow: TextOverflow.ellipsis,
               maxLines: 2,
@@ -81,9 +82,9 @@ class UserProfilePage extends StatelessWidget {
                   onPressed: () {
                     context.read<AuthCubit>().signOut();
                   },
-                  child: const Text(
-                    'Logout',
-                    style: TextStyle(
+                  child: Text(
+                    AppLocalizations.of(context).logout,
+                    style: const TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.black),
                   ),
                 ),
@@ -106,22 +107,25 @@ class UserProfilePage extends StatelessWidget {
                   context: context,
                   builder: (BuildContext child) {
                     return AlertDialog(
-                      title: const Text('Delete your Account?'),
-                      content: const Text(
-                          '''If you select Delete we will delete your account on our server.
-
-Your app data will also be deleted and you won't be able to retrieve it.'''),
+                      title: Text(
+                        AppLocalizations.of(context).delete,
+                      ),
+                      content: Text(
+                        AppLocalizations.of(context).warningDelete1,
+                      ),
                       actions: [
                         TextButton(
-                          child: const Text('Cancel'),
+                          child: Text(
+                            AppLocalizations.of(context).cancel,
+                          ),
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
                         ),
                         TextButton(
-                          child: const Text(
-                            'Delete',
-                            style: TextStyle(color: Colors.red),
+                          child: Text(
+                            AppLocalizations.of(context).deleteFinal,
+                            style: const TextStyle(color: Colors.red),
                           ),
                           onPressed: () {
                             // Call the delete account function
@@ -135,9 +139,9 @@ Your app data will also be deleted and you won't be able to retrieve it.'''),
                   },
                 );
               },
-              child: const Text(
-                'DELETE ACCOUNT',
-                style: TextStyle(color: Colors.white),
+              child: Text(
+                AppLocalizations.of(context).deleteAccount,
+                style: const TextStyle(color: Colors.white),
               ),
             )
           ],
