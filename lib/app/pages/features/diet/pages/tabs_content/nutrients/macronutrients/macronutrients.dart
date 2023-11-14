@@ -38,7 +38,7 @@ class _MacronutrientsState extends State<Macronutrients> {
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('images_diet/macronutrients.jpg'),
+                image: AssetImage('assets/images_diet/macronutrients.jpg'),
                 fit: BoxFit.cover)),
         child: Center(
           child: ListView(
@@ -60,8 +60,8 @@ class _MacronutrientsState extends State<Macronutrients> {
                         );
                       },
                       child: Ink.image(
-                        image:
-                            const AssetImage('images_diet/protein_button.jpg'),
+                        image: const AssetImage(
+                            'assets/images_diet/protein_button.jpg'),
                         height: 250,
                         width: 250,
                         fit: BoxFit.cover,
@@ -91,7 +91,7 @@ class _MacronutrientsState extends State<Macronutrients> {
                         );
                       },
                       child: Ink.image(
-                        image: const AssetImage('images_diet/carbs.jpg'),
+                        image: const AssetImage('assets/images_diet/carbs.jpg'),
                         height: 250,
                         width: 250,
                         fit: BoxFit.cover,
@@ -121,7 +121,7 @@ class _MacronutrientsState extends State<Macronutrients> {
                         );
                       },
                       child: Ink.image(
-                        image: const AssetImage('images_diet/fats.jpg'),
+                        image: const AssetImage('assets/images_diet/fats.jpg'),
                         height: 250,
                         width: 250,
                         fit: BoxFit.cover,

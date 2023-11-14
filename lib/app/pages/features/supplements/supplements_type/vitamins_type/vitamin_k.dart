@@ -30,7 +30,7 @@ class VitaminKContent extends StatelessWidget {
           child: ListView(
         children: [
           const Image(
-            image: AssetImage('images_supplements/vitamin_k.jpg'),
+            image: AssetImage('assets/images_supplements/vitamin_k.jpg'),
           ),
           const SizedBox(height: 15),
           _buildSupplements1('Overview:', vitaminkdescription),

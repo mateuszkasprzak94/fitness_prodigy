@@ -32,8 +32,7 @@ class CitrullinePage extends StatelessWidget {
         child: ListView(
           children: [
             const Image(
-              image: AssetImage(
-                  'images_supplements/cytruline.jpg'), //add image of Citrulline
+              image: AssetImage('assets/images_supplements/cytruline.jpg'),
             ),
             const SizedBox(height: 15),
             _buildSupplements1('Description:', citrullinedescription),

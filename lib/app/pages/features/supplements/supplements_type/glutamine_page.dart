@@ -33,7 +33,7 @@ class GlutaminePage extends StatelessWidget {
           children: [
             const Image(
               image: AssetImage(
-                  'images_supplements/glutamine.png'), //add image of Glutamine
+                  'assets/images_supplements/glutamine.png'), //add image of Glutamine
             ),
             const SizedBox(height: 15),
             _buildSupplements1('Description:', glutaminedescription),

@@ -1,5 +1,4 @@
 import 'package:fitness_prodigy/app/pages/features/diet/pages/nutrients_tab_page.dart';
-// import 'package:fitness_prodigy/app/pages/features/diet/pages/recipes_tap_page.dart';
 import 'package:fitness_prodigy/app/pages/features/diet/pages/tips_tab_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -27,14 +26,6 @@ class _DietPageState extends State<DietPage> {
               style: GoogleFonts.satisfy(fontSize: 30, color: Colors.black),
             ),
             centerTitle: true,
-            // flexibleSpace: Container(
-            //   decoration: const BoxDecoration(
-            //     gradient: LinearGradient(colors: [
-            //       Color.fromARGB(164, 0, 0, 0),
-            //       Colors.white,
-            //     ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
-            //   ),
-            // ),
             systemOverlayStyle: SystemUiOverlayStyle.light,
             automaticallyImplyLeading: true,
             bottom: const TabBar(
@@ -48,19 +39,12 @@ class _DietPageState extends State<DietPage> {
                 Tab(
                     text: 'Tips',
                     icon: Icon(Icons.lightbulb, color: Colors.yellow)),
-                // Tab(
-                //     text: 'Recipes',
-                //     icon: Icon(
-                //       Icons.fastfood_outlined,
-                //       color: Colors.orange.shade400,
-                //     )),
               ],
             ),
           ),
           body: const TabBarView(children: [
             NutrientsTabPage(),
             TipsTabPage(),
-            // RecipesTabPage(),
           ]),
         ),
       );

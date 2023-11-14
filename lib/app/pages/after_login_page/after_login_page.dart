@@ -20,14 +20,23 @@ class AfterLogin extends StatefulWidget {
 class _AfterLoginState extends State<AfterLogin> {
   int currentIndex = 0;
 
+  late final List<Widget> screens;
+
   @override
-  Widget build(BuildContext context) {
-    final screens = [
+  void initState() {
+    super.initState();
+    screens = [
       const Features(),
       const ExerciseExamplesPage(),
       const WorkoutPlansPage(),
-      UserProfilePage(email: widget.user.email),
+      UserProfilePage(
+        email: widget.user.email,
+      ),
     ];
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: screens[currentIndex],
       bottomNavigationBar: BottomNavigationBar(

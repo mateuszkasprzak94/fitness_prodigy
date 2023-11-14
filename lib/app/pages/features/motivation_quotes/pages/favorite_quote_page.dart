@@ -19,12 +19,11 @@ class _FavoriteQuotePageState extends State<FavoriteQuotePage> {
         body: BlocBuilder<MotivationQuotesCubit, MotivationQuotesState>(
           builder: (context, state) {
             final favoriteQuotes = state.favoriteQuotes;
-            // context.read<MotivationQuotesCubit>().favoriteQuotes;
             if (favoriteQuotes.isEmpty) {
               return Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('images/Motivation page.png'),
+                    image: AssetImage('assets/images/Motivation page.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -33,7 +32,7 @@ class _FavoriteQuotePageState extends State<FavoriteQuotePage> {
               return Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage('images/Motivation page.png'),
+                    image: AssetImage('assets/images/Motivation page.png'),
                     fit: BoxFit.cover,
                   ),
                 ),

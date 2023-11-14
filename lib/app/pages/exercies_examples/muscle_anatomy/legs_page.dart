@@ -44,21 +44,25 @@ class LegsPage extends StatelessWidget {
           const SizedBox(height: 15),
           _buildExercise('1. Squats:', legs1),
           const Image(
-              image: AssetImage('assets_exercise_examples/legs_squad.jpg')),
+              image:
+                  AssetImage('assets/assets_exercise_examples/legs_squad.jpg')),
           const SizedBox(height: 15),
           _buildExercise('2. Dumbbell Walking Lunge:', legs2),
           const Image(
-              image: AssetImage('assets_exercise_examples/legs_walking.jpg')),
+              image: AssetImage(
+                  'assets/assets_exercise_examples/legs_walking.jpg')),
           const SizedBox(height: 15),
           _buildExercise('3. Leg Press:', legs3),
           const Image(
-              image: AssetImage('assets_exercise_examples/legs_press.jpg')),
+              image:
+                  AssetImage('assets/assets_exercise_examples/legs_press.jpg')),
           const SizedBox(height: 15),
           _buildExercise('4. Bulgarian Split Squats:', legs4),
           const SizedBox(height: 15),
           _buildExercise('5. Calf Raises:', legs5),
           const Image(
-              image: AssetImage('assets_exercise_examples/legs_calfs.jpg')),
+              image:
+                  AssetImage('assets/assets_exercise_examples/legs_calfs.jpg')),
           const SizedBox(height: 15),
           _buildExercise('6. Leg Extensions:', legs6),
           const SizedBox(height: 15),
@@ -66,7 +70,8 @@ class LegsPage extends StatelessWidget {
           const SizedBox(height: 15),
           _buildExercise('8. Goblet Squat:', legs8),
           const Image(
-              image: AssetImage('assets_exercise_examples/legs_goblet.jpg')),
+              image: AssetImage(
+                  'assets/assets_exercise_examples/legs_goblet.jpg')),
           const SizedBox(height: 15),
           _buildExercise('9. Seated Leg Curl:', legs9),
           const SizedBox(height: 15),

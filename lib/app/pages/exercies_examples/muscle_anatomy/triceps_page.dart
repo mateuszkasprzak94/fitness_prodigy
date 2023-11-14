@@ -44,41 +44,45 @@ class TricepsPage extends StatelessWidget {
           const SizedBox(height: 15),
           _buildExercise('1. Bench Dips:', triceps1),
           const Image(
-              image: AssetImage('assets_exercise_examples/triceps_bench.jpg')),
+              image: AssetImage(
+                  'assets/assets_exercise_examples/triceps_bench.jpg')),
           const SizedBox(height: 15),
           _buildExercise('2. Dumbbell Triceps Extension:', triceps2),
           const Image(
               image: AssetImage(
-                  'assets_exercise_examples/triceps_dumbbell_extension.jpg')),
+                  'assets/assets_exercise_examples/triceps_dumbbell_extension.jpg')),
           const SizedBox(height: 15),
           _buildExercise('3. Push Ups:', triceps3),
           const Image(
-              image:
-                  AssetImage('assets_exercise_examples/triceps_pushups.jpg')),
+              image: AssetImage(
+                  'assets/assets_exercise_examples/triceps_pushups.jpg')),
           const SizedBox(height: 15),
           _buildExercise('4. Reverse Grip Bench Press:', triceps4),
           const SizedBox(height: 15),
           _buildExercise('5. Reverse Grip Triceps Pushdown:', triceps5),
           const Image(
               image: AssetImage(
-                  'assets_exercise_examples/triceps_reverse_pushdown.jpg')),
+                  'assets/assets_exercise_examples/triceps_reverse_pushdown.jpg')),
           const SizedBox(height: 15),
           _buildExercise('6. Skull Crushers:', triceps6),
           const Image(
-              image: AssetImage('assets_exercise_examples/triceps_skull.jpg')),
+              image: AssetImage(
+                  'assets/assets_exercise_examples/triceps_skull.jpg')),
           const SizedBox(height: 15),
           _buildExercise('7. Triceps Rope Pushdown:', triceps7),
           const Image(
-              image: AssetImage('assets_exercise_examples/triceps_rope.jpg')),
+              image: AssetImage(
+                  'assets/assets_exercise_examples/triceps_rope.jpg')),
           const SizedBox(height: 15),
           _buildExercise('8. Triceps Press Machine:', triceps8),
           const Image(
-              image: AssetImage('assets_exercise_examples/triceps_press.jpg')),
+              image: AssetImage(
+                  'assets/assets_exercise_examples/triceps_press.jpg')),
           const SizedBox(height: 15),
           _buildExercise('9. Close-Grip Bench Press:', triceps9),
           const Image(
               image: AssetImage(
-                  'assets_exercise_examples/triceps_close_grip.jpg')),
+                  'assets/assets_exercise_examples/triceps_close_grip.jpg')),
           const SizedBox(height: 15),
           const Divider(
             height: 10,

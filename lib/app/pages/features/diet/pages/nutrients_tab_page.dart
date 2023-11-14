@@ -17,7 +17,8 @@ class _NutrientsTabPageState extends State<NutrientsTabPage> {
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('images_diet/diet.jpg'), fit: BoxFit.cover)),
+                image: AssetImage('assets/images_diet/diet.jpg'),
+                fit: BoxFit.cover)),
         child: Center(
           child: ListView(
             children: [
@@ -38,7 +39,7 @@ class _NutrientsTabPageState extends State<NutrientsTabPage> {
                         );
                       },
                       child: Ink.image(
-                        image: const AssetImage('images_diet/macro.jpg'),
+                        image: const AssetImage('assets/images_diet/macro.jpg'),
                         height: 250,
                         width: 250,
                         fit: BoxFit.cover,
@@ -68,7 +69,7 @@ class _NutrientsTabPageState extends State<NutrientsTabPage> {
                         );
                       },
                       child: Ink.image(
-                        image: const AssetImage('images_diet/micro.jpg'),
+                        image: const AssetImage('assets/images_diet/micro.jpg'),
                         height: 250,
                         width: 250,
                         fit: BoxFit.cover,

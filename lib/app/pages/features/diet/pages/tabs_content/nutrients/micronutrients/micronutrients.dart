@@ -37,7 +37,7 @@ class _MicronutrientsState extends State<Micronutrients> {
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('images_diet/micronutrients.jpg'),
+                image: AssetImage('assets/images_diet/micronutrients.jpg'),
                 fit: BoxFit.cover)),
         child: Center(
           child: ListView(
@@ -59,7 +59,7 @@ class _MicronutrientsState extends State<Micronutrients> {
                         );
                       },
                       child: Ink.image(
-                        image: const AssetImage('images_diet/vits.jpg'),
+                        image: const AssetImage('assets/images_diet/vits.jpg'),
                         height: 250,
                         width: 250,
                         fit: BoxFit.cover,
@@ -89,7 +89,8 @@ class _MicronutrientsState extends State<Micronutrients> {
                         );
                       },
                       child: Ink.image(
-                        image: const AssetImage('images_diet/minerals.jpg'),
+                        image:
+                            const AssetImage('assets/images_diet/minerals.jpg'),
                         height: 250,
                         width: 250,
                         fit: BoxFit.cover,

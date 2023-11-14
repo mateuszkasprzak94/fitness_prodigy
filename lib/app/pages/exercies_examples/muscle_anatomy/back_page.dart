@@ -49,36 +49,36 @@ class BackPage extends StatelessWidget {
                   _buildExercise('1. Deadlift:', back1),
                   const Image(
                       image: AssetImage(
-                          'assets_exercise_examples/back_deadlift.jpg')),
+                          'assets/assets_exercise_examples/back_deadlift.jpg')),
                   const SizedBox(height: 15),
                   _buildExercise('2. Bent-Over Row:', back2),
                   const Image(
-                      image:
-                          AssetImage('assets_exercise_examples/back_row.jpg')),
+                      image: AssetImage(
+                          'assets/assets_exercise_examples/back_row.jpg')),
                   const SizedBox(height: 15),
                   _buildExercise('3. Pull-Up:', back3),
                   const Image(
-                      image:
-                          AssetImage('assets_exercise_examples/back_pull.jpg')),
+                      image: AssetImage(
+                          'assets/assets_exercise_examples/back_pull.jpg')),
                   const SizedBox(height: 15),
                   _buildExercise('4. T-Bar Row:', back4),
                   const SizedBox(height: 15),
                   _buildExercise('5. Seated Row:', back5),
                   const Image(
                       image: AssetImage(
-                          'assets_exercise_examples/back_seated.jpg')),
+                          'assets/assets_exercise_examples/back_seated.jpg')),
                   const SizedBox(height: 15),
                   _buildExercise('6. Single-Arm Smith Machine Row:', back6),
                   const SizedBox(height: 15),
                   _buildExercise('7. Lat Pull-Down:', back7),
                   const Image(
-                      image:
-                          AssetImage('assets_exercise_examples/back_lat.jpg')),
+                      image: AssetImage(
+                          'assets/assets_exercise_examples/back_lat.jpg')),
                   const SizedBox(height: 15),
                   _buildExercise('8. Single-Arm Dumbbell Row:', back8),
                   const Image(
                       image: AssetImage(
-                          'assets_exercise_examples/back_single_arm.jpg')),
+                          'assets/assets_exercise_examples/back_single_arm.jpg')),
                   const SizedBox(height: 15),
                   const Divider(
                     height: 10,

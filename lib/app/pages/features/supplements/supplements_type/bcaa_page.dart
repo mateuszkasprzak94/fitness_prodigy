@@ -32,8 +32,7 @@ class BCAAPage extends StatelessWidget {
         child: ListView(
           children: [
             const Image(
-              image:
-                  AssetImage('images_supplements/bcaa.jpg'), //add image of BCAA
+              image: AssetImage('assets/images_supplements/bcaa.jpg'),
             ),
             const SizedBox(height: 15),
             _buildSupplements1('Description:', bcaadescription),

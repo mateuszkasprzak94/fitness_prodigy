@@ -8,17 +8,3 @@ class GoalsState with _$GoalsState {
     String? errorMessage,
   }) = _GoalsState;
 }
-
-
-
-// class GoalsState {
-//   const GoalsState({
-//     this.items = const [],
-//     this.isLoading = false,
-//     this.errorMessage = '',
-//   });
-
-//   final List<GoalModel> items;
-//   final bool isLoading;
-//   final String errorMessage;
-// }

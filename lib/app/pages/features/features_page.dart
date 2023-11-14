@@ -37,7 +37,7 @@ class _FeaturesState extends State<Features> {
     return ListView(
       children: [
         const Image(
-          image: AssetImage('images/features.jpg'),
+          image: AssetImage('assets/images/features.jpg'),
           fit: BoxFit.cover,
         ),
         const SizedBox(height: 5),
@@ -70,7 +70,7 @@ class _FeaturesState extends State<Features> {
                 ),
               );
             },
-            assetImage: 'images/goals.png'),
+            assetImage: 'assets/images/goals.png'),
         customFeaturesButtonWithImage(
             title: 'MOTIVATION QUOTES',
             onPressed: () {
@@ -80,7 +80,7 @@ class _FeaturesState extends State<Features> {
                 ),
               );
             },
-            assetImage: 'images/motivation.png'),
+            assetImage: 'assets/images/motivation.png'),
         customFeaturesButtonWithImage(
             title: 'WATER GLASS COUNTER',
             onPressed: () {
@@ -90,7 +90,7 @@ class _FeaturesState extends State<Features> {
                 ),
               );
             },
-            assetImage: 'images/water.png'),
+            assetImage: 'assets/images/water.png'),
         customFeaturesButton(
             title: 'EVENT PLANNER',
             onPressed: () {
@@ -125,7 +125,7 @@ class _FeaturesState extends State<Features> {
                 margin: const EdgeInsets.all(10),
                 alignment: Alignment.center,
                 width: 30,
-                child: Image.asset('images/weather_icon.png')
+                child: Image.asset('assets/images/weather_icon.png')
                     .animate()
                     .fade(delay: 500.ms, duration: 1000.ms)
                     .slide()

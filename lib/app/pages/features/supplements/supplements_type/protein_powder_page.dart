@@ -32,7 +32,7 @@ class ProteinPowder extends StatelessWidget {
           children: [
             const Image(
               image: AssetImage(
-                  'images_supplements/protein.jpg'), //add image of protein powder
+                  'assets/images_supplements/protein.jpg'), //add image of protein powder
             ),
             const SizedBox(height: 15),
             _buildSupplements1('Description:', proteindescription),

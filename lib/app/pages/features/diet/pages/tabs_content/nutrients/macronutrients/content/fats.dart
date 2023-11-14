@@ -35,7 +35,8 @@ class _FatsContentState extends State<FatsContent> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('images_diet/fatspage.jpg'), fit: BoxFit.cover),
+              image: AssetImage('assets/images_diet/fatspage.jpg'),
+              fit: BoxFit.cover),
         ),
         child: ListView(children: [
           _buildFats('Fats: Essential Nutrients for Health', fatsdescription),
