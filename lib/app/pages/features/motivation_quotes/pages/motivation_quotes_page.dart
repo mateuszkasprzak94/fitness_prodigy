@@ -34,7 +34,7 @@ class _MotivationQuotesPageState extends State<MotivationQuotesPage> {
           body: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('images/Motivation page.png'),
+                image: AssetImage('assets/images/Motivation page.png'),
                 fit: BoxFit.cover,
               ),
             ),

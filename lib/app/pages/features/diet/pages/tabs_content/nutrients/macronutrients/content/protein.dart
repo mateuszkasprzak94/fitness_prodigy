@@ -35,7 +35,7 @@ class _ProteinContentState extends State<ProteinContent> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('images_diet/proteinpage.jpg'),
+              image: AssetImage('assets/images_diet/proteinpage.jpg'),
               fit: BoxFit.cover),
         ),
         child: ListView(children: [

@@ -32,8 +32,8 @@ class AAKGPage extends StatelessWidget {
         child: ListView(
           children: [
             const Image(
-              image:
-                  AssetImage('images_supplements/aakg.jpg'), //add image of AAKG
+              image: AssetImage(
+                  'assets/images_supplements/aakg.jpg'), //add image of AAKG
             ),
             const SizedBox(height: 15),
             _buildSupplements1('Description:', aakgdescription),

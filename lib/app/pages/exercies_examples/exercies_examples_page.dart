@@ -54,7 +54,7 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
                     ),
                   );
                 },
-                image: 'exercise_examples_page_images/chest.png'),
+                image: 'assets/exercise_examples_page_assets/images/chest.png'),
             const SizedBox(height: 5),
             customExerciseButton(
                 title: 'Back',
@@ -65,7 +65,7 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
                     ),
                   );
                 },
-                image: 'exercise_examples_page_images/back.png'),
+                image: 'assets/exercise_examples_page_assets/images/back.png'),
             const SizedBox(height: 5),
             customExerciseButton(
                 title: 'Shoulders',
@@ -76,7 +76,8 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
                     ),
                   );
                 },
-                image: 'exercise_examples_page_images/shoulders.png'),
+                image:
+                    'assets/exercise_examples_page_assets/images/shoulders.png'),
             const SizedBox(height: 5),
             customExerciseButton(
                 title: 'Biceps',
@@ -87,7 +88,8 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
                     ),
                   );
                 },
-                image: 'exercise_examples_page_images/biceps.png'),
+                image:
+                    'assets/exercise_examples_page_assets/images/biceps.png'),
             const SizedBox(height: 5),
             customExerciseButton(
                 title: 'Triceps',
@@ -98,7 +100,8 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
                     ),
                   );
                 },
-                image: 'exercise_examples_page_images/triceps.png'),
+                image:
+                    'assets/exercise_examples_page_assets/images/triceps.png'),
             const SizedBox(height: 5),
             customExerciseButton(
                 title: 'Forearms',
@@ -109,7 +112,8 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
                     ),
                   );
                 },
-                image: 'exercise_examples_page_images/forearms.png'),
+                image:
+                    'assets/exercise_examples_page_assets/images/forearms.png'),
             const SizedBox(height: 5),
             customExerciseButton(
                 title: 'Legs',
@@ -120,7 +124,7 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
                     ),
                   );
                 },
-                image: 'exercise_examples_page_images/legs.png'),
+                image: 'assets/exercise_examples_page_assets/images/legs.png'),
             const SizedBox(height: 5),
             customExerciseButton(
                 title: 'Abs',
@@ -131,7 +135,7 @@ class _ExerciseExamplesPageState extends State<ExerciseExamplesPage> {
                     ),
                   );
                 },
-                image: 'exercise_examples_page_images/abs.png'),
+                image: 'assets/exercise_examples_page_assets/images/abs.png'),
             const SizedBox(height: 5),
           ],
         ),

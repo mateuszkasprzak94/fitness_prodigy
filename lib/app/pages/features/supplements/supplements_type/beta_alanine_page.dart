@@ -32,8 +32,7 @@ class BetaAlaninePage extends StatelessWidget {
         child: ListView(
           children: [
             const Image(
-              image: AssetImage(
-                  'images_supplements/beta.jpg'), //add image of Beta-Alanine
+              image: AssetImage('assets/images_supplements/beta.jpg'),
             ),
             const SizedBox(height: 15),
             _buildSupplements1('Description:', betadescription),

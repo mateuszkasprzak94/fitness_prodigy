@@ -54,7 +54,8 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
             body: Container(
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('images/w3.png'), fit: BoxFit.cover),
+                    image: AssetImage('assets/images/w3.png'),
+                    fit: BoxFit.cover),
               ),
               child: Center(
                 child: Column(
@@ -66,7 +67,7 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
                           ? Column(
                               children: [
                                 Image.asset(
-                                  'images/water glass.png',
+                                  'assets/images/water glass.png',
                                   width: 200,
                                   height: 200,
                                 )
@@ -92,7 +93,7 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
                               ],
                             )
                           : Image.asset(
-                              'images/empty.png',
+                              'assets/images/empty.png',
                               width: 200,
                               height: 200,
                             )

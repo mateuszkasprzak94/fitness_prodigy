@@ -31,7 +31,7 @@ class Omega3Content extends StatelessWidget {
           child: ListView(
         children: [
           const Image(
-            image: AssetImage('images_supplements/omega3.jpg'),
+            image: AssetImage('assets/images_supplements/omega3.jpg'),
           ),
           const SizedBox(height: 15),
           _buildSupplements1('Overview:', descriptionOmega3),

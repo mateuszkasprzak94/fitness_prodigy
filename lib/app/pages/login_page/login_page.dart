@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Container(
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('images/step.png'),
+                        image: AssetImage('assets/images/step.png'),
                         fit: BoxFit.cover),
                   ),
                   child: Padding(

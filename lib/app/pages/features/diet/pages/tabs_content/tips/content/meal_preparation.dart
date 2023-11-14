@@ -35,7 +35,7 @@ class _MealPreparationContentState extends State<MealPreparationContent> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('images_diet/preparationpage.jpg'),
+              image: AssetImage('assets/images_diet/preparationpage.jpg'),
               fit: BoxFit.cover),
         ),
         child: ListView(children: [

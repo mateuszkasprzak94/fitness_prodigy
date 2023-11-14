@@ -51,7 +51,7 @@ class _WeatherContentState extends State<WeatherContent> {
                   return Container(
                     decoration: const BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage('images/weather4.png'),
+                        image: AssetImage('assets/images/weather4.png'),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -221,7 +221,7 @@ class _SearchWidgetState extends State<_SearchWidget> {
 // Weather animations
 String getWeatherAnimation(String? condition) {
   if (condition == null) {
-    return 'assets_weather/sunny.json'; // default to sunny
+    return 'assets/assets_weather/sunny.json'; // default to sunny
   }
   switch (condition.toLowerCase()) {
     case 'partly cloudy':
@@ -232,20 +232,20 @@ String getWeatherAnimation(String? condition) {
     case 'dust':
     case 'fog':
     case 'overcast':
-      return 'assets_weather/cloud.json';
+      return 'assets/assets_weather/cloud.json';
     case 'patchy rain possible':
     case 'rain':
     case 'light rain':
     case 'drizzle':
     case 'shower rain':
-      return 'assets_weather/rain.json';
+      return 'assets/assets_weather/rain.json';
     case 'thunderstorm':
-      return 'assets_weather/thunder.json';
+      return 'assets/assets_weather/thunder.json';
     case 'snow':
-      return 'assets_weather/snow.json';
+      return 'assets/assets_weather/snow.json';
     case 'clear':
-      return 'assets_weather/sunny.json';
+      return 'assets/assets_weather/sunny.json';
     default:
-      return 'assets_weather/sunny.json';
+      return 'assets/assets_weather/sunny.json';
   }
 }

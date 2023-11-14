@@ -45,31 +45,38 @@ class ChestPage extends StatelessWidget {
           const SizedBox(height: 15),
           _buildExercise('1. Flat Bench Press:', chest1),
           const Image(
-              image: AssetImage('assets_exercise_examples/chest_flat.jpg')),
+              image:
+                  AssetImage('assets/assets_exercise_examples/chest_flat.jpg')),
           const SizedBox(height: 15),
           _buildExercise('2. Incline Bench Press:', chest2),
           const Image(
-              image: AssetImage('assets_exercise_examples/chest_incline.jpg')),
+              image: AssetImage(
+                  'assets/assets_exercise_examples/chest_incline.jpg')),
           const SizedBox(height: 15),
           _buildExercise('3. Decline Bench Press:', chest3),
           const Image(
-              image: AssetImage('assets_exercise_examples/chest_decline.jpg')),
+              image: AssetImage(
+                  'assets/assets_exercise_examples/chest_decline.jpg')),
           const SizedBox(height: 15),
           _buildExercise('4. Cable Crossover:', chest4),
           const Image(
-              image: AssetImage('assets_exercise_examples/chest_cable.jpg')),
+              image: AssetImage(
+                  'assets/assets_exercise_examples/chest_cable.jpg')),
           const SizedBox(height: 15),
           _buildExercise('5. Chest Dip:', chest5),
           const Image(
-              image: AssetImage('assets_exercise_examples/chest_dip.jpg')),
+              image:
+                  AssetImage('assets/assets_exercise_examples/chest_dip.jpg')),
           const SizedBox(height: 15),
           _buildExercise('6. Dumbbell Pull-Over:', chest6),
           const Image(
-              image: AssetImage('assets_exercise_examples/chest_dumbbel.jpg')),
+              image: AssetImage(
+                  'assets/assets_exercise_examples/chest_dumbbel.jpg')),
           const SizedBox(height: 15),
           _buildExercise('7. Machine Fly:', chest7),
           const Image(
-              image: AssetImage('assets_exercise_examples/chest_machine.jpg')),
+              image: AssetImage(
+                  'assets/assets_exercise_examples/chest_machine.jpg')),
           const SizedBox(height: 15),
           const Divider(
             height: 10,

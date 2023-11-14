@@ -35,7 +35,7 @@ class _PortionControlContentState extends State<PortionControlContent> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('images_diet/portionpage.jpg'),
+              image: AssetImage('assets/images_diet/portionpage.jpg'),
               fit: BoxFit.cover),
         ),
         child: ListView(children: [

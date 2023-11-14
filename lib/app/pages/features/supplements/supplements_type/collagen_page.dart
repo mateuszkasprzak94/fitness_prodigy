@@ -33,7 +33,7 @@ class CollagenPage extends StatelessWidget {
           children: [
             const Image(
               image: AssetImage(
-                  'images_supplements/collagen.jpg'), //add image of Collagen
+                  'assets/images_supplements/collagen.jpg'), //add image of Collagen
             ),
             const SizedBox(height: 15),
             _buildSupplements1('Description:', collagendescription),

@@ -19,7 +19,8 @@ class _TipsTabPageState extends State<TipsTabPage> {
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('images_diet/diet.jpg'), fit: BoxFit.cover)),
+                image: AssetImage('assets/images_diet/diet.jpg'),
+                fit: BoxFit.cover)),
         child: Center(
           child: Column(
             children: [
@@ -45,8 +46,8 @@ class _TipsTabPageState extends State<TipsTabPage> {
                               );
                             },
                             child: Ink.image(
-                              image:
-                                  const AssetImage('images_diet/portion.jpg'),
+                              image: const AssetImage(
+                                  'assets/images_diet/portion.jpg'),
                               height: 250,
                               width: 250,
                               fit: BoxFit.cover,
@@ -77,8 +78,8 @@ class _TipsTabPageState extends State<TipsTabPage> {
                               );
                             },
                             child: Ink.image(
-                              image:
-                                  const AssetImage('images_diet/planning1.jpg'),
+                              image: const AssetImage(
+                                  'assets/images_diet/planning1.jpg'),
                               height: 250,
                               width: 250,
                               fit: BoxFit.cover,
@@ -109,8 +110,8 @@ class _TipsTabPageState extends State<TipsTabPage> {
                               );
                             },
                             child: Ink.image(
-                              image:
-                                  const AssetImage('images_diet/habits1.jpg'),
+                              image: const AssetImage(
+                                  'assets/images_diet/habits1.jpg'),
                               height: 250,
                               width: 250,
                               fit: BoxFit.cover,
@@ -142,7 +143,8 @@ class _TipsTabPageState extends State<TipsTabPage> {
                               );
                             },
                             child: Ink.image(
-                              image: const AssetImage('images_diet/meal.jpg'),
+                              image: const AssetImage(
+                                  'assets/images_diet/meal.jpg'),
                               height: 250,
                               width: 250,
                               fit: BoxFit.cover,

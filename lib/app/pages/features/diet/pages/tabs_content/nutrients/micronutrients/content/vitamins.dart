@@ -35,7 +35,7 @@ class _VitaminsContentState extends State<VitaminsContent> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('images_diet/vitaminspage.jpg'),
+              image: AssetImage('assets/images_diet/vitaminspage.jpg'),
               fit: BoxFit.cover),
         ),
         child: ListView(children: [

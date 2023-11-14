@@ -35,7 +35,7 @@ class _MineralsContentState extends State<MineralsContent> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('images_diet/mineralspage.jpg'),
+              image: AssetImage('assets/images_diet/mineralspage.jpg'),
               fit: BoxFit.cover),
         ),
         child: ListView(children: [

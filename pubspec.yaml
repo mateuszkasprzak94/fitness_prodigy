@@ -68,12 +68,12 @@ flutter:
 
   
   assets:
-    - images/
-    - exercise_examples_page_images/
-    - images_supplements/
-    - images_diet/
-    - assets_weather/
-    - assets_exercise_examples/
+    - assets/images/
+    - assets/exercise_examples_page_images/
+    - assets/images_supplements/
+    - assets/images_diet/
+    - assets/assets_weather/
+    - assets/assets_exercise_examples/
 
 
 

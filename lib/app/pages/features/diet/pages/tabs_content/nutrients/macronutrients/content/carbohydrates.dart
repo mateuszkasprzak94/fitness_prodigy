@@ -35,7 +35,7 @@ class _CarbohydratesContentState extends State<CarbohydratesContent> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('images_diet/carbspage.jpg'),
+              image: AssetImage('assets/images_diet/carbspage.jpg'),
               fit: BoxFit.cover),
         ),
         child: ListView(
