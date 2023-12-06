@@ -10,6 +10,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -29,7 +31,7 @@ class HomePage extends StatelessWidget {
                 Text(
                   'Fitness Prodigy',
                   style: GoogleFonts.italianno(
-                    fontSize: 78,
+                    fontSize: screenWidth / 5,
                     color: Colors.amber,
                   ),
                 ),

@@ -38,6 +38,7 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
           }
         },
         builder: (context, state) {
+          double screenWidth = MediaQuery.of(context).size.width;
           final waterModels = state.model;
           return Scaffold(
             extendBodyBehindAppBar: true,
@@ -45,7 +46,8 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
               backgroundColor: Colors.transparent,
               title: Text(
                 'Water Glass Counter',
-                style: GoogleFonts.satisfy(fontSize: 30, color: Colors.black),
+                style: GoogleFonts.satisfy(
+                    fontSize: screenWidth / 12, color: Colors.black),
               ),
               centerTitle: true,
               systemOverlayStyle: SystemUiOverlayStyle.light,

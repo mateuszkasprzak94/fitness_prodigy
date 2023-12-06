@@ -10,13 +10,15 @@ class TricepsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'Sculpting Powerful Triceps',
           style: GoogleFonts.lancelot(
-              fontSize: 30, color: Colors.black, fontWeight: FontWeight.bold),
-          maxLines: 2,
+              fontSize: screenWidth / 13,
+              color: Colors.black,
+              fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         flexibleSpace: Container(

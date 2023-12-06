@@ -10,14 +10,16 @@ class ChestPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       extendBodyBehindAppBar: false,
       appBar: AppBar(
         title: Text(
           'Forge Your Pectoral Power',
           style: GoogleFonts.lancelot(
-              fontSize: 29, color: Colors.black, fontWeight: FontWeight.bold),
-          maxLines: 2,
+              fontSize: screenWidth / 13,
+              color: Colors.black,
+              fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         flexibleSpace: Container(

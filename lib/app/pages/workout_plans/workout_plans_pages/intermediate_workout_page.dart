@@ -10,12 +10,15 @@ class IntermediateWorkoutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'Intermediate Workout',
-          style: GoogleFonts.satisfy(fontSize: 30, color: Colors.black),
+          style: GoogleFonts.satisfy(
+              fontSize: screenWidth / 12, color: Colors.black),
         ),
+        titleSpacing: 0,
         centerTitle: true,
         flexibleSpace: Container(
           decoration: const BoxDecoration(

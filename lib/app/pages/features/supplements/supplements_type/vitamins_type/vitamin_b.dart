@@ -8,11 +8,13 @@ class VitaminBContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'Vitamin B (The B-Complex Vitamins)',
-          style: GoogleFonts.lancelot(fontSize: 22, color: Colors.black),
+          style: GoogleFonts.lancelot(
+              fontSize: screenWidth / 17, color: Colors.black),
         ),
         centerTitle: true,
         titleSpacing: 0,

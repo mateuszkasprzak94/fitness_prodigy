@@ -8,11 +8,13 @@ class D3k2Content extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'Vitamin D3 (Cholecalciferol) and Vitamin K2 (Menakinone)',
-          style: GoogleFonts.lancelot(fontSize: 25, color: Colors.black),
+          style: GoogleFonts.lancelot(
+              fontSize: screenWidth / 15, color: Colors.black),
           maxLines: 2,
         ),
         centerTitle: true,

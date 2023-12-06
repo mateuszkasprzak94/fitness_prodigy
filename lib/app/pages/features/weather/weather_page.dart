@@ -79,6 +79,7 @@ class _WeatherContentState extends State<WeatherContent> {
   }
 
   AppBar _appBar() {
+    double screenWidth = MediaQuery.of(context).size.width;
     return AppBar(
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
@@ -88,9 +89,11 @@ class _WeatherContentState extends State<WeatherContent> {
       backgroundColor: Colors.black.withOpacity(0.15),
       title: Text(
         'Welcome to the Weather Center! 🌦️',
-        style: GoogleFonts.satisfy(fontSize: 24, color: Colors.white),
+        style: GoogleFonts.satisfy(
+            fontSize: screenWidth / 17, color: Colors.white),
         maxLines: 2,
       ),
+      titleSpacing: 0,
       centerTitle: true,
       automaticallyImplyLeading: true,
     );

@@ -10,14 +10,18 @@ class ForearmsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'Building Resilient Forearms: Strengthening Grip',
           style: GoogleFonts.lancelot(
-              fontSize: 24, color: Colors.black, fontWeight: FontWeight.bold),
+              fontSize: screenWidth / 16,
+              color: Colors.black,
+              fontWeight: FontWeight.bold),
           maxLines: 2,
         ),
+        titleSpacing: 0,
         centerTitle: true,
         flexibleSpace: Container(
           decoration: const BoxDecoration(

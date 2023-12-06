@@ -10,13 +10,15 @@ class BackPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(
           "Unlock Your Back's Full Potential",
           style: GoogleFonts.lancelot(
-              fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
-          maxLines: 2,
+              fontSize: screenWidth / 15,
+              color: Colors.black,
+              fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         flexibleSpace: Container(

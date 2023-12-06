@@ -22,11 +22,13 @@ class Creatine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'Creatine Monohydrate',
-          style: GoogleFonts.lancelot(fontSize: 30, color: Colors.black),
+          style: GoogleFonts.lancelot(
+              fontSize: screenWidth / 12, color: Colors.black),
         ),
         centerTitle: true,
         flexibleSpace: Container(

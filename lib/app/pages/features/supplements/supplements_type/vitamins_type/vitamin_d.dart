@@ -8,12 +8,13 @@ class VitaminDContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'Vitamin D(The Sunshine Vitamin)',
-          style: GoogleFonts.lancelot(fontSize: 23, color: Colors.black),
-          // maxLines: 2,
+          style: GoogleFonts.lancelot(
+              fontSize: screenWidth / 17, color: Colors.black),
         ),
         centerTitle: true,
         titleSpacing: 0,

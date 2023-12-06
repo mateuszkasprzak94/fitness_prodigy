@@ -10,12 +10,15 @@ class AbsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'Sculpting Strong Core: Unveiling Abdominal Power',
           style: GoogleFonts.lancelot(
-              fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
+              fontSize: screenWidth / 15,
+              color: Colors.black,
+              fontWeight: FontWeight.bold),
           maxLines: 2,
         ),
         centerTitle: true,

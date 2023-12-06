@@ -107,6 +107,7 @@ class _FeaturesState extends State<Features> {
   }
 
   AppBar _appBar() {
+    double screenWidth = MediaQuery.of(context).size.width;
     return AppBar(
       actions: [
         GestureDetector(
@@ -138,7 +139,8 @@ class _FeaturesState extends State<Features> {
       ],
       title: Text(
         '# Fitness Prodigy',
-        style: GoogleFonts.lobster(fontSize: 40, color: Colors.black),
+        style:
+            GoogleFonts.lobster(fontSize: screenWidth / 9, color: Colors.black),
       ),
       centerTitle: true,
       flexibleSpace: Container(

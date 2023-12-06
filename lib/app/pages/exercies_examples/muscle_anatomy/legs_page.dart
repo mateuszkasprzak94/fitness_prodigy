@@ -10,13 +10,15 @@ class LegsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         title: Text(
           'Forging Powerful Lower Body',
           style: GoogleFonts.lancelot(
-              fontSize: 28, color: Colors.black, fontWeight: FontWeight.bold),
-          maxLines: 2,
+              fontSize: screenWidth / 14,
+              color: Colors.black,
+              fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
         flexibleSpace: Container(
