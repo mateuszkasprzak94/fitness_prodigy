@@ -1,7 +1,10 @@
+import 'package:fitness_prodigy/app/core/constants.dart';
 import 'package:fitness_prodigy/app/cubit/auth_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:email_validator/email_validator.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({
@@ -35,55 +38,99 @@ class _LoginPageState extends State<LoginPage> {
               return Center(
                 child: Container(
                   decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/images/step.png'),
-                        fit: BoxFit.cover),
+                    gradient: LinearGradient(
+                        colors: kHomeGradient,
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight),
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 3, 20, 10),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 30),
+                        child: Text(
                           isCreatingAccount == true
                               ? AppLocalizations.of(context).register
                               : AppLocalizations.of(context).login,
-                          style: const TextStyle(
+                          style: GoogleFonts.montserrat(
                             color: Colors.white,
-                            fontSize: 25,
+                            fontSize: 35,
+                            fontWeight: FontWeight.bold,
+                            shadows: [
+                              Shadow(
+                                color: Colors.black.withOpacity(0.8),
+                                offset: const Offset(0, 5),
+                                blurRadius: 3,
+                              ),
+                            ],
                           ),
                         ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        TextField(
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 30),
+                        child: TextFormField(
                           keyboardType: TextInputType.emailAddress,
                           controller: widget.emailController,
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          validator: (email) =>
+                              email != null && !EmailValidator.validate(email)
+                                  ? 'Enter a valid email'
+                                  : null,
                           decoration: InputDecoration(
-                            prefixIcon: const Icon(Icons.email),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: const BorderSide(
+                                color: Colors.black,
+                                width: 2,
+                              ),
+                            ),
+                            prefixIcon: const Icon(
+                              Icons.email,
+                              color: Colors.black87,
+                            ),
                             suffixIcon: widget.emailController.text.isEmpty
                                 ? Container(width: 0)
                                 : IconButton(
                                     onPressed: () =>
                                         widget.emailController.clear(),
-                                    icon: const Icon(Icons.close)),
+                                    icon: const Icon(Icons.close),
+                                  ),
                             hintText: AppLocalizations.of(context).email,
                             filled: true,
-                            fillColor: const Color.fromARGB(69, 255, 255, 255),
+                            fillColor: Colors.white,
                             hintStyle: const TextStyle(
                                 color: Colors.black,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold),
+                            contentPadding: const EdgeInsets.symmetric(
+                                vertical: 18, horizontal: 20),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
                           ),
-                          style: const TextStyle(
+                          style: GoogleFonts.roboto(
                             color: Colors.black87,
                           ),
                         ),
-                        TextField(
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: TextField(
                           controller: widget.passwordController,
                           obscureText: isPasswordVisible,
                           decoration: InputDecoration(
-                            prefixIcon: const Icon(Icons.key),
+                            enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              borderSide: const BorderSide(
+                                color: Colors.black,
+                                width: 2,
+                              ),
+                            ),
+                            prefixIcon: const Icon(
+                              Icons.key,
+                              color: Colors.black87,
+                            ),
                             suffixIcon: IconButton(
                               icon: isPasswordVisible
                                   ? const Icon(Icons.visibility_off)
@@ -93,89 +140,101 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             hintText: AppLocalizations.of(context).password,
                             filled: true,
-                            fillColor: const Color.fromARGB(69, 255, 255, 255),
+                            fillColor: Colors.white,
                             hintStyle: const TextStyle(
                               color: Colors.black,
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
+                            contentPadding: const EdgeInsets.symmetric(
+                                vertical: 18, horizontal: 20),
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15),
+                            ),
                           ),
-                          style: const TextStyle(
+                          style: GoogleFonts.roboto(
                             color: Colors.black87,
                           ),
                         ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Text(
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 10, vertical: 10),
+                        child: Text(
                           errorMessage as String,
                           style: const TextStyle(
                             color: Color.fromARGB(255, 253, 29, 13),
                           ),
                         ),
-                        ElevatedButton(
-                          onPressed: () {
-                            if (isCreatingAccount == true) {
-                              // rejestracja
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          if (isCreatingAccount == true) {
+                            // rejestracja
 
-                              context.read<AuthCubit>().register(
-                                  widget.emailController.text,
-                                  widget.passwordController.text);
-                            } else {
-                              // logowanie
-                              context.read<AuthCubit>().signIn(
-                                  widget.emailController.text,
-                                  widget.passwordController.text);
-                            }
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white.withOpacity(0.5),
+                            context.read<AuthCubit>().register(
+                                widget.emailController.text,
+                                widget.passwordController.text);
+                          } else {
+                            // logowanie
+                            context.read<AuthCubit>().signIn(
+                                widget.emailController.text,
+                                widget.passwordController.text);
+                          }
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.amber.shade600,
+                        ),
+                        child: Text(
+                          isCreatingAccount == true
+                              ? AppLocalizations.of(context).registerr
+                              : AppLocalizations.of(context).loginn,
+                          style: GoogleFonts.raleway(
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
                           ),
+                        ),
+                      ),
+                      const SizedBox(height: 18.0),
+                      if (isCreatingAccount == false) ...[
+                        TextButton(
+                          onPressed: () {
+                            setState(() {
+                              isCreatingAccount = true;
+                            });
+                          },
                           child: Text(
-                            isCreatingAccount == true
-                                ? AppLocalizations.of(context).registerr
-                                : AppLocalizations.of(context).loginn,
+                            AppLocalizations.of(context).createAccount,
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 18,
+                              fontStyle: FontStyle.italic,
                             ),
                           ),
                         ),
-                        const SizedBox(height: 18.0),
-                        if (isCreatingAccount == false) ...[
-                          TextButton(
-                            onPressed: () {
-                              setState(() {
-                                isCreatingAccount = true;
-                              });
-                            },
-                            child: Text(
-                              AppLocalizations.of(context).createAccount,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                              ),
-                            ),
-                          ),
-                        ],
-                        if (isCreatingAccount == true) ...[
-                          TextButton(
-                            onPressed: () {
-                              setState(() {
-                                isCreatingAccount = false;
-                              });
-                            },
-                            child: Text(
-                              AppLocalizations.of(context).haveAccount,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                              ),
-                            ),
-                          ),
-                        ],
                       ],
-                    ),
+                      if (isCreatingAccount == true) ...[
+                        TextButton(
+                          onPressed: () {
+                            setState(() {
+                              isCreatingAccount = false;
+                            });
+                          },
+                          child: Text(
+                            AppLocalizations.of(context).haveAccount,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontStyle: FontStyle.italic,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ],
                   ),
                 ),
               );
