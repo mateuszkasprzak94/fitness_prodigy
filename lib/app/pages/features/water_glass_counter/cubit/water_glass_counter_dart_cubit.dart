@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:fitness_prodigy/app/core/enums.dart';
-import 'package:fitness_prodigy/app/models/water_glass_counter_model.dart';
-import 'package:fitness_prodigy/app/repositories/water_glass_counter_repository.dart';
+import 'package:fitness_prodigy/app/domain/models/water_glass_counter_model.dart';
+import 'package:fitness_prodigy/app/domain/repositories/water_glass_counter_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'water_glass_counter_dart_state.dart';

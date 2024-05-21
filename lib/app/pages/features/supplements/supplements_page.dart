@@ -6,7 +6,7 @@ import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/citrulline_page.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/glutamine_page.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/protein_powder_page.dart';
-import 'package:fitness_prodigy/app/models/button_model.dart';
+import 'package:fitness_prodigy/app/domain/models/button_model.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/ashwagandha.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/calcium.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/vitamins_type/d3k2.dart';

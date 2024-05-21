@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:fitness_prodigy/app/models/goal_model.dart';
-import 'package:fitness_prodigy/app/repositories/goals_repository.dart';
+import 'package:fitness_prodigy/app/domain/models/goal_model.dart';
+import 'package:fitness_prodigy/app/domain/repositories/goals_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'goals_cubit.freezed.dart';

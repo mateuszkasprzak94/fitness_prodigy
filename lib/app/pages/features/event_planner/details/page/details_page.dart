@@ -1,6 +1,6 @@
 import 'package:fitness_prodigy/app/pages/features/event_planner/details/cubit/details_cubit.dart';
-import 'package:fitness_prodigy/app/models/event_planner_item_model.dart';
-import 'package:fitness_prodigy/app/repositories/items_repository.dart';
+import 'package:fitness_prodigy/app/domain/models/event_planner_item_model.dart';
+import 'package:fitness_prodigy/app/domain/repositories/items_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

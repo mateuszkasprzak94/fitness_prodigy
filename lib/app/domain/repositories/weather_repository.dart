@@ -1,5 +1,5 @@
 import 'package:fitness_prodigy/app/data/remote_data_sources/weather_remote_data_source.dart';
-import 'package:fitness_prodigy/app/models/weather_model.dart';
+import 'package:fitness_prodigy/app/domain/models/weather_model.dart';
 
 class WeatherRepository {
   WeatherRepository({required this.weatherRemoteDataSource});

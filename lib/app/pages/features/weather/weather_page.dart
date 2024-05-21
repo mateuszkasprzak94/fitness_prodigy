@@ -1,6 +1,6 @@
 import 'package:fitness_prodigy/app/core/enums.dart';
 import 'package:fitness_prodigy/app/injection_container.dart';
-import 'package:fitness_prodigy/app/models/weather_model.dart';
+import 'package:fitness_prodigy/app/domain/models/weather_model.dart';
 import 'package:fitness_prodigy/app/pages/features/weather/cubit/weather_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

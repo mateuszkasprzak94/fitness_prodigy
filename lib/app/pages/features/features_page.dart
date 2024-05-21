@@ -4,7 +4,7 @@ import 'package:fitness_prodigy/app/pages/features/goals/goals_page.dart';
 import 'package:fitness_prodigy/app/pages/features/motivation_quotes/pages/main_quote_page.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_page.dart';
 import 'package:fitness_prodigy/app/pages/features/water_glass_counter/water_glass_counter_page.dart';
-import 'package:fitness_prodigy/app/models/button_model.dart';
+import 'package:fitness_prodigy/app/domain/models/button_model.dart';
 import 'package:fitness_prodigy/app/pages/features/weather/weather_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

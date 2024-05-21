@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:fitness_prodigy/app/core/enums.dart';
-import 'package:fitness_prodigy/app/models/quote_model.dart';
-import 'package:fitness_prodigy/app/repositories/motivation_quotes_repository.dart';
+import 'package:fitness_prodigy/app/domain/models/quote_model.dart';
+import 'package:fitness_prodigy/app/domain/repositories/motivation_quotes_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'motivation_quotes_cubit.freezed.dart';

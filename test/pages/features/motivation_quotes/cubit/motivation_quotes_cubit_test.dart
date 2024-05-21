@@ -1,8 +1,8 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:fitness_prodigy/app/core/enums.dart';
-import 'package:fitness_prodigy/app/models/quote_model.dart';
+import 'package:fitness_prodigy/app/domain/models/quote_model.dart';
 import 'package:fitness_prodigy/app/pages/features/motivation_quotes/cubit/motivation_quotes_cubit.dart';
-import 'package:fitness_prodigy/app/repositories/motivation_quotes_repository.dart';
+import 'package:fitness_prodigy/app/domain/repositories/motivation_quotes_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

@@ -6,7 +6,7 @@ import 'package:fitness_prodigy/app/pages/exercies_examples/muscle_anatomy/forea
 import 'package:fitness_prodigy/app/pages/exercies_examples/muscle_anatomy/legs_page.dart';
 import 'package:fitness_prodigy/app/pages/exercies_examples/muscle_anatomy/shoulders_page.dart';
 import 'package:fitness_prodigy/app/pages/exercies_examples/muscle_anatomy/triceps_page.dart';
-import 'package:fitness_prodigy/app/models/button_model.dart';
+import 'package:fitness_prodigy/app/domain/models/button_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';

@@ -1,12 +1,42 @@
-targets:  
-  $default:  
-    builders:  
+# targets:  
+#   $default:  
+#     builders:  
+#       injectable_generator:injectable_builder:  
+#         options:  
+#           auto_register: true  
+#           # auto registers any class with a name matches the given pattern  
+#           class_name_pattern:  
+#             "DataSource$|Repository$|Cubit$"  
+#             # auto registers any class inside a file with a  
+#             # name matches the given pattern  
+#           file_name_pattern: "_data_source$|_repository$|_cubit$"  
+
+
+
+targets:
+  $default:
+    builders:
+      source_gen|combining_builder:
+        generate_for:
+          - lib/app/domain/models/**.dart
+          - lib/app/data/remote_data_sources/**.dart
+        options:
+          build_extensions:
+            'lib/{{path}}/{{file}}.dart': 'lib/{{path}}/generated/{{file}}.g.dart'
+      freezed:
+        options:
+          build_extensions:
+            'lib/{{path}}/{{file}}.dart': 'lib/{{path}}/generated/{{file}}.freezed.dart'
+          field_rename: snake
+          explicit_to_json: true
+      json_serializable:
+        options:
+          field_rename: snake
+          explicit_to_json: true
       injectable_generator:injectable_builder:  
-        options:  
+        options: 
           auto_register: true  
-          # auto registers any class with a name matches the given pattern  
           class_name_pattern:  
-            "DataSource$|Repository$|Cubit$"  
-            # auto registers any class inside a file with a  
-            # name matches the given pattern  
-          file_name_pattern: "_data_source$|_repository$|_cubit$"  
+            "Repository$|Cubit$"  
+          file_name_pattern: "_repository$|_cubit$"  
+

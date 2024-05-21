@@ -1,5 +1,5 @@
 import 'package:fitness_prodigy/app/injection_container.dart';
-import 'package:fitness_prodigy/app/models/goal_model.dart';
+import 'package:fitness_prodigy/app/domain/models/goal_model.dart';
 import 'package:fitness_prodigy/app/pages/features/goals/cubit/goals_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

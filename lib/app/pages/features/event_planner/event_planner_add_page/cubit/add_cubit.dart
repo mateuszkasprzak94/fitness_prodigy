@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:fitness_prodigy/app/repositories/items_repository.dart';
+import 'package:fitness_prodigy/app/domain/repositories/items_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'add_state.dart';

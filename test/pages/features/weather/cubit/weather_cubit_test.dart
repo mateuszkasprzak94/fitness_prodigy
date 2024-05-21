@@ -1,8 +1,8 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:fitness_prodigy/app/core/enums.dart';
-import 'package:fitness_prodigy/app/models/weather_model.dart';
+import 'package:fitness_prodigy/app/domain/models/weather_model.dart';
 import 'package:fitness_prodigy/app/pages/features/weather/cubit/weather_cubit.dart';
-import 'package:fitness_prodigy/app/repositories/weather_repository.dart';
+import 'package:fitness_prodigy/app/domain/repositories/weather_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

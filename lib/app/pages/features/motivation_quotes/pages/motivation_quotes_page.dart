@@ -1,5 +1,5 @@
 import 'package:fitness_prodigy/app/core/enums.dart';
-import 'package:fitness_prodigy/app/models/quote_model.dart';
+import 'package:fitness_prodigy/app/domain/models/quote_model.dart';
 import 'package:fitness_prodigy/app/pages/features/motivation_quotes/cubit/motivation_quotes_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fitness_prodigy/app/models/water_glass_counter_model.dart';
+import 'package:fitness_prodigy/app/domain/models/water_glass_counter_model.dart';
 
 class WaterGlassCounterRepository {
   Stream<List<WaterModel>> getWaterStream() {

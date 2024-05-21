@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fitness_prodigy/app/models/goal_model.dart';
+import 'package:fitness_prodigy/app/domain/models/event_planner_item_model.dart';
 
-class GoalsRepository {
-  Stream<List<GoalModel>> getGoalsStream() {
+class ItemsRepository {
+  Stream<List<ItemModel>> getItemsStream() {
     final userID = FirebaseAuth.instance.currentUser?.uid;
     if (userID == null) {
       throw Exception('User is not logged in');
@@ -11,24 +11,60 @@ class GoalsRepository {
     return FirebaseFirestore.instance
         .collection('users')
         .doc(userID)
-        .collection('goals')
-        .orderBy('timestamp')
+        .collection('events')
+        .orderBy('release_date')
         .snapshots()
         .map((querySnapshot) {
       return querySnapshot.docs.map(
         (doc) {
-          final timestamp = doc['timestamp'] as Timestamp?;
-          return GoalModel(
+          return ItemModel(
             id: doc.id,
             title: doc['title'],
-            timestamp: timestamp ?? Timestamp.now(),
+            imageURL: doc['image_url'],
+            releaseDate: (doc['release_date'] as Timestamp).toDate(),
           );
         },
       ).toList();
     });
   }
 
-  Future<void> add({required String controller}) async {
+  Future<void> delete({required String id}) {
+    final userID = FirebaseAuth.instance.currentUser?.uid;
+    if (userID == null) {
+      throw Exception('User is not logged in');
+    }
+    return FirebaseFirestore.instance
+        .collection('users')
+        .doc(userID)
+        .collection('events')
+        .doc(id)
+        .delete();
+  }
+
+  Future<ItemModel> get({required String id}) async {
+    final userID = FirebaseAuth.instance.currentUser?.uid;
+    if (userID == null) {
+      throw Exception('User is not logged in');
+    }
+    final doc = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(userID)
+        .collection('events')
+        .doc(id)
+        .get();
+    return ItemModel(
+      id: doc.id,
+      title: doc['title'],
+      imageURL: doc['image_url'],
+      releaseDate: (doc['release_date'] as Timestamp).toDate(),
+    );
+  }
+
+  Future<void> add(
+    String title,
+    String imageURL,
+    DateTime releaseDate,
+  ) async {
     final userID = FirebaseAuth.instance.currentUser?.uid;
     if (userID == null) {
       throw Exception('User is not logged in');
@@ -36,41 +72,13 @@ class GoalsRepository {
     await FirebaseFirestore.instance
         .collection('users')
         .doc(userID)
-        .collection('goals')
+        .collection('events')
         .add(
       {
-        'title': controller,
-        'timestamp': FieldValue.serverTimestamp(),
+        'title': title,
+        'image_url': imageURL,
+        'release_date': releaseDate,
       },
     );
-  }
-
-  Future<void> delete({required String documentID}) {
-    final userID = FirebaseAuth.instance.currentUser?.uid;
-    if (userID == null) {
-      throw Exception('User is not logged in');
-    }
-    return FirebaseFirestore.instance
-        .collection('users')
-        .doc(userID)
-        .collection('goals')
-        .doc(documentID)
-        .delete();
-  }
-
-  Future<void> undo(
-      {required String deletedGoal, required Timestamp originalTimestamp}) {
-    final userID = FirebaseAuth.instance.currentUser?.uid;
-    if (userID == null) {
-      throw Exception('User is not logged in');
-    }
-    return FirebaseFirestore.instance
-        .collection('users')
-        .doc(userID)
-        .collection('goals')
-        .add({
-      'title': deletedGoal,
-      'timestamp': originalTimestamp,
-    });
   }
 }
