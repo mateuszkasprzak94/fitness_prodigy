@@ -1,7 +1,8 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:fitness_prodigy/app/app.dart';
 import 'package:fitness_prodigy/app/core/constants.dart';
+import 'package:fitness_prodigy/app/core/text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomePage extends StatelessWidget {
@@ -25,41 +26,22 @@ class HomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Column(
-                children: [
-                  Text(
-                    'Fitness',
-                    style: GoogleFonts.montserrat(
-                      fontSize: screenWidth * 0.2,
-                      color: Colors.white,
-                      fontStyle: FontStyle.italic,
-                      fontWeight: FontWeight.bold,
-                      shadows: [
-                        const Shadow(
-                          color: Colors.black,
-                          offset: Offset(-2, 10),
-                          blurRadius: 1.0,
-                        )
-                      ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    AutoSizeText(
+                      'Fitness'.toUpperCase(),
+                      style: headlineTextStyleOne,
+                      maxLines: 1,
                     ),
-                  ),
-                  Text(
-                    'Prodigy',
-                    style: GoogleFonts.montserrat(
-                      fontSize: screenWidth * 0.2,
-                      color: Colors.amber.shade600,
-                      fontStyle: FontStyle.italic,
-                      fontWeight: FontWeight.bold,
-                      shadows: [
-                        const Shadow(
-                          color: Colors.black,
-                          offset: Offset(-2, 10),
-                          blurRadius: 1.0,
-                        )
-                      ],
+                    AutoSizeText(
+                      'Prodigy'.toUpperCase(),
+                      style: headlineTextStyleTwo,
+                      maxLines: 1,
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               const SizedBox(height: 90),
               ElevatedButton(
@@ -73,11 +55,7 @@ class HomePage extends StatelessWidget {
                 ),
                 child: Text(
                   AppLocalizations.of(context).achive,
-                  style: GoogleFonts.raleway(
-                    fontSize: screenWidth * 0.04,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: homeButtonTextStyle,
                 ),
                 onPressed: () {
                   Navigator.of(context).push(
