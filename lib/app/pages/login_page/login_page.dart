@@ -26,6 +26,7 @@ class _LoginPageState extends State<LoginPage> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: BlocProvider(
           create: (context) => AuthCubit(),
           child: BlocBuilder<AuthCubit, AuthState>(
