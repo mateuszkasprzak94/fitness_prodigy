@@ -7,7 +7,7 @@ import 'package:fitness_prodigy/app/domain/repositories/water_glass_counter_repo
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'water_glass_counter_dart_state.dart';
-part 'water_glass_counter_dart_cubit.freezed.dart';
+part 'generated/water_glass_counter_dart_cubit.freezed.dart';
 
 class WaterGlassCounterCubit extends Cubit<WaterGlassCounterState> {
   WaterGlassCounterCubit({required this.waterGlassCounterRepository})

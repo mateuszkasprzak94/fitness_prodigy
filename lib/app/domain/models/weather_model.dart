@@ -4,8 +4,8 @@
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'weather_model.freezed.dart';
-part 'weather_model.g.dart';
+part 'generated/weather_model.freezed.dart';
+part 'generated/weather_model.g.dart';
 
 @freezed
 class WeatherModel with _$WeatherModel {

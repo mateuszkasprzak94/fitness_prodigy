@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:fitness_prodigy/app/core/config.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class MotivationQuotesRemoteDioDataSource {
   Future<List<Map<String, dynamic>>?> getQuoteData() async {
     final respone = await Dio().get<List<dynamic>>(Config.quoteUrl);

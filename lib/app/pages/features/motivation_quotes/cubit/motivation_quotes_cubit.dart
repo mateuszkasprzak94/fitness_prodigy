@@ -6,7 +6,7 @@ import 'package:fitness_prodigy/app/domain/models/quote_model.dart';
 import 'package:fitness_prodigy/app/domain/repositories/motivation_quotes_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'motivation_quotes_cubit.freezed.dart';
+part 'generated/motivation_quotes_cubit.freezed.dart';
 part 'motivation_quotes_state.dart';
 
 class MotivationQuotesCubit extends Cubit<MotivationQuotesState> {

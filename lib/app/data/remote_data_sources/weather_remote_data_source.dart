@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:fitness_prodigy/app/core/config.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class WeatherRemoteDioDataSource {
   Future<Map<String, dynamic>?> getWeatherData({
     required String city,

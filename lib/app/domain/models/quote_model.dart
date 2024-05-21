@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'quote_model.freezed.dart';
-part 'quote_model.g.dart';
+part 'generated/quote_model.freezed.dart';
+part 'generated/quote_model.g.dart';
 
 class TimestampSerializer implements JsonConverter<DateTime, dynamic> {
   const TimestampSerializer();

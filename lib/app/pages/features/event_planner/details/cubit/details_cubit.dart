@@ -4,7 +4,7 @@ import 'package:fitness_prodigy/app/domain/repositories/items_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'details_state.dart';
-part 'details_cubit.freezed.dart';
+part 'generated/details_cubit.freezed.dart';
 
 class DetailsCubit extends Cubit<DetailsState> {
   DetailsCubit(this._itemsRepository) : super(DetailsState(null));

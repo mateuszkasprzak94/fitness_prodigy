@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'weather_model.dart';
+part of '../weather_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -14,8 +14,8 @@ _$WeatherModelImpl _$$WeatherModelImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$WeatherModelImplToJson(_$WeatherModelImpl instance) =>
     <String, dynamic>{
-      'location': instance.city,
-      'current': instance.current,
+      'location': instance.city.toJson(),
+      'current': instance.current.toJson(),
     };
 
 _$LocationImpl _$$LocationImplFromJson(Map<String, dynamic> json) =>
@@ -37,7 +37,7 @@ _$CurrentImpl _$$CurrentImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$CurrentImplToJson(_$CurrentImpl instance) =>
     <String, dynamic>{
       'temp_c': instance.tempC,
-      'condition': instance.condition,
+      'condition': instance.condition.toJson(),
     };
 
 _$ConditionImpl _$$ConditionImplFromJson(Map<String, dynamic> json) =>

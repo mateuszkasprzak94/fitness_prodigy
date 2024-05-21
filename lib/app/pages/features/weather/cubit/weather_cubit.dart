@@ -4,7 +4,7 @@ import 'package:fitness_prodigy/app/domain/models/weather_model.dart';
 import 'package:fitness_prodigy/app/domain/repositories/weather_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'weather_cubit.freezed.dart';
+part 'generated/weather_cubit.freezed.dart';
 part 'weather_state.dart';
 
 class WeatherCubit extends Cubit<WeatherState> {

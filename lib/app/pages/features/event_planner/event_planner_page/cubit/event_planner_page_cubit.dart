@@ -6,7 +6,7 @@ import 'package:fitness_prodigy/app/domain/repositories/items_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'event_planner_page_state.dart';
-part 'event_planner_page_cubit.freezed.dart';
+part 'generated/event_planner_page_cubit.freezed.dart';
 
 class EventPlannerPageCubit extends Cubit<EventPlannerPageState> {
   EventPlannerPageCubit(this._itemsRepository) : super(EventPlannerPageState());

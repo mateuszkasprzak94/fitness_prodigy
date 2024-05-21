@@ -5,7 +5,7 @@ import 'package:fitness_prodigy/app/domain/models/goal_model.dart';
 import 'package:fitness_prodigy/app/domain/repositories/goals_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'goals_cubit.freezed.dart';
+part 'generated/goals_cubit.freezed.dart';
 part 'goals_state.dart';
 
 class GoalsCubit extends Cubit<GoalsState> {
