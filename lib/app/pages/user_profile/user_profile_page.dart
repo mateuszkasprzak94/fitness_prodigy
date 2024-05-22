@@ -1,6 +1,8 @@
+import 'package:fitness_prodigy/app/core/constants.dart';
+import 'package:fitness_prodigy/app/core/text_styles.dart';
 import 'package:fitness_prodigy/app/cubit/auth_cubit.dart';
+import 'package:fitness_prodigy/app/pages/user_profile/widgets/profile_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -15,52 +17,118 @@ class UserProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const shape = StadiumBorder();
-
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'User Profile',
-          style: GoogleFonts.satisfy(fontSize: 30, color: Colors.black),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              colors: kHomeGradient,
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight),
         ),
-        centerTitle: true,
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(colors: [
-              Color.fromARGB(164, 0, 0, 0),
-              Colors.white,
-            ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                flex: 1,
+                child: Container(
+                  alignment: Alignment.center,
+                  child: Text(
+                    'user profile'.toUpperCase(),
+                    style: profileTextStyle,
+                    maxLines: 1,
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Column(
+                  children: [
+                    Text(
+                      AppLocalizations.of(context).loggedAs,
+                      style: GoogleFonts.libreFranklin(
+                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      '$email',
+                      style: GoogleFonts.libreFranklin(
+                        fontSize: 20,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Column(
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        context.read<AuthCubit>().signOut();
+                      },
+                      child: ProfileButton(
+                        title:
+                            AppLocalizations.of(context).logout.toUpperCase(),
+                        icon: Icons.login_outlined,
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext child) {
+                            return AlertDialog(
+                              title: Text(
+                                AppLocalizations.of(context).delete,
+                              ),
+                              content: Text(
+                                AppLocalizations.of(context).warningDelete1,
+                              ),
+                              actions: [
+                                TextButton(
+                                  child: Text(
+                                    AppLocalizations.of(context).cancel,
+                                  ),
+                                  onPressed: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                ),
+                                TextButton(
+                                  child: Text(
+                                    AppLocalizations.of(context).deleteFinal,
+                                    style: const TextStyle(color: Colors.red),
+                                  ),
+                                  onPressed: () {
+                                    // Call the delete account function
+                                    context
+                                        .read<AuthCubit>()
+                                        .deleteUserAccount();
+
+                                    Navigator.of(context).pop();
+                                  },
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                      child: ProfileButton(
+                        title: AppLocalizations.of(context).deleteAccount,
+                        icon: Icons.delete,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
-        systemOverlayStyle: SystemUiOverlayStyle.light,
-        automaticallyImplyLeading: false,
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              AppLocalizations.of(context).loggedAs,
-              style: GoogleFonts.libreFranklin(fontSize: 20),
-              overflow: TextOverflow.ellipsis,
-              maxLines: 2,
-            ),
-            Text(
-              '$email',
-              style: GoogleFonts.libreFranklin(fontSize: 20),
-              overflow: TextOverflow.ellipsis,
-              maxLines: 2,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const SignedOutButton(shape: shape),
-            const SizedBox(height: 20),
-            const DeleteButton()
-          ],
-        ),
-      ),
-      floatingActionButton: const AboutWidget(),
     );
   }
 }
@@ -68,20 +136,17 @@ class UserProfilePage extends StatelessWidget {
 class SignedOutButton extends StatelessWidget {
   const SignedOutButton({
     super.key,
-    required this.shape,
   });
-
-  final StadiumBorder shape;
 
   @override
   Widget build(BuildContext context) {
     return Material(
       color: Colors.transparent,
-      shape: shape,
+      shape: StadiumBorder(),
       elevation: 8,
       child: Container(
         decoration: ShapeDecoration(
-          shape: shape,
+          shape: StadiumBorder(),
           gradient: const LinearGradient(
             colors: [
               Color.fromARGB(164, 0, 0, 0),
