@@ -1,8 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_prodigy/app/pages/exercies_examples/exercies_examples_page.dart';
-import 'package:fitness_prodigy/app/pages/features/features_page.dart';
+import 'package:fitness_prodigy/app/pages/features/features.dart';
 import 'package:fitness_prodigy/app/pages/user_profile/user_profile_page.dart';
 import 'package:fitness_prodigy/app/pages/workout_plans/workout_plans_page.dart';
+
 import 'package:flutter/material.dart';
 
 class AfterLogin extends StatefulWidget {
@@ -47,10 +48,13 @@ class _AfterLoginState extends State<AfterLogin> {
             currentIndex = newIndex;
           });
         },
-        selectedItemColor: Colors.amber,
+        selectedItemColor: Colors.amber.shade600,
         unselectedItemColor: Colors.black,
         showSelectedLabels: true,
         showUnselectedLabels: true,
+        unselectedLabelStyle: const TextStyle(
+          fontWeight: FontWeight.w500,
+        ),
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),

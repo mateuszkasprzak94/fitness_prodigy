@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 TextStyle headlineTextStyleOne = GoogleFonts.montserrat(
-  fontSize: 74,
+  fontSize: 72,
   color: Colors.white,
   fontStyle: FontStyle.italic,
   fontWeight: FontWeight.bold,
@@ -16,7 +16,7 @@ TextStyle headlineTextStyleOne = GoogleFonts.montserrat(
 );
 
 TextStyle headlineTextStyleTwo = GoogleFonts.montserrat(
-  fontSize: 73,
+  fontSize: 70,
   color: Colors.amber.shade600,
   fontStyle: FontStyle.italic,
   fontWeight: FontWeight.bold,
@@ -37,7 +37,7 @@ TextStyle homeButtonTextStyle = GoogleFonts.raleway(
 
 TextStyle loginTextStyle = GoogleFonts.montserrat(
   color: Colors.white,
-  fontSize: 35,
+  fontSize: 40,
   fontWeight: FontWeight.bold,
   shadows: [
     Shadow(
@@ -53,6 +53,7 @@ TextStyle textfieldHintStyle = const TextStyle(
 
 TextStyle textfieldStyle = GoogleFonts.roboto(
   color: Colors.black87,
+  fontWeight: FontWeight.w600,
 );
 
 TextStyle loginRegisterTextStyle = GoogleFonts.raleway(
