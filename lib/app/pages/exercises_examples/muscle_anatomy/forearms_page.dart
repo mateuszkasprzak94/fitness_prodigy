@@ -1,4 +1,4 @@
-import 'package:fitness_prodigy/app/pages/exercies_examples/muscle_anatomy/text_for_muscle_anatomy/text_for_muscle_anatomy.dart';
+import 'package:fitness_prodigy/app/pages/exercises_examples/muscle_anatomy/text_for_muscle_anatomy/text_for_muscle_anatomy.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';

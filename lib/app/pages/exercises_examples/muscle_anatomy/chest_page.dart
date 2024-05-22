@@ -1,10 +1,10 @@
-import 'package:fitness_prodigy/app/pages/exercies_examples/muscle_anatomy/text_for_muscle_anatomy/text_for_muscle_anatomy.dart';
+import 'package:fitness_prodigy/app/pages/exercises_examples/muscle_anatomy/text_for_muscle_anatomy/text_for_muscle_anatomy.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ShouldersPage extends StatelessWidget {
-  const ShouldersPage({
+class ChestPage extends StatelessWidget {
+  const ChestPage({
     Key? key,
   }) : super(key: key);
 
@@ -12,11 +12,12 @@ class ShouldersPage extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      extendBodyBehindAppBar: false,
       appBar: AppBar(
         title: Text(
-          'Crafting Broad and Impressive Shoulders',
+          'Forge Your Pectoral Power',
           style: GoogleFonts.lancelot(
-              fontSize: screenWidth / 18,
+              fontSize: screenWidth / 13,
               color: Colors.black,
               fontWeight: FontWeight.bold),
         ),
@@ -36,7 +37,7 @@ class ShouldersPage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: [
           Text(
-            startshoulders,
+            startchest,
             style: const TextStyle(fontWeight: FontWeight.w400),
           ),
           const Divider(
@@ -44,57 +45,56 @@ class ShouldersPage extends StatelessWidget {
             thickness: 5,
           ),
           const SizedBox(height: 15),
-          _buildExercise('1. Overhead Press:', shoulders1),
+          _buildExercise('1. Flat Bench Press:', chest1),
+          const Image(
+              image:
+                  AssetImage('assets/assets_exercise_examples/chest_flat.jpg')),
+          const SizedBox(height: 15),
+          _buildExercise('2. Incline Bench Press:', chest2),
           const Image(
               image: AssetImage(
-                  'assets/assets_exercise_examples/shoulders_overhead.jpg')),
+                  'assets/assets_exercise_examples/chest_incline.jpg')),
           const SizedBox(height: 15),
-          _buildExercise('2. Seated Dumbbell Shoulder Press:', shoulders2),
+          _buildExercise('3. Decline Bench Press:', chest3),
           const Image(
               image: AssetImage(
-                  'assets/assets_exercise_examples/shoulders_seated_press.jpg')),
+                  'assets/assets_exercise_examples/chest_decline.jpg')),
           const SizedBox(height: 15),
-          _buildExercise('3. Barbell Front Raise:', shoulders3),
+          _buildExercise('4. Cable Crossover:', chest4),
           const Image(
               image: AssetImage(
-                  'assets/assets_exercise_examples/shoulders_front.jpg')),
+                  'assets/assets_exercise_examples/chest_cable.jpg')),
           const SizedBox(height: 15),
-          _buildExercise('4. Dumbbell Lateral Raise:', shoulders4),
+          _buildExercise('5. Chest Dip:', chest5),
+          const Image(
+              image:
+                  AssetImage('assets/assets_exercise_examples/chest_dip.jpg')),
+          const SizedBox(height: 15),
+          _buildExercise('6. Dumbbell Pull-Over:', chest6),
           const Image(
               image: AssetImage(
-                  'assets/assets_exercise_examples/shoulders_lateral.jpg')),
+                  'assets/assets_exercise_examples/chest_dumbbel.jpg')),
           const SizedBox(height: 15),
-          _buildExercise('5. Barbell Upright Row:', shoulder5),
-          const SizedBox(height: 15),
-          _buildExercise('6. Reverse Dumbbell Flyes:', shoulders6),
-          const SizedBox(height: 15),
-          _buildExercise('7. Face Pull:', shoulders7),
+          _buildExercise('7. Machine Fly:', chest7),
           const Image(
               image: AssetImage(
-                  'assets/assets_exercise_examples/shoulders_face.jpg')),
-          const SizedBox(height: 15),
-          _buildExercise('8. Barbell Rear Delt Row:', shoulders8),
-          const SizedBox(height: 15),
-          _buildExercise('9. Arnold Press:', shoulders9),
-          const Image(
-              image: AssetImage(
-                  'assets/assets_exercise_examples/shoulders_arnold.jpg')),
+                  'assets/assets_exercise_examples/chest_machine.jpg')),
           const SizedBox(height: 15),
           const Divider(
             height: 10,
             thickness: 5,
           ),
           Text(
-            endshoulders,
+            endchest,
             style: const TextStyle(fontWeight: FontWeight.w400),
-          ),
+          )
         ],
       ),
     );
   }
 }
 
-Widget _buildExercise(String title, String description) {
+_buildExercise(String title, String description) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [

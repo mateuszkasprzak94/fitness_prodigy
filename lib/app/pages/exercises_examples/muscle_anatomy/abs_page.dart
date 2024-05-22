@@ -1,10 +1,10 @@
-import 'package:fitness_prodigy/app/pages/exercies_examples/muscle_anatomy/text_for_muscle_anatomy/text_for_muscle_anatomy.dart';
+import 'package:fitness_prodigy/app/pages/exercises_examples/muscle_anatomy/text_for_muscle_anatomy/text_for_muscle_anatomy.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LegsPage extends StatelessWidget {
-  const LegsPage({
+class AbsPage extends StatelessWidget {
+  const AbsPage({
     Key? key,
   }) : super(key: key);
 
@@ -14,11 +14,12 @@ class LegsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Forging Powerful Lower Body',
+          'Sculpting Strong Core: Unveiling Abdominal Power',
           style: GoogleFonts.lancelot(
-              fontSize: screenWidth / 14,
+              fontSize: screenWidth / 15,
               color: Colors.black,
               fontWeight: FontWeight.bold),
+          maxLines: 2,
         ),
         centerTitle: true,
         flexibleSpace: Container(
@@ -36,7 +37,7 @@ class LegsPage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: [
           Text(
-            startlegs,
+            startabs,
             style: const TextStyle(fontWeight: FontWeight.w400),
           ),
           const Divider(
@@ -44,45 +45,36 @@ class LegsPage extends StatelessWidget {
             thickness: 5,
           ),
           const SizedBox(height: 15),
-          _buildExercise('1. Squats:', legs1),
-          const Image(
-              image:
-                  AssetImage('assets/assets_exercise_examples/legs_squad.jpg')),
+          _buildExercise('1. Cable Crunch:', abs1),
           const SizedBox(height: 15),
-          _buildExercise('2. Dumbbell Walking Lunge:', legs2),
-          const Image(
-              image: AssetImage(
-                  'assets/assets_exercise_examples/legs_walking.jpg')),
+          _buildExercise('2. Machine Crunch:', abs2),
           const SizedBox(height: 15),
-          _buildExercise('3. Leg Press:', legs3),
-          const Image(
-              image:
-                  AssetImage('assets/assets_exercise_examples/legs_press.jpg')),
+          _buildExercise('3. Landmine Twists:', abs3),
           const SizedBox(height: 15),
-          _buildExercise('4. Bulgarian Split Squats:', legs4),
+          _buildExercise('4. Cable Side Bend:', abs4),
           const SizedBox(height: 15),
-          _buildExercise('5. Calf Raises:', legs5),
-          const Image(
-              image:
-                  AssetImage('assets/assets_exercise_examples/legs_calfs.jpg')),
+          _buildExercise('5. Hanging Knee Raise:', abs5),
           const SizedBox(height: 15),
-          _buildExercise('6. Leg Extensions:', legs6),
+          _buildExercise('6. Hanging Straight Leg Raise:', abs6),
           const SizedBox(height: 15),
-          _buildExercise('7. Romanian Deadlift:', legs7),
+          _buildExercise('7. Hanging Windshield Wiper:', abs7),
           const SizedBox(height: 15),
-          _buildExercise('8. Goblet Squat:', legs8),
-          const Image(
-              image: AssetImage(
-                  'assets/assets_exercise_examples/legs_goblet.jpg')),
+          _buildExercise('8. Abs Wheel Rollout:', abs8),
           const SizedBox(height: 15),
-          _buildExercise('9. Seated Leg Curl:', legs9),
+          _buildExercise('9. Barbell Rollout:', abs9),
+          const SizedBox(height: 15),
+          _buildExercise('10. Pallof Press:', abs10),
+          const SizedBox(height: 15),
+          _buildExercise('11. Cable Wood Chop:', abs11),
+          const SizedBox(height: 15),
+          _buildExercise('12. Stability Ball Tuck:', abs12),
           const SizedBox(height: 15),
           const Divider(
             height: 10,
             thickness: 5,
           ),
           Text(
-            endlegs,
+            endabs,
             style: const TextStyle(fontWeight: FontWeight.w400),
           ),
         ],

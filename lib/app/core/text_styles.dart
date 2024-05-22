@@ -81,3 +81,17 @@ TextStyle profileTextStyle = GoogleFonts.montserrat(
     )
   ],
 );
+
+TextStyle exercisesTextStyle = GoogleFonts.montserrat(
+  fontSize: 35,
+  color: Colors.amber.shade600,
+  fontStyle: FontStyle.italic,
+  fontWeight: FontWeight.bold,
+  shadows: [
+    const Shadow(
+      color: Colors.black,
+      offset: Offset(0, 3),
+      blurRadius: 1.0,
+    )
+  ],
+);

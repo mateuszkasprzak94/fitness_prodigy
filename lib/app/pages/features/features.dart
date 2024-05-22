@@ -50,7 +50,7 @@ class Features extends StatelessWidget {
         title: Text(
           '# Fitness Prodigy',
           style: GoogleFonts.lobster(
-              fontSize: screenWidth / 9, color: Colors.black),
+              fontSize: screenWidth * 0.11, color: Colors.black),
         ),
         centerTitle: true,
         flexibleSpace: Container(

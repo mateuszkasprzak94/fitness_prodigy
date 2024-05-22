@@ -1,10 +1,10 @@
-import 'package:fitness_prodigy/app/pages/exercies_examples/muscle_anatomy/text_for_muscle_anatomy/text_for_muscle_anatomy.dart';
+import 'package:fitness_prodigy/app/pages/exercises_examples/muscle_anatomy/text_for_muscle_anatomy/text_for_muscle_anatomy.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ChestPage extends StatelessWidget {
-  const ChestPage({
+class BicepsPage extends StatelessWidget {
+  const BicepsPage({
     Key? key,
   }) : super(key: key);
 
@@ -12,14 +12,14 @@ class ChestPage extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      extendBodyBehindAppBar: false,
       appBar: AppBar(
         title: Text(
-          'Forge Your Pectoral Power',
+          'Crafting Strength and Definition',
           style: GoogleFonts.lancelot(
-              fontSize: screenWidth / 13,
+              fontSize: screenWidth / 15,
               color: Colors.black,
               fontWeight: FontWeight.bold),
+          maxLines: 2,
         ),
         centerTitle: true,
         flexibleSpace: Container(
@@ -37,7 +37,7 @@ class ChestPage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: [
           Text(
-            startchest,
+            startbiceps,
             style: const TextStyle(fontWeight: FontWeight.w400),
           ),
           const Divider(
@@ -45,72 +45,78 @@ class ChestPage extends StatelessWidget {
             thickness: 5,
           ),
           const SizedBox(height: 15),
-          _buildExercise('1. Flat Bench Press:', chest1),
-          const Image(
-              image:
-                  AssetImage('assets/assets_exercise_examples/chest_flat.jpg')),
-          const SizedBox(height: 15),
-          _buildExercise('2. Incline Bench Press:', chest2),
+          _buildExercise('1. Barbell Curls:', biceps1),
           const Image(
               image: AssetImage(
-                  'assets/assets_exercise_examples/chest_incline.jpg')),
+                  'assets/assets_exercise_examples/biceps_barbell_curl.jpg')),
           const SizedBox(height: 15),
-          _buildExercise('3. Decline Bench Press:', chest3),
+          _buildExercise('2. Bar Cable Curls:', biceps2),
+          const SizedBox(height: 15),
+          _buildExercise('3. EZ Bar Preacher Curls:', biceps3),
           const Image(
               image: AssetImage(
-                  'assets/assets_exercise_examples/chest_decline.jpg')),
+                  'assets/assets_exercise_examples/biceps_preacher_ez.jpg')),
           const SizedBox(height: 15),
-          _buildExercise('4. Cable Crossover:', chest4),
+          _buildExercise('4. Incline Dumbbell Curls:', biceps4),
+          const SizedBox(height: 15),
+          _buildExercise('5. One-arm Dumbbell Preacher Curls:', biceps5),
           const Image(
               image: AssetImage(
-                  'assets/assets_exercise_examples/chest_cable.jpg')),
+                  'assets/assets_exercise_examples/biceps_one_arm.jpg')),
           const SizedBox(height: 15),
-          _buildExercise('5. Chest Dip:', chest5),
-          const Image(
-              image:
-                  AssetImage('assets/assets_exercise_examples/chest_dip.jpg')),
-          const SizedBox(height: 15),
-          _buildExercise('6. Dumbbell Pull-Over:', chest6),
+          _buildExercise('6. Reverse Barbell Curls:', biceps6),
           const Image(
               image: AssetImage(
-                  'assets/assets_exercise_examples/chest_dumbbel.jpg')),
+                  'assets/assets_exercise_examples/biceps_reverse_curl.jpg')),
           const SizedBox(height: 15),
-          _buildExercise('7. Machine Fly:', chest7),
+          _buildExercise('7. Seated Dumbbell Curls:', biceps7),
           const Image(
               image: AssetImage(
-                  'assets/assets_exercise_examples/chest_machine.jpg')),
+                  'assets/assets_exercise_examples/biceps_seated_curl.jpg')),
+          const SizedBox(height: 15),
+          _buildExercise('8. Standing Biceps Cable Curl:', biceps8),
+          const Image(
+              image: AssetImage(
+                  'assets/assets_exercise_examples/biceps_cable_curl.jpg')),
+          const SizedBox(height: 15),
+          _buildExercise('9. Preacher Curl:', biceps9),
+          const Image(
+              image: AssetImage(
+                  'assets/assets_exercise_examples/biceps_preacher_curl.jpg')),
           const SizedBox(height: 15),
           const Divider(
             height: 10,
             thickness: 5,
           ),
           Text(
-            endchest,
+            endbiceps,
             style: const TextStyle(fontWeight: FontWeight.w400),
-          )
+          ),
         ],
       ),
     );
   }
 }
 
-_buildExercise(String title, String description) {
+Widget _buildExercise(String title, String description) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Text(
         title,
         style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontStyle: FontStyle.italic,
-            fontSize: 17),
+          fontWeight: FontWeight.bold,
+          fontStyle: FontStyle.italic,
+          fontSize: 17,
+        ),
       ),
       Text(
         description,
         style: const TextStyle(
-            fontWeight: FontWeight.normal,
-            fontStyle: FontStyle.normal,
-            fontSize: 12),
+          fontWeight: FontWeight.normal,
+          fontStyle: FontStyle.normal,
+          fontSize: 12,
+        ),
       ),
     ],
   );

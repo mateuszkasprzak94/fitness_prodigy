@@ -1,10 +1,10 @@
-import 'package:fitness_prodigy/app/pages/exercies_examples/muscle_anatomy/text_for_muscle_anatomy/text_for_muscle_anatomy.dart';
+import 'package:fitness_prodigy/app/pages/exercises_examples/muscle_anatomy/text_for_muscle_anatomy/text_for_muscle_anatomy.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class BicepsPage extends StatelessWidget {
-  const BicepsPage({
+class LegsPage extends StatelessWidget {
+  const LegsPage({
     Key? key,
   }) : super(key: key);
 
@@ -14,12 +14,11 @@ class BicepsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Crafting Strength and Definition',
+          'Forging Powerful Lower Body',
           style: GoogleFonts.lancelot(
-              fontSize: screenWidth / 15,
+              fontSize: screenWidth / 14,
               color: Colors.black,
               fontWeight: FontWeight.bold),
-          maxLines: 2,
         ),
         centerTitle: true,
         flexibleSpace: Container(
@@ -37,7 +36,7 @@ class BicepsPage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: [
           Text(
-            startbiceps,
+            startlegs,
             style: const TextStyle(fontWeight: FontWeight.w400),
           ),
           const Divider(
@@ -45,51 +44,45 @@ class BicepsPage extends StatelessWidget {
             thickness: 5,
           ),
           const SizedBox(height: 15),
-          _buildExercise('1. Barbell Curls:', biceps1),
+          _buildExercise('1. Squats:', legs1),
+          const Image(
+              image:
+                  AssetImage('assets/assets_exercise_examples/legs_squad.jpg')),
+          const SizedBox(height: 15),
+          _buildExercise('2. Dumbbell Walking Lunge:', legs2),
           const Image(
               image: AssetImage(
-                  'assets/assets_exercise_examples/biceps_barbell_curl.jpg')),
+                  'assets/assets_exercise_examples/legs_walking.jpg')),
           const SizedBox(height: 15),
-          _buildExercise('2. Bar Cable Curls:', biceps2),
+          _buildExercise('3. Leg Press:', legs3),
+          const Image(
+              image:
+                  AssetImage('assets/assets_exercise_examples/legs_press.jpg')),
           const SizedBox(height: 15),
-          _buildExercise('3. EZ Bar Preacher Curls:', biceps3),
+          _buildExercise('4. Bulgarian Split Squats:', legs4),
+          const SizedBox(height: 15),
+          _buildExercise('5. Calf Raises:', legs5),
+          const Image(
+              image:
+                  AssetImage('assets/assets_exercise_examples/legs_calfs.jpg')),
+          const SizedBox(height: 15),
+          _buildExercise('6. Leg Extensions:', legs6),
+          const SizedBox(height: 15),
+          _buildExercise('7. Romanian Deadlift:', legs7),
+          const SizedBox(height: 15),
+          _buildExercise('8. Goblet Squat:', legs8),
           const Image(
               image: AssetImage(
-                  'assets/assets_exercise_examples/biceps_preacher_ez.jpg')),
+                  'assets/assets_exercise_examples/legs_goblet.jpg')),
           const SizedBox(height: 15),
-          _buildExercise('4. Incline Dumbbell Curls:', biceps4),
-          const SizedBox(height: 15),
-          _buildExercise('5. One-arm Dumbbell Preacher Curls:', biceps5),
-          const Image(
-              image: AssetImage(
-                  'assets/assets_exercise_examples/biceps_one_arm.jpg')),
-          const SizedBox(height: 15),
-          _buildExercise('6. Reverse Barbell Curls:', biceps6),
-          const Image(
-              image: AssetImage(
-                  'assets/assets_exercise_examples/biceps_reverse_curl.jpg')),
-          const SizedBox(height: 15),
-          _buildExercise('7. Seated Dumbbell Curls:', biceps7),
-          const Image(
-              image: AssetImage(
-                  'assets/assets_exercise_examples/biceps_seated_curl.jpg')),
-          const SizedBox(height: 15),
-          _buildExercise('8. Standing Biceps Cable Curl:', biceps8),
-          const Image(
-              image: AssetImage(
-                  'assets/assets_exercise_examples/biceps_cable_curl.jpg')),
-          const SizedBox(height: 15),
-          _buildExercise('9. Preacher Curl:', biceps9),
-          const Image(
-              image: AssetImage(
-                  'assets/assets_exercise_examples/biceps_preacher_curl.jpg')),
+          _buildExercise('9. Seated Leg Curl:', legs9),
           const SizedBox(height: 15),
           const Divider(
             height: 10,
             thickness: 5,
           ),
           Text(
-            endbiceps,
+            endlegs,
             style: const TextStyle(fontWeight: FontWeight.w400),
           ),
         ],

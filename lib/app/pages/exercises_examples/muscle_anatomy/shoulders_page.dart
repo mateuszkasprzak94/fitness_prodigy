@@ -1,10 +1,10 @@
-import 'package:fitness_prodigy/app/pages/exercies_examples/muscle_anatomy/text_for_muscle_anatomy/text_for_muscle_anatomy.dart';
+import 'package:fitness_prodigy/app/pages/exercises_examples/muscle_anatomy/text_for_muscle_anatomy/text_for_muscle_anatomy.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class AbsPage extends StatelessWidget {
-  const AbsPage({
+class ShouldersPage extends StatelessWidget {
+  const ShouldersPage({
     Key? key,
   }) : super(key: key);
 
@@ -14,12 +14,11 @@ class AbsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Sculpting Strong Core: Unveiling Abdominal Power',
+          'Crafting Broad and Impressive Shoulders',
           style: GoogleFonts.lancelot(
-              fontSize: screenWidth / 15,
+              fontSize: screenWidth / 18,
               color: Colors.black,
               fontWeight: FontWeight.bold),
-          maxLines: 2,
         ),
         centerTitle: true,
         flexibleSpace: Container(
@@ -37,7 +36,7 @@ class AbsPage extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         children: [
           Text(
-            startabs,
+            startshoulders,
             style: const TextStyle(fontWeight: FontWeight.w400),
           ),
           const Divider(
@@ -45,36 +44,48 @@ class AbsPage extends StatelessWidget {
             thickness: 5,
           ),
           const SizedBox(height: 15),
-          _buildExercise('1. Cable Crunch:', abs1),
+          _buildExercise('1. Overhead Press:', shoulders1),
+          const Image(
+              image: AssetImage(
+                  'assets/assets_exercise_examples/shoulders_overhead.jpg')),
           const SizedBox(height: 15),
-          _buildExercise('2. Machine Crunch:', abs2),
+          _buildExercise('2. Seated Dumbbell Shoulder Press:', shoulders2),
+          const Image(
+              image: AssetImage(
+                  'assets/assets_exercise_examples/shoulders_seated_press.jpg')),
           const SizedBox(height: 15),
-          _buildExercise('3. Landmine Twists:', abs3),
+          _buildExercise('3. Barbell Front Raise:', shoulders3),
+          const Image(
+              image: AssetImage(
+                  'assets/assets_exercise_examples/shoulders_front.jpg')),
           const SizedBox(height: 15),
-          _buildExercise('4. Cable Side Bend:', abs4),
+          _buildExercise('4. Dumbbell Lateral Raise:', shoulders4),
+          const Image(
+              image: AssetImage(
+                  'assets/assets_exercise_examples/shoulders_lateral.jpg')),
           const SizedBox(height: 15),
-          _buildExercise('5. Hanging Knee Raise:', abs5),
+          _buildExercise('5. Barbell Upright Row:', shoulder5),
           const SizedBox(height: 15),
-          _buildExercise('6. Hanging Straight Leg Raise:', abs6),
+          _buildExercise('6. Reverse Dumbbell Flyes:', shoulders6),
           const SizedBox(height: 15),
-          _buildExercise('7. Hanging Windshield Wiper:', abs7),
+          _buildExercise('7. Face Pull:', shoulders7),
+          const Image(
+              image: AssetImage(
+                  'assets/assets_exercise_examples/shoulders_face.jpg')),
           const SizedBox(height: 15),
-          _buildExercise('8. Abs Wheel Rollout:', abs8),
+          _buildExercise('8. Barbell Rear Delt Row:', shoulders8),
           const SizedBox(height: 15),
-          _buildExercise('9. Barbell Rollout:', abs9),
-          const SizedBox(height: 15),
-          _buildExercise('10. Pallof Press:', abs10),
-          const SizedBox(height: 15),
-          _buildExercise('11. Cable Wood Chop:', abs11),
-          const SizedBox(height: 15),
-          _buildExercise('12. Stability Ball Tuck:', abs12),
+          _buildExercise('9. Arnold Press:', shoulders9),
+          const Image(
+              image: AssetImage(
+                  'assets/assets_exercise_examples/shoulders_arnold.jpg')),
           const SizedBox(height: 15),
           const Divider(
             height: 10,
             thickness: 5,
           ),
           Text(
-            endabs,
+            endshoulders,
             style: const TextStyle(fontWeight: FontWeight.w400),
           ),
         ],
@@ -90,18 +101,16 @@ Widget _buildExercise(String title, String description) {
       Text(
         title,
         style: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontStyle: FontStyle.italic,
-          fontSize: 17,
-        ),
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            fontSize: 17),
       ),
       Text(
         description,
         style: const TextStyle(
-          fontWeight: FontWeight.normal,
-          fontStyle: FontStyle.normal,
-          fontSize: 12,
-        ),
+            fontWeight: FontWeight.normal,
+            fontStyle: FontStyle.normal,
+            fontSize: 12),
       ),
     ],
   );

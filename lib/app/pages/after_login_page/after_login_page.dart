@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fitness_prodigy/app/pages/exercies_examples/exercies_examples_page.dart';
+import 'package:fitness_prodigy/app/pages/exercises_examples/exercies_examples_page.dart';
 import 'package:fitness_prodigy/app/pages/features/features.dart';
 import 'package:fitness_prodigy/app/pages/user_profile/user_profile_page.dart';
 import 'package:fitness_prodigy/app/pages/workout_plans/workout_plans_page.dart';
