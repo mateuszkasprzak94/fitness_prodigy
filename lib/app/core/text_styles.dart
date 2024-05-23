@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-TextStyle headlineTextStyleOne = GoogleFonts.montserrat(
-  fontSize: 72,
+final TextStyle headlineTextStyleOne = GoogleFonts.montserrat(
+  fontSize: 64,
   color: Colors.white,
   fontStyle: FontStyle.italic,
   fontWeight: FontWeight.bold,
@@ -15,8 +15,8 @@ TextStyle headlineTextStyleOne = GoogleFonts.montserrat(
   ],
 );
 
-TextStyle headlineTextStyleTwo = GoogleFonts.montserrat(
-  fontSize: 70,
+final TextStyle headlineTextStyleTwo = GoogleFonts.montserrat(
+  fontSize: 66,
   color: Colors.amber.shade600,
   fontStyle: FontStyle.italic,
   fontWeight: FontWeight.bold,
@@ -29,13 +29,13 @@ TextStyle headlineTextStyleTwo = GoogleFonts.montserrat(
   ],
 );
 
-TextStyle homeButtonTextStyle = GoogleFonts.raleway(
+final TextStyle homeButtonTextStyle = GoogleFonts.raleway(
   fontSize: 17,
   color: Colors.black,
   fontWeight: FontWeight.bold,
 );
 
-TextStyle loginTextStyle = GoogleFonts.montserrat(
+final TextStyle loginTextStyle = GoogleFonts.montserrat(
   color: Colors.white,
   fontSize: 40,
   fontWeight: FontWeight.bold,
@@ -48,27 +48,27 @@ TextStyle loginTextStyle = GoogleFonts.montserrat(
   ],
 );
 
-TextStyle textfieldHintStyle = const TextStyle(
-    color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold);
+const TextStyle textfieldHintStyle =
+    TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold);
 
-TextStyle textfieldStyle = GoogleFonts.roboto(
+final TextStyle textfieldStyle = GoogleFonts.roboto(
   color: Colors.black87,
   fontWeight: FontWeight.w600,
 );
 
-TextStyle loginRegisterTextStyle = GoogleFonts.raleway(
+final TextStyle loginRegisterTextStyle = GoogleFonts.raleway(
   color: Colors.black,
   fontSize: 18,
   fontWeight: FontWeight.bold,
 );
 
-TextStyle haveOrCreateTextStyle = const TextStyle(
+const TextStyle haveOrCreateTextStyle = TextStyle(
   color: Colors.white,
   fontSize: 18,
   fontStyle: FontStyle.italic,
 );
 
-TextStyle profileTextStyle = GoogleFonts.montserrat(
+final TextStyle profileTextStyle = GoogleFonts.montserrat(
   fontSize: 35,
   color: Colors.amber.shade600,
   fontStyle: FontStyle.italic,
@@ -82,7 +82,20 @@ TextStyle profileTextStyle = GoogleFonts.montserrat(
   ],
 );
 
-TextStyle exercisesTextStyle = GoogleFonts.montserrat(
+final TextStyle supplementTextStyle = GoogleFonts.montserrat(
+  fontSize: 35,
+  color: Colors.white,
+  fontStyle: FontStyle.italic,
+  fontWeight: FontWeight.bold,
+  shadows: [
+    const Shadow(
+      color: Colors.black,
+      offset: Offset(0, 2),
+    )
+  ],
+);
+
+final TextStyle exercisesTextStyle = GoogleFonts.montserrat(
   fontSize: 35,
   color: Colors.amber.shade600,
   fontStyle: FontStyle.italic,

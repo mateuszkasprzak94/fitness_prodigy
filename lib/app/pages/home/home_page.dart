@@ -27,18 +27,20 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: Column(
                   children: [
                     AutoSizeText(
                       'Fitness'.toUpperCase(),
                       style: headlineTextStyleOne,
                       maxLines: 1,
+                      minFontSize: 48,
                     ),
                     AutoSizeText(
                       'Prodigy'.toUpperCase(),
                       style: headlineTextStyleTwo,
                       maxLines: 1,
+                      minFontSize: 50,
                     ),
                   ],
                 ),

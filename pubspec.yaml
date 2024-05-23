@@ -31,7 +31,7 @@ dependencies:
   keyboard_dismisser: ^3.0.0
   dio: ^5.3.3
   lottie: ^2.6.0
-  json_annotation: ^4.8.1
+  json_annotation: ^4.9.0
   freezed_annotation: ^2.4.1
   retrofit: ^4.0.3
   get_it: ^7.6.4
