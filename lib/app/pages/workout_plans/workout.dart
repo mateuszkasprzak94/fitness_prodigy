@@ -1,11 +1,11 @@
-import 'package:fitness_prodigy/app/domain/models/exercise_gridview_details_model.dart';
-import 'package:fitness_prodigy/app/pages/exercises_examples/widgets/exercise_gridview_content.dart';
+import 'package:fitness_prodigy/app/domain/models/workout_plan_gridview_details_model.dart';
+import 'package:fitness_prodigy/app/pages/workout_plans/widgets/workout_gridview_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ExerciseExamplesPage extends StatelessWidget {
-  const ExerciseExamplesPage({
+class WorkoutPlansPage extends StatelessWidget {
+  const WorkoutPlansPage({
     Key? key,
   }) : super(key: key);
 
@@ -14,9 +14,10 @@ class ExerciseExamplesPage extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      backgroundColor: Colors.grey.shade300,
       appBar: AppBar(
         title: Text(
-          'Exercise Examples',
+          'Workout Plans',
           style: GoogleFonts.lobster(
               fontSize: screenWidth * 0.11, color: Colors.black),
         ),
@@ -32,7 +33,6 @@ class ExerciseExamplesPage extends StatelessWidget {
         systemOverlayStyle: SystemUiOverlayStyle.light,
         automaticallyImplyLeading: false,
       ),
-      backgroundColor: Colors.grey.shade300,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -40,8 +40,7 @@ class ExerciseExamplesPage extends StatelessWidget {
             const Expanded(
               flex: 1,
               child: Image(
-                image: AssetImage(
-                    'assets/exercise_examples_page_images/exercise_image.png'),
+                image: AssetImage('assets/images/plan.png'),
               ),
             ),
             Expanded(
@@ -51,13 +50,13 @@ class ExerciseExamplesPage extends StatelessWidget {
                   crossAxisCount: 2,
                   childAspectRatio: 1,
                 ),
-                itemCount: exerciseGridViewDetails.length,
+                itemCount: workoutGridViewDetails.length,
                 itemBuilder: (context, index) {
-                  final detail = exerciseGridViewDetails[index];
+                  final detail = workoutGridViewDetails[index];
                   return InkWell(
                     splashColor: Colors.transparent,
                     onTap: () => detail.onPressed(context),
-                    child: ExerciseGridviewContent(
+                    child: WorkoutGridviewContent(
                       index: index,
                     ),
                   );

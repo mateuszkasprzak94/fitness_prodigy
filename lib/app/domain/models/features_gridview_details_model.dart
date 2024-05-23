@@ -7,8 +7,8 @@ import 'package:fitness_prodigy/app/pages/features/supplements/supplements_page.
 import 'package:fitness_prodigy/app/pages/features/water_glass_counter/water_glass_counter_page.dart';
 import 'package:flutter/material.dart';
 
-class GridViewDetails {
-  GridViewDetails({
+class FeaturesGridViewDetails {
+  FeaturesGridViewDetails({
     required this.title,
     required this.iconImage,
     required this.gradientsColor,
@@ -23,8 +23,8 @@ class GridViewDetails {
   final void Function(BuildContext context) onPressed;
 }
 
-final List<GridViewDetails> featuresGridViewDetails = [
-  GridViewDetails(
+final List<FeaturesGridViewDetails> featuresGridViewDetails = [
+  FeaturesGridViewDetails(
     title: 'diet',
     iconImage: 'assets/images/diet.png',
     gradientsColor: kHomeGradient,
@@ -37,7 +37,7 @@ final List<GridViewDetails> featuresGridViewDetails = [
       );
     },
   ),
-  GridViewDetails(
+  FeaturesGridViewDetails(
     title: 'supplements',
     iconImage: 'assets/images/supplements.png',
     gradientsColor: kHomeGradient,
@@ -50,7 +50,7 @@ final List<GridViewDetails> featuresGridViewDetails = [
       );
     },
   ),
-  GridViewDetails(
+  FeaturesGridViewDetails(
     title: 'goals',
     iconImage: 'assets/images/goals.png',
     gradientsColor: kHomeGradient,
@@ -63,7 +63,7 @@ final List<GridViewDetails> featuresGridViewDetails = [
       );
     },
   ),
-  GridViewDetails(
+  FeaturesGridViewDetails(
     title: 'motivation quotes',
     iconImage: 'assets/images/quotes.png',
     gradientsColor: kHomeGradient,
@@ -76,7 +76,7 @@ final List<GridViewDetails> featuresGridViewDetails = [
       );
     },
   ),
-  GridViewDetails(
+  FeaturesGridViewDetails(
     title: 'water glass counter',
     iconImage: 'assets/images/water.png',
     gradientsColor: kHomeGradient,
@@ -89,7 +89,7 @@ final List<GridViewDetails> featuresGridViewDetails = [
       );
     },
   ),
-  GridViewDetails(
+  FeaturesGridViewDetails(
     title: 'event planner',
     iconImage: 'assets/images/planner.png',
     gradientsColor: kHomeGradient,
