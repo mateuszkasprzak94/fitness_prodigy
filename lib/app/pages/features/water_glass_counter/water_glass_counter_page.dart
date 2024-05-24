@@ -45,10 +45,11 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
             extendBodyBehindAppBar: true,
             appBar: AppBar(
               backgroundColor: Colors.transparent,
+              titleSpacing: 0,
               title: Text(
                 'Water Glass Counter',
-                style: GoogleFonts.satisfy(
-                    fontSize: screenWidth / 12, color: Colors.black),
+                style: GoogleFonts.lobster(
+                    fontSize: screenWidth * 0.09, color: Colors.black),
               ),
               centerTitle: true,
               systemOverlayStyle: SystemUiOverlayStyle.light,
@@ -86,9 +87,16 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
                                     const Text(
                                       'GOAL REACHED!',
                                       style: TextStyle(
+                                        letterSpacing: 3,
                                         color: Color.fromARGB(255, 25, 187, 30),
                                         fontWeight: FontWeight.bold,
                                         fontSize: 25,
+                                        shadows: [
+                                          Shadow(
+                                              color: Colors.black,
+                                              offset: Offset(1, 1),
+                                              blurRadius: 1),
+                                        ],
                                       ),
                                     )
                                         .animate()
@@ -117,7 +125,7 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
                         alignment: Alignment.center,
                         child: Text(
                           'Water Glass: ${waterModel.glassCount} / Goal: ${waterModel.newGoal}',
-                          style: const TextStyle(
+                          style: GoogleFonts.roboto(
                               fontSize: 20,
                               color: Colors.black,
                               fontWeight: FontWeight.bold),
@@ -133,7 +141,10 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
                         decoration: const ShapeDecoration(
                           shape: StadiumBorder(),
                           gradient: LinearGradient(
-                            colors: [Colors.blue, Colors.white],
+                            colors: [
+                              Colors.blue,
+                              Colors.white,
+                            ],
                             begin: Alignment.bottomCenter,
                             end: Alignment.topCenter,
                           ),
@@ -154,7 +165,7 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
                           ),
                           child: const Text(
                             '+',
-                            style: TextStyle(fontSize: 17, color: Colors.black),
+                            style: TextStyle(fontSize: 25, color: Colors.black),
                           ),
                         ),
                       ),
@@ -165,7 +176,10 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
                         decoration: const ShapeDecoration(
                           shape: StadiumBorder(),
                           gradient: LinearGradient(
-                            colors: [Colors.blue, Colors.white],
+                            colors: [
+                              Colors.blue,
+                              Colors.white,
+                            ],
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                           ),
@@ -184,9 +198,13 @@ class _WaterGlassCounterPageState extends State<WaterGlassCounterPage> {
                             elevation: 0,
                             fixedSize: const Size(50, 50),
                           ),
-                          child: const Text('-',
-                              style:
-                                  TextStyle(fontSize: 17, color: Colors.black)),
+                          child: const Text(
+                            '-',
+                            style: TextStyle(
+                              fontSize: 35,
+                              color: Colors.black,
+                            ),
+                          ),
                         ),
                       ),
                     ],
