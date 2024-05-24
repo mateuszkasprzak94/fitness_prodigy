@@ -22,33 +22,44 @@ class _MainQuotePageState extends State<MainQuotePage> {
           create: (context) => getIt()..start(),
           child: BlocBuilder<MotivationQuotesCubit, MotivationQuotesState>(
             builder: (context, state) {
+              double screenWidth = MediaQuery.of(context).size.width;
+
               return Scaffold(
-                extendBodyBehindAppBar: true,
+                extendBodyBehindAppBar: false,
                 appBar: AppBar(
-                  backgroundColor: Colors.transparent,
+                  backgroundColor: Colors.grey.shade300,
                   title: Text(
                     'Motivation Quotes',
-                    style:
-                        GoogleFonts.satisfy(fontSize: 30, color: Colors.white),
+                    style: GoogleFonts.lobster(
+                        fontSize: screenWidth * 0.11, color: Colors.black),
                   ),
                   centerTitle: true,
+                  titleSpacing: 0,
                   systemOverlayStyle: SystemUiOverlayStyle.light,
                   automaticallyImplyLeading: true,
-                  foregroundColor: Colors.white,
-                  bottom: const TabBar(labelColor: Colors.white, tabs: [
-                    Tab(
+                  bottom: TabBar(
+                    labelColor: Colors.blueGrey,
+                    labelStyle: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 17),
+                    tabs: [
+                      Tab(
                         text: 'Random Quote',
                         icon: Icon(
                           Icons.all_inclusive,
-                          color: Colors.amber,
-                        )),
-                    Tab(
+                          color: Colors.amber.shade600,
+                          size: 35,
+                        ),
+                      ),
+                      const Tab(
                         text: 'Favorite Quote',
                         icon: Icon(
                           Icons.favorite,
                           color: Colors.red,
-                        )),
-                  ]),
+                          size: 35,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 body: const TabBarView(children: [
                   MotivationQuotesPage(),
