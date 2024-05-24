@@ -6,7 +6,7 @@ import 'package:fitness_prodigy/app/data/remote_data_sources/supplements_data_so
 import 'package:fitness_prodigy/app/domain/models/supplements_gridview_details_model.dart';
 import 'package:fitness_prodigy/app/domain/models/supplements_type_model.dart';
 import 'package:fitness_prodigy/app/domain/repositories/supplements_type_repository.dart';
-import 'package:fitness_prodigy/app/pages/features/supplements/supplements_t/cubit/supplements_cubit.dart';
+import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/cubit/supplements_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

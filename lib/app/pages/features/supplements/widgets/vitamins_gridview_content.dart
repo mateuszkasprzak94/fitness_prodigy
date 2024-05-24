@@ -1,10 +1,10 @@
-import 'package:fitness_prodigy/app/domain/models/supplements_gridview_details_model.dart';
-import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/supplements_type_content_page.dart';
+import 'package:fitness_prodigy/app/domain/models/vitamins_gridview_details_model.dart';
+import 'package:fitness_prodigy/app/pages/features/supplements/vitamins_type/vitamins_type_content_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SupplementsTypeGridviewContent extends StatelessWidget {
-  const SupplementsTypeGridviewContent(
+class VitaminsTypeGridviewContent extends StatelessWidget {
+  const VitaminsTypeGridviewContent(
     this.index, {
     super.key,
   });
@@ -13,14 +13,14 @@ class SupplementsTypeGridviewContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final details = supplementsGridViewDetails[index];
+    final details = vitaminsGridViewDetails[index];
 
     return InkWell(
       splashColor: Colors.transparent,
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(
-            builder: (_) => SupplementsTypeContentPage(
+            builder: (_) => VitaminsTypeContentPage(
               supplementIndex: index,
             ),
           ),

@@ -1,5 +1,6 @@
 import 'package:fitness_prodigy/app/core/constants.dart';
-import 'package:fitness_prodigy/app/pages/features/supplements/supplements_t/supplements_type_page.dart';
+import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/supplements_type_page.dart';
+import 'package:fitness_prodigy/app/pages/features/supplements/vitamins_type/vitamins_type_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -82,7 +83,13 @@ class SupplementsButton extends StatelessWidget {
             ),
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => const VitaminsTypePage(),
+                ),
+              );
+            },
             child: Container(
               height: 150,
               width: double.infinity,
