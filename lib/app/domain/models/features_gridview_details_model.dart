@@ -1,7 +1,7 @@
 import 'package:fitness_prodigy/app/core/constants.dart';
 import 'package:fitness_prodigy/app/pages/features/diet/pages/diet_page.dart';
 import 'package:fitness_prodigy/app/pages/features/event_planner/event_planner_page/page/event_planner_page.dart';
-import 'package:fitness_prodigy/app/pages/features/goals/goals_page.dart';
+import 'package:fitness_prodigy/app/pages/features/goals/g.dart';
 import 'package:fitness_prodigy/app/pages/features/motivation_quotes/pages/main_quote_page.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_page.dart';
 import 'package:fitness_prodigy/app/pages/features/water_glass_counter/water_glass_counter_page.dart';
