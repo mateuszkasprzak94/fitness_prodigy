@@ -21,7 +21,7 @@ class VitaminsTypeGridviewContent extends StatelessWidget {
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (_) => VitaminsTypeContentPage(
-              supplementIndex: index,
+              vitaminIndex: index,
             ),
           ),
         );

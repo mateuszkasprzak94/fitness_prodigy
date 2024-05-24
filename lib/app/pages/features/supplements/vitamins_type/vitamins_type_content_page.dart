@@ -13,10 +13,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class VitaminsTypeContentPage extends StatelessWidget {
   const VitaminsTypeContentPage({
     super.key,
-    required this.supplementIndex,
+    required this.vitaminIndex,
   });
 
-  final int supplementIndex;
+  final int vitaminIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class VitaminsTypeContentPage extends StatelessWidget {
             vitaminsTypeRepository: VitaminsTypeRepository(
                 remoteDataSource: VitaminsTypeMockedDataSource()))
           ..fetchData(
-            vitaminType: vitaminsGridViewDetails[supplementIndex].vitaminType,
+            vitaminType: vitaminsGridViewDetails[vitaminIndex].vitaminType,
           ),
         child: BlocBuilder<VitaminsCubit, VitaminsState>(
           builder: (context, state) {
@@ -61,9 +61,9 @@ class VitaminsTypeContentPage extends StatelessWidget {
                       child: ListView(
                         children: [
                           for (final vitamin in vitaminModel)
-                            SupplementItemWidget(
+                            VitaminItemWidget(
                               vitaminModel: vitamin,
-                              index: supplementIndex,
+                              index: vitaminIndex,
                             ),
                         ],
                       ),
@@ -87,8 +87,8 @@ class VitaminsTypeContentPage extends StatelessWidget {
   }
 }
 
-class SupplementItemWidget extends StatelessWidget {
-  const SupplementItemWidget({
+class VitaminItemWidget extends StatelessWidget {
+  const VitaminItemWidget({
     super.key,
     required this.vitaminModel,
     required this.index,
