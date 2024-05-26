@@ -5,23 +5,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Macronutrients extends StatefulWidget {
+class Macronutrients extends StatelessWidget {
   const Macronutrients({super.key});
 
   @override
-  State<Macronutrients> createState() => _MacronutrientsState();
-}
-
-class _MacronutrientsState extends State<Macronutrients> {
-  @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       extendBodyBehindAppBar: false,
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
           'Macronutrients',
-          style: GoogleFonts.satisfy(fontSize: 30, color: Colors.black),
+          style: GoogleFonts.lobster(
+            fontSize: screenWidth * 0.09,
+            color: Colors.black,
+          ),
         ),
         centerTitle: true,
         flexibleSpace: Container(
@@ -37,9 +37,10 @@ class _MacronutrientsState extends State<Macronutrients> {
       ),
       body: Container(
         decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/images_diet/macronutrients.jpg'),
-                fit: BoxFit.cover)),
+          image: DecorationImage(
+              image: AssetImage('assets/images_diet/macronutrients.jpg'),
+              fit: BoxFit.cover),
+        ),
         child: Center(
           child: ListView(
             children: [

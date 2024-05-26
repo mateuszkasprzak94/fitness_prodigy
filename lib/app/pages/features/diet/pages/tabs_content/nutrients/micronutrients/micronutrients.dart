@@ -4,23 +4,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Micronutrients extends StatefulWidget {
+class Micronutrients extends StatelessWidget {
   const Micronutrients({super.key});
 
   @override
-  State<Micronutrients> createState() => _MicronutrientsState();
-}
-
-class _MicronutrientsState extends State<Micronutrients> {
-  @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
           'Micronutrients',
-          style: GoogleFonts.satisfy(fontSize: 30, color: Colors.black),
+          style: GoogleFonts.lobster(
+            fontSize: screenWidth * 0.09,
+            color: Colors.black,
+          ),
         ),
         centerTitle: true,
         flexibleSpace: Container(

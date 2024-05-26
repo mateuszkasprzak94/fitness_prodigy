@@ -3,22 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class MealPlanningContent extends StatefulWidget {
+class MealPlanningContent extends StatelessWidget {
   const MealPlanningContent({super.key});
 
   @override
-  State<MealPlanningContent> createState() => _MealPlanningContentState();
-}
-
-class _MealPlanningContentState extends State<MealPlanningContent> {
-  @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
           'Meal Planning',
-          style: GoogleFonts.sahitya(fontSize: 30, color: Colors.black),
+          style: GoogleFonts.lobster(
+            fontSize: screenWidth * 0.09,
+            color: Colors.black,
+          ),
         ),
         centerTitle: true,
         flexibleSpace: Container(
@@ -33,10 +33,15 @@ class _MealPlanningContentState extends State<MealPlanningContent> {
         automaticallyImplyLeading: true,
       ),
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images_diet/planningpage.jpg'),
-              fit: BoxFit.cover),
+            image: const AssetImage('assets/images_diet/planningpage.jpg'),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(
+              Colors.black.withOpacity(0.40),
+              BlendMode.darken,
+            ),
+          ),
         ),
         child: ListView(children: [
           _buildVitamins('Meal Planning:', planningdescription),
@@ -76,6 +81,7 @@ Widget _buildVitamins(String title, String description) {
           ),
         ),
         Container(
+          padding: const EdgeInsets.all(5),
           color: Colors.white.withOpacity(0.90),
           child: Text(
             description,

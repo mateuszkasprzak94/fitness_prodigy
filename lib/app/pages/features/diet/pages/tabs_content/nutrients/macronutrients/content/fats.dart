@@ -3,22 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class FatsContent extends StatefulWidget {
+class FatsContent extends StatelessWidget {
   const FatsContent({super.key});
 
   @override
-  State<FatsContent> createState() => _FatsContentState();
-}
-
-class _FatsContentState extends State<FatsContent> {
-  @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
-          'FATS',
-          style: GoogleFonts.sahitya(fontSize: 30, color: Colors.black),
+          'Fats',
+          style: GoogleFonts.lobster(
+            fontSize: screenWidth * 0.09,
+            color: Colors.black,
+          ),
         ),
         centerTitle: true,
         flexibleSpace: Container(
@@ -33,10 +33,15 @@ class _FatsContentState extends State<FatsContent> {
         automaticallyImplyLeading: true,
       ),
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images_diet/fatspage.jpg'),
-              fit: BoxFit.cover),
+            image: const AssetImage('assets/images_diet/fatspage.jpg'),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(
+              Colors.black.withOpacity(0.40),
+              BlendMode.darken,
+            ),
+          ),
         ),
         child: ListView(children: [
           _buildFats('Fats: Essential Nutrients for Health', fatsdescription),
@@ -79,6 +84,7 @@ Widget _buildFats(String title, String description) {
           ),
         ),
         Container(
+          padding: const EdgeInsets.all(5),
           color: Colors.white.withOpacity(0.90),
           child: Text(
             description,

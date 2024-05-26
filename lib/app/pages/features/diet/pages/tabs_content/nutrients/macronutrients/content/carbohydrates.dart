@@ -3,22 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CarbohydratesContent extends StatefulWidget {
+class CarbohydratesContent extends StatelessWidget {
   const CarbohydratesContent({super.key});
 
   @override
-  State<CarbohydratesContent> createState() => _CarbohydratesContentState();
-}
-
-class _CarbohydratesContentState extends State<CarbohydratesContent> {
-  @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
           'Carbohydrates',
-          style: GoogleFonts.satisfy(fontSize: 30, color: Colors.black),
+          style: GoogleFonts.lobster(
+            fontSize: screenWidth * 0.09,
+            color: Colors.black,
+          ),
         ),
         centerTitle: true,
         flexibleSpace: Container(
@@ -33,10 +32,15 @@ class _CarbohydratesContentState extends State<CarbohydratesContent> {
         automaticallyImplyLeading: true,
       ),
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images_diet/carbspage.jpg'),
-              fit: BoxFit.cover),
+            image: const AssetImage('assets/images_diet/carbspage.jpg'),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(
+              Colors.black.withOpacity(0.40),
+              BlendMode.darken,
+            ),
+          ),
         ),
         child: ListView(
           children: [
@@ -83,6 +87,7 @@ Widget _buildCarbohydrates(String title, String description) {
           ),
         ),
         Container(
+          padding: const EdgeInsets.all(5),
           color: Colors.white.withOpacity(0.90),
           child: Text(
             description,

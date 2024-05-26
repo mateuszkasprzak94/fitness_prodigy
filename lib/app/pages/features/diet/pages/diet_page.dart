@@ -4,48 +4,99 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class DietPage extends StatefulWidget {
+class DietPage extends StatelessWidget {
   const DietPage({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<DietPage> createState() => _DietPageState();
-}
+  Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
 
-class _DietPageState extends State<DietPage> {
-  @override
-  Widget build(BuildContext context) => DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          extendBodyBehindAppBar: true,
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            title: Text(
-              'Diet',
-              style: GoogleFonts.satisfy(fontSize: 30, color: Colors.black),
-            ),
-            centerTitle: true,
-            systemOverlayStyle: SystemUiOverlayStyle.light,
-            automaticallyImplyLeading: true,
-            bottom: const TabBar(
-              labelColor: Colors.black,
-              unselectedLabelColor: Color.fromARGB(255, 121, 120, 120),
-              tabs: [
-                Tab(
-                    text: 'Nutrients',
-                    icon: Icon(Icons.local_dining,
-                        color: Color.fromARGB(255, 52, 153, 204))),
-                Tab(
-                    text: 'Tips',
-                    icon: Icon(Icons.lightbulb, color: Colors.yellow)),
-              ],
-            ),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        backgroundColor: Colors.grey.shade300,
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          iconTheme: const IconThemeData(color: Colors.white),
+          backgroundColor: Colors.transparent,
+          title: Text(
+            'Diet',
+            style: GoogleFonts.lobster(
+                fontSize: screenWidth * 0.09, color: Colors.white),
           ),
-          body: const TabBarView(children: [
+          centerTitle: true,
+          systemOverlayStyle: SystemUiOverlayStyle.light,
+          automaticallyImplyLeading: true,
+          bottom: TabBar(
+            indicator: const BoxDecoration(),
+            labelColor: Colors.white,
+            labelStyle: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 17,
+            ),
+            unselectedLabelStyle: const TextStyle(
+              color: Colors.white60,
+              fontWeight: FontWeight.bold,
+              fontSize: 15,
+            ),
+            splashFactory: NoSplash.splashFactory,
+            tabs: [
+              Tab(
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: const Color.fromARGB(166, 0, 0, 0),
+                  ),
+                  padding: const EdgeInsets.all(8.0),
+                  child: const Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.local_dining,
+                        size: 30,
+                        color: Color.fromARGB(255, 41, 218, 94),
+                      ),
+                      SizedBox(width: 5),
+                      Text('Nutrients'),
+                    ],
+                  ),
+                ),
+              ),
+              Tab(
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: const Color.fromARGB(166, 0, 0, 0),
+                  ),
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.lightbulb,
+                        size: 30,
+                        color: Colors.amber.shade800,
+                      ),
+                      const SizedBox(width: 5),
+                      const Text(
+                        'Tips',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        body: const TabBarView(
+          children: [
             NutrientsTabPage(),
             TipsTabPage(),
-          ]),
+          ],
         ),
-      );
+      ),
+    );
+  }
 }

@@ -3,22 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class EatingHabitsContent extends StatefulWidget {
+class EatingHabitsContent extends StatelessWidget {
   const EatingHabitsContent({super.key});
 
   @override
-  State<EatingHabitsContent> createState() => _EatingHabitsContentState();
-}
-
-class _EatingHabitsContentState extends State<EatingHabitsContent> {
-  @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
           'Eating Habits',
-          style: GoogleFonts.sahitya(fontSize: 30, color: Colors.black),
+          style: GoogleFonts.lobster(
+            fontSize: screenWidth * 0.09,
+            color: Colors.black,
+          ),
         ),
         centerTitle: true,
         flexibleSpace: Container(
@@ -33,10 +33,15 @@ class _EatingHabitsContentState extends State<EatingHabitsContent> {
         automaticallyImplyLeading: true,
       ),
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images_diet/habitspage.jpg'),
-              fit: BoxFit.cover),
+            image: const AssetImage('assets/images_diet/habitspage.jpg'),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(
+              Colors.black.withOpacity(0.40),
+              BlendMode.darken,
+            ),
+          ),
         ),
         child: ListView(children: [
           _buildVitamins('Eating Habits:', habitsdescription),
@@ -80,6 +85,7 @@ Widget _buildVitamins(String title, String description) {
           ),
         ),
         Container(
+          padding: const EdgeInsets.all(5),
           color: Colors.white.withOpacity(0.90),
           child: Text(
             description,
