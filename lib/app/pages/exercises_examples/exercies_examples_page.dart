@@ -53,13 +53,8 @@ class ExerciseExamplesPage extends StatelessWidget {
                 ),
                 itemCount: exerciseGridViewDetails.length,
                 itemBuilder: (context, index) {
-                  final detail = exerciseGridViewDetails[index];
-                  return InkWell(
-                    splashColor: Colors.transparent,
-                    onTap: () => detail.onPressed(context),
-                    child: ExerciseGridviewContent(
-                      index: index,
-                    ),
+                  return ExerciseGridviewContent(
+                    index,
                   );
                 },
               ),

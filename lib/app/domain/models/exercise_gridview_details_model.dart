@@ -1,12 +1,4 @@
 import 'package:fitness_prodigy/app/core/constants.dart';
-import 'package:fitness_prodigy/app/pages/exercises_examples/muscle_anatomy/abs_page.dart';
-import 'package:fitness_prodigy/app/pages/exercises_examples/muscle_anatomy/back_page.dart';
-import 'package:fitness_prodigy/app/pages/exercises_examples/muscle_anatomy/biceps_page.dart';
-import 'package:fitness_prodigy/app/pages/exercises_examples/muscle_anatomy/chest_page.dart';
-import 'package:fitness_prodigy/app/pages/exercises_examples/muscle_anatomy/forearms_page.dart';
-import 'package:fitness_prodigy/app/pages/exercises_examples/muscle_anatomy/legs_page.dart';
-import 'package:fitness_prodigy/app/pages/exercises_examples/muscle_anatomy/shoulders_page.dart';
-import 'package:fitness_prodigy/app/pages/exercises_examples/muscle_anatomy/triceps_page.dart';
 import 'package:flutter/material.dart';
 
 class ExerciseGridViewDetails {
@@ -14,13 +6,15 @@ class ExerciseGridViewDetails {
     required this.title,
     required this.iconImage,
     required this.gradientsColor,
-    required this.onPressed,
+    required this.muscleName,
+    required this.muscleTitle,
   });
 
   final String title;
   final String iconImage;
   final List<Color> gradientsColor;
-  final void Function(BuildContext context) onPressed;
+  final String muscleName;
+  final String muscleTitle;
 }
 
 final List<ExerciseGridViewDetails> exerciseGridViewDetails = [
@@ -28,96 +22,56 @@ final List<ExerciseGridViewDetails> exerciseGridViewDetails = [
     title: 'chest',
     iconImage: 'assets/exercise_examples_page_images/chest.png',
     gradientsColor: kHomeGradient,
-    onPressed: (context) {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (_) => const ChestPage(),
-        ),
-      );
-    },
+    muscleName: 'chest',
+    muscleTitle: 'Forge Your Pectoral Power',
   ),
   ExerciseGridViewDetails(
     title: 'back',
     iconImage: 'assets/exercise_examples_page_images/back.png',
     gradientsColor: kHomeGradient,
-    onPressed: (context) {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (_) => const BackPage(),
-        ),
-      );
-    },
+    muscleName: 'back',
+    muscleTitle: 'Unlock Your Back\'s Full Potential',
   ),
   ExerciseGridViewDetails(
     title: 'shoulders',
     iconImage: 'assets/exercise_examples_page_images/shoulders.png',
     gradientsColor: kHomeGradient,
-    onPressed: (context) {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (_) => const ShouldersPage(),
-        ),
-      );
-    },
+    muscleName: 'shoulders',
+    muscleTitle: 'Crafting Broad and Impressive Shoulders',
   ),
   ExerciseGridViewDetails(
     title: 'biceps',
     iconImage: 'assets/exercise_examples_page_images/biceps.png',
     gradientsColor: kHomeGradient,
-    onPressed: (context) {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (_) => const BicepsPage(),
-        ),
-      );
-    },
+    muscleName: 'biceps',
+    muscleTitle: 'Crafting Strength and Definition',
   ),
   ExerciseGridViewDetails(
     title: 'triceps',
     iconImage: 'assets/exercise_examples_page_images/triceps.png',
     gradientsColor: kHomeGradient,
-    onPressed: (context) {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (_) => const TricepsPage(),
-        ),
-      );
-    },
+    muscleName: 'triceps',
+    muscleTitle: 'Sculpting Powerful Triceps',
   ),
   ExerciseGridViewDetails(
     title: 'forearms',
     iconImage: 'assets/exercise_examples_page_images/forearms.png',
     gradientsColor: kHomeGradient,
-    onPressed: (context) {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (_) => const ForearmsPage(),
-        ),
-      );
-    },
+    muscleName: 'forearms',
+    muscleTitle: 'Building Resilient Forearms: Strengthening Grip',
   ),
   ExerciseGridViewDetails(
     title: 'legs',
     iconImage: 'assets/exercise_examples_page_images/legs.png',
     gradientsColor: kHomeGradient,
-    onPressed: (context) {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (_) => const LegsPage(),
-        ),
-      );
-    },
+    muscleName: 'legs',
+    muscleTitle: 'Forging Powerful Lower Body',
   ),
   ExerciseGridViewDetails(
     title: 'abs',
     iconImage: 'assets/exercise_examples_page_images/abs.png',
     gradientsColor: kHomeGradient,
-    onPressed: (context) {
-      Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (_) => const AbsPage(),
-        ),
-      );
-    },
+    muscleName: 'abs',
+    muscleTitle: 'Sculpting Strong Core: Unveiling Abdominal Power',
   ),
 ];

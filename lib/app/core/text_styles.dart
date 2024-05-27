@@ -83,7 +83,7 @@ final TextStyle profileTextStyle = GoogleFonts.montserrat(
 );
 
 final TextStyle supplementTextStyle = GoogleFonts.montserrat(
-  fontSize: 35,
+  fontSize: 15,
   color: Colors.white,
   fontStyle: FontStyle.italic,
   fontWeight: FontWeight.bold,
@@ -96,15 +96,27 @@ final TextStyle supplementTextStyle = GoogleFonts.montserrat(
 );
 
 final TextStyle exercisesTextStyle = GoogleFonts.montserrat(
-  fontSize: 35,
-  color: Colors.amber.shade600,
+  fontSize: 15,
+  color: Colors.white,
   fontStyle: FontStyle.italic,
   fontWeight: FontWeight.bold,
   shadows: [
     const Shadow(
       color: Colors.black,
-      offset: Offset(0, 3),
-      blurRadius: 1.0,
+      offset: Offset(0, 2),
+    )
+  ],
+);
+
+final TextStyle exercisesTextStyleTwo = GoogleFonts.montserrat(
+  fontSize: 14,
+  color: Colors.white,
+  fontStyle: FontStyle.italic,
+  fontWeight: FontWeight.bold,
+  shadows: [
+    const Shadow(
+      color: Colors.black,
+      offset: Offset(0, 2),
     )
   ],
 );
