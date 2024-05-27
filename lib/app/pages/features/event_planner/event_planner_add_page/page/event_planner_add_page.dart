@@ -1,8 +1,11 @@
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:fitness_prodigy/app/core/constants.dart';
 import 'package:fitness_prodigy/app/pages/features/event_planner/event_planner_add_page/cubit/add_cubit.dart';
 import 'package:fitness_prodigy/app/pages/features/event_planner/event_planner_add_page/page/text_for_event_planner_add_page.dart';
 import 'package:fitness_prodigy/app/domain/repositories/items_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 class EventPlannerAddPage extends StatefulWidget {
@@ -21,6 +24,8 @@ class _AddPageState extends State<EventPlannerAddPage> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return BlocProvider(
       create: (context) => AddCubit(ItemsRepository()),
       child: BlocListener<AddCubit, AddState>(
@@ -43,10 +48,16 @@ class _AddPageState extends State<EventPlannerAddPage> {
                 _imageURL == null || _title == null || _releaseDate == null;
             final colorchange = result;
             return Scaffold(
+              backgroundColor: Colors.grey.shade300,
               appBar: AppBar(
-                title: const Text(
+                backgroundColor: Colors.grey.shade300,
+                centerTitle: true,
+                titleSpacing: 0,
+                title: AutoSizeText(
                   'Add new upcoming event',
-                  maxLines: 2,
+                  style: GoogleFonts.lobster(
+                      fontSize: screenWidth * 0.07, color: Colors.black),
+                  maxLines: 1,
                 ),
                 actions: [
                   IconButton(
@@ -62,6 +73,7 @@ class _AddPageState extends State<EventPlannerAddPage> {
                                 );
                           },
                     icon: Icon(Icons.check,
+                        size: 35,
                         color:
                             colorchange == true ? Colors.grey : Colors.green),
                   ),
@@ -121,58 +133,133 @@ class _AddPageBody extends StatelessWidget {
         children: [
           TextField(
             onChanged: onTitleChanged,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
+            decoration: InputDecoration(
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(
+                  color: Colors.black,
+                  width: 2,
+                ),
+              ),
+              contentPadding: const EdgeInsets.all(10),
+              labelText: 'Title',
+              labelStyle: const TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.w600,
+                fontSize: 18,
+                fontStyle: FontStyle.italic,
+              ),
               hintText: 'Mr. Olympia',
-              label: Text('Title'),
+              hintStyle: const TextStyle(color: Colors.grey),
+              filled: true,
+              fillColor: Colors.white,
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+            ),
+            style: GoogleFonts.roboto(
+              color: Colors.black87,
             ),
           ),
           const SizedBox(height: 20),
           TextField(
             onChanged: onImageUrlChanged,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
+            decoration: InputDecoration(
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(
+                  color: Colors.black,
+                  width: 2,
+                ),
+              ),
+              contentPadding: const EdgeInsets.all(10),
+              labelText: 'Image URL',
+              labelStyle: const TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.w600,
+                fontSize: 18,
+                fontStyle: FontStyle.italic,
+              ),
               hintText: 'http:// ... .jpg',
-              label: Text('Image URL'),
+              hintStyle: const TextStyle(color: Colors.grey),
+              filled: true,
+              fillColor: Colors.white,
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+            ),
+            style: GoogleFonts.roboto(
+              color: Colors.black87,
             ),
           ),
           const SizedBox(height: 20),
-          Container(
-            decoration: const ShapeDecoration(
-              shape: StadiumBorder(),
-              gradient: LinearGradient(colors: [
-                Color.fromARGB(164, 0, 0, 0),
-                Colors.white,
-              ], begin: Alignment.centerRight, end: Alignment.centerLeft),
-            ),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                //deactivate color and shadow
-                tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                backgroundColor: Colors.transparent,
-                shadowColor: Colors.transparent,
-                elevation: 0,
-              ),
-              onPressed: () async {
-                final selectedDate = await showDatePicker(
-                  context: context,
-                  initialDate: DateTime.now(),
-                  firstDate: DateTime.now(),
-                  lastDate: DateTime.now().add(
-                    const Duration(days: 365 * 10),
+          InkWell(
+            splashColor: Colors.transparent,
+            onTap: () async {
+              final selectedDate = await showDatePicker(
+                context: context,
+                initialDate: DateTime.now(),
+                firstDate: DateTime.now(),
+                lastDate: DateTime.now().add(
+                  const Duration(days: 365 * 10),
+                ),
+              );
+              onDateChanged(selectedDate);
+            },
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 20, vertical: 10) +
+                      const EdgeInsets.only(top: 20),
+              child: Container(
+                padding: const EdgeInsets.all(15),
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: kHomeGradient,
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
                   ),
-                );
-                onDateChanged(selectedDate);
-              },
-              child: Text(
-                selectedDateFormatted ?? 'Choose event date',
-                style: const TextStyle(color: Colors.black),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(20),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black26,
+                      blurRadius: 5,
+                      offset: Offset(0, 10),
+                    ),
+                  ],
+                ),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    selectedDateFormatted ?? 'Choose event date',
+                    style: GoogleFonts.montserrat(
+                        fontSize: 18,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700),
+                  ),
+                ),
               ),
             ),
           ),
           const SizedBox(height: 30),
-          Center(child: Text(descriptionadd)),
+          Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.grey.withOpacity(0.40),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Center(
+              child: Text(
+                textAlign: TextAlign.center,
+                addDescription,
+                style: GoogleFonts.montserrat(
+                  fontSize: 16,
+                  color: const Color.fromARGB(255, 38, 78, 99),
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

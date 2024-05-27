@@ -17,9 +17,17 @@ class AddCubit extends Cubit<AddState> {
   ) async {
     try {
       await _itemsRepository.add(title, imageURL, releaseDate);
-      emit(AddState(saved: true));
+      emit(
+        AddState(
+          saved: true,
+        ),
+      );
     } catch (error) {
-      emit(AddState(errorMessage: error.toString()));
+      emit(
+        AddState(
+          errorMessage: error.toString(),
+        ),
+      );
     }
   }
 }

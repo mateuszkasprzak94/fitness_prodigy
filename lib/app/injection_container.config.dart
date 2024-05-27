@@ -31,16 +31,14 @@ import 'package:fitness_prodigy/app/domain/repositories/water_glass_counter_repo
     as _i9;
 import 'package:fitness_prodigy/app/domain/repositories/weather_repository.dart'
     as _i17;
-import 'package:fitness_prodigy/app/pages/features/event_planner/details/cubit/details_cubit.dart'
-    as _i19;
 import 'package:fitness_prodigy/app/pages/features/event_planner/event_planner_add_page/cubit/add_cubit.dart'
-    as _i20;
+    as _i19;
 import 'package:fitness_prodigy/app/pages/features/event_planner/event_planner_page/cubit/event_planner_page_cubit.dart'
-    as _i21;
+    as _i20;
 import 'package:fitness_prodigy/app/pages/features/goals/cubit/goals_cubit.dart'
     as _i13;
 import 'package:fitness_prodigy/app/pages/features/motivation_quotes/cubit/motivation_quotes_cubit.dart'
-    as _i22;
+    as _i21;
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/cubit/supplements_cubit.dart'
     as _i15;
 import 'package:fitness_prodigy/app/pages/features/supplements/vitamins_type/cubit/vitamins_cubit.dart'
@@ -48,7 +46,7 @@ import 'package:fitness_prodigy/app/pages/features/supplements/vitamins_type/cub
 import 'package:fitness_prodigy/app/pages/features/water_glass_counter/cubit/water_glass_counter_dart_cubit.dart'
     as _i12;
 import 'package:fitness_prodigy/app/pages/features/weather/cubit/weather_cubit.dart'
-    as _i23;
+    as _i22;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
@@ -95,15 +93,13 @@ extension GetItInjectableX on _i1.GetIt {
         _i18.MotivationQuotesRepository(
             motivationQuotesRemoteDataSource:
                 gh<_i4.MotivationQuotesRemoteDioDataSource>()));
-    gh.factory<_i19.DetailsCubit>(
-        () => _i19.DetailsCubit(gh<_i8.ItemsRepository>()));
-    gh.factory<_i20.AddCubit>(() => _i20.AddCubit(gh<_i8.ItemsRepository>()));
-    gh.factory<_i21.EventPlannerPageCubit>(
-        () => _i21.EventPlannerPageCubit(gh<_i8.ItemsRepository>()));
-    gh.factory<_i22.MotivationQuotesCubit>(() => _i22.MotivationQuotesCubit(
+    gh.factory<_i19.AddCubit>(() => _i19.AddCubit(gh<_i8.ItemsRepository>()));
+    gh.factory<_i20.EventPlannerPageCubit>(
+        () => _i20.EventPlannerPageCubit(gh<_i8.ItemsRepository>()));
+    gh.factory<_i21.MotivationQuotesCubit>(() => _i21.MotivationQuotesCubit(
         motivationQuotesRepository: gh<_i18.MotivationQuotesRepository>()));
-    gh.factory<_i23.WeatherCubit>(() =>
-        _i23.WeatherCubit(weatherRepository: gh<_i17.WeatherRepository>()));
+    gh.factory<_i22.WeatherCubit>(() =>
+        _i22.WeatherCubit(weatherRepository: gh<_i17.WeatherRepository>()));
     return this;
   }
 }

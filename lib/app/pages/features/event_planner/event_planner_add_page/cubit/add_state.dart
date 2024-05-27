@@ -7,14 +7,3 @@ class AddState with _$AddState {
     String? errorMessage,
   }) = _AddState;
 }
-
-
-// class AddState {
-//   const AddState({
-//     this.saved = false,
-//     this.errorMessage = '',
-//   });
-
-//   final bool saved;
-//   final String errorMessage;
-// }
