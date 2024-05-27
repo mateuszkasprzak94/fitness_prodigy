@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final TextStyle headlineTextStyleOne = GoogleFonts.montserrat(
-  fontSize: 64,
+  fontSize: 62,
   color: Colors.white,
   fontStyle: FontStyle.italic,
   fontWeight: FontWeight.bold,
@@ -16,7 +16,7 @@ final TextStyle headlineTextStyleOne = GoogleFonts.montserrat(
 );
 
 final TextStyle headlineTextStyleTwo = GoogleFonts.montserrat(
-  fontSize: 66,
+  fontSize: 64,
   color: Colors.amber.shade600,
   fontStyle: FontStyle.italic,
   fontWeight: FontWeight.bold,

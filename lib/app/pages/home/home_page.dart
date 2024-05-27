@@ -1,4 +1,3 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:fitness_prodigy/app/app.dart';
 import 'package:fitness_prodigy/app/core/constants.dart';
 import 'package:fitness_prodigy/app/core/text_styles.dart';
@@ -27,20 +26,22 @@ class HomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Column(
                   children: [
-                    AutoSizeText(
-                      'Fitness'.toUpperCase(),
-                      style: headlineTextStyleOne,
-                      maxLines: 1,
-                      minFontSize: 48,
+                    FittedBox(
+                      child: Text(
+                        'Fitness'.toUpperCase(),
+                        style: headlineTextStyleOne,
+                        maxLines: 1,
+                      ),
                     ),
-                    AutoSizeText(
-                      'Prodigy'.toUpperCase(),
-                      style: headlineTextStyleTwo,
-                      maxLines: 1,
-                      minFontSize: 50,
+                    FittedBox(
+                      child: Text(
+                        'Prodigy'.toUpperCase(),
+                        style: headlineTextStyleTwo,
+                        maxLines: 1,
+                      ),
                     ),
                   ],
                 ),

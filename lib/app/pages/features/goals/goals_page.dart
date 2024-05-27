@@ -209,6 +209,8 @@ class FloatingButton extends StatelessWidget {
             context.read<GoalsCubit>().add(controller.text);
 
             controller.clear();
+
+            FocusScope.of(context).unfocus();
           }
         },
         child: const Icon(

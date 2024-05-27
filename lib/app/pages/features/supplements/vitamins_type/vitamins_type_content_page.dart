@@ -105,9 +105,9 @@ class VitaminItemWidget extends StatelessWidget {
         AutoSizeText(
           vitaminModel.vitaminName.toUpperCase(),
           style: profileTextStyle,
-          maxLines: 1,
-          maxFontSize: 25,
-          minFontSize: 20,
+          maxLines: 2,
+          maxFontSize: 30,
+          minFontSize: 15,
         ),
         InkWell(
           onTap: () {

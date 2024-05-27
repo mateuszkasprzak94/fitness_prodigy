@@ -104,11 +104,12 @@ class SupplementItemWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         AutoSizeText(
+          textAlign: TextAlign.center,
           supplementModel.supplementName.toUpperCase(),
           style: profileTextStyle,
-          maxLines: 1,
-          maxFontSize: 25,
-          minFontSize: 20,
+          maxLines: 2,
+          maxFontSize: 30,
+          minFontSize: 15,
         ),
         InkWell(
           onTap: () {
