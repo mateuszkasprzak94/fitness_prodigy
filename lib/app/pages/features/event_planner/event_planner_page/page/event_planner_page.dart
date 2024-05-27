@@ -38,15 +38,7 @@ class EventPlannerPage extends StatelessWidget {
         automaticallyImplyLeading: true,
       ),
       body: const _EventPlannerPageBody(),
-      floatingActionButton: Container(
-        decoration: const ShapeDecoration(
-          shape: StadiumBorder(),
-          gradient: LinearGradient(
-            colors: kButtonGradient,
-          ),
-        ),
-        child: const FloatingButtonEvent(),
-      ),
+      floatingActionButton: const FloatingButtonEvent(),
     );
   }
 }
@@ -107,9 +99,7 @@ class _EventPlannerPageBody extends StatelessWidget {
         builder: (context, state) {
           final itemModels = state.items;
           return ListView(
-            padding: const EdgeInsets.symmetric(
-              vertical: 20,
-            ),
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
             children: [
               for (final itemModel in itemModels)
                 Dismissible(
@@ -117,7 +107,6 @@ class _EventPlannerPageBody extends StatelessWidget {
                   background: Padding(
                     padding: const EdgeInsets.symmetric(
                       vertical: 10,
-                      horizontal: 10,
                     ),
                     child: Container(
                       decoration: const BoxDecoration(
@@ -164,7 +153,6 @@ class _ListViewItem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(
         vertical: 10,
-        horizontal: 30,
       ),
       child: Container(
         decoration: BoxDecoration(
