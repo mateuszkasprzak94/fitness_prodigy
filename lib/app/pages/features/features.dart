@@ -33,9 +33,9 @@ class Features extends StatelessWidget {
               child: Tooltip(
                 message: AppLocalizations.of(context).checkweather,
                 child: Container(
-                  margin: const EdgeInsets.all(10),
+                  margin: const EdgeInsets.only(left: 5, right: 10),
                   alignment: Alignment.center,
-                  width: 30,
+                  width: 35,
                   child: Image.asset('assets/images/weather_icon.png')
                       .animate()
                       .fade(delay: 500.ms, duration: 1000.ms)
