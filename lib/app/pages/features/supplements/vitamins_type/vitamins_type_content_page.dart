@@ -2,10 +2,9 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:fitness_prodigy/app/core/constants.dart';
 import 'package:fitness_prodigy/app/core/enums.dart';
 import 'package:fitness_prodigy/app/core/text_styles.dart';
-import 'package:fitness_prodigy/app/data/remote_data_sources/vitamins_data_source.dart';
 import 'package:fitness_prodigy/app/domain/models/vitamins_gridview_details_model.dart';
 import 'package:fitness_prodigy/app/domain/models/vitamins_type_model.dart';
-import 'package:fitness_prodigy/app/domain/repositories/vitamins_type_repository.dart';
+import 'package:fitness_prodigy/app/injection_container.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/vitamins_type/cubit/vitamins_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,10 +20,8 @@ class VitaminsTypeContentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocProvider(
-        create: (context) => VitaminsCubit(
-            vitaminsTypeRepository: VitaminsTypeRepository(
-                remoteDataSource: VitaminsTypeMockedDataSource()))
+      body: BlocProvider<VitaminsCubit>(
+        create: (context) => getIt()
           ..fetchData(
             vitaminType: vitaminsGridViewDetails[vitaminIndex].vitaminType,
           ),

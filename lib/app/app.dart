@@ -1,5 +1,6 @@
 import 'package:fitness_prodigy/app/core/config.dart';
 import 'package:fitness_prodigy/app/cubit/auth_cubit.dart';
+import 'package:fitness_prodigy/app/injection_container.dart';
 import 'package:fitness_prodigy/app/pages/after_login_page/after_login_page.dart';
 import 'package:fitness_prodigy/app/pages/home/home_page.dart';
 import 'package:fitness_prodigy/app/pages/login_page/login_page.dart';
@@ -42,8 +43,8 @@ class Auth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AuthCubit()..start(),
+    return BlocProvider<AuthCubit>(
+      create: (context) => getIt()..start(),
       child: BlocBuilder<AuthCubit, AuthState>(
         builder: (context, state) {
           final user = state.user;

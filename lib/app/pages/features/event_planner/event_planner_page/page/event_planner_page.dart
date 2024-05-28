@@ -1,8 +1,8 @@
 import 'package:fitness_prodigy/app/core/constants.dart';
+import 'package:fitness_prodigy/app/injection_container.dart';
 import 'package:fitness_prodigy/app/pages/features/event_planner/event_planner_add_page/page/event_planner_add_page.dart';
 import 'package:fitness_prodigy/app/pages/features/event_planner/event_planner_page/cubit/event_planner_page_cubit.dart';
 import 'package:fitness_prodigy/app/domain/models/event_planner_item_model.dart';
-import 'package:fitness_prodigy/app/domain/repositories/items_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -93,8 +93,8 @@ class _EventPlannerPageBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => EventPlannerPageCubit(ItemsRepository())..start(),
+    return BlocProvider<EventPlannerPageCubit>(
+      create: (context) => getIt()..start(),
       child: BlocBuilder<EventPlannerPageCubit, EventPlannerPageState>(
         builder: (context, state) {
           final itemModels = state.items;

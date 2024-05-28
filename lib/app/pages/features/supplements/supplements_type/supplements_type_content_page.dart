@@ -2,10 +2,9 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:fitness_prodigy/app/core/constants.dart';
 import 'package:fitness_prodigy/app/core/enums.dart';
 import 'package:fitness_prodigy/app/core/text_styles.dart';
-import 'package:fitness_prodigy/app/data/remote_data_sources/supplements_data_source.dart';
 import 'package:fitness_prodigy/app/domain/models/supplements_gridview_details_model.dart';
 import 'package:fitness_prodigy/app/domain/models/supplements_type_model.dart';
-import 'package:fitness_prodigy/app/domain/repositories/supplements_type_repository.dart';
+import 'package:fitness_prodigy/app/injection_container.dart';
 import 'package:fitness_prodigy/app/pages/features/supplements/supplements_type/cubit/supplements_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,10 +20,8 @@ class SupplementsTypeContentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocProvider(
-        create: (context) => SupplementsCubit(
-            supplementsTypeRepository: SupplementsTypeRepository(
-                remoteDataSource: SupplementsTypeMockedDataSource()))
+      body: BlocProvider<SupplementsCubit>(
+        create: (context) => getIt()
           ..fetchData(
             supplementType:
                 supplementsGridViewDetails[supplementIndex].supplementType,

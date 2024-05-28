@@ -1,9 +1,8 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:fitness_prodigy/app/core/constants.dart';
 import 'package:fitness_prodigy/app/core/enums.dart';
-import 'package:fitness_prodigy/app/data/remote_data_sources/exercises_examples_data_source.dart';
 import 'package:fitness_prodigy/app/domain/models/exercise_gridview_details_model.dart';
-import 'package:fitness_prodigy/app/domain/repositories/exercises_examples_repository.dart';
+import 'package:fitness_prodigy/app/injection_container.dart';
 import 'package:fitness_prodigy/app/pages/exercises_examples/muscle_anatomy/cubit/muscle_anatomy_cubit.dart';
 import 'package:fitness_prodigy/app/pages/exercises_examples/muscle_anatomy/widgets/item_widget.dart';
 import 'package:flutter/material.dart';
@@ -23,10 +22,8 @@ class MuscleAnatomyContent extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      body: BlocProvider(
-        create: (context) => MuscleAnatomyCubit(
-            exercisesExamplesRepository: ExercisesExamplesRepository(
-                remoteDataSource: ExercisesExamplesMockedDataSource()))
+      body: BlocProvider<MuscleAnatomyCubit>(
+        create: (context) => getIt()
           ..fetchExerciseData(
               muscleName: exerciseGridViewDetails[exerciseIndex].muscleName),
         child: BlocBuilder<MuscleAnatomyCubit, MuscleAnatomyState>(
