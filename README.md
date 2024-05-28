@@ -7,10 +7,11 @@ Fitness Prodigy is a comprehensive health and fitness app designed to cater to a
 
 # <p align="center">Project Screenshots</p>
 
-![1 2](https://github.com/mateuszkasprzak94/fitness_prodigy/assets/142491717/b7e81060-7818-4524-87f1-b05b7e84411c)
-![3 4](https://github.com/mateuszkasprzak94/fitness_prodigy/assets/142491717/ddbbb895-4312-450d-b9b2-0b14ab62227c)
-![5 6](https://github.com/mateuszkasprzak94/fitness_prodigy/assets/142491717/d0228cfa-3994-4bf2-a173-40c550ada74b)
-![7 8](https://github.com/mateuszkasprzak94/fitness_prodigy/assets/142491717/2cc0b13a-116b-4693-a848-4b3433e987c9)
+![1 2](https://github.com/mateuszkasprzak94/fitness_prodigy/assets/142491717/143419d3-8e4b-47cd-8875-d2d3b054f815)
+![3 4](https://github.com/mateuszkasprzak94/fitness_prodigy/assets/142491717/1ec0aefb-6ed4-4bad-a579-45ca12cd90bb)
+![5 6](https://github.com/mateuszkasprzak94/fitness_prodigy/assets/142491717/ac0f6cd5-4215-4ae6-a770-753c4498cb95)
+![7 8](https://github.com/mateuszkasprzak94/fitness_prodigy/assets/142491717/552de152-f491-44ab-a2f5-73e60f924f6e)
+
 
 # <p align="center">Technologies used in the project:</p>
 
