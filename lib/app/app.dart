@@ -1,5 +1,6 @@
 import 'package:fitness_prodigy/app/core/config.dart';
 import 'package:fitness_prodigy/app/cubit/auth_cubit.dart';
+import 'package:fitness_prodigy/app/injection_container.dart';
 import 'package:fitness_prodigy/app/pages/after_login_page/after_login_page.dart';
 import 'package:fitness_prodigy/app/pages/home/home_page.dart';
 import 'package:fitness_prodigy/app/pages/login_page/login_page.dart';
@@ -15,7 +16,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: Config.debugShowCheckedModeBanner,
-      title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
@@ -43,8 +43,8 @@ class Auth extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => AuthCubit()..start(),
+    return BlocProvider<AuthCubit>(
+      create: (context) => getIt()..start(),
       child: BlocBuilder<AuthCubit, AuthState>(
         builder: (context, state) {
           final user = state.user;

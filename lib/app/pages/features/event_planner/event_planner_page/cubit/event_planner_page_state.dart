@@ -8,16 +8,3 @@ class EventPlannerPageState with _$EventPlannerPageState {
     @Default(false) bool removingErrorOccured,
   }) = _EventPlannerPageState;
 }
-
-
-// class EventPlannerPageState {
-//   const EventPlannerPageState({
-//     this.items = const [],
-//     this.loadingErrorOccured = false,
-//     this.removingErrorOccured = false,
-//   });
-
-//   final List<ItemModel> items;
-//   final bool loadingErrorOccured;
-//   final bool removingErrorOccured;
-// }

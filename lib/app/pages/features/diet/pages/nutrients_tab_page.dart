@@ -3,86 +3,102 @@ import 'package:fitness_prodigy/app/pages/features/diet/pages/tabs_content/nutri
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class NutrientsTabPage extends StatefulWidget {
+class NutrientsTabPage extends StatelessWidget {
   const NutrientsTabPage({super.key});
 
-  @override
-  State<NutrientsTabPage> createState() => _NutrientsTabPageState();
-}
-
-class _NutrientsTabPageState extends State<NutrientsTabPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/images_diet/diet.jpg'),
-                fit: BoxFit.cover)),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: const AssetImage('assets/images_diet/diet.jpg'),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(
+              Colors.black.withOpacity(0.40),
+              BlendMode.darken,
+            ),
+          ),
+        ),
         child: Center(
-          child: ListView(
+          child: Column(
             children: [
-              const SizedBox(height: 20),
-              Stack(
-                alignment: Alignment.topCenter,
-                children: [
-                  Material(
-                    elevation: 8,
-                    borderRadius: BorderRadius.circular(28),
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => const Macronutrients(),
-                          ),
-                        );
-                      },
-                      child: Ink.image(
-                        image: const AssetImage('assets/images_diet/macro.jpg'),
-                        height: 250,
-                        width: 250,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  Text(
-                    'Macronutrients',
-                    style: GoogleFonts.asul(fontSize: 24, color: Colors.black),
-                  ),
-                ],
+              const Expanded(
+                flex: 1,
+                child: SizedBox(),
               ),
-              const SizedBox(height: 50),
-              Stack(
-                alignment: Alignment.topCenter,
-                children: [
-                  Material(
-                    elevation: 8,
-                    borderRadius: BorderRadius.circular(28),
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (_) => const Micronutrients(),
+              Expanded(
+                flex: 3,
+                child: SizedBox(
+                  child: Column(
+                    children: [
+                      Stack(
+                        alignment: Alignment.topCenter,
+                        children: [
+                          Material(
+                            elevation: 8,
+                            borderRadius: BorderRadius.circular(28),
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (_) => const Macronutrients(),
+                                  ),
+                                );
+                              },
+                              child: Ink.image(
+                                image: const AssetImage(
+                                    'assets/images_diet/macro.jpg'),
+                                height: 250,
+                                width: 250,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
-                        );
-                      },
-                      child: Ink.image(
-                        image: const AssetImage('assets/images_diet/micro.jpg'),
-                        height: 250,
-                        width: 250,
-                        fit: BoxFit.cover,
+                          Text(
+                            'Macronutrients',
+                            style: GoogleFonts.asul(
+                                fontSize: 24, color: Colors.black),
+                          ),
+                        ],
                       ),
-                    ),
+                      const SizedBox(height: 50),
+                      Stack(
+                        alignment: Alignment.topCenter,
+                        children: [
+                          Material(
+                            elevation: 8,
+                            borderRadius: BorderRadius.circular(28),
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (_) => const Micronutrients(),
+                                  ),
+                                );
+                              },
+                              child: Ink.image(
+                                image: const AssetImage(
+                                    'assets/images_diet/micro.jpg'),
+                                height: 250,
+                                width: 250,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          Text(
+                            'Micronutrients',
+                            style: GoogleFonts.asul(
+                                fontSize: 24, color: Colors.black),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                  Text(
-                    'Micronutrients',
-                    style: GoogleFonts.asul(fontSize: 24, color: Colors.black),
-                  ),
-                ],
+                ),
               ),
-              const SizedBox(height: 50),
             ],
           ),
         ),

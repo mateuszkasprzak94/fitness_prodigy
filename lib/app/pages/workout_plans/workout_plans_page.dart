@@ -1,173 +1,65 @@
-import 'package:fitness_prodigy/app/pages/workout_plans/workout_plans_pages/abs_workout_page.dart';
-import 'package:fitness_prodigy/app/pages/workout_plans/workout_plans_pages/advanced_workout_page.dart';
-import 'package:fitness_prodigy/app/pages/workout_plans/workout_plans_pages/back_workout_page.dart';
-import 'package:fitness_prodigy/app/pages/workout_plans/workout_plans_pages/beginner_workout_page.dart';
-import 'package:fitness_prodigy/app/pages/workout_plans/workout_plans_pages/biceps_workout_page.dart';
-import 'package:fitness_prodigy/app/pages/workout_plans/workout_plans_pages/chest_workout_page.dart';
-import 'package:fitness_prodigy/app/pages/workout_plans/workout_plans_pages/forearms_workout_page.dart';
-import 'package:fitness_prodigy/app/pages/workout_plans/workout_plans_pages/intermediate_workout_page.dart';
-import 'package:fitness_prodigy/app/pages/workout_plans/workout_plans_pages/legs_workout_page.dart';
-import 'package:fitness_prodigy/app/pages/workout_plans/workout_plans_pages/shoulders_workout_page.dart';
-import 'package:fitness_prodigy/app/pages/workout_plans/workout_plans_pages/triceps_workout_page.dart';
-import 'package:fitness_prodigy/app/domain/models/button_model.dart';
+import 'package:fitness_prodigy/app/domain/models/workout_plan_gridview_details_model.dart';
+import 'package:fitness_prodigy/app/pages/workout_plans/widgets/workout_gridview_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class WorkoutPlansPage extends StatefulWidget {
+class WorkoutPlansPage extends StatelessWidget {
   const WorkoutPlansPage({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<WorkoutPlansPage> createState() => _WorkoutPlansPageState();
-}
-
-class _WorkoutPlansPageState extends State<WorkoutPlansPage> {
-  @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
+      backgroundColor: Colors.grey.shade300,
       appBar: AppBar(
         title: Text(
           'Workout Plans',
-          style: GoogleFonts.satisfy(fontSize: 30, color: Colors.black),
+          style: GoogleFonts.lobster(
+              fontSize: screenWidth * 0.11, color: Colors.black),
         ),
         centerTitle: true,
         flexibleSpace: Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             gradient: LinearGradient(colors: [
-              Color.fromARGB(164, 0, 0, 0),
-              Colors.white,
+              const Color.fromARGB(164, 0, 0, 0),
+              Colors.grey.shade300,
             ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
           ),
         ),
         systemOverlayStyle: SystemUiOverlayStyle.light,
         automaticallyImplyLeading: false,
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        children: [
-          customWorkoutButton(
-            title: 'Beginner Workout',
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => const BeginnerWorkoutPage(),
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Expanded(
+              flex: 1,
+              child: Image(
+                image: AssetImage('assets/images/plan.png'),
+              ),
+            ),
+            Expanded(
+              flex: 2,
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 1,
                 ),
-              );
-            },
-          ),
-          const SizedBox(height: 15),
-          customWorkoutButton(
-            title: 'Intermediate Workout',
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => const IntermediateWorkoutPage(),
-                ),
-              );
-            },
-          ),
-          const SizedBox(height: 15),
-          customWorkoutButton(
-            title: 'Advanced Workout',
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => const AdvancedWorkoutPage(),
-                ),
-              );
-            },
-          ),
-          const SizedBox(height: 15),
-          customWorkoutButton(
-            title: 'Chest',
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => const ChestWorkoutPage(),
-                ),
-              );
-            },
-          ),
-          const SizedBox(height: 15),
-          customWorkoutButton(
-            title: 'Back',
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => const BackWorkoutPage(),
-                ),
-              );
-            },
-          ),
-          const SizedBox(height: 15),
-          customWorkoutButton(
-            title: 'Shoulders',
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => const ShouldersWorkoutPage(),
-                ),
-              );
-            },
-          ),
-          const SizedBox(height: 15),
-          customWorkoutButton(
-            title: 'Biceps',
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => const BicepsWorkoutPage(),
-                ),
-              );
-            },
-          ),
-          const SizedBox(height: 15),
-          customWorkoutButton(
-            title: 'Triceps',
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => const TricepsWorkoutPage(),
-                ),
-              );
-            },
-          ),
-          const SizedBox(height: 15),
-          customWorkoutButton(
-            title: 'Forearms',
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => const ForearmsWorkoutPage(),
-                ),
-              );
-            },
-          ),
-          const SizedBox(height: 15),
-          customWorkoutButton(
-            title: 'Legs',
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => const LegsWorkoutPage(),
-                ),
-              );
-            },
-          ),
-          const SizedBox(height: 15),
-          customWorkoutButton(
-            title: 'Abs',
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => const AbsWorkoutPage(),
-                ),
-              );
-            },
-          ),
-        ],
+                itemCount: workoutGridViewDetails.length,
+                itemBuilder: (context, index) {
+                  return WorkoutGridviewContent(
+                    index: index,
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
