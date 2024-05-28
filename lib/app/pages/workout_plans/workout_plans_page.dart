@@ -52,13 +52,8 @@ class WorkoutPlansPage extends StatelessWidget {
                 ),
                 itemCount: workoutGridViewDetails.length,
                 itemBuilder: (context, index) {
-                  final detail = workoutGridViewDetails[index];
-                  return InkWell(
-                    splashColor: Colors.transparent,
-                    onTap: () => detail.onPressed(context),
-                    child: WorkoutGridviewContent(
-                      index: index,
-                    ),
+                  return WorkoutGridviewContent(
+                    index: index,
                   );
                 },
               ),
