@@ -13,7 +13,7 @@ Fitness Prodigy is a comprehensive health and fitness app designed to cater to a
 ![7 8](https://github.com/mateuszkasprzak94/fitness_prodigy/assets/142491717/552de152-f491-44ab-a2f5-73e60f924f6e)
 
 
-# <p align="center">Technologies used in the project:</p>
+# <p align="center">💻Technologies used in the project:</p>
 
 - Flutter
 - Dart
