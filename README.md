@@ -15,10 +15,10 @@ Fitness Prodigy is a comprehensive health and fitness app designed to cater to a
 
 # <p align="center">💻Technologies used in the project:</p>
 
-- Flutter
-- Dart
-- Firebase
-- REST API
+* Flutter
+* Dart
+* Firebase
+* REST API
 
 
 # <p align="center">Author</p>
