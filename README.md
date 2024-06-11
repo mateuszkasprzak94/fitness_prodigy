@@ -6,7 +6,7 @@
 Fitness Prodigy is a comprehensive health and fitness app designed to cater to all your wellness needs. Whether you're a seasoned fitness enthusiast or just starting your health journey, this app is your perfect companion. From workout planning to accessing valuable information about diet and supplements, goal setting, and daily motivation, Fitness Prodigy has it all.
 
 
-<h2>🛠️ Installation Steps:</h2>
+# <p align="center">🛠️ Installation Steps:</p>
      
 <p>1. Install Flutter SDK</p>
 
@@ -42,7 +42,7 @@ flutter run
 ![7 8](https://github.com/mateuszkasprzak94/fitness_prodigy/assets/142491717/552de152-f491-44ab-a2f5-73e60f924f6e)
 
 
-# <p align="center">💻Technologies used in the project:</p>
+# <p align="center">💻Build with:</p>
 
 * Flutter
 * Dart
